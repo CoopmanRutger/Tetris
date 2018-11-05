@@ -1,0 +1,55 @@
+/*HTML tags*/
+body {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    border: black solid 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*classes*/
+
+/*id's*/
+#homemid {
+    margin-bottom: 50px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+#homemid li {
+    border: black solid;
+    border-radius: 50%;
+    padding: 15px 30px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#homemid li:first-child {
+    margin-bottom: 20px;
+}
+
+#homemid li:last-child {
+    margin-top: 20px;
+}
+
+#homebot {
+    margin-bottom: 10px;
+}
+
+#homebot li {
+    display: inline-block;
+    right: 10%;
+    padding: 1px 10px;
+    margin-right: 15px;
+    border: black solid;
+    border-radius: 50%;
+}
+
+#homebot li:first-child {
+    margin-left: 75%;
+}
