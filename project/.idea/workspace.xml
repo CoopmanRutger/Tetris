@@ -5,7 +5,26 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="" />
+    <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/js/loadingScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/js/shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/Tetris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/faction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/js/faction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -127,41 +146,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Start.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Routes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="100">
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homeScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homescreen.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -174,11 +181,11 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="JUnit4 Test Class" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -206,14 +213,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="groep-21" />
+              <option name="name" value="project" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="groep-21" />
+                <option name="name" value="project" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -232,27 +239,27 @@
                 <option name="name" value="init" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'groep-21'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'project'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'groep-21'." />
+                <option name="description" value="Displays the sub-projects of root project 'project'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'groep-21'. [incubating]" />
+                <option name="description" value="Displays the dependent components of components in root project 'project'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'groep-21'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'project'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'groep-21'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'project'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -262,7 +269,7 @@
                 <option name="name" value="wrapper" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'groep-21'." />
+                <option name="description" value="Displays all dependencies declared in root project 'project'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -272,17 +279,17 @@
                 <option name="name" value="help" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'groep-21'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'project'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'groep-21'." />
+                <option name="description" value="Displays the properties of root project 'project'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'groep-21'." />
+                <option name="description" value="Displays the tasks runnable from root project 'project'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -293,7 +300,6 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3083201848359" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3118474793" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2083459160" />
@@ -316,7 +322,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="groep-21" />
+              <option name="name" value="project" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/announce" />
@@ -473,7 +479,6 @@
     </option>
     <option name="projectSyncType">
       <map>
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
         <entry key="$PROJECT_DIR$/../../../../../../S2/projecten/Programmeren/project1/2018-Group-07/SQL" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../../../../S2/projecten/Programmeren/project1/2018-Group-07/java_backend" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../../../../S2/software development 2/oefeningen/Sessie_11/contactbook" value="PREVIEW" />
@@ -484,40 +489,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/playfields/Playfields.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/Events/Events.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/playfield/block/Block.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/playfields/playfield/Score.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/hero/Hero.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/playfields/playfield/Playfield.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/info/Info.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/playfields/playfield/block/Block.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/hero/abilities/Abilities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/players/player/hero/abilities/Abilitie/Abilitie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/events/Events.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/events/event/event.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/hero/HeroNames.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/JDBCInteractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/Chatty.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/hero/Hero.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/PointsForAbilities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/hero/ability/Ability2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilitiesLvl1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/hero/ability/Ability1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java" />
-        <option value="$PROJECT_DIR$/src/main/webapi.js" />
-        <option value="$PROJECT_DIR$/src/main/js/webapi.js" />
         <option value="$PROJECT_DIR$/src/main/js/messagehandler.js" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/test/webapi/MessageHandlerTest" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/ChattySockJSHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
         <option value="$PROJECT_DIR$/src/test/java/game/player/info/GoldTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/game/player/info/LifepointsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/info/Lifepoints.java" />
@@ -536,13 +511,35 @@
         <option value="$PROJECT_DIR$/src/main/js/messagehandler.js" />
         <option value="$PROJECT_DIR$/src/test/webapi/MessageHandlerTest" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/Start.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
         <option value="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/block/BlockTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/block/Block.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/game/data/MySQLUsage.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/data/MySQLUseExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
+        <option value="$PROJECT_DIR$/src/main/js/webpages/battelefield.js" />
+        <option value="$PROJECT_DIR$/src/main/js/webpages/chooseFaction.js" />
+        <option value="$PROJECT_DIR$/src/main/js/webpages/faction_clan.html.js" />
+        <option value="$PROJECT_DIR$/src/main/js/webpages/gameStart.js" />
+        <option value="$PROJECT_DIR$/src/main/js/webpages/homeScreen.js" />
+        <option value="$PROJECT_DIR$/src/main/js/webpages/loadingScreen.js" />
+        <option value="$PROJECT_DIR$/src/main/js/webpages/shop.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/loadingScreen.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/clan.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/faction.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" />
       </list>
     </option>
   </component>
@@ -565,51 +562,123 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="groep-21" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="groep-21" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="groep-21" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="groep-21" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="groep-21" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="groep-21" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webroot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webroot" type="462c0819:PsiDirectoryNode" />
+              <item name="webpages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="webapi" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -620,7 +689,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
@@ -636,6 +705,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\project\Groep21\groep-21\project\src\main\resources\assets\js" />
       <recent name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\project\groep-21\backend\src\main\js" />
     </key>
   </component>
@@ -827,6 +897,7 @@
       <workItem from="1541599472919" duration="263000" />
       <workItem from="1541603619786" duration="5000" />
       <workItem from="1541604519905" duration="95000" />
+      <workItem from="1541606133547" duration="3891000" />
     </task>
     <servers />
   </component>
@@ -863,7 +934,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36615000" />
+    <option name="totallyTimeSpent" value="40506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -871,6 +942,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3294423" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -878,11 +950,12 @@
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3294423" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28313252" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28274968" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23242188" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23242188" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.31776914" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Gradle" order="7" weight="0.3297568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -891,10 +964,8 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3294423" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.31776914" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -913,100 +984,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/players/player/playfields/playfield/block/Block.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/players/player/hero/abilities/Abilities.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/players/player/hero/abilities/Abilitie/Abilitie.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/events/Events.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/events/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/ArrayList.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/events/event/Trigger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/game.Game">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID />
-          <OriginalElement>game.Game</OriginalElement>
-          <nodes>
-            <node x="" y="">game.Game</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="40.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MODULES/mdl-tetrisGroep21">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID />
-          <OriginalElement>mdl-tetrisGroep21</OriginalElement>
-          <nodes>
-            <node x="" y="">mdl-tetrisGroep21</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="76.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/HeroNames.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/List.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Chatty.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/JDBCInteractor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/Ability1.java~backend" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/Ability.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilitiesLvl3.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilitiesLvl2.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilityLvl3.java">
@@ -1074,20 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1138,13 +1101,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilitiesLvl1.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1216">
@@ -1192,6 +1148,158 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index2.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/js/webpages/shop.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/loadingScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/Tetris.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="41" selection-end-line="285" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5700">
+          <caret line="285" column="5" selection-start-line="285" selection-start-column="5" selection-end-line="285" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/clan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/faction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/shop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="71" column="96" selection-start-line="71" selection-start-column="96" selection-end-line="71" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="25" column="96" selection-start-line="25" selection-start-column="96" selection-end-line="25" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="96" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="30" column="96" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="96" selection-start-line="12" selection-start-column="96" selection-end-line="12" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1247,11 +1355,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>tetrisGroep21</last-edited>
+          <last-edited>tetrisGroep21_test|tetrisGroep21</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
