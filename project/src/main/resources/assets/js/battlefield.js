@@ -27,17 +27,21 @@ const colors = [
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVQ4T2NkYGBg+Hln0n8QfeLSGwYLPREwDQLIbLAAGrAPamJkBGlm4+RjOHTyHjY1OMXszJXAehgPrqsD204uALsA5mSQqcQAZNdiGsDOAzHj5xcGBhAbRKMBFAOQvQB2AQ5NyGYQdgEWW3EagOECIgIBvxeINODK7bcMOqrCqNFIVhiQ4oVf3z8xoCc6lISELR3ANIFoEIAZgNsLlIQByFRiACjwYADsBVjGIEYzTA08M4EECGUomH9hLoS5AJSdASaukfnTt+kFAAAAAElFTkSuQmCC"
 ];
 
+const context = player1.getContext("2d");
+const context2 = player2.getContext("2d");
+
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
 
-    eb.onopen = function(){
+    eb.onopen = function () {
         initialize("momom");
     };
     tetris(player);
 }
 
-function initialize(lol ) {
+
+function initialize(lol) {
 
     eb.registerHandler("tetris.game.BattleField", function (error, message) {
         if (error) {
@@ -57,8 +61,53 @@ function initialize(lol ) {
     });
 }
 
+function tetris(player) {
+    const player1 = document.getElementById("player1");
+    const player2 = document.getElementById("player2");
+    context.scale(20, 20);
+    context2.scale(20, 20);
 
-function makeMatrix(width, height){
+    update();
+
+    gameRun = false;
+    playerReset();
+    draw(context, context2);
+    gameOver(context, context2);
+    document.addEventListener('keydown', function (e) {
+        if (e.keyCode === 37) {
+            playerMove(-move);
+        }
+        else if (e.keyCode === 39) {
+            playerMove(+move);
+        }
+        else if (e.keyCode === 40) {
+            // console.log(player.pos);
+            if (gameRun) {
+                playerDrop();
+            }
+        }
+        else if (e.keyCode === 38) {
+            playerRotate(-move);
+        }
+    });
+    addEventHandler("#start_game", "click", startGame);
+
+}
+
+function update() {
+    let time = 0;
+    let dropInter = 100;
+    time++;
+    if (time >= dropInter) {
+        playerDrop();
+        time = 0;
+    }
+    draw(context, context2);
+}
+
+
+
+function makeMatrix(width, height) {
     const matrix = [];
     while (height--) {
         matrix.push(new Array(width).fill(0));
@@ -154,7 +203,7 @@ function collide(area, player) {
     return false;
 }
 
-function drawMatrix(matrix, offset, context, context2) {
+function drawMatrix(matrix, offset) {
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
@@ -199,7 +248,7 @@ function rotate(matrix, dir) {
     }
 }
 
-function playerReset(player) {
+function playerReset() {
     console.log(player);
     const pieces = "ijlostzb";
     player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
@@ -219,8 +268,8 @@ function playerDrop(player, context, context2) {
         player.pos.y--;
         merge(area, player);
         points();
-        playerReset(player);
-        updateScore(context, context2);
+        playerReset();
+        updateScore();
     }
 }
 
@@ -246,19 +295,19 @@ function playerRotate(dir) {
     }
 }
 
-function draw(context,context2) {
+function draw(context, context2) {
     context.clearRect(0, 0, player1.width, player1.height);
     context.fillStyle = "#000000";
     context.fillRect(0, 0, player2.width, player2.height);
     context2.clearRect(0, 0, player2.width, player2.height);
     context2.fillStyle = "#000000";
     context2.fillRect(0, 0, player2.width, player2.height);
-    updateScore(context, context2);
-    drawMatrix(area, {x: 0, y: 0}, context, context2);
-    drawMatrix(player.matrix, player.pos, context, context2);
+    updateScore();
+    drawMatrix(area, {x: 0, y: 0});
+    drawMatrix(player.matrix, player.pos);
 }
 
-function updateScore(context, context2) {
+function updateScore() {
     context.font = "bold 1px Comic Sans MS";
     context.fillStyle = "#ffffff";
     context.textAlign = "left";
@@ -286,53 +335,8 @@ function gameOver(context, context2) {
     document.getElementById("start_game").disabled = false;
 }
 
-function tetris(player) {
-    const player1 = document.getElementById("player1");
-    const player2 = document.getElementById("player2");
-    const context = player1.getContext("2d");
-    const context2 = player2.getContext("2d");
-    context.scale(20, 20);
-    context2.scale(20, 20);
 
-    let dropInter = 100;
-    let time = 0;
-    let update = function () {
-        time++;
-        if (time >= dropInter) {
-            playerDrop();
-            time = 0;
-        }
-        draw(context,context2);
-    };
-
-    gameRun = false;
-    playerReset(player);
-    draw(context, context2);
-    gameOver(context, context2);
-    document.addEventListener('keydown', function (e) {
-        if (e.keyCode === 37) {
-            playerMove(-move);
-        }
-        else if (e.keyCode === 39) {
-            playerMove(+move);
-        }
-        else if (e.keyCode === 40) {
-            // console.log(player.pos);
-            if (gameRun) {
-                playerDrop();
-            }
-        }
-        else if (e.keyCode === 38) {
-            playerRotate(-move);
-        }
-    });
-    addEventHandler("#start_game","click",startGame );
-
-
-}
-
-function startGame () {
-
+function startGame() {
     gameRun = true;
     playerReset();
     // console.log(player.pos);
@@ -345,4 +349,4 @@ function startGame () {
         }
     }, 10);
     this.disabled = true;
-};
+}

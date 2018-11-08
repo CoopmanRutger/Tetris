@@ -6,10 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -148,7 +146,7 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="220">
               <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
               <folding>
                 <element signature="e#708#709#0" expanded="true" />
@@ -158,11 +156,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="battlefield.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="battlefield.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="201" column="23" selection-start-line="201" selection-start-column="23" selection-end-line="201" selection-end-column="23" />
+            <state relative-caret-position="-720">
+              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -170,17 +168,8 @@
       <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebAPI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+            <state relative-caret-position="160">
+              <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -188,8 +177,17 @@
       <file leaf-file-name="battlefield.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="182">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Routes.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -212,6 +210,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>addeventH</find>
+      <find>update</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -887,11 +886,11 @@
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Consumers.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/Start.java" />
         <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" />
+        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" />
       </list>
     </option>
@@ -923,44 +922,6 @@
             <path>
               <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
-              <item name="buildOutputCleanup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="inspectionProfiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="groep21" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tetrisGroep21" type="b2602c69:ProjectViewProjectNode" />
@@ -1407,7 +1368,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58317000" />
+    <option name="totallyTimeSpent" value="64030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -1431,7 +1392,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3294423" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28274968" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28274968" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23242188" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294423" />
@@ -1641,24 +1602,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/ChattySockJSHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
           <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Consumers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1741,23 +1688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="e#422#423#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -1788,13 +1718,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/ChattySockJSHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        <state relative-caret-position="160">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Consumers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+          <folding>
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1806,31 +1754,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="715">
+          <caret line="4673" column="27" lean-forward="true" selection-start-line="4673" selection-start-column="27" selection-end-line="4673" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="15908" column="17" selection-start-line="15908" selection-start-column="17" selection-end-line="15908" selection-end-column="17" />
+        <state relative-caret-position="220">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding>
+            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+        <state relative-caret-position="160">
+          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="201" column="23" selection-start-line="201" selection-start-column="23" selection-end-line="201" selection-end-column="23" />
+        <state relative-caret-position="-720">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
         </state>
       </provider>
     </entry>
