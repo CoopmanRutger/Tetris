@@ -83,12 +83,48 @@ public class Playfield {
         return true;
     }
 
-    public void lineCompleted(int line) {
-        playfield.remove(line);
-        int heightOfField = playfield.size();
-        int widthOfField = playfield.get(heightOfField - 1).size();
-        playfield.add(makeLine(widthOfField));
+    public void checkForCompletedLine() {
+        int amountOf1s = 0;
+        int amountOfCompletedLines = 0;
+        List<Integer> completedLines = new ArrayList<>();
+        for (int i = 0; i < playfield.size(); i++) {
+            for (int j = 0; j < playfield.get(i).size(); j++) {
+                if (playfield.get(i).get(j) == 1) {
+                    amountOf1s++;
+                }
+            }
+            if (amountOf1s == 10) {
+                scoreForCompletedLine();
+                completedLines.add(i);
+                amountOfCompletedLines++;
+            }
+            amountOf1s = 0;
+        }
+
+        if (amountOfCompletedLines > 1) {
+            score.extraScoreForMultipleLines(amountOfCompletedLines);
+        }
+
+        removeCompletedLines(completedLines);
+    }
+
+    private void scoreForCompletedLine() {
         score.updateScore();
+    }
+
+    private void removeCompletedLines(List<Integer> completedLines) {
+        int deleted = 0;
+        for (Integer completedLine : completedLines) {
+            int lineToRemove = 0;
+            if (deleted > 0) {
+                lineToRemove = completedLine - deleted;
+            }
+            playfield.remove(lineToRemove);
+            int heightOfField = playfield.size();
+            int widthOfField = playfield.get(heightOfField - 1).size();
+            playfield.add(makeLine(widthOfField));
+            deleted++;
+        }
     }
 
     private List<Integer> makeLine(int size) {
@@ -99,7 +135,7 @@ public class Playfield {
         return blocks;
     }
 
-    public Score getScore() {
+    Score getScore() {
         return score;
     }
 
@@ -129,4 +165,7 @@ public class Playfield {
                 '}';
     }
 
+    void putLineOnField(int line, List<Integer> completeLine) {
+        playfield.set(line, completeLine);
+    }
 }
