@@ -3,5 +3,9 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    console.log("faction")
+    getFactionFromDB();
+}
+
+function getFactionFromDB() {
+    // TODO: get faction from database.
 }
