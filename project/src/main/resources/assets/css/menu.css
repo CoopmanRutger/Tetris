@@ -2,6 +2,25 @@ body {
     min-height: 200px;
 }
 
+header {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+header h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+main h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-bottom: 15px;
+}
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -29,10 +48,9 @@ body {
 
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
     color: white;
+    margin-left: 20px;
 }
 
 .tabcontent {

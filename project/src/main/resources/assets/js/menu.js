@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
 }
 
-function openShopMenu(evt, shopMenu) {
+function openMenu(evt, shopMenu) {
     // Declare all variables
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
 
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");

@@ -2,75 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../assets/css/Shop.css">
+    <link rel="stylesheet" href="../../assets/css/menu.css">
     <link rel="stylesheet" href="../../assets/css/common.css">
     <title>Welcome to the shop</title>
 </head>
 <body>
-<div class="tab">
-    <button class="tablinks" onclick="openShopMenu(event, 'skins')">Skins</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'themes')">themes</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'heroes')">heroes</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'keys')">keys</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'gold')">gold</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'wood')">wood</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'gems')">gems</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'premium')">premium</button>
-    <button class="tablinks" onclick="openShopMenu(event, 'bundles')">bundles</button>
 
-</div>
+<header>
+    <div class="tab">
+        <button class="tablinks" onclick="openMenu(event, 'skins')">Skins</button>
+        <button class="tablinks" onclick="openMenu(event, 'themes')">themes</button>
+        <button class="tablinks" onclick="openMenu(event, 'heroes')">heroes</button>
+        <button class="tablinks" onclick="openMenu(event, 'keys')">keys</button>
+        <button class="tablinks" onclick="openMenu(event, 'gold')">gold</button>
+        <button class="tablinks" onclick="openMenu(event, 'wood')">wood</button>
+        <button class="tablinks" onclick="openMenu(event, 'gems')">gems</button>
+        <button class="tablinks" onclick="openMenu(event, 'premium')">premium</button>
+        <button class="tablinks" onclick="openMenu(event, 'bundles')">bundles</button>
+    </div>
 
-<!-- Tab content -->
-<article id="skins" class="tabcontent">
-    <h3>Skins</h3>
-    <p>Here are some skins</p>
-</article>
+    <h1>Shop</h1>
+</header>
 
-<article id="themes" class="tabcontent">
-    <h3>Themes</h3>
-    <p>THEMES!</p>
-</article>
+<main>
+    <!-- Tab content -->
+    <article id="skins" class="tabcontent">
+        <h2>Skins</h2>
+        <p>Here are some skins</p>
+    </article>
 
-<article id="heroes" class="tabcontent">
-    <h3>Heroes</h3>
-    <p>heroes</p>
-</article>
+    <article id="themes" class="tabcontent">
+        <h2>Themes</h2>
+        <p>THEMES!</p>
+    </article>
 
-<article id="keys" class="tabcontent">
-    <h3>Keys</h3>
-    <p>keys</p>
-</article>
+    <article id="heroes" class="tabcontent">
+        <h2>Heroes</h2>
+        <p>heroes</p>
+    </article>
 
-<article id="gold" class="tabcontent">
-    <h3>Gold</h3>
-    <p>gold</p>
-</article>
+    <article id="keys" class="tabcontent">
+        <h2>Keys</h2>
+        <p>keys</p>
+    </article>
 
-<article id="wood" class="tabcontent">
-    <h3>Wood</h3>
-    <p>wood</p>
-</article>
+    <article id="gold" class="tabcontent">
+        <h2>Gold</h2>
+        <p>gold</p>
+    </article>
 
-<article id="gems" class="tabcontent">
-    <h3>Gems</h3>
-    <p>gems</p>
-</article>
+    <article id="wood" class="tabcontent">
+        <h2>Wood</h2>
+        <p>wood</p>
+    </article>
 
-<article id="premium" class="tabcontent">
-    <h3>Premium</h3>
-    <p>premium</p>
-</article>
+    <article id="gems" class="tabcontent">
+        <h2>Gems</h2>
+        <p>gems</p>
+    </article>
 
-<article id="bundles" class="tabcontent">
-    <h3>Bundles</h3>
-    <p>bundles</p>
-</article>
+    <article id="premium" class="tabcontent">
+        <h2>Premium</h2>
+        <p>premium</p>
+    </article>
 
-<a id="home" href="homescreen.html">Home</a>
+    <article id="bundles" class="tabcontent">
+        <h2>Bundles</h2>
+        <p>bundles</p>
+    </article>
+</main>
+
+<footer>
+    <a id="home" href="homescreen.html">Home</a>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
-<script src="../../assets/js/shop.js"></script>
+<script src="../../assets/js/menu.js"></script>
 <script src="../../assets/js/functions.js"></script>
 </body>
 </html>
