@@ -14,16 +14,11 @@ public class Routes {
     private Game game;
 
 
-    public Routes() {
+    public Routes(Game game) {
         Vertx vertx = Vertx.vertx();
         eb = vertx.eventBus();
         vertx.deployVerticle(new WebAPI());
-        Events events = new Events();
-        game = new Game(events);
-        Player player = new Player("rutger");
-        Player player1 = new Player("jan");
-        game.addPlayer(player);
-        game.addPlayer(player1);
+        this.game = game;
     }
 
     public void homeScreen(){
