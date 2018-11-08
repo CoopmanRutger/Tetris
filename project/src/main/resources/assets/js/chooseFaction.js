@@ -2,6 +2,14 @@
 
 document.addEventListener("DOMContentLoaded", init);
 
+let faction;
+
 function init() {
-    console.log("choose faction")
+    document.querySelector("#chooseFaction").addEventListener("click", chooseFaction);
+}
+
+function chooseFaction(e) {
+    e.preventDefault();
+    faction = e.target.alt;
+    // TODO: Process faction to database
 }
