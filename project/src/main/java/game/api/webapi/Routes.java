@@ -1,26 +1,50 @@
 package game.api.webapi;
 
+import game.Game;
+import game.api.Start;
+import game.events.Events;
+import game.player.Player;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
+import io.vertx.core.json.Json;
+import io.vertx.core.json.JsonObject;
 
 public class Routes {
     private EventBus eb;
+    private Game game;
+
 
     public Routes() {
         Vertx vertx = Vertx.vertx();
         eb = vertx.eventBus();
         vertx.deployVerticle(new WebAPI());
+        Events events = new Events();
+        game = new Game(events);
+        Player player = new Player("rutger");
+        Player player1 = new Player("jan");
+        game.addPlayer(player);
+        game.addPlayer(player1);
     }
 
     public void homeScreen(){
-        eb.consumer("tetris.game.homescreen",message -> {
+        eb.consumer("tetris.game.homescreen", message -> {
             message.reply(message.body());
         });
     }
 
-    public void route2(){
-        eb.consumer("tetris.game.play",message -> {
-            message.reply(message.body());
+    public void BattleFieldStart(){
+        eb.consumer("tetris.game.BattleField",message -> {
+            String m = message.body().toString();
+            message.reply(m);
+            sendBlockOneByOne(game);
         });
+    }
+
+
+
+    public void sendBlockOneByOne(Game game) {
+        eb.send("tetris.game.test", Json.encode(game));
+
+        System.out.println(game.getPlayers().get(0));
     }
 }

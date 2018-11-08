@@ -8,7 +8,8 @@ public class Score {
         score = 0;
     }
 
-    int getScore() {
+
+    public int getScore() {
         return score;
     }
 

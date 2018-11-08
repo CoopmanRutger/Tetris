@@ -15,6 +15,22 @@ public class Game {
         this.events = events;
     }
 
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public Events getEvents() {
+        return events;
+    }
+
+    public void setEvents(Events events) {
+        this.events = events;
+    }
+
     public void addPlayer(Player player) {
         players.add(player);
     }
