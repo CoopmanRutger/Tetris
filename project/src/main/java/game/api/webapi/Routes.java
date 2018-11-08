@@ -18,9 +18,13 @@ public class Routes {
         });
     }
 
-    public void route2(){
-        eb.consumer("tetris.game.play",message -> {
+    public void BattleFieldStart(){
+        eb.consumer("tetris.game.BattleField",message -> {
             message.reply(message.body());
         });
+    }
+
+    public void test(){
+        eb.send("tetris.game.test", "test");
     }
 }

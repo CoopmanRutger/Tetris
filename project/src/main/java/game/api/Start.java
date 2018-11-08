@@ -7,8 +7,8 @@ public class Start {
 
         Routes routes = new Routes();
         routes.homeScreen();
-//        routes.route2();
-
+        routes.BattleFieldStart();
+        routes.test();
 
 
 

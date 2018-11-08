@@ -1,11 +1,38 @@
-(function () {
-    "use strict";
+"use strict";
+
+/* global EventBus */
+let eb = new EventBus("http://localhost:8080/tetris/game");
+
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+
+    eb.onopen = function(){
+        initialize();
+    };
+    tetris();
+}
+
+function initialize() {
+
+    eb.registerHandler("tetris.game.test", function (error, message) {
+        console.log("hello");
+        console.log(message.body);
+    });
+    eb.send("tetris.game.BattleField", "yeet", function (error, reply) {
+        console.log(reply.body);
+    });
+}
+
+
+function tetris() {
     const player1 = document.getElementById("player1");
     const player2 = document.getElementById("player2");
     const context = player1.getContext("2d");
     const context2 = player2.getContext("2d");
     context.scale(20, 20);
     context2.scale(20, 20);
+
     let makeMatrix = function (w, h) {
         const matrix = [];
         while (h--) {
@@ -71,7 +98,8 @@
             ];
         }
     };
-    let points = function () {
+
+    let points = function points() {
         let rowCount = 1;
         outer:for (let y = area.length - 1; y > 0; --y) {
             for (let x = 0; x < area[y].length; ++x) {
@@ -260,7 +288,7 @@
             playerMove(+move);
         }
         else if (e.keyCode === 40) {
-            console.log(player.pos);
+            // console.log(player.pos);
             if (gameRun) {
                 playerDrop();
             }
@@ -272,7 +300,7 @@
     document.getElementById("start_game").onclick = function () {
         gameRun = true;
         playerReset();
-        console.log(player.pos);
+        // console.log(player.pos);
         gameLoop = setInterval(function () {
             if (gameRun) {
                 update();
@@ -283,4 +311,4 @@
         }, 10);
         this.disabled = true;
     };
-})();
+}
