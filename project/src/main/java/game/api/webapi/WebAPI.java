@@ -17,7 +17,7 @@ public class WebAPI extends AbstractVerticle {
         router.route("/").handler(routingContext -> {
             final HttpServerResponse response = routingContext.response();
             response.setChunked(true);
-            response.write("Hello chatty");
+            response.write("Hello player");
             response.end();
         });
         server.requestHandler(router::accept).listen(8080);

@@ -15,6 +15,10 @@ public class Playfields {
         addPlayfield(new Playfield());
     }
 
+    public List<Playfield> getPlayfields() {
+        return playfields;
+    }
+
     public void addPlayfield(Playfield playfield){
         playfields.add(playfield);
     }

@@ -8,19 +8,27 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
 
     eb.onopen = function(){
-        initialize();
+        initialize("momom");
     };
     tetris();
 }
 
-function initialize() {
+function initialize(lol ) {
 
-    eb.registerHandler("tetris.game.test", function (error, message) {
-        console.log("hello");
-        console.log(message.body);
+    eb.registerHandler("tetris.game.BattleField", function (error, message) {
+        if (error) {
+            console.log(error)
+        }
+        console.log("manuele handler:", message.body);
     });
-    eb.send("tetris.game.BattleField", "yeet", function (error, reply) {
+    eb.send("tetris.game.BattleField", lol, function (error, reply) {
+        if (error) {
+            console.log(error)
+        }
         console.log(reply.body);
+    });
+    eb.registerHandler("tetris.game.test", function (error, message) {
+        console.log(message.body);
     });
 }
 
