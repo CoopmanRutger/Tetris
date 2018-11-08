@@ -12,8 +12,8 @@ public class Routes {
         vertx.deployVerticle(new WebAPI());
     }
 
-    public void route1(){
-        eb.consumer("tetris.game.message",message -> {
+    public void homeScreen(){
+        eb.consumer("tetris.game.homescreen",message -> {
             message.reply(message.body());
         });
     }
