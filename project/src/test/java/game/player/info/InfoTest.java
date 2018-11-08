@@ -25,4 +25,9 @@ public class InfoTest {
         assertEquals(10,info.getLifepoints());
     }
 
+    @Test
+    public void testXp() {
+        assertEquals(0, info.getXp());
+    }
+
 }

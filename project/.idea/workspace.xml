@@ -6,7 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/player/info/Xp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/game/player/info/XpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -14,17 +16,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/player/info/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/player/info/Info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/playfield/Playfield.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/playfield/Playfield.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/playfield/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/playfield/Score.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/game.player.playfields.playfield.PlayfieldTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/game/player/info/InfoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/game/player/info/InfoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/game/player/playfields/playfield/PlayfieldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/game/player/playfields/playfield/PlayfieldTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/game/player/playfields/playfield/ScoreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/game/player/playfields/playfield/ScoreTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/game/player/playfields/playfield/block/BlockTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/game/player/playfields/playfield/block/BlockTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/game.player.playfields.playfield.PlayfieldTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/game.player.playfields.playfield.PlayfieldTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/game.player.playfields.playfield.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/game.player.playfields.playfield.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-game.player.playfields.playfield.PlayfieldTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-game.player.playfields.playfield.PlayfieldTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-game.player.playfields.playfield.PlayfieldTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/player/info/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/player/info/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/game/player/info/InfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/game/player/info/InfoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/PlayfieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/PlayfieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/block/BlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/block/BlockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -128,63 +135,71 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="12" />
+          <entry key="java" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="12" />
+          <entry key="JAVA" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1588" />
+          <entry key="java" value="2352" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1588" />
+          <entry key="JAVA" value="2352" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-              <folding>
-                <element signature="e#108#109#0" expanded="true" />
-                <element signature="e#133#134#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Xp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2052">
-              <caret line="116" column="10" lean-forward="true" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+            <state relative-caret-position="625">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
-                <element signature="e#3287#3288#0" expanded="true" />
-                <element signature="e#3322#3323#0" expanded="true" />
-                <element signature="e#4986#4987#0" expanded="true" />
-                <element signature="e#5010#5011#0" expanded="true" />
+                <element signature="e#147#148#0" expanded="true" />
+                <element signature="e#172#173#0" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#229#230#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/PlayfieldTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/game/player/info/XpTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1330">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="152">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#229#230#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Info.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+              <folding>
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#511#512#0" expanded="true" />
+                <element signature="e#546#547#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,9 +214,9 @@
         <option value="Enum" />
         <option value="HTML File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="JavaScript File" />
         <option value="Class" />
-        <option value="JavaScript File" />
-        <option value="JavaScript File" />
         <option value="JUnit4 Test Class" />
       </list>
     </option>
@@ -839,11 +854,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/game/player/info/LifepointsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/info/Lifepoints.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/info/Gold.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/info/Info.java" />
-        <option value="$PROJECT_DIR$/src/test/java/game/player/info/InfoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilitiesLvl2.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilitiesLvl3.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilityLvl3.java" />
@@ -885,11 +896,15 @@
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/Start.java" />
-        <option value="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/PlayfieldTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/block/BlockTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/player/info/Info.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/player/info/Xp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/game/player/info/XpTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/game/player/info/InfoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/PlayfieldTest.java" />
       </list>
     </option>
   </component>
@@ -949,22 +964,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="player" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="playfields" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -988,22 +987,6 @@
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="playfield" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="block" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -1015,7 +998,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541669560657" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541674054567" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -1028,8 +1011,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="game.player.playfields.playfield" />
       <recent name="game.player.info" />
+      <recent name="game.player.playfields.playfield" />
       <recent name="game.player.hero.ability" />
       <recent name="game.player.playfields.playfield.block" />
     </key>
@@ -1060,25 +1043,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.api.Start" />
-      <module name="tetrisGroep21_main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="InfoTest.testXp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;game.player.info.InfoTest.testXp&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="PlayfieldTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -1118,12 +1106,12 @@
       </ExternalSystemSettings>
       <method v="2" />
     </configuration>
-    <configuration name="ScoreTest.testUpdateScore" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ScoreTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;game.player.playfields.playfield.ScoreTest.testUpdateScore&quot;" />
+        <option name="scriptParameters" value="--tests game.player.playfields.playfield.ScoreTest" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -1137,12 +1125,12 @@
       </ExternalSystemSettings>
       <method v="2" />
     </configuration>
-    <configuration name="ScoreTest.testUpdateScoreForMultipleLines" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="XpTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;game.player.playfields.playfield.ScoreTest.testUpdateScoreForMultipleLines&quot;" />
+        <option name="scriptParameters" value="--tests game.player.info.XpTest" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -1182,19 +1170,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Start" />
       <item itemvalue="Gradle.PlayfieldTest" />
-      <item itemvalue="Gradle.ScoreTest.testUpdateScore" />
-      <item itemvalue="Gradle.ScoreTest.testUpdateScoreForMultipleLines" />
       <item itemvalue="Gradle.PlayfieldTest.testCheckForCompleted" />
+      <item itemvalue="Gradle.XpTest" />
+      <item itemvalue="Gradle.InfoTest.testXp" />
+      <item itemvalue="Gradle.ScoreTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PlayfieldTest" />
+        <item itemvalue="Gradle.ScoreTest" />
+        <item itemvalue="Gradle.InfoTest.testXp" />
+        <item itemvalue="Gradle.XpTest" />
         <item itemvalue="Gradle.PlayfieldTest.testCheckForCompleted" />
-        <item itemvalue="Gradle.ScoreTest.testUpdateScoreForMultipleLines" />
-        <item itemvalue="Gradle.ScoreTest.testUpdateScore" />
-        <item itemvalue="Application.Start" />
       </list>
     </recent_temporary>
   </component>
@@ -1224,24 +1212,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BlockTest_testRotateLeft - 2018.11.07 at 11h 06m 07s.xml">
-      <configuration name="BlockTest.testRotateLeft" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="BlockTest_testRotateLeft - 2018.11.07 at 11h 06m 33s.xml">
-      <configuration name="BlockTest.testRotateLeft" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="BlockTest_testRotateLeft - 2018.11.07 at 11h 06m 39s.xml">
-      <configuration name="BlockTest.testRotateLeft" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="BlockTest_testMakeBlock - 2018.11.07 at 11h 09m 28s.xml">
-      <configuration name="BlockTest.testMakeBlock" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="PlayfieldTest - 2018.11.08 at 09h 25m 30s.xml">
-      <configuration name="PlayfieldTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="ScoreTest_testUpdateScore - 2018.11.08 at 10h 13m 48s.xml">
-      <configuration name="ScoreTest.testUpdateScore" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="ScoreTest_testUpdateScoreForMultipleLines - 2018.11.08 at 10h 15m 04s.xml">
       <configuration name="ScoreTest.testUpdateScoreForMultipleLines" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -1254,13 +1224,30 @@
     <history-entry file="PlayfieldTest - 2018.11.08 at 10h 32m 40s.xml">
       <configuration name="PlayfieldTest" configurationId="GradleRunConfiguration" />
     </history-entry>
+    <history-entry file="XpTest - 2018.11.08 at 11h 33m 25s.xml">
+      <configuration name="XpTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="XpTest - 2018.11.08 at 11h 34m 40s.xml">
+      <configuration name="XpTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="XpTest - 2018.11.08 at 11h 34m 53s.xml">
+      <configuration name="XpTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="InfoTest_testXp - 2018.11.08 at 11h 36m 28s.xml">
+      <configuration name="InfoTest.testXp" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScoreTest - 2018.11.08 at 11h 37m 48s.xml">
+      <configuration name="ScoreTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="PlayfieldTest - 2018.11.08 at 11h 40m 25s.xml">
+      <configuration name="PlayfieldTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45873000" />
+    <option name="totallyTimeSpent" value="47876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2353362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1271,14 +1258,14 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294423" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2819277" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.2819277" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.31776914" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32814527" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.2819277" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3294423" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3294423" />
@@ -1301,43 +1288,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilityLvl3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Lifepoints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Gold.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilityLvl2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/AbilityLvl1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/Ability.java~backend" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/ability/Ability.java~HEAD" />
     <entry file="file://$PROJECT_DIR$/src/main/js/messagehandler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1580,37 +1530,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/PlayfieldTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1330">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/block/BlockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1627,13 +1550,118 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="116" column="10" lean-forward="true" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+        <state relative-caret-position="399">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
           <folding>
             <element signature="e#3287#3288#0" expanded="true" />
             <element signature="e#3322#3323#0" expanded="true" />
             <element signature="e#4986#4987#0" expanded="true" />
             <element signature="e#5010#5011#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Lifepoints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Gold.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/info/LifepointsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-347">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/info/InfoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/PlayfieldTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/block/BlockTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1767">
+          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/info/XpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#229#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Xp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
           </folding>
         </state>
       </provider>

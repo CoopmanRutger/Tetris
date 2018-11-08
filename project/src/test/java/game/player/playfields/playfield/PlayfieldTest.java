@@ -2,6 +2,7 @@ package game.player.playfields.playfield;
 
 import game.player.playfields.playfield.block.Block;
 import game.player.playfields.playfield.block.TypesOfBlocks;
+import org.junit.Before;
 import org.junit.Test;
 import java.awt.*;
 import java.util.ArrayList;
@@ -10,26 +11,29 @@ import static org.junit.Assert.*;
 
 public class PlayfieldTest  {
 
+    private Playfield playfield;
+    private Block block;
+
+    @Before
+    public void initiate() {
+        playfield = new Playfield();
+        block = new Block("Lblock", TypesOfBlocks.lBlock, Color.BLACK);
+        block.makeBlock(2, 0, 1, 3);
+    }
+
     @Test
     public void testMakeField() {
-        Playfield playfield = new Playfield();
         assertEquals(20,playfield.getPlayfield().size());
         assertEquals(10, playfield.getPlayfield().get(2).size());
     }
 
     @Test
     public void testAvailability() {
-        Playfield playfield = new Playfield();
-        Block block = new Block("Lblock", TypesOfBlocks.lBlock, Color.BLACK);
-        block.makeBlock(2, 0, 1, 3);
         assertTrue(playfield.positionAvailable(18, 4, block));
     }
 
     @Test
     public void testPutBlockOnField() {
-        Playfield playfield = new Playfield();
-        Block block = new Block("Lblock", TypesOfBlocks.lBlock, Color.BLACK);
-        block.makeBlock(2, 0, 1, 3);
         playfield.putOnPlayField(2, 4, block);
 
         int valueOfPlayfield = playfield.getPlayfield().get(2).get(4);
@@ -50,7 +54,6 @@ public class PlayfieldTest  {
 
     @Test
     public void testCheckForCompleted() {
-        Playfield playfield = new Playfield();
         List<Integer> completeLine = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             completeLine.add(1);

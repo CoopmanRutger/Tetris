@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.player.playfields.playfield.PlayfieldTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-11-08T09:32:39" hostname="MacBook-Pro-van-Din.local" time="0.243">
+<testsuite name="game.player.playfields.playfield.PlayfieldTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-11-08T10:40:24" hostname="MacBook-Pro-van-Din.local" time="0.302">
   <properties/>
-  <testcase name="testAvailability" classname="game.player.playfields.playfield.PlayfieldTest" time="0.23"/>
-  <testcase name="testPutBlockOnField" classname="game.player.playfields.playfield.PlayfieldTest" time="0.006"/>
-  <testcase name="testCheckForCompleted" classname="game.player.playfields.playfield.PlayfieldTest" time="0.0"/>
-  <testcase name="testMakeField" classname="game.player.playfields.playfield.PlayfieldTest" time="0.001"/>
+  <testcase name="testAvailability" classname="game.player.playfields.playfield.PlayfieldTest" time="0.296"/>
+  <testcase name="testPutBlockOnField" classname="game.player.playfields.playfield.PlayfieldTest" time="0.001"/>
+  <testcase name="testCheckForCompleted" classname="game.player.playfields.playfield.PlayfieldTest" time="0.001"/>
+  <testcase name="testMakeField" classname="game.player.playfields.playfield.PlayfieldTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
