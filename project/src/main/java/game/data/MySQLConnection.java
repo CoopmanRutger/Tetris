@@ -10,10 +10,9 @@ import io.vertx.ext.sql.SQLConnection;
 
 public class MySQLConnection extends AbstractVerticle {
 
-    private static final String URL = "jdbc:mysql://localhost/shop?useSSL=false&serverTimezone=UTC";
-    // TODO: naam van database specifiëren
-    private static final String user = "Leo"; // TODO: gebruiker hier specifiëren
-    private static final String pwd = "leonard"; // TODO: paswoord hier invullen
+    private static final String URL = "jdbc:mysql://localhost/tetrisGroep21?useSSL=false&serverTimezone=UTC";
+    private static final String user = "tetrisUser";
+    private static final String pwd = "tetrisGroep21";
 
     private final JsonObject config = new JsonObject()
             .put("url", URL)
