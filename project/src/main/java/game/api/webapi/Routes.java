@@ -44,6 +44,15 @@ public class Routes {
     }
 // TODO: get faction from DB and change here to DB class
 
+    public void chooseFaction() {
+        eb.consumer("tetris.game.faction.choose", message -> {
+            String faction = message.body().toString();
+            System.out.println(faction);
+            message.reply(faction);
+        });
+    }
+    // TODO: pass faction to DB.
+
     public void sendBlockOneByOne(Game game) {
         eb.send("tetris.game.test", Json.encode(game));
 

@@ -90,6 +90,8 @@ public class Start {
 
         routes.passFaction();
 
+        routes.chooseFaction();
+
         routes.sendBlockOneByOne(game);
 
 
