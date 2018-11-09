@@ -27,10 +27,10 @@ public class Event {
     }
 
     private void activateOnTime() {
-
+        // TODO: event is triggered on certain time
     }
 
     private void activateOnScore() {
-
+        // TODO: event is triggered on certain score
     }
 }
