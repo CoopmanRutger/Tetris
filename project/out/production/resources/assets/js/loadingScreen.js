@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    setTimeout(goToBattlefield, 5000);
+    setTimeout(goToBattlefield, 3000);
 }
 
 function goToBattlefield() {

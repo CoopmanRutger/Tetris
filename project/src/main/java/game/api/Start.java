@@ -88,6 +88,8 @@ public class Start {
 
         routes.BattleFieldStart();
 
+        routes.passFaction();
+
         routes.sendBlockOneByOne(game);
 
 
