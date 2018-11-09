@@ -4,10 +4,15 @@
 let eb = new EventBus("http://localhost:8080/tetris/game");
 let game = null;
 let gameRun = false;
+let gameRun2 = false;
 let gameLoop;
 
 const area = makeMatrix(12, 20);
-const player = {
+const area2 = makeMatrix(12, 20);
+const context = player1.getContext("2d");
+const context2 = player2.getContext("2d");
+
+let player = {
     pos: {
         x: 0,
         y: 0
@@ -15,7 +20,15 @@ const player = {
     matrix: null,
     score: 0
 };
-const move = 1;
+let fieldPlayer2 = {
+    pos: {
+        x: 0,
+        y: 0
+    },
+    matrix: null,
+    score: 0
+};
+
 const colors = [
     null,
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Jz34T+Ifv3kGIOojBWYBgFkNlgADfTUeTEygjQLC3Iz3Li8G5sanGIauq5gPYwlTdvAtpMLwC6AORlkKjEA2bUYBvDxsYDN+PTpDwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Bb19cYRCW0EGNRrLCgBQXvH3/lQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQAfwJNr7nKi7AAAAABJRU5ErkJggg==",
@@ -31,14 +44,16 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
 
-    eb.onopen = function(){
+    eb.onopen = function () {
         initialize("momom");
     };
-    tetris(player);
+    backgroundStuff();
+    startGame();
+
 }
 
 
-function initialize(lol ) {
+function initialize(lol) {
 
     eb.registerHandler("tetris.game.BattleField", function (error, message) {
         if (error) {
@@ -58,58 +73,256 @@ function initialize(lol ) {
     });
 }
 
-function tetris(player) {
+function backgroundStuff() {
     const player1 = document.getElementById("player1");
     const player2 = document.getElementById("player2");
-    const context = player1.getContext("2d");
-    const context2 = player2.getContext("2d");
     context.scale(20, 20);
     context2.scale(20, 20);
 
-    let dropInter = 100;
-    let time = 0;
-    let update = function () {
-        time++;
-        if (time >= dropInter) {
-            playerDrop();
-            time = 0;
-        }
-        draw(context,context2);
-    };
-    gameRun = false;
-    playerReset(player);
-    draw(context, context2);
-    gameOver(context, context2);
+    update(player, context, area);
+    update(fieldPlayer2, context2, area2);
+
+    playerReset();
+    draw(player, context, area);
+    draw(fieldPlayer2, context2, area);
+
+    const move = 1;
     document.addEventListener('keydown', function (e) {
-        if (e.keyCode === 37) {
-            playerMove(-move);
+        if (e.keyCode === 37 ) {
+            playerMove(player, -move, area);
+        }
+        else if (e.keyCode === 81) {
+            playerMove(fieldPlayer2, -move, area2);
         }
         else if (e.keyCode === 39) {
-            playerMove(+move);
+            playerMove(player, +move, area);
+        }
+        else if (e.keyCode === 68) {
+            playerMove(fieldPlayer2, +move, area2);
         }
         else if (e.keyCode === 40) {
-            // console.log(player.pos);
-            if (gameRun) {
-                playerDrop();
-            }
+                playerDrop(player,context ,area);
+        }
+        else if (e.keyCode === 83) {
+                playerDrop(fieldPlayer2,context2, area2);
         }
         else if (e.keyCode === 38) {
-            playerRotate(-move);
+            playerRotate(player, -move, area);
+        }
+        else if (e.keyCode === 90) {
+            playerRotate(fieldPlayer2, -move, area2);
         }
     });
-    addEventHandler("#start_game","click",startGame );
+}
 
+function startGame() {
+    gameRun = true;
+    gameRun2 = true;
+
+    playerReset();
+    gameLoop = setInterval(function () {
+        if (gameRun && gameRun2) {
+            update(player, context, area);
+            update(fieldPlayer2, context2, area2)
+        } else if (gameRun){
+            gameOver(context);
+            youWon(context2);
+        } else if (gameRun2){
+            youWon(context);
+            gameOver(context2);
+        }
+    }, 10);
+}
+
+function update(player, context, area) {
+    let time = 0;
+    let dropInter = 100;
+    time++;
+
+    if (time >= dropInter) {
+        playerDrop(player,context, area);
+        time = 0;
+    }
+    draw(player, context, area);
 
 }
 
-
-function makeMatrix(width, height){
+function makeMatrix(width, height) {
     const matrix = [];
     while (height--) {
         matrix.push(new Array(width).fill(0));
     }
     return matrix;
 }
+
+function points(player, area) {
+    let rowCount = 1;
+    outer:for (let y = area.length - 1; y > 0; --y) {
+        for (let x = 0; x < area[y].length; ++x) {
+            if (area[y][x] === 0) {
+                continue outer;
+            }
+        }
+        const row = area.splice(y, 1)[0].fill(0);
+        area.unshift(row);
+        ++y;
+        player.score += rowCount * 100;
+        rowCount *= 2;
+    }
+}
+
+function collide(player, area) {
+    const [m, o] = [player.matrix, player.pos];
+    for (let y = 0; y < m.length; ++y) {
+        for (let x = 0; x < m[y].length; ++x) {
+            if (m[y][x] !== 0 && (area[y + o.y] && area[y + o.y][x + o.x]) !== 0) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+function merge(player, area) {
+    player.matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                area[y + player.pos.y][x + player.pos.x] = value;
+            }
+        });
+    });
+}
+
+function rotate(matrix, dir) {
+    for (let y = 0; y < matrix.length; ++y) {
+        for (let x = 0; x < y; ++x) {
+            [
+                matrix[x][y],
+                matrix[y][x]
+            ] = [
+                matrix[y][x],
+                matrix[x][y],
+            ]
+        }
+    }
+    if (dir > 0) {
+        matrix.forEach(row => row.reverse());
+    }
+    else {
+        matrix.reverse();
+    }
+}
+
+function playerReset() {
+    makePieces(player, area);
+    makePieces(fieldPlayer2, area2);
+}
+
+
+function makePieces(player, area) {
+    let pieces = "ijlostzb";
+    player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
+    player.pos.y = 0;
+    player.pos.x = (Math.floor(area[0].length / 2)) - (Math.floor(player.matrix[0].length / 2));
+    collidefunction(player,area);
+}
+
+function collidefunction(player, area) {
+    if (collide(player, area)) {
+        area.forEach(row => row.fill(0));
+        player.score = 0;
+        gameRun = false;
+    }
+
+}
+
+function playerDrop(player, context, area) {
+    player.pos.y++;
+    if (collide(player, area)) {
+        player.pos.y--;
+        merge(player, area);
+        points(player, area);
+        playerReset();
+        updateScore(player, context);
+    }
+}
+
+function playerMove(player,dir, area) {
+    player.pos.x += dir;
+    if (collide(player, area)) {
+        player.pos.x -= dir;
+    }
+}
+
+
+function playerRotate(player, dir, area) {
+    const pos = player.pos.x;
+    let offset = 1;
+    rotate(player.matrix, dir);
+    while (collide(player, area)) {
+        player.pos.x += offset;
+        offset = -(offset + (offset > 0 ? 1 : -1));
+        if (offset > player.matrix[0].length) {
+            rotate(player.matrix, -dir);
+            player.pos.x = pos;
+            return;
+        }
+    }
+}
+
+function draw(player, context, area) {
+    context.clearRect(0, 0, player1.width, player1.height);
+    context.fillStyle = "#000000";
+    context.fillRect(0, 0, player2.width, player2.height);
+
+    updateScore(player, context);
+    drawMatrix(area, {x: 0, y: 0}, context);
+    if (player.matrix != null){
+        drawMatrix(player.matrix, player.pos, context);
+    }
+}
+
+function updateScore(player, context) {
+    context.font = "bold 1px Comic Sans MS";
+    context.fillStyle = "#ffffff";
+    context.textAlign = "left";
+    context.textBaseline = "top";
+    context.fillText("Score:" + player.score, 0.2, 0);
+}
+
+
+function gameOver(context) {
+    clearInterval(gameLoop);
+    context.font = "2px Comic Sans MS";
+    context.fillStyle = "#ffffff";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText("Game Over", (player1.width / 20) / 2, (player1.width / 20) / 2);
+}
+function youWon(context) {
+    clearInterval(gameLoop);
+    context.font = "2px Comic Sans MS";
+    context.fillStyle = "#ffffff";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText("YOU WON!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+}
+
+function drawMatrix(matrix, offset, context) {
+    matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                // context.fillStyle=colors[value];
+                // context.fillRect(x+offset.x,y+offset.y,1,1);
+                let imgTag = document.createElement("IMG");
+                imgTag.src = colors[value];
+                context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
+            }
+        });
+    });
+}
+
 
 function makePiece(type) {
     if (type === "t") {
@@ -171,180 +384,22 @@ function makePiece(type) {
 
 }
 
-function points() {
-    let rowCount = 1;
-    outer:for (let y = area.length - 1; y > 0; --y) {
-        for (let x = 0; x < area[y].length; ++x) {
-            if (area[y][x] === 0) {
-                continue outer;
-            }
-        }
-        const row = area.splice(y, 1)[0].fill(0);
-        area.unshift(row);
-        ++y;
-        player.score += rowCount * 100;
-        rowCount *= 2;
-    }
-}
 
-function collide(area, player) {
-    const [m, o] = [player.matrix, player.pos];
-    for (let y = 0; y < m.length; ++y) {
-        for (let x = 0; x < m[y].length; ++x) {
-            if (m[y][x] !== 0 && (area[y + o.y] && area[y + o.y][x + o.x]) !== 0) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-function drawMatrix(matrix, offset, context, context2) {
-    matrix.forEach((row, y) => {
-        row.forEach((value, x) => {
-            if (value !== 0) {
-                // context.fillStyle=colors[value];
-                // context.fillRect(x+offset.x,y+offset.y,1,1);
-                let imgTag = document.createElement("IMG");
-                imgTag.src = colors[value];
-                context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
-                context2.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
-            }
-        });
-    });
-}
-
-function merge(area, player) {
-    player.matrix.forEach((row, y) => {
-        row.forEach((value, x) => {
-            if (value !== 0) {
-                area[y + player.pos.y][x + player.pos.x] = value;
-            }
-        });
-    });
-}
-
-function rotate(matrix, dir) {
-    for (let y = 0; y < matrix.length; ++y) {
-        for (let x = 0; x < y; ++x) {
-            [
-                matrix[x][y],
-                matrix[y][x]
-            ] = [
-                matrix[y][x],
-                matrix[x][y],
-            ]
-        }
-    }
-    if (dir > 0) {
-        matrix.forEach(row => row.reverse());
-    }
-    else {
-        matrix.reverse();
-    }
-}
-
-function playerReset(player) {
-    console.log(player);
-    const pieces = "ijlostzb";
-    player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
-    console.log(player.matrix);
-    player.pos.y = 0;
-    player.pos.x = (Math.floor(area[0].length / 2)) - (Math.floor(player.matrix[0].length / 2));
-    if (collide(area, player)) {
-        area.forEach(row => row.fill(0));
-        player.score = 0;
-        gameRun = false;
-    }
-}
-
-function playerDrop(player, context, context2) {
-    player.pos.y++;
-    if (collide(area, player)) {
-        player.pos.y--;
-        merge(area, player);
-        points();
-        playerReset(player);
-        updateScore(context, context2);
-    }
-}
-
-function playerMove(dir) {
-    player.pos.x += dir;
-    if (collide(area, player)) {
-        player.pos.x -= dir;
-    }
-}
-
-function playerRotate(dir) {
-    const pos = player.pos.x;
-    let offset = 1;
-    rotate(player.matrix, dir);
-    while (collide(area, player)) {
-        player.pos.x += offset;
-        offset = -(offset + (offset > 0 ? 1 : -1));
-        if (offset > player.matrix[0].length) {
-            rotate(player.matrix, -dir);
-            player.pos.x = pos;
-            return;
-        }
-    }
-}
-
-function draw(context,context2) {
-    context.clearRect(0, 0, player1.width, player1.height);
-    context.fillStyle = "#000000";
-    context.fillRect(0, 0, player2.width, player2.height);
-    context2.clearRect(0, 0, player2.width, player2.height);
-    context2.fillStyle = "#000000";
-    context2.fillRect(0, 0, player2.width, player2.height);
-    updateScore(context, context2);
-    drawMatrix(area, {x: 0, y: 0}, context, context2);
-    drawMatrix(player.matrix, player.pos, context, context2);
-}
-
-function updateScore(context, context2) {
-    context.font = "bold 1px Comic Sans MS";
-    context.fillStyle = "#ffffff";
-    context.textAlign = "left";
-    context.textBaseline = "top";
-    context.fillText("Score:" + player.score, 0.2, 0);
-    context2.font = "bold 1px Comic Sans MS";
-    context2.fillStyle = "#ffffff";
-    context2.textAlign = "left";
-    context2.textBaseline = "top";
-    context2.fillText("Score:" + player.score, 0.2, 0);
-}
-
-function gameOver(context, context2) {
-    clearInterval(gameLoop);
-    context.font = "2px Comic Sans MS";
-    context.fillStyle = "#ffffff";
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    context2.font = "2px Comic Sans MS";
-    context2.fillStyle = "#ffffff";
-    context2.textAlign = "center";
-    context2.textBaseline = "middle";
-    context.fillText("Game Over", (player1.width / 20) / 2, (player1.width / 20) / 2);
-    context2.fillText("Game Over", (player2.width / 20) / 2, (player2.width / 20) / 2);
-    document.getElementById("start_game").disabled = false;
-}
-
-
-
-
-function startGame (player) {
-    gameRun = true;
-    playerReset(player);
-    // console.log(player.pos);
-    gameLoop = setInterval(function () {
-        if (gameRun) {
-            update();
-        }
-        else {
-            gameOver(context, context2);
-        }
-    }, 10);
-    this.disabled = true;
-}
+// ---------------------------- afteller----------------------------------
+// var timer = new Timer();
+// timer.start({precision: 'seconds', startValues: {seconds: 90}, target: {seconds: 120}});
+// $('#startValuesAndTargetExample .values').html(timer.getTimeValues().toString());
+// timer.addEventListener('secondsUpdated', function (e) {
+//     $('#startValuesAndTargetExample .values').html(timer.getTimeValues().toString());
+//     $('#startValuesAndTargetExample .progress_bar').html($('#startValuesAndTargetExample .progress_bar').html() + '.');
+// });
+// timer.addEventListener('targetAchieved', function (e) {
+//     $('#startValuesAndTargetExample .progress_bar').html('COMPLETE!!');
+// });
+//
+//
+// HTML
+// <div id="startValuesAndTargetExample">
+//     <div class="values"></div>
+//     <div class="progress_bar">.</div>
+// </div>
