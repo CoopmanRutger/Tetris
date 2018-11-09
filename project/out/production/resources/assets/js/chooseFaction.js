@@ -21,12 +21,10 @@ function init() {
 function chooseFaction(e) {
     e.preventDefault();
     faction = e.target.alt;
-    console.log(faction);
     sendFactionToServer();
 }
 
 function sendFactionToServer() {
-    console.log("entered2");
     eb.send("tetris.game.faction.choose", faction, function (error, reply) {
         if (error) {
             console.log(error);

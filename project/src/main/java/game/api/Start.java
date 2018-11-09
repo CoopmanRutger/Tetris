@@ -88,9 +88,9 @@ public class Start {
 
         routes.BattleFieldStart();
 
-        routes.passFaction();
-
         routes.chooseFaction();
+
+        routes.getFactionInfo();
 
         routes.sendBlockOneByOne(game);
 

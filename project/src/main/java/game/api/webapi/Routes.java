@@ -35,23 +35,21 @@ public class Routes {
         });
     }
 
-    public void passFaction() {
-        eb.consumer("tetris.game.faction", message -> {
-            String m = message.body().toString();
-            message.reply(m);
-            sendBlockOneByOne(game);
-        });
-    }
-// TODO: get faction from DB and change here to DB class
-
     public void chooseFaction() {
         eb.consumer("tetris.game.faction.choose", message -> {
             String faction = message.body().toString();
-            System.out.println(faction);
             message.reply(faction);
         });
     }
     // TODO: pass faction to DB.
+
+    public void getFactionInfo() {
+        eb.consumer("tetris.game.faction.get", message -> {
+            String m = message.body().toString();
+            message.reply(null);
+        });
+    }
+    // TODO: get faction from DB.
 
     public void sendBlockOneByOne(Game game) {
         eb.send("tetris.game.test", Json.encode(game));

@@ -8,28 +8,22 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
     eb.onopen = function () {
-        getFactionFromDB("fun");
+        getFactionFromDB();
     };
 }
 
-function getFactionFromDB(lol) {
-    eb.registerHandler("tetris.game.faction", function (error, message) {
+function getFactionFromDB() {
+    eb.registerHandler("tetris.game.faction.get", function (error, message) {
         if (error) {
-            console.log(error)
+            console.log(error);
         }
         console.log(message);
-        console.log("manuele handler:", message.body);
     });
-    eb.send("tetris.game.faction", lol, function (error, reply) {
+    eb.send("tetris.game.faction.get",  "faction",function (error, reply) {
         if (error) {
-            console.log(error)
+            console.log(error);
         }
-        console.log(reply.body);
+        faction = reply.body;
+        console.log(faction);
     });
-    eb.registerHandler("tetris.game.test", function (error, message) {
-        console.log(message.body);
-        faction = message.body;
-    });
-
-    // TODO: get faction from database.
 }

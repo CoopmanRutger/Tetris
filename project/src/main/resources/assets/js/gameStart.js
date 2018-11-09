@@ -1,28 +1,39 @@
 "use strict";
 
+/* global EventBus */
+let eb = new EventBus("http://localhost:8080/tetris/game");
+
 document.addEventListener("DOMContentLoaded", init);
 
-let firstTime = true;
+let chosenFaction = null;
 
 function init() {
-    getFactionInfoFromDB();
+    eb.onopen = function () {
+        getFactionInfoFromDB();
+    };
     document.querySelector("#goToFaction").addEventListener('click', goToFaction);
     document.querySelector("#goToClan").addEventListener('click', goToClan);
 }
 
 function getFactionInfoFromDB() {
-    // TODO: link database info about faction here.
-    let chosenFaction = null;
-    if (chosenFaction !== null) {
-        firstTime = false;
-    } else {
-        firstTime = true;
-    }
+    eb.registerHandler("tetris.game.faction.get", function (error, message) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(message);
+    });
+    eb.send("tetris.game.faction.get",  "faction",function (error, reply) {
+        if (error) {
+            console.log(error);
+        }
+        chosenFaction = reply.body;
+        console.log(chosenFaction);
+    });
 }
 
 function goToFaction(e) {
     e.preventDefault();
-    if (firstTime === true) {
+    if (chosenFaction === null) {
         window.location.href = "chooseFaction.html";
     } else {
         window.location.href = "faction_clan.html";
@@ -31,9 +42,9 @@ function goToFaction(e) {
 
 function goToClan(e) {
     e.preventDefault();
-    if (firstTime === true) {
+    if (chosenFaction === null) {
         window.location.href = "chooseFaction.html";
     } else {
-        window.location.href = "faction_clan.html"; // TODO: make faction html page.
+        window.location.href = "faction_clan.html"; // TODO: make clan html page.
     }
 }
