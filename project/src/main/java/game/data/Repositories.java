@@ -11,4 +11,8 @@ public class Repositories {
     public MySQLUseExample mySQLUseExample() {
         return new MySQLUseExample();
     }
+
+    public MySQLTetris mySQLTetris() {
+        return new MySQLTetris();
+    }
 }

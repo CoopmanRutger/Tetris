@@ -5,12 +5,12 @@ import io.vertx.ext.web.handler.sockjs.BridgeOptions;
 import io.vertx.ext.bridge.PermittedOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
 
-public class ChattySockJSHandler {
+public class TetrisSockJSHandler {
 
 
     private final SockJSHandler sockJSHandler;
 
-    ChattySockJSHandler(final Vertx vertx) {
+    TetrisSockJSHandler(final Vertx vertx) {
         sockJSHandler = SockJSHandler.create(vertx);
 
     }
