@@ -79,10 +79,9 @@ public class Start {
         Game game = new Game(events);
         game.addPlayer(player);
         game.addPlayer(player1);
+
+
         Routes routes = new Routes(game);
-
-
-
 
         routes.homeScreen();
 
