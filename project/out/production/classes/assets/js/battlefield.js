@@ -121,17 +121,23 @@ function startGame() {
 
     playerReset();
     gameLoop = setInterval(function () {
+        console.log(gameRun, gameRun2);
         if (gameRun && gameRun2) {
             update(player, context, area);
             update(fieldPlayer2, context2, area2)
-        } else if (gameRun){
+        }
+        else if (!gameRun){
+            console.log("gamerun :" + gameRun );
+            gameOver(context2);
+            youWon(context);
+        }
+        else if (!gameRun2){
+            console.log("gamerun2 :" + gameRun );
             gameOver(context);
             youWon(context2);
-        } else if (gameRun2){
-            youWon(context);
-            gameOver(context2);
         }
     }, 10);
+
 }
 
 function update(player, context, area) {
@@ -226,14 +232,19 @@ function makePieces(player, area) {
     player.pos.y = 0;
     player.pos.x = (Math.floor(area[0].length / 2)) - (Math.floor(player.matrix[0].length / 2));
     collidefunction(player,area);
-}
-
-function collidefunction(player, area) {
     if (collide(player, area)) {
         area.forEach(row => row.fill(0));
         player.score = 0;
-        gameRun = false;
+        console.log(player);
+        if (player === ""){
+            gameRun = false;
+        } else {
+            gameRun2 = false;
+        }
     }
+
+}
+function collidefunction(player, area) {
 
 }
 
@@ -301,12 +312,11 @@ function gameOver(context) {
     context.fillText("Game Over", (player1.width / 20) / 2, (player1.width / 20) / 2);
 }
 function youWon(context) {
-    clearInterval(gameLoop);
     context.font = "2px Comic Sans MS";
     context.fillStyle = "#ffffff";
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillText("YOU WON!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+    context.fillText("YOU WON!", (player2.width / 20) / 2, (player2.width / 20) / 2);
 }
 
 function drawMatrix(matrix, offset, context) {

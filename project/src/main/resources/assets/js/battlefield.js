@@ -12,7 +12,8 @@ const area2 = makeMatrix(12, 20);
 const context = player1.getContext("2d");
 const context2 = player2.getContext("2d");
 
-let player = {
+let fieldPlayer1 = {
+    name: "player1",
     pos: {
         x: 0,
         y: 0
@@ -21,6 +22,7 @@ let player = {
     score: 0
 };
 let fieldPlayer2 = {
+    name: "player2",
     pos: {
         x: 0,
         y: 0
@@ -79,37 +81,38 @@ function backgroundStuff() {
     context.scale(20, 20);
     context2.scale(20, 20);
 
-    update(player, context, area);
-    update(fieldPlayer2, context2, area2);
+    draw(fieldPlayer1, context, area);
+    draw(fieldPlayer2, context2, area2);
 
-    playerReset();
-    draw(player, context, area);
+    playerReset(fieldPlayer1.name);
+    playerReset(fieldPlayer2.name);
+    draw(fieldPlayer1, context, area);
     draw(fieldPlayer2, context2, area);
 
     const move = 1;
     document.addEventListener('keydown', function (e) {
-        if (e.keyCode === 37 ) {
-            playerMove(player, -move, area);
+        if (e.keyCode === 81) {
+            playerMove(fieldPlayer1, -move, area);
         }
-        else if (e.keyCode === 81) {
+        else if (e.keyCode === 37) {
             playerMove(fieldPlayer2, -move, area2);
         }
-        else if (e.keyCode === 39) {
-            playerMove(player, +move, area);
-        }
         else if (e.keyCode === 68) {
+            playerMove(fieldPlayer1, +move, area);
+        }
+        else if (e.keyCode === 39) {
             playerMove(fieldPlayer2, +move, area2);
         }
-        else if (e.keyCode === 40) {
-                playerDrop(player,context ,area);
-        }
         else if (e.keyCode === 83) {
-                playerDrop(fieldPlayer2,context2, area2);
+            playerDrop(fieldPlayer1, context, area);
         }
-        else if (e.keyCode === 38) {
-            playerRotate(player, -move, area);
+        else if (e.keyCode === 40) {
+            playerDrop(fieldPlayer2, context2, area2);
         }
         else if (e.keyCode === 90) {
+            playerRotate(fieldPlayer1, -move, area);
+        }
+        else if (e.keyCode === 38) {
             playerRotate(fieldPlayer2, -move, area2);
         }
     });
@@ -118,38 +121,29 @@ function backgroundStuff() {
 function startGame() {
     gameRun = true;
     gameRun2 = true;
-
-    playerReset();
+    let number = 0;
+    playerReset(fieldPlayer1.name);
+    playerReset(fieldPlayer2.name);
     gameLoop = setInterval(function () {
-        console.log(gameRun, gameRun2);
+        number++;
+        if ((number % 30 === 0)) {
+            playerDrop(fieldPlayer1, context, area);
+            playerDrop(fieldPlayer2, context2, area2)
+        }
         if (gameRun && gameRun2) {
-            update(player, context, area);
-            update(fieldPlayer2, context2, area2)
+            draw(fieldPlayer1, context, area);
+            draw(fieldPlayer2, context2, area2)
         }
-        else if (!gameRun){
-            console.log("gamerun :" + gameRun );
-            gameOver(context2);
-            youWon(context);
-        }
-        else if (!gameRun2){
-            console.log("gamerun2 :" + gameRun );
+        else if (!gameRun) {
             gameOver(context);
             youWon(context2);
         }
+        else if (!gameRun2) {
+            gameOver(context2);
+            youWon(context);
+
+        }
     }, 10);
-
-}
-
-function update(player, context, area) {
-    let time = 0;
-    let dropInter = 100;
-    time++;
-
-    if (time >= dropInter) {
-        playerDrop(player,context, area);
-        time = 0;
-    }
-    draw(player, context, area);
 
 }
 
@@ -220,9 +214,14 @@ function rotate(matrix, dir) {
     }
 }
 
-function playerReset() {
-    makePieces(player, area);
-    makePieces(fieldPlayer2, area2);
+function playerReset(player) {
+    if (fieldPlayer1.name === player) {
+        makePieces(fieldPlayer1, area);
+    }
+    if (fieldPlayer2.name === player) {
+
+        makePieces(fieldPlayer2, area2);
+    }
 }
 
 
@@ -231,21 +230,21 @@ function makePieces(player, area) {
     player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
     player.pos.y = 0;
     player.pos.x = (Math.floor(area[0].length / 2)) - (Math.floor(player.matrix[0].length / 2));
-    collidefunction(player,area);
+
+    collidefunction(player, area);
+}
+
+function collidefunction(player, area) {
     if (collide(player, area)) {
         area.forEach(row => row.fill(0));
         player.score = 0;
-        console.log(player);
-        if (player === ""){
+        if (player.name === "player1") {
             gameRun = false;
-        } else {
+        } else if (player.name === "player2") {
             gameRun2 = false;
         }
+
     }
-
-}
-function collidefunction(player, area) {
-
 }
 
 function playerDrop(player, context, area) {
@@ -254,12 +253,12 @@ function playerDrop(player, context, area) {
         player.pos.y--;
         merge(player, area);
         points(player, area);
-        playerReset();
+        playerReset(player.name);
         updateScore(player, context);
     }
 }
 
-function playerMove(player,dir, area) {
+function playerMove(player, dir, area) {
     player.pos.x += dir;
     if (collide(player, area)) {
         player.pos.x -= dir;
@@ -289,7 +288,7 @@ function draw(player, context, area) {
 
     updateScore(player, context);
     drawMatrix(area, {x: 0, y: 0}, context);
-    if (player.matrix != null){
+    if (player.matrix != null) {
         drawMatrix(player.matrix, player.pos, context);
     }
 }
@@ -302,7 +301,6 @@ function updateScore(player, context) {
     context.fillText("Score:" + player.score, 0.2, 0);
 }
 
-
 function gameOver(context) {
     clearInterval(gameLoop);
     context.font = "2px Comic Sans MS";
@@ -311,6 +309,7 @@ function gameOver(context) {
     context.textBaseline = "middle";
     context.fillText("Game Over", (player1.width / 20) / 2, (player1.width / 20) / 2);
 }
+
 function youWon(context) {
     context.font = "2px Comic Sans MS";
     context.fillStyle = "#ffffff";
@@ -323,8 +322,8 @@ function drawMatrix(matrix, offset, context) {
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
-                // context.fillStyle=colors[value];
-                // context.fillRect(x+offset.x,y+offset.y,1,1);
+                context.fillStyle=colors[value];
+                context.fillRect(x+offset.x,y+offset.y,1,1);
                 let imgTag = document.createElement("IMG");
                 imgTag.src = colors[value];
                 context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
@@ -332,7 +331,6 @@ function drawMatrix(matrix, offset, context) {
         });
     });
 }
-
 
 function makePiece(type) {
     if (type === "t") {
