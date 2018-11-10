@@ -307,7 +307,7 @@ function gameOver(context) {
     context.fillStyle = "#ffffff";
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillText("Game Over", (player1.width / 20) / 2, (player1.width / 20) / 2);
+    context.fillText("YOU LOSE!", (player1.width / 20) / 2, (player1.width / 20) / 2);
 }
 
 function youWon(context) {
