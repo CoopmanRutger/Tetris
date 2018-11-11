@@ -3,7 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", init);
 
-let eb = new EventBus("http://localhost:8080/tetris/game");
+let eb = new EventBus("http://localhost:8080/tetris/infoBackend");
 
 
 function init() {
@@ -15,14 +15,14 @@ function init() {
 
 function f() {
     let sendMessage = function (val) {
-        eb.send("tetris.game.homeScreen", {user : document.getElementById("play").value, content : val},
+        eb.send("tetris.infoBackend.homeScreen", {user : document.getElementById("play").value, content : val},
             function(err, reply) {
                 console.log("message broadcasted: " + JSON.stringify(reply));
 
             });
     };
     eb.onopen = function() {
-        eb.registerHandler("tetris.game.homeScreen", function (error, message) {
+        eb.registerHandler("tetris.infoBackend.homeScreen", function (error, message) {
             if (error) {
                 console.log("error: " + JSON.stringify(error));
             };

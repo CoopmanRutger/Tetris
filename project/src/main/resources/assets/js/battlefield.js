@@ -1,150 +1,171 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8080/tetris/game");
-let game = null;
-let gameRun = false;
-let gameRun2 = false;
-let gameLoop;
-
-const area = makeMatrix(12, 20);
-const area2 = makeMatrix(12, 20);
-const context = player1.getContext("2d");
-const context2 = player2.getContext("2d");
-
-let fieldPlayer1 = {
-    name: "player1",
-    pos: {
-        x: 0,
-        y: 0
-    },
-    matrix: null,
-    score: 0
+let eb = new EventBus("http://localhost:8080/tetris/infoBackend");
+let infoBackend = null;
+let game = {
+    gameRun: false, gameRun2: false, gameLoop: null,countdown: null, timer: 20, speed: 50,
+    area: makeMatrix(12, 20),
+    area2: makeMatrix(12, 20),
+    context: player1.getContext("2d"),
+    context2: player2.getContext("2d"),
+    fieldPlayer: {name: "player1", pos: {x: 0, y: 0}, matrix: null, score: 0},
+    fieldPlayer2: {name: "player2", pos: {x: 0, y: 0}, matrix: null, score: 0},
+    colors: [
+        null,
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Jz34T+Ifv3kGIOojBWYBgFkNlgADfTUeTEygjQLC3Iz3Li8G5sanGIauq5gPYwlTdvAtpMLwC6AORlkKjEA2bUYBvDxsYDN+PTpDwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Bb19cYRCW0EGNRrLCgBQXvH3/lQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQAfwJNr7nKi7AAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBgKD1y/D+Ifn7sCIOklQ2YBgFkNlgADSwpK2VkBGkW4udjuLp9GzY1OMW0Pb3AehhjurrBtpMLwC6AORlkKjEA2bUYBvBzcYPN+PjtKwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Br69fYxDV1EKNRrLCgBQXvPv4iQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQBReJAxJHOTqwAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Ly04z+IfnXhJoOYgTqYBgFkNlgADfTG5TMygjQL8/EzXD90CpsanGKadmZgPYzFiyaCbScXgF0AczLIVGIAsmsxDODj4gGb8enbFwYQG0SjAxQDkL0AcgEuTciGEHQBNltxGoDuApLDgFwD3tx+yCCiKo8ajWSFASkuePvpIwN6okNJSNjSAUwTiAYBmAE4vUBsIGI1ACRIDAAFHgyAvQDLGMRohqmBZyaQAKEMBXMuzIUwF4CyMwBvl5MXVeEacQAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg+D8l5T+I3vf0G4OTNBeYBgFkNlgADTi3L2NkBGsWFmfYd+k+NjU4xZz0FMF6GPdWRoFtJxeAXQB3sp4iUeYguxbTAH5hiCEf3zIwgNggGg2gGIDsBZC/cGlCNoOwC7DYitMADBcQEQr4vUCkARdefmUwEOdGjUaywoAkL7x9yYCe6FASEtgF6ACqiQFEgwA01eL2AiVhADKVGAAKPBgAewGWMYjRDFMDz0wgAUIZCuZfmAthLgBlZwBvBonjT09XegAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg2Fvy6T+IvvnlGIM6jxWYBgFkNlgADWTN8GBkBGnmE+FiOP1gDzY1OMVMFVzAehinZewA204uALsA5mSQqcQAZNdiGMAtwAw24+uHvwwgNohGBygGIHsB5AJcmpANIegCbLbiNADdBSSHAbkGPPh0hUGBTwc1GskKA1Jc8OnNNwb0RIeSkLClA5gmEA0CMANweoHYQMRqAEiQGAAKPBgAewGWMYjRDFMDz0wgAUIZCuZcmAthLgBlZwBQ3ZP3OaGtaAAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBgeJXf8h9EH/n4ksGGXxxMgwAyGyyABoIWTGZkBGnmExdj2HbrMjY1OMW81HTBehjXJeSCbScXgF0AczLIVGIAsmsxDGAXEQSb8fPNewYQG0SjAxQDkL0AcgEuTciGEHQBNltxGoDuApLDgFwDrnx8w6DDL4IajWSFASku+PTyFQN6okNJSNjSAUwTiAYBmAE4vUBsIGI1ACRIDAAFHgyAvQDLGMRohqmBZyaQAKEMBXMuzIUwF4CyMwBUFZC9raUyoQAAAABJRU5ErkJggg==",
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVQ4T2NkYGBg+Hln0n8QfeLSGwYLPREwDQLIbLAAGrAPamJkBGlm4+RjOHTyHjY1OMXszJXAehgPrqsD204uALsA5mSQqcQAZNdiGsDOAzHj5xcGBhAbRKMBFAOQvQB2AQ5NyGYQdgEWW3EagOECIgIBvxeINODK7bcMOqrCqNFIVhiQ4oVf3z8xoCc6lISELR3ANIFoEIAZgNsLlIQByFRiACjwYADsBVjGIEYzTA08M4EECGUomH9hLoS5AJSdASaukfnTt+kFAAAAAElFTkSuQmCC"
+    ]
 };
-let fieldPlayer2 = {
-    name: "player2",
-    pos: {
-        x: 0,
-        y: 0
-    },
-    matrix: null,
-    score: 0
-};
-
-const colors = [
-    null,
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Jz34T+Ifv3kGIOojBWYBgFkNlgADfTUeTEygjQLC3Iz3Li8G5sanGIauq5gPYwlTdvAtpMLwC6AORlkKjEA2bUYBvDxsYDN+PTpDwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Bb19cYRCW0EGNRrLCgBQXvH3/lQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQAfwJNr7nKi7AAAAABJRU5ErkJggg==",
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBgKD1y/D+Ifn7sCIOklQ2YBgFkNlgADSwpK2VkBGkW4udjuLp9GzY1OMW0Pb3AehhjurrBtpMLwC6AORlkKjEA2bUYBvBzcYPN+PjtKwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Br69fYxDV1EKNRrLCgBQXvPv4iQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQBReJAxJHOTqwAAAABJRU5ErkJggg==",
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Ly04z+IfnXhJoOYgTqYBgFkNlgADfTG5TMygjQL8/EzXD90CpsanGKadmZgPYzFiyaCbScXgF0AczLIVGIAsmsxDODj4gGb8enbFwYQG0SjAxQDkL0AcgEuTciGEHQBNltxGoDuApLDgFwD3tx+yCCiKo8ajWSFASkuePvpIwN6okNJSNjSAUwTiAYBmAE4vUBsIGI1ACRIDAAFHgyAvQDLGMRohqmBZyaQAKEMBXMuzIUwF4CyMwBvl5MXVeEacQAAAABJRU5ErkJggg==",
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg+D8l5T+I3vf0G4OTNBeYBgFkNlgADTi3L2NkBGsWFmfYd+k+NjU4xZz0FMF6GPdWRoFtJxeAXQB3sp4iUeYguxbTAH5hiCEf3zIwgNggGg2gGIDsBZC/cGlCNoOwC7DYitMADBcQEQr4vUCkARdefmUwEOdGjUaywoAkL7x9yYCe6FASEtgF6ACqiQFEgwA01eL2AiVhADKVGAAKPBgAewGWMYjRDFMDz0wgAUIZCuZfmAthLgBlZwBvBonjT09XegAAAABJRU5ErkJggg==",
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg2Fvy6T+IvvnlGIM6jxWYBgFkNlgADWTN8GBkBGnmE+FiOP1gDzY1OMVMFVzAehinZewA204uALsA5mSQqcQAZNdiGMAtwAw24+uHvwwgNohGBygGIHsB5AJcmpANIegCbLbiNADdBSSHAbkGPPh0hUGBTwc1GskKA1Jc8OnNNwb0RIeSkLClA5gmEA0CMANweoHYQMRqAEiQGAAKPBgAewGWMYjRDFMDz0wgAUIZCuZcmAthLgBlZwBQ3ZP3OaGtaAAAAABJRU5ErkJggg==",
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBgeJXf8h9EH/n4ksGGXxxMgwAyGyyABoIWTGZkBGnmExdj2HbrMjY1OMW81HTBehjXJeSCbScXgF0AczLIVGIAsmsxDGAXEQSb8fPNewYQG0SjAxQDkL0AcgEuTciGEHQBNltxGoDuApLDgFwDrnx8w6DDL4IajWSFASku+PTyFQN6okNJSNjSAUwTiAYBmAE4vUBsIGI1ACRIDAAFHgyAvQDLGMRohqmBZyaQAKEMBXMuzIUwF4CyMwBUFZC9raUyoQAAAABJRU5ErkJggg==",
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVQ4T2NkYGBg+Hln0n8QfeLSGwYLPREwDQLIbLAAGrAPamJkBGlm4+RjOHTyHjY1OMXszJXAehgPrqsD204uALsA5mSQqcQAZNdiGsDOAzHj5xcGBhAbRKMBFAOQvQB2AQ5NyGYQdgEWW3EagOECIgIBvxeINODK7bcMOqrCqNFIVhiQ4oVf3z8xoCc6lISELR3ANIFoEIAZgNsLlIQByFRiACjwYADsBVjGIEYzTA08M4EECGUomH9hLoS5AJSdASaukfnTt+kFAAAAAElFTkSuQmCC"
-];
 
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-
     eb.onopen = function () {
         initialize("momom");
     };
     backgroundStuff();
     startGame();
-
+    countdown(game.timer)
 }
 
 
 function initialize(lol) {
 
-    eb.registerHandler("tetris.game.BattleField", function (error, message) {
+    eb.registerHandler("tetris.infoBackend.BattleField", function (error, message) {
         if (error) {
             console.log(error)
         }
         console.log("manuele handler:", message.body);
     });
-    eb.send("tetris.game.BattleField", lol, function (error, reply) {
+    eb.send("tetris.infoBackend.BattleField", lol, function (error, reply) {
         if (error) {
             console.log(error)
         }
         console.log(reply.body);
     });
-    eb.registerHandler("tetris.game.test", function (error, message) {
+    eb.registerHandler("tetris.infoBackend.test", function (error, message) {
         console.log(message.body);
-        game = message.body;
+        infoBackend = message.body;
     });
 }
 
 function backgroundStuff() {
     const player1 = document.getElementById("player1");
     const player2 = document.getElementById("player2");
-    context.scale(20, 20);
-    context2.scale(20, 20);
+    game.context.scale(20, 20);
+    game.context2.scale(20, 20);
 
-    draw(fieldPlayer1, context, area);
-    draw(fieldPlayer2, context2, area2);
+    draw(game.fieldPlayer, game.context, game.area);
+    draw(game.fieldPlayer2, game.context2, game.area2);
 
-    playerReset(fieldPlayer1.name);
-    playerReset(fieldPlayer2.name);
-    draw(fieldPlayer1, context, area);
-    draw(fieldPlayer2, context2, area);
+    playerReset(game.fieldPlayer.name);
+    playerReset(game.fieldPlayer2.name);
+    draw(game.fieldPlayer, game.context, game.area);
+    draw(game.fieldPlayer2, game.context2, game.area);
 
     const move = 1;
     document.addEventListener('keydown', function (e) {
         if (e.keyCode === 81) {
-            playerMove(fieldPlayer1, -move, area);
+            playerMove(game.fieldPlayer, -move, game.area);
         }
         else if (e.keyCode === 37) {
-            playerMove(fieldPlayer2, -move, area2);
+            playerMove(game.fieldPlayer2, -move, game.area2);
         }
         else if (e.keyCode === 68) {
-            playerMove(fieldPlayer1, +move, area);
+            playerMove(game.fieldPlayer, +move, game.area);
         }
         else if (e.keyCode === 39) {
-            playerMove(fieldPlayer2, +move, area2);
+            playerMove(game.fieldPlayer2, +move, game.area2);
         }
         else if (e.keyCode === 83) {
-            playerDrop(fieldPlayer1, context, area);
+            playerDrop(game.fieldPlayer, game.context, game.area);
         }
         else if (e.keyCode === 40) {
-            playerDrop(fieldPlayer2, context2, area2);
+            playerDrop(game.fieldPlayer2, game.context2, game.area2);
         }
         else if (e.keyCode === 90) {
-            playerRotate(fieldPlayer1, -move, area);
+            playerRotate(game.fieldPlayer, -move, game.area);
         }
         else if (e.keyCode === 38) {
-            playerRotate(fieldPlayer2, -move, area2);
+            playerRotate(game.fieldPlayer2, -move, game.area2);
         }
     });
 }
 
 function startGame() {
-    gameRun = true;
-    gameRun2 = true;
-    let number = 0;
-    playerReset(fieldPlayer1.name);
-    playerReset(fieldPlayer2.name);
-    gameLoop = setInterval(function () {
-        number++;
-        if ((number % 30 === 0)) {
-            playerDrop(fieldPlayer1, context, area);
-            playerDrop(fieldPlayer2, context2, area2)
-        }
-        if (gameRun && gameRun2) {
-            draw(fieldPlayer1, context, area);
-            draw(fieldPlayer2, context2, area2)
-        }
-        else if (!gameRun) {
-            gameOver(context);
-            youWon(context2);
-        }
-        else if (!gameRun2) {
-            gameOver(context2);
-            youWon(context);
+    game.gameRun = true;
+    game.gameRun2 = true;
+    playerReset(game.fieldPlayer.name);
+    playerReset(game.fieldPlayer2.name);
 
+    let number = 0;
+    game.gameLoop = setInterval(function () {
+        number++;
+        if ((number % game.speed === 0)) {
+            playerDrop(game.fieldPlayer, game.context, game.area);
+            playerDrop(game.fieldPlayer2, game.context2, game.area2)
+        }
+        if (game.gameRun && game.gameRun2) {
+            draw(game.fieldPlayer, game.context, game.area);
+            draw(game.fieldPlayer2, game.context2, game.area2)
+        }
+        else if (!game.gameRun) {
+            gameOver(game.context);
+            youWon(game.context2);
+        }
+        else if (!game.gameRun2) {
+            gameOver(game.context2);
+            youWon(game.context);
         }
     }, 10);
+}
 
+function countdown(durationInSeconds) {
+    let timer = durationInSeconds, minutes, seconds;
+
+    game.countdown = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + (seconds-1) : seconds;
+
+        document.querySelector("#time").textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = durationInSeconds;
+        }
+
+        if (timer === 0) {
+            if (game.fieldPlayer.score < game.fieldPlayer2.score) {
+                gameOver(game.context);
+                youWon(game.context2);
+            }
+            else if (game.fieldPlayer.score > game.fieldPlayer2.score) {
+                gameOver(game.context2);
+                youWon(game.context);
+
+            } else if (game.fieldPlayer.score === game.fieldPlayer2.score) {
+                Tie();
+            }
+        }
+    }, 1000);
+}
+
+
+function playerReset(player) {
+    if (game.fieldPlayer.name === player) {
+        makePieces(game.fieldPlayer, game.area);
+    }
+    if (game.fieldPlayer2.name === player) {
+        makePieces(game.fieldPlayer2, game.area2);
+    }
 }
 
 function makeMatrix(width, height) {
@@ -214,17 +235,6 @@ function rotate(matrix, dir) {
     }
 }
 
-function playerReset(player) {
-    if (fieldPlayer1.name === player) {
-        makePieces(fieldPlayer1, area);
-    }
-    if (fieldPlayer2.name === player) {
-
-        makePieces(fieldPlayer2, area2);
-    }
-}
-
-
 function makePieces(player, area) {
     let pieces = "ijlostzb";
     player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
@@ -239,9 +249,9 @@ function collidefunction(player, area) {
         area.forEach(row => row.fill(0));
         player.score = 0;
         if (player.name === "player1") {
-            gameRun = false;
+            game.gameRun = false;
         } else if (player.name === "player2") {
-            gameRun2 = false;
+            game.gameRun2 = false;
         }
 
     }
@@ -264,7 +274,6 @@ function playerMove(player, dir, area) {
         player.pos.x -= dir;
     }
 }
-
 
 function playerRotate(player, dir, area) {
     const pos = player.pos.x;
@@ -301,31 +310,41 @@ function updateScore(player, context) {
     context.fillText("Score:" + player.score, 0.2, 0);
 }
 
-function gameOver(context) {
-    clearInterval(gameLoop);
+function resultscore(context) {
+    clearInterval(game.gameLoop);
+    clearInterval(game.countdown);
     context.font = "2px Comic Sans MS";
     context.fillStyle = "#ffffff";
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillText("YOU LOSE!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+}
+
+function gameOver(context) {
+    resultscore(context);
+    context.fillText("Game Over", (player1.width / 20) / 2, (player1.width / 20) / 2);
 }
 
 function youWon(context) {
-    context.font = "2px Comic Sans MS";
-    context.fillStyle = "#ffffff";
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    context.fillText("YOU WON!", (player2.width / 20) / 2, (player2.width / 20) / 2);
+    resultscore(context);
+    context.fillText("YOU WON!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+}
+
+function Tie() {
+    resultscore(game.context);
+    resultscore(game.context2);
+    game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
+    game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
+    // TODO: fixen + bug als er gewonnen is komt na iets x omgekeerd.
 }
 
 function drawMatrix(matrix, offset, context) {
     matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
-                context.fillStyle=colors[value];
-                context.fillRect(x+offset.x,y+offset.y,1,1);
+                context.fillStyle = game.colors[value];
+                context.fillRect(x + offset.x, y + offset.y, 1, 1);
                 let imgTag = document.createElement("IMG");
-                imgTag.src = colors[value];
+                imgTag.src = game.colors[value];
                 context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
             }
         });
@@ -391,23 +410,3 @@ function makePiece(type) {
     }
 
 }
-
-
-// ---------------------------- afteller----------------------------------
-// var timer = new Timer();
-// timer.start({precision: 'seconds', startValues: {seconds: 90}, target: {seconds: 120}});
-// $('#startValuesAndTargetExample .values').html(timer.getTimeValues().toString());
-// timer.addEventListener('secondsUpdated', function (e) {
-//     $('#startValuesAndTargetExample .values').html(timer.getTimeValues().toString());
-//     $('#startValuesAndTargetExample .progress_bar').html($('#startValuesAndTargetExample .progress_bar').html() + '.');
-// });
-// timer.addEventListener('targetAchieved', function (e) {
-//     $('#startValuesAndTargetExample .progress_bar').html('COMPLETE!!');
-// });
-//
-//
-// HTML
-// <div id="startValuesAndTargetExample">
-//     <div class="values"></div>
-//     <div class="progress_bar">.</div>
-// </div>
