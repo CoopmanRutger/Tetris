@@ -9,7 +9,7 @@ let game = {
     area2: makeMatrix(12, 20),
     context: player1.getContext("2d"),
     context2: player2.getContext("2d"),
-    fieldPlayer1: {name: "player1", pos: {x: 0, y: 0}, matrix: null, score: 0},
+    fieldPlayer: {name: "player1", pos: {x: 0, y: 0}, matrix: null, score: 0},
     fieldPlayer2: {name: "player2", pos: {x: 0, y: 0}, matrix: null, score: 0},
     colors: [
         null,
@@ -61,36 +61,36 @@ function backgroundStuff() {
     game.context.scale(20, 20);
     game.context2.scale(20, 20);
 
-    draw(game.fieldPlayer1, game.context, game.area);
+    draw(game.fieldPlayer, game.context, game.area);
     draw(game.fieldPlayer2, game.context2, game.area2);
 
-    playerReset(game.fieldPlayer1.name);
+    playerReset(game.fieldPlayer.name);
     playerReset(game.fieldPlayer2.name);
-    draw(game.fieldPlayer1, game.context, game.area);
+    draw(game.fieldPlayer, game.context, game.area);
     draw(game.fieldPlayer2, game.context2, game.area);
 
     const move = 1;
     document.addEventListener('keydown', function (e) {
         if (e.keyCode === 81) {
-            playerMove(game.fieldPlayer1, -move, game.area);
+            playerMove(game.fieldPlayer, -move, game.area);
         }
         else if (e.keyCode === 37) {
             playerMove(game.fieldPlayer2, -move, game.area2);
         }
         else if (e.keyCode === 68) {
-            playerMove(game.fieldPlayer1, +move, game.area);
+            playerMove(game.fieldPlayer, +move, game.area);
         }
         else if (e.keyCode === 39) {
             playerMove(game.fieldPlayer2, +move, game.area2);
         }
         else if (e.keyCode === 83) {
-            playerDrop(game.fieldPlayer1, game.context, game.area);
+            playerDrop(game.fieldPlayer, game.context, game.area);
         }
         else if (e.keyCode === 40) {
             playerDrop(game.fieldPlayer2, game.context2, game.area2);
         }
         else if (e.keyCode === 90) {
-            playerRotate(game.fieldPlayer1, -move, game.area);
+            playerRotate(game.fieldPlayer, -move, game.area);
         }
         else if (e.keyCode === 38) {
             playerRotate(game.fieldPlayer2, -move, game.area2);
@@ -101,17 +101,18 @@ function backgroundStuff() {
 function startGame() {
     game.gameRun = true;
     game.gameRun2 = true;
-    let number = 0;
-    playerReset(game.fieldPlayer1.name);
+    playerReset(game.fieldPlayer.name);
     playerReset(game.fieldPlayer2.name);
+
+    let number = 0;
     game.gameLoop = setInterval(function () {
         number++;
         if ((number % game.speed === 0)) {
-            playerDrop(game.fieldPlayer1, game.context, game.area);
+            playerDrop(game.fieldPlayer, game.context, game.area);
             playerDrop(game.fieldPlayer2, game.context2, game.area2)
         }
         if (game.gameRun && game.gameRun2) {
-            draw(game.fieldPlayer1, game.context, game.area);
+            draw(game.fieldPlayer, game.context, game.area);
             draw(game.fieldPlayer2, game.context2, game.area2)
         }
         else if (!game.gameRun) {
@@ -121,10 +122,10 @@ function startGame() {
         else if (!game.gameRun2) {
             gameOver(game.context2);
             youWon(game.context);
-
         }
     }, 10);
 }
+
 function countdown(durationInSeconds) {
     let timer = durationInSeconds, minutes, seconds;
 
@@ -133,7 +134,7 @@ function countdown(durationInSeconds) {
         seconds = parseInt(timer % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+        seconds = seconds < 10 ? "0" + (seconds-1) : seconds;
 
         document.querySelector("#time").textContent = minutes + ":" + seconds;
 
@@ -142,15 +143,15 @@ function countdown(durationInSeconds) {
         }
 
         if (timer === 0) {
-            if (game.fieldPlayer1.score < game.fieldPlayer2.score) {
+            if (game.fieldPlayer.score < game.fieldPlayer2.score) {
                 gameOver(game.context);
                 youWon(game.context2);
             }
-            else if (game.fieldPlayer1.score > game.fieldPlayer2.score) {
+            else if (game.fieldPlayer.score > game.fieldPlayer2.score) {
                 gameOver(game.context2);
                 youWon(game.context);
 
-            } else if (game.fieldPlayer1.score === game.fieldPlayer2.score) {
+            } else if (game.fieldPlayer.score === game.fieldPlayer2.score) {
                 Tie();
             }
         }
@@ -159,8 +160,8 @@ function countdown(durationInSeconds) {
 
 
 function playerReset(player) {
-    if (game.fieldPlayer1.name === player) {
-        makePieces(game.fieldPlayer1, game.area);
+    if (game.fieldPlayer.name === player) {
+        makePieces(game.fieldPlayer, game.area);
     }
     if (game.fieldPlayer2.name === player) {
         makePieces(game.fieldPlayer2, game.area2);
@@ -310,6 +311,8 @@ function updateScore(player, context) {
 }
 
 function resultscore(context) {
+    clearInterval(game.gameLoop);
+    clearInterval(game.countdown);
     context.font = "2px Comic Sans MS";
     context.fillStyle = "#ffffff";
     context.textAlign = "center";

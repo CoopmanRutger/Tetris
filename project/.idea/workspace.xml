@@ -7,13 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/assets/css/battlefield.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/assets/css/battlefield.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/assets/js/battlefield.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/assets/js/battlefield.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/webroot/webpages/battlefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/webroot/webpages/battlefield.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/battlefield.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/css/battlefield.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/game/api/webapi/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/game/api/webapi/Routes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/game/api/webapi/WebAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/game/api/webapi/WebAPI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -158,8 +155,8 @@
       <file leaf-file-name="battlefield.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1960">
-              <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+            <state relative-caret-position="198">
+              <caret line="186" column="38" lean-forward="true" selection-start-line="186" selection-start-column="38" selection-end-line="186" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -167,8 +164,8 @@
       <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+            <state relative-caret-position="1060">
+              <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,8 +185,8 @@
       <file leaf-file-name="battlefield.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/assets/css/battlefield.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="320">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -1221,7 +1218,7 @@
       <workItem from="1541751933418" duration="30457000" />
       <workItem from="1541939498148" duration="6511000" />
       <workItem from="1541949352291" duration="1395000" />
-      <workItem from="1541960599847" duration="3340000" />
+      <workItem from="1541960599847" duration="4486000" />
     </task>
     <servers />
   </component>
@@ -1258,7 +1255,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106336000" />
+    <option name="totallyTimeSpent" value="107482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -1290,11 +1287,11 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28274968" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32771084" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24153645" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -1306,13 +1303,14 @@
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3294423" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294423" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3294423" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28274968" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.31776914" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3294423" />
       <window_info anchor="right" id="Gradle" order="7" weight="0.3297568" />
@@ -1332,6 +1330,37 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/css/battlefield.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/webapi/MessageHandlerTest">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
@@ -1560,13 +1589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-20">
@@ -1604,8 +1626,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/css/battlefield.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="320">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1613,6 +1635,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="15910" column="17" selection-start-line="15910" selection-start-column="17" selection-end-line="15910" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1960">
+          <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1625,18 +1654,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Start.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+        <state relative-caret-position="1060">
+          <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1960">
-          <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+        <state relative-caret-position="198">
+          <caret line="186" column="38" lean-forward="true" selection-start-line="186" selection-start-column="38" selection-end-line="186" selection-end-column="38" />
         </state>
       </provider>
     </entry>

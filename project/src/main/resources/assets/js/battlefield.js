@@ -116,11 +116,11 @@ function startGame() {
             draw(game.fieldPlayer2, game.context2, game.area2)
         }
         else if (!game.gameRun) {
-            gameOver(game.context);
+            youLose(game.context);
             youWon(game.context2);
         }
         else if (!game.gameRun2) {
-            gameOver(game.context2);
+            youLose(game.context2);
             youWon(game.context);
         }
     }, 10);
@@ -144,11 +144,11 @@ function countdown(durationInSeconds) {
 
         if (timer === 0) {
             if (game.fieldPlayer.score < game.fieldPlayer2.score) {
-                gameOver(game.context);
+                youLose(game.context);
                 youWon(game.context2);
             }
             else if (game.fieldPlayer.score > game.fieldPlayer2.score) {
-                gameOver(game.context2);
+                youLose(game.context2);
                 youWon(game.context);
 
             } else if (game.fieldPlayer.score === game.fieldPlayer2.score) {
@@ -218,19 +218,12 @@ function merge(player, area) {
 function rotate(matrix, dir) {
     for (let y = 0; y < matrix.length; ++y) {
         for (let x = 0; x < y; ++x) {
-            [
-                matrix[x][y],
-                matrix[y][x]
-            ] = [
-                matrix[y][x],
-                matrix[x][y],
-            ]
+            [matrix[x][y], matrix[y][x]] = [ matrix[y][x], matrix[x][y]]
         }
     }
     if (dir > 0) {
         matrix.forEach(row => row.reverse());
-    }
-    else {
+    } else {
         matrix.reverse();
     }
 }
@@ -240,7 +233,6 @@ function makePieces(player, area) {
     player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
     player.pos.y = 0;
     player.pos.x = (Math.floor(area[0].length / 2)) - (Math.floor(player.matrix[0].length / 2));
-
     collidefunction(player, area);
 }
 
@@ -253,7 +245,6 @@ function collidefunction(player, area) {
         } else if (player.name === "player2") {
             game.gameRun2 = false;
         }
-
     }
 }
 
@@ -319,9 +310,9 @@ function resultscore(context) {
     context.textBaseline = "middle";
 }
 
-function gameOver(context) {
+function youLose(context) {
     resultscore(context);
-    context.fillText("Game Over", (player1.width / 20) / 2, (player1.width / 20) / 2);
+    context.fillText("YOU LOSE!", (player1.width / 20) / 2, (player1.width / 20) / 2);
 }
 
 function youWon(context) {
@@ -334,7 +325,6 @@ function Tie() {
     resultscore(game.context2);
     game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
     game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
-    // TODO: fixen + bug als er gewonnen is komt na iets x omgekeerd.
 }
 
 function drawMatrix(matrix, offset, context) {
@@ -408,5 +398,4 @@ function makePiece(type) {
             [7, 0, 0, 0]
         ];
     }
-
 }
