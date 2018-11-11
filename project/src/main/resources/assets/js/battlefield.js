@@ -397,5 +397,6 @@ function makePiece(type) {
             [0, 7, 0, 0],
             [7, 0, 0, 0]
         ];
+        // TODO: eigen block draai niet correct
     }
 }
