@@ -29,8 +29,8 @@ public class Playfields {
 
     @Override
     public String toString() {
-        return "Playfields{ (WEG -> zie playfields)"
-//                + playfields
+        return "Playfields{"
+                + playfields
                 + '}';
     }
 }

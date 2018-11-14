@@ -82,10 +82,9 @@ public class Start extends AbstractVerticle {
         Game game = new Game(events);
         game.addPlayer(player);
         game.addPlayer(player1);
-        Routes routes = new Routes();
 
 
-
+        Routes routes = new Routes(game);
 
         routes.homeScreen();
 

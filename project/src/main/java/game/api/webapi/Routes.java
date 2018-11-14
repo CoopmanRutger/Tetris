@@ -22,13 +22,13 @@ public class Routes {
     }
 
     public void homeScreen(){
-        eb.consumer("tetris.game.homescreen", message -> {
+        eb.consumer("tetris.infoBackend.homescreen", message -> {
             message.reply(message.body());
         });
     }
 
     public void BattleFieldStart(){
-        eb.consumer("tetris.game.BattleField",message -> {
+        eb.consumer("tetris.infoBackend.BattleField",message -> {
             String m = message.body().toString();
             message.reply(m);
             sendBlockOneByOne(game);
@@ -52,7 +52,7 @@ public class Routes {
     // TODO: get faction from DB.
 
     public void sendBlockOneByOne(Game game) {
-        eb.send("tetris.game.test", Json.encode(game));
+        eb.send("tetris.infoBackend.test", Json.encode(game));
 
         System.out.println(game.getPlayers().get(0));
     }
