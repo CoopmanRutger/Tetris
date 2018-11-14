@@ -3,6 +3,7 @@ package game.api;
 import game.Game;
 import game.api.webapi.Consumers;
 import game.api.webapi.Routes;
+import game.data.MySQLConnection;
 import game.events.Events;
 import game.events.event.Event;
 import game.events.event.Trigger;
@@ -18,9 +19,11 @@ import game.player.info.Lifepoints;
 import game.player.playfields.Playfields;
 import game.player.playfields.playfield.Playfield;
 import game.player.playfields.playfield.PointsForAbilities;
+import io.vertx.core.AbstractVerticle;
 import io.vertx.core.json.JsonObject;
+import org.pmw.tinylog.Logger;
 
-public class Start {
+public class Start extends AbstractVerticle {
     public static void main(String... args) throws InterruptedException {
 
         Trigger trigger1 = Trigger.SCORE;
@@ -79,7 +82,7 @@ public class Start {
         Game game = new Game(events);
         game.addPlayer(player);
         game.addPlayer(player1);
-        Routes routes = new Routes(game);
+        Routes routes = new Routes();
 
 
 
@@ -94,8 +97,12 @@ public class Start {
 
         routes.sendBlockOneByOne(game);
 
+//        vertx.deployVerticle(MySQLConnection::start);
 
-
+    }
+    @Override
+    public void start() {
+        Logger.info("yeet");
     }
 }
 

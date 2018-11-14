@@ -14,11 +14,11 @@ public class Routes {
     private Game game;
 
 
-    public Routes(Game game) {
+    public Routes() {
         Vertx vertx = Vertx.vertx();
         eb = vertx.eventBus();
         vertx.deployVerticle(new WebAPI());
-        this.game = game;
+//        this.game = game;
     }
 
     public void homeScreen(){
