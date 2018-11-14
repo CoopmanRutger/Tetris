@@ -4,7 +4,7 @@
 let eb = new EventBus("http://localhost:8080/tetris/infoBackend");
 let infoBackend = null;
 let game = {
-    gameRun: false, gameRun2: false, gameLoop: null,countdown: null, timer: 20, speed: 50,
+    gameRun: false, gameRun2: false, gameLoop: null,countdown: null, timer: 180, speed: 50,
     area: makeMatrix(12, 20),
     area2: makeMatrix(12, 20),
     context: player1.getContext("2d"),
