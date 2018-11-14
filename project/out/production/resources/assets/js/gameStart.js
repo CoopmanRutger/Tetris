@@ -45,6 +45,6 @@ function goToClan(e) {
     if (chosenFaction === null) {
         window.location.href = "chooseFaction.html";
     } else {
-        window.location.href = "faction_clan.html"; // TODO: make faction html page.
+        window.location.href = "faction_clan.html"; // TODO: make clan html page.
     }
 }
