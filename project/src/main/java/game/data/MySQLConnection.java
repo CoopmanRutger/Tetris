@@ -19,6 +19,7 @@ public class MySQLConnection extends AbstractVerticle {
 
     private void initializeDB() {
         JsonObject config = new JsonObject()
+                .put("provider_class", "io.vertx.ext.jdbc.spi.impl.HikariCPDataSourceProvider")
                 .put("jdbcUrl", URL)
                 .put("username", user)
                 .put("password", pwd);

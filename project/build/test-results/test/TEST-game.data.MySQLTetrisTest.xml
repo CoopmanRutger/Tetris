@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.data.MySQLTetrisTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2018-11-09T14:40:37" hostname="MacBook-Pro-van-Din.local" time="0.015">
+<testsuite name="game.data.MySQLTetrisTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2018-11-09T15:03:53" hostname="MacBook-Pro-van-Din.local" time="0.016">
   <properties/>
-  <testcase name="testGetFaction" classname="game.data.MySQLTetrisTest" time="0.015">
+  <testcase name="testGetFaction" classname="game.data.MySQLTetrisTest" time="0.016">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.util.Objects.requireNonNull(Objects.java:203)
 	at io.vertx.ext.jdbc.impl.JDBCClientImpl.&lt;init&gt;(JDBCClientImpl.java:92)
 	at io.vertx.ext.jdbc.JDBCClient.createNonShared(JDBCClient.java:56)
-	at game.data.MySQLConnection.initializeDB(MySQLConnection.java:25)
-	at game.data.MySQLConnection.getClient(MySQLConnection.java:29)
+	at game.data.MySQLConnection.initializeDB(MySQLConnection.java:26)
+	at game.data.MySQLConnection.getClient(MySQLConnection.java:30)
 	at game.data.MySQLTetris.getFactions(MySQLTetris.java:22)
 	at game.data.MySQLTetrisTest.testGetFaction(MySQLTetrisTest.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

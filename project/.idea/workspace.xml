@@ -6,9 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/data/MySQLTetris.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/game/data/MySQLTetrisTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -16,40 +13,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/api/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/ChattySockJSHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/Routes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/WebAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/WebAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/data/MySQLConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/data/Repositories.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/Playfields.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/Playfields.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/playfield/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/player/playfields/playfield/Score.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/game.player.playfields.playfield.PlayfieldTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/game.player.playfields.playfield.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/battlefield.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/battlefield.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/chooseFaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/chooseFaction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/clan.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/clan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/faction.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/faction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/gameStart.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/gameStart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/loadingScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/loadingScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/webapi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/battlefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/battlefield.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/chooseFaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/chooseFaction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/gameStart.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/gameStart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-game.player.playfields.playfield.PlayfieldTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/api/webapi/ChattySockJSHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/data/MySQLConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/data/MySQLConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/game.data.MySQLTetrisTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/game.data.MySQLTetrisTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/game.data.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/game.data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-game.data.MySQLTetrisTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-game.data.MySQLTetrisTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/data/Repositories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/data/Repositories.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -153,7 +123,7 @@
     <session id="-716613631">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
@@ -164,26 +134,26 @@
         <counts>
           <entry key="gradle" value="1" />
           <entry key="html" value="1" />
-          <entry key="java" value="46" />
+          <entry key="java" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
           <entry key="HTML" value="1" />
-          <entry key="JAVA" value="46" />
+          <entry key="JAVA" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="java" value="3711" />
+          <entry key="java" value="3712" />
           <entry key="js" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3711" />
+          <entry key="JAVA" value="3712" />
           <entry key="JavaScript" value="69" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
@@ -192,11 +162,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+            <state relative-caret-position="286">
+              <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -222,7 +201,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/data/MySQLTetris.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -239,8 +218,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/game/data/MySQLTetrisTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+            <state relative-caret-position="147">
+              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#230#231#0" expanded="true" />
@@ -1136,7 +1115,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541773569890" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541776034458" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -1342,20 +1321,11 @@
       <workItem from="1541606133547" duration="4685000" />
       <workItem from="1541664480857" duration="306000" />
       <workItem from="1541750464856" duration="1609000" />
-      <workItem from="1541768692538" duration="3443000" />
+      <workItem from="1541768692538" duration="4570000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 15h 08m 47s.xml">
-      <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 15h 19m 52s.xml">
-      <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 15h 22m 08s.xml">
-      <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 15h 22m 43s.xml">
       <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -1377,15 +1347,24 @@
     <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 15h 40m 38s.xml">
       <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
     </history-entry>
+    <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 15h 55m 49s.xml">
+      <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 15h 57m 27s.xml">
+      <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="MySQLTetrisTest_testGetFaction - 2018.11.09 at 16h 03m 53s.xml">
+      <configuration name="MySQLTetrisTest.testGetFaction" configurationId="GradleRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67828000" />
+    <option name="totallyTimeSpent" value="68955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24892704" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24892704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1394,7 +1373,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294423" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2819277" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2819277" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1697,13 +1676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.4/7aebf47c0b9f35b297276eb006b91151a2f756e5/vertx-core-3.5.4-sources.jar!/io/vertx/core/AbstractVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -1722,18 +1694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/game/data/MySQLTetrisTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1757,16 +1717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -1783,6 +1733,35 @@
             <element signature="e#436#437#0" expanded="true" />
             <element signature="e#486#487#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/game/data/MySQLTetrisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
