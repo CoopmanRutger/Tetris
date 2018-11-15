@@ -1,11 +1,10 @@
-package game.data;
+package game.api.jdbcinteractor;
 
+import game.api.webapi.Routes;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.jdbc.JDBCClient;
-import io.vertx.ext.sql.SQLClient;
 import io.vertx.ext.sql.SQLConnection;
 import org.h2.tools.Server;
 import org.pmw.tinylog.Logger;
@@ -13,30 +12,26 @@ import org.pmw.tinylog.Logger;
 import java.sql.SQLException;
 
 
-public class MySQLConnection extends AbstractVerticle {
+public class ConnectionDatababase extends AbstractVerticle {
 
     private Server dbServer;
     private Server webDB;
     private JDBCClient jdbcClient;
 
 
-private void initializeDB() {
+    private void initializeDB() {
     jdbcClient = JDBCClient.createNonShared(vertx, new JsonObject()
             .put("provider_class", "io.vertx.ext.jdbc.spi.impl.HikariCPDataSourceProvider")
-            // gebruik van H2 DB, deze driver is hiervoor nodig
-            .put("driverClassName", "com.mysql.jdbc.Driver")
-//            .put("driverClassName", "org.h2.Driver")            // db wordt opgeslagen in chatty in je eigen root
-            .put("jdbcUrl", "jdbc:mysql://localhost/tetrisGroep21?useSSL=false&serverTimezone=UTC")
-            // standaard user
-            .put("username", "tetrisUser")
-            // standaard paswoord
-            .put("password", "tetrisGroep21"));
+            .put("driverClassName", "org.h2.Driver")
+            .put("jdbcUrl", "jdbc:h2:~/tetrisDatabank")
+            .put("username", "sa")
+            .put("password", ""));
     jdbcClient.getConnection(res -> {
         if (res.succeeded()) {
             final SQLConnection conn = res.result();
             conn.query("CREATE TABLE IF NOT EXISTS "
-                            + "messages(id INT PRIMARY KEY auto_increment, "
-                            + "timestamp TIMESTAMP, user VARCHAR(255), message VARCHAR(255))",
+                            + "game(id INT PRIMARY KEY auto_increment, "
+                            + "user1 VARCHAR(255),user2 VARCHAR(255), events VARCHAR(255))",
                     queryResult -> {
                         if (queryResult.succeeded()) {
                             Logger.info("Database started");
@@ -65,13 +60,30 @@ private void initializeDB() {
         initializeDB();
         EventBus eb = vertx.eventBus();
         ConsumerHandlers consumerHandlers = new ConsumerHandlers(jdbcClient);
-        eb.consumer("chatty.store.message", consumerHandlers::storeMessage);
+
+
+        // consumers( routes
+        eb.consumer("tetris.infoBackend.homescreen", consumerHandlers::storeMessage);
+
+//        Routes routes = new Routes();
+//        routes.homeScreen();
+
     }
+
+
+
+
 
     @Override
     public void stop(){
         dbServer.stop();
         webDB.stop();
     }
+
+
+
+
+
+
 }
 

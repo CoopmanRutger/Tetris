@@ -16,13 +16,14 @@ public class ConsumerHandlers {
         this.jdbcClient = jdbcClient;
     }
 
+
     public <T> void storeMessage(final Message message) {
-        Instant timestamp = Instant.now();
+        Instant name = Instant.now();
         jdbcClient.updateWithParams(
-                "INSERT INTO messages(timestamp, user, message) VALUES (?, ?, ?)",
-                new JsonArray().add(timestamp)
-                        .add(((JsonObject) message.body()).getString("user"))
-                        .add(((JsonObject) message.body()).getString("content")),
+                "INSERT INTO heroes(name) VALUES (?)",
+                new JsonArray().add(((JsonObject) message.body()).getString("name")),
+//                        .add(((JsonObject) message.body()).getString("user"))
+//                        .add(((JsonObject) message.body()).getString("content")),
                 res -> {
                     if (res.succeeded()) {
                         res.result();

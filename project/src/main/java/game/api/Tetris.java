@@ -9,6 +9,7 @@ import io.vertx.core.json.JsonObject;
 public class Tetris extends AbstractVerticle {
     @Override
     public void start() {
+        System.out.println(config());
         config().getJsonObject("components")
                 .forEach(entry -> {
                     JsonObject json = (JsonObject) entry.getValue();
