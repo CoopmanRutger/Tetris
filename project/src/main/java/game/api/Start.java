@@ -1,7 +1,6 @@
 package game.api;
 
 import game.Game;
-import game.api.webapi.Consumers;
 import game.api.webapi.Routes;
 import game.events.Events;
 import game.events.event.Event;
@@ -18,7 +17,6 @@ import game.player.info.Lifepoints;
 import game.player.playfields.Playfields;
 import game.player.playfields.playfield.Playfield;
 import game.player.playfields.playfield.PointsForAbilities;
-import io.vertx.core.json.JsonObject;
 
 public class Start {
     public static void main(String... args) throws InterruptedException {
@@ -85,7 +83,9 @@ public class Start {
 
         routes.homeScreen();
 
-        routes.BattleFieldStart();
+        routes.battleFieldStart();
+
+        routes.battleFieldBlockPositioning();
 
         routes.chooseFaction();
 

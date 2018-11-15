@@ -4,10 +4,14 @@ import game.Game;
 import game.api.Start;
 import game.events.Events;
 import game.player.Player;
+import game.player.playfields.playfield.block.Block;
+import game.player.playfields.playfield.block.TypesOfBlocks;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
+
+import java.awt.*;
 
 public class Routes {
     private EventBus eb;
@@ -27,9 +31,19 @@ public class Routes {
         });
     }
 
-    public void BattleFieldStart(){
+    public void battleFieldStart(){
         eb.consumer("tetris.infoBackend.BattleField",message -> {
             String m = message.body().toString();
+            message.reply(m);
+            sendBlockOneByOne(game);
+        });
+    }
+
+    public void battleFieldBlockPositioning() {
+        eb.consumer("tetris.infoBackend.BattleField.positionBlock", message -> {
+            String m = message.body().toString();
+            game.getPlayers().get(1).getPlayfields().getPlayfields().get(1)
+                    .putOnPlayField(1, 1, new Block("Lblock", TypesOfBlocks.lBlock, Color.RED));
             message.reply(m);
             sendBlockOneByOne(game);
         });
