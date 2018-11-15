@@ -3,6 +3,8 @@ package game.api.webapi;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.ext.web.RoutingContext;
 
+import java.awt.*;
+
 public class Routes {
 //    private EventBus eb;
 //    private Game game;
@@ -15,46 +17,43 @@ public class Routes {
     }
 
 
-//    public Routes() {
-//        Vertx vertx = Vertx.vertx();
-//        eb = vertx.eventBus();
-//    }
-//
-//
-//    public void homeScreen() {
-//        JsonObject json = new JsonObject();
-//        json.put("message", "hello");
-//        eb.send("tetris.infoBackend.homescreen", json.encode());
-//
-//    }
-//
-//    public void BattleFieldStart(){
-//        eb.consumer("tetris.infoBackend.BattleField",message -> {
-//            String m = message.body().toString();
-//            message.reply(m);
-//            sendBlockOneByOne(game);
-//        });
-//    }
-//
-//    public void chooseFaction() {
-//        eb.consumer("tetris.game.faction.choose", message -> {
-//            String faction = message.body().toString();
-//            message.reply(faction);
-//        });
-//    }
-//    // TODO: pass faction to DB.
-//
-//    public void getFactionInfo() {
-//        eb.consumer("tetris.game.faction.get", message -> {
-//            String m = message.body().toString();
-//            message.reply(null);
-//        });
-//    }
-//    // TODO: get faction from DB.
-//
-//    public void sendBlockOneByOne(Game game) {
-//        eb.send("tetris.infoBackend.test", Json.encode(game));
-//
-//        System.out.println(game.getPlayers().get(0));
-//    }
+    public void battleFieldStart(){
+            String m = message.body().toString();
+        eb.consumer("tetris.infoBackend.BattleField",message -> {
+            message.reply(m);
+            sendBlockOneByOne(game);
+        });
+    }
+
+    public void battleFieldBlockPositioning() {
+        eb.consumer("tetris.infoBackend.BattleField.positionBlock", message -> {
+            game.getPlayers().get(1).getPlayfields().getPlayfields().get(1)
+            String m = message.body().toString();
+                    .putOnPlayField(1, 1, new Block("Lblock", TypesOfBlocks.lBlock, Color.RED));
+            message.reply(m);
+            sendBlockOneByOne(game);
+        });
+
+    }
+    public void chooseFaction() {
+            String faction = message.body().toString();
+        eb.consumer("tetris.game.faction.choose", message -> {
+            message.reply(faction);
+        });
+    }
+    // TODO: pass faction to DB.
+    public void getFactionInfo() {
+
+            String m = message.body().toString();
+        eb.consumer("tetris.game.faction.get", message -> {
+        });
+            message.reply(null);
+    }
+    // TODO: get faction from DB.
+
+    public void sendBlockOneByOne(Game game) {
+        eb.send("tetris.infoBackend.test", Json.encode(game));
+
+        System.out.println(game.getPlayers().get(0));
+    }
 }
