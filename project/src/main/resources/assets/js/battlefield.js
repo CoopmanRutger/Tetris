@@ -2,6 +2,7 @@
 
 /* global EventBus */
 let eb = new EventBus("http://localhost:8080/tetris/infoBackend");
+// let eb = new EventBus("http://172.31.27.58:8080/tetris/infoBackend");
 let infoBackend = null;
 let game = {
     gameRun: false, gameRun2: false, gameLoop: null,countdown: null, timer: 180, speed: 50,
@@ -37,13 +38,14 @@ function init() {
 
 function initialize(lol) {
 
-    eb.registerHandler("tetris.infoBackend.BattleField", function (error, message) {
+    eb.registerHandler("tetris.infoBackend.homescreen", function (error, message) {
         if (error) {
             console.log(error)
         }
-        console.log("manuele handler:", message.body);
+        let json = JSON.parse(message.body);
+        console.log("manuele handler:", json);
     });
-    eb.send("tetris.infoBackend.BattleField", lol, function (error, reply) {
+    eb.send("tetris.infoBackend.BattleField", {name: "gsm", speed: 30}, function (error, reply) {
         if (error) {
             console.log(error)
         }

@@ -3,5 +3,9 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    console.log("loading screen")
+    setTimeout(goToBattlefield, 3000);
+}
+
+function goToBattlefield() {
+    window.location.href = "battlefield.html";
 }

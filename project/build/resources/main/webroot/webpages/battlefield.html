@@ -7,21 +7,27 @@
     <title>To battle!!!!!</title>
 </head>
 <body>
+<main>
+    <header>
+        <div><p>Countdown</p> <span id="time"></span> minutes</div>
+    </header>
+
 <div class="canvas_wrap">
     <canvas id="player1" width="240" height="400"></canvas>
 
     <aside>
         <!-- TODO:  hero, score and abilities-->
     </aside>
-    <!-- TODO: end game button-->
+    <!-- TODO: end infoBackend button-->
 </div>
 <div class="canvas_wrap">
     <canvas id="player2" width="240" height="400"></canvas>
-    <button type="button" id="start_game">Start</button>
 </div>
-
+</main>
 <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
+
 <script src="../../assets/js/battlefield.js"></script>
+<script src="../../assets/js/functions.js"></script>
 </body>
 </html>
