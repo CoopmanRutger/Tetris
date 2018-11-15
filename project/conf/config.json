@@ -1,0 +1,20 @@
+{
+  "components": {
+    "game.api.webapi.WebAPI": {
+      "options": {
+        "config": {
+          "http.port": 8080
+        }
+      }
+    },
+    "game.api.jdbcinteractor.ConnectionDatabase": {
+      "options": {
+        "config": {
+          "http.port": 8080
+        }
+      }
+
+      // deploy
+    }
+  }
+}

@@ -9,10 +9,8 @@ public class TetrisSockJSHandler {
 
 
     private final SockJSHandler sockJSHandler;
-
     TetrisSockJSHandler(final Vertx vertx) {
         sockJSHandler = SockJSHandler.create(vertx);
-
     }
 
     private void addBridgeOptions() {

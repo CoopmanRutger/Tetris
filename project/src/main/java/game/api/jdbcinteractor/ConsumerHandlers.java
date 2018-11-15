@@ -1,4 +1,4 @@
-package game.data;
+package game.api.jdbcinteractor;
 
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonArray;

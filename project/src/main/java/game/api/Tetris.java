@@ -1,4 +1,4 @@
-package game.api.webapi;
+package game.api;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
@@ -7,6 +7,7 @@ import io.vertx.core.json.JsonObject;
 
 
 public class Tetris extends AbstractVerticle {
+
     @Override
     public void start() {
         System.out.println(config());

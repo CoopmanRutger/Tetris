@@ -4,11 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/project.iml" filepath="$PROJECT_DIR$/.idea/modules/project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/project.iml" filepath="$PROJECT_DIR$/.idea/project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project.iml" filepath="$PROJECT_DIR$/.idea/modules/project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/project.iml" filepath="$PROJECT_DIR$/.idea/project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_main.iml" filepath="$PROJECT_DIR$/.idea/modules/project_main.iml" group="project" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_main.iml" filepath="$PROJECT_DIR$/.idea/modules/project_main.iml" group="project" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_test.iml" filepath="$PROJECT_DIR$/.idea/modules/project_test.iml" group="project" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_test.iml" filepath="$PROJECT_DIR$/.idea/modules/project_test.iml" group="project" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tetrisGroep21.iml" filepath="$PROJECT_DIR$/.idea/modules/tetrisGroep21.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tetrisGroep21_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tetrisGroep21_main.iml" group="tetrisGroep21" />

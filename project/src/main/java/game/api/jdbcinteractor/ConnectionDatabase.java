@@ -12,7 +12,10 @@ import org.pmw.tinylog.Logger;
 import java.sql.SQLException;
 
 
-public class ConnectionDatababase extends AbstractVerticle {
+public class ConnectionDatabase extends AbstractVerticle {
+
+    //http://localhost:8082 voor database
+
 
     private Server dbServer;
     private Server webDB;
