@@ -1,5 +1,8 @@
 package game.api;
 
+import game.api.jdbcinteractor.ConnectionDatabase;
+import game.api.webapi.WebAPI;
+import game.api.webapi.Server;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
@@ -10,16 +13,10 @@ public class Tetris extends AbstractVerticle {
 
     @Override
     public void start() {
-        config().getJsonObject("components")
-                .forEach(entry -> {
-                    JsonObject json = (JsonObject) entry.getValue();
-                    String optionsKey = "options";
-                    if (json.containsKey(optionsKey)) {
-                        JsonObject options = ((JsonObject) entry.getValue()).getJsonObject(optionsKey);
-                        vertx.deployVerticle(entry.getKey(), new DeploymentOptions(options));
-                    } else {
-                        vertx.deployVerticle(entry.getKey());
-                    }
-                });
+
+        Vertx vertx = Vertx.vertx();
+        vertx.deployVerticle(new Server());
+        vertx.deployVerticle(new WebAPI());
+        vertx.deployVerticle(new ConnectionDatabase());
     }
 }

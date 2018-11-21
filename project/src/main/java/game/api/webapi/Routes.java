@@ -21,6 +21,7 @@ public class Routes {
         response.setChunked(true);
         response.write("hello tetris");
         response.end();
+
     }
 
     public Routes(Game game) {
@@ -29,13 +30,14 @@ public class Routes {
     }
 
     public void battleFieldStart(){
+        System.out.println("yeet");
 
         eb.consumer("tetris.infoBackend.BattleField",message -> {
             message.reply("ok");
             System.out.println(message);
             sendBlockOneByOne(game);
         });
-        eb.send("tetris.infoBackend.BattleField", "hello" );
+        eb.send("tetris.infoBackend.BattleField", Json.encode(game) );
     }
 //
 //    public void battleFieldBlockPositioning() {

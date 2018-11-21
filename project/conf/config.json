@@ -1,5 +1,12 @@
 {
   "components": {
+    "game.api.webapi.Server": {
+      "options": {
+        "config": {
+          "http.port": 8080
+        }
+      }
+    },
     "game.api.webapi.WebAPI": {
       "options": {
         "config": {
@@ -11,13 +18,6 @@
       "options": {
         "config": {
           "http.port": 8080
-        }
-      },
-      "game.api.webapi.Server": {
-        "options": {
-          "config": {
-            "http.port": 8080
-          }
         }
       }
 
