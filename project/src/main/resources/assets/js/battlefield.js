@@ -45,11 +45,11 @@ function initialize(lol) {
         let json = JSON.parse(message.body);
         console.log("manuele handler:", json);
     });
-    eb.send("tetris.infoBackend.BattleField", {name: "gsm", speed: 30}, function (error, reply) {
+    eb.send("tetris.infoBackend.BattleField", "hello", function (error, reply) {
         if (error) {
             console.log(error)
         }
-        console.log(reply.body);
+        console.log(reply);
     });
     eb.registerHandler("tetris.infoBackend.BattleField", function (error, message) {
         if (error) {

@@ -25,6 +25,7 @@ public class Routes {
     }
 
     public void battleFieldStart(){
+
         eb.consumer("tetris.infoBackend.BattleField",message -> {
             message.reply("ok");
             System.out.println(message);
