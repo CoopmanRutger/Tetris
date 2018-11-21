@@ -1,5 +1,6 @@
 package game.api.webapi;
 
+import game.Game;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.handler.StaticHandler;
@@ -8,11 +9,13 @@ import io.vertx.ext.web.Router;
 
 public class WebAPI extends AbstractVerticle {
 
+    private Game game = null;
+
     @Override
     public void start() {
         HttpServer server = vertx.createHttpServer();
         Router router = Router.router(vertx);
-        Routes routes = new Routes();
+        Routes routes = new Routes(game);
         router.route("/").handler(routes::rootHandler);
         router.route("/static/*").handler(StaticHandler.create());
         router.route("/tetris/infoBackend/*").handler(new TetrisSockJSHandler(vertx).create());
