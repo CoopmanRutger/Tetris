@@ -1,6 +1,8 @@
 package game.api.webapi;
 
 import game.Game;
+import game.api.jdbcinteractor.ConnectionDatabase;
+import game.api.jdbcinteractor.ConsumerHandlers;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
@@ -12,6 +14,7 @@ import java.awt.*;
 public class Routes {
     private EventBus eb;
     private Game game;
+    private ConnectionDatabase connectionDB;
 
     void rootHandler(RoutingContext routingContext){
         HttpServerResponse response = routingContext.response();
@@ -22,6 +25,7 @@ public class Routes {
 
     public Routes(Game game) {
         this.game = game;
+        connectionDB.start();
     }
 
     public void battleFieldStart(){
@@ -44,22 +48,26 @@ public class Routes {
 //        });
 //
 //    }
-//    public void chooseFaction() {
-//            String faction = message.body().toString();
-//        eb.consumer("tetris.game.faction.choose", message -> {
-//            message.reply(faction);
-//        });
-//    }
-//    // TODO: pass faction to DB.
-//    public void getFactionInfo() {
-//
-//            String m = message.body().toString();
-//        eb.consumer("tetris.game.faction.get", message -> {
-//        });
-//            message.reply(null);
-//    }
-//    // TODO: get faction from DB.
-//
+
+    public void chooseFaction() {
+        eb.consumer("tetris.game.faction.choose", message -> {
+            String faction = message.body().toString();
+            message.reply(faction);
+        });
+    }
+    // TODO: pass faction to DB.
+
+    public void getFactionInfo() {
+
+
+        eb.consumer("tetris.game.faction.get", message -> {
+            String faction = message.body().toString();
+            message.reply(null);
+        });
+
+    }
+    // TODO: get faction from DB.
+
     public void sendBlockOneByOne(Game game) {
         eb.send("tetris.infoBackend.test", Json.encode(game));
 

@@ -73,10 +73,6 @@ public class ConnectionDatabase extends AbstractVerticle {
 
     }
 
-
-
-
-
     @Override
     public void stop(){
         dbServer.stop();
