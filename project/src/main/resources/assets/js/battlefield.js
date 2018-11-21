@@ -1,7 +1,7 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8080/tetris/infoBackend");
+let eb = new EventBus("http://localhost:8000/tetris/infoBackend");
 // let eb = new EventBus("http://172.31.27.58:8080/tetris/infoBackend");
 let infoBackend = null;
 let game = {
@@ -28,41 +28,45 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
     eb.onopen = function () {
-        initialize("momom");
+        initialize();
     };
+
     backgroundStuff();
     startGame();
     countdown(game.timer)
 }
 
 
-function initialize(lol) {
+function initialize() {
 
-    eb.registerHandler("tetris.infoBackend.homescreen", function (error, message) {
-        if (error) {
-            console.log(error)
-        }
-        let json = JSON.parse(message.body);
-        console.log("manuele handler:", json);
-    });
-    eb.send("tetris.infoBackend.BattleField", "hello", function (error, reply) {
-        if (error) {
-            console.log(error)
-        }
-        console.log(reply);
-    });
+    // eb.registerHandler("tetris.infoBackend.homescreen", function (error, message) {
+    //     if (error) {
+    //         console.log(error)
+    //     }
+    //     let json = JSON.parse(message.body);
+    //     console.log("manuele handler:", json);
+    // });
+
     eb.registerHandler("tetris.infoBackend.BattleField", function (error, message) {
         if (error) {
             console.log(error)
         }
-        let json = JSON.parse(message.body);
-        console.log("manuele handler:", json);
+        console.log(message.body);
+        // let json = JSON.parse(message.body);
+        // console.log("manuele handler:", json);
     });
 
-    eb.registerHandler("tetris.infoBackend.test", function (error, message) {
-        console.log(message.body);
-        infoBackend = message.body;
+    eb.send("tetris.infoBackend.BattleField", {name: "gsm", speed: 30}, function (error, reply) {
+        if (error) {
+            console.log(error)
+        }
+        console.log(reply.body);
     });
+
+    // eb.registerHandler("tetris.infoBackend.test", function (error, message) {
+    //     console.log(message.body);
+    //     infoBackend = message.body;
+    // });
 }
 
 function backgroundStuff() {

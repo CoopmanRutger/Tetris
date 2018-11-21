@@ -26,11 +26,8 @@ public class Server extends AbstractVerticle {
 
     @Override
     public void start(){
-        Vertx vertx = Vertx.vertx();
-        vertx.deployVerticle(new ConnectionDatabase());
-        vertx.deployVerticle(new Tetris());
-        vertx.deployVerticle(new WebAPI());
-
+        System.out.println("server started");
+//        gamePlay();
     }
 
     public void gamePlay(){

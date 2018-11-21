@@ -13,6 +13,7 @@ public class WebAPI extends AbstractVerticle {
 
     @Override
     public void start() {
+        System.out.println("webApi");
         HttpServer server = vertx.createHttpServer();
         Router router = Router.router(vertx);
         Routes routes = new Routes(game);
@@ -21,7 +22,7 @@ public class WebAPI extends AbstractVerticle {
         router.route("/tetris/infoBackend/*").handler(new TetrisSockJSHandler(vertx).create());
         server.requestHandler(router::accept).listen(config().getInteger("http.port", 8000));
 //        router.route("/tetris/game/*").handler(new TetrisSockJSHandler(vertx).create());
-
+//
 //        router.route("/tetris/infoBackend/block").handler(Routes::homeScreen);
 //        router.route("/tetris/game/block").handler(Routes::homeScreen);
 
