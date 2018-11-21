@@ -10,7 +10,6 @@ public class Tetris extends AbstractVerticle {
 
     @Override
     public void start() {
-        System.out.println(config());
         config().getJsonObject("components")
                 .forEach(entry -> {
                     JsonObject json = (JsonObject) entry.getValue();
@@ -22,10 +21,5 @@ public class Tetris extends AbstractVerticle {
                         vertx.deployVerticle(entry.getKey());
                     }
                 });
-    }
-
-    public static void main(String... args) {
-        Vertx vertx = Vertx.vertx();
-        vertx.deployVerticle(new Tetris());
     }
 }

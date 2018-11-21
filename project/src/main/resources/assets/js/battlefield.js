@@ -51,6 +51,14 @@ function initialize(lol) {
         }
         console.log(reply.body);
     });
+    eb.registerHandler("tetris.infoBackend.BattleField", function (error, message) {
+        if (error) {
+            console.log(error)
+        }
+        let json = JSON.parse(message.body);
+        console.log("manuele handler:", json);
+    });
+
     eb.registerHandler("tetris.infoBackend.test", function (error, message) {
         console.log(message.body);
         infoBackend = message.body;
