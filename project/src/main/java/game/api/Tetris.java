@@ -1,6 +1,7 @@
 package game.api;
 
 import game.api.jdbcinteractor.ConnectionDatabase;
+import game.api.webapi.Routes;
 import game.api.webapi.WebAPI;
 import game.api.webapi.Server;
 import io.vertx.core.AbstractVerticle;
@@ -18,5 +19,6 @@ public class Tetris extends AbstractVerticle {
         vertx.deployVerticle(new Server());
         vertx.deployVerticle(new WebAPI());
         vertx.deployVerticle(new ConnectionDatabase());
+        vertx.deployVerticle(new Routes());
     }
 }
