@@ -19,18 +19,28 @@ import game.player.playfields.Playfields;
 import game.player.playfields.playfield.Playfield;
 import game.player.playfields.playfield.PointsForAbilities;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Verticle;
 import io.vertx.core.Vertx;
 
 public class Server extends AbstractVerticle {
 
+    Game game = null;
 
     @Override
     public void start(){
         System.out.println("server started");
-//        gamePlay();
+//        Vertx vertx = Vertx.vertx();
+//        vertx.deployVerticle(new WebAPI());
     }
 
-    public void gamePlay(){
+
+    public Game getGame(){
+        gamePlay();
+        return game;
+
+    }
+
+   public void gamePlay(){
 
         Trigger trigger1 = Trigger.SCORE;
         Trigger trigger2 = Trigger.TIME;
@@ -85,24 +95,9 @@ public class Server extends AbstractVerticle {
         player.setPlayfields(playfields);
 
 
-        Game game = new Game(events);
+        game = new Game(events);
         game.addPlayer(player);
         game.addPlayer(player1);
-
-
-        Routes routes = new Routes(game);
-//        routes.homeScreen();
-
-        routes.battleFieldStart();
-
-//        routes.battleFieldBlockPositioning();
-
-//        routes.chooseFaction();
-
-//        routes.getFactionInfo();
-
-//        routes.sendBlockOneByOne(game);
-
 
     }
 }

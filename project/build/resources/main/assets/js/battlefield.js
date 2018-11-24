@@ -37,8 +37,11 @@ function init() {
 }
 
 
-function initialize() {
+function senders() {
 
+}
+
+function registers() {
     // eb.registerHandler("tetris.infoBackend.homescreen", function (error, message) {
     //     if (error) {
     //         console.log(error)
@@ -51,22 +54,43 @@ function initialize() {
         if (error) {
             console.log(error)
         }
+        console.log("test");
         console.log(message.body);
         // let json = JSON.parse(message.body);
         // console.log("manuele handler:", json);
     });
-
-    eb.send("tetris.infoBackend.BattleField", {name: "gsm", speed: 30}, function (error, reply) {
+    eb.send("tetris.infoBackend.gamestart", "Im ready!", function (error, reply) {
         if (error) {
             console.log(error)
         }
         console.log(reply.body);
     });
 
-    // eb.registerHandler("tetris.infoBackend.test", function (error, message) {
-    //     console.log(message.body);
-    //     infoBackend = message.body;
+
+    let hallo = {
+        message : "hello",
+    };
+
+
+    // eb.send("tetris.infoBackend.game", hallo, function (error, reply) {
+    //     if (error) {
+    //         console.log(error)
+    //     }
+    //
+    //     console.log(reply.body);
     // });
+
+
+    eb.registerHandler("tetris.infoBackend.game", function (error, message) {
+        console.log(message.body);
+        // infoBackend = message.body;
+     });
+
+}
+
+function initialize() {
+    senders();
+    registers();
 }
 
 function backgroundStuff() {

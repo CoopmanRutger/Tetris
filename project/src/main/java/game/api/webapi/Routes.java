@@ -1,15 +1,21 @@
 package game.api.webapi;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
+import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.Json;
+import io.vertx.core.json.JsonObject;
+import io.vertx.core.parsetools.JsonParser;
 import io.vertx.ext.web.RoutingContext;
+import jdk.nashorn.internal.parser.JSONParser;
 
 import java.awt.*;
 
-public class Routes {
+public class Routes extends AbstractVerticle {
     private EventBus eb;
     private Game game;
 
@@ -20,22 +26,43 @@ public class Routes {
         response.end();
 
     }
-
-    public Routes(Game game) {
-        this.game = game;
+    public void start(){
+        eb = vertx.eventBus();
+        addConsumers();
     }
 
-    public void battleFieldStart(){
-        System.out.println("yeet");
 
-        eb.consumer("tetris.infoBackend.BattleField",message -> {
-            message.reply("ok");
-            System.out.println(message);
-            sendBlockOneByOne(game);
-        });
-        eb.send("tetris.infoBackend.BattleField", Json.encode(game) );
+    public Routes() {
+        Server server = new Server();
+        this.game = server.getGame();
     }
-//
+
+    public void addConsumers(){
+        eb.consumer("tetris.infoBackend.gamestart",this::ImReady);
+//        eb.consumer("tetris.infoBackend.game",this::sendBack);
+    }
+
+    private void ImReady(Message message){
+        System.out.println(message);
+        ObjectMapper mapper = new ObjectMapper();
+        String json;
+        try {
+            json = mapper.writeValueAsString(game);
+            eb.send("tetris.infoBackend.game", json);
+//            message.reply(json);
+        } catch (JsonProcessingException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void sendBack(Message message) {
+        System.out.println(message);
+        JsonObject json = new JsonObject();
+        json.put("yeet","yeet");
+        message.reply(json.encode());
+    }
+
+    //
 //    public void battleFieldBlockPositioning() {
 //        eb.consumer("tetris.infoBackend.BattleField.positionBlock", message -> {
 //            game.getPlayers().get(1).getPlayfields().getPlayfields().get(1)

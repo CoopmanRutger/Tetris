@@ -33,4 +33,12 @@ public class Event {
     private void activateOnScore() {
         // TODO: event is triggered on certain score
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "name='" + name + '\'' +
+                ", trigger=" + trigger +
+                '}';
+    }
 }
