@@ -62,9 +62,9 @@ public class Server extends AbstractVerticle {
         player1.setHero(hero1);
 
 
-        Ability ability1 = new AbilityLvl1("one");
-        Ability ability2 = new AbilityLvl2("paper");
-        Ability ability3 = new AbilityLvl3("car");
+        Ability ability1 = new AbilityLvl1("destruction");
+        Ability ability2 = new AbilityLvl2("tornado");
+        Ability ability3 = new AbilityLvl3("spook");
 
         hero.addAbility(ability1);
         hero.addAbility(ability2);
@@ -99,5 +99,9 @@ public class Server extends AbstractVerticle {
         game.addPlayer(player);
         game.addPlayer(player1);
 
+    }
+
+    public void chooseFaction(String faction) {
+        // todo naar databank
     }
 }

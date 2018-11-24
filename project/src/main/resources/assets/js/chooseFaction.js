@@ -1,20 +1,14 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8080/tetris/game");
+let eb = new EventBus("http://localhost:8000/tetris/infoBackend");
 let faction;
 
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    document.querySelector("#chooseFaction").addEventListener("click", chooseFaction);
     eb.onopen = function () {
-        eb.registerHandler("tetris.game.homescreen", function (error, message) {
-            if (error) {
-                console.log(error);
-            }
-            console.log(message.body);
-        })
+        document.querySelector("#chooseFaction").addEventListener("click", chooseFaction);
     };
 }
 
@@ -25,7 +19,7 @@ function chooseFaction(e) {
 }
 
 function sendFactionToServer() {
-    eb.send("tetris.game.faction.choose", faction, function (error, reply) {
+    eb.send("tetris.infoBackend.faction.choose", faction, function (error, reply) {
         if (error) {
             console.log(error);
         }

@@ -2,21 +2,56 @@ body {
     background: url("../media/bg.png") no-repeat;
     background-size: cover;
     margin-top: 10%;
+    color: white;
+}
+
+
+header {
+    position: absolute;
+    top: 10%;
+    left: 46.5%;
+}
+
+#linesPlayer1{
+    position: absolute;
+    border: 5px white solid;
+    top: 21.5%;
+    left: 39%;
+    text-align: center;
+    padding: 35px;
+}
+
+#linesPlayer2 {
+    position: absolute;
+    border: 5px white solid;
+    top: 21.5%;
+    right: 39.9%;
+    text-align: center;
+    padding: 35px;
+}
+
+#heroplayer1, #heroplayer2 {
+    position: absolute;
+    top: 45%;
+    padding: 10px;
+}
+
+#heroplayer1 {
+    left: 39%;
+}
+
+#heroplayer2 {
+    right: 39.9%;
 }
 
 .canvas_wrap {
     display: inline;
     margin-left: 22.5%;
     padding-top: 25px;
-
 }
 
 .canvas_wrap > * {
     display: inline;
     margin: 0 auto;
-    border: 1px solid #ffffff;
-}
-
-header {
-    color: white;
+    border: white 1px solid;
 }

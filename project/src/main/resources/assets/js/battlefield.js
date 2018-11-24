@@ -3,15 +3,14 @@
 /* global EventBus */
 let eb = new EventBus("http://localhost:8000/tetris/infoBackend");
 // let eb = new EventBus("http://172.31.27.58:8080/tetris/infoBackend");
-let infoBackend = null;
 let game = {
     gameRun: false, gameRun2: false, gameLoop: null,countdown: null, timer: 180, speed: 50,
     area: makeMatrix(12, 20),
     area2: makeMatrix(12, 20),
     context: player1.getContext("2d"),
     context2: player2.getContext("2d"),
-    fieldPlayer: {name: "player1", pos: {x: 0, y: 0}, matrix: null, score: 0},
-    fieldPlayer2: {name: "player2", pos: {x: 0, y: 0}, matrix: null, score: 0},
+    fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0},
+    fieldPlayer2: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0},
     colors: [
         null,
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Jz34T+Ifv3kGIOojBWYBgFkNlgADfTUeTEygjQLC3Iz3Li8G5sanGIauq5gPYwlTdvAtpMLwC6AORlkKjEA2bUYBvDxsYDN+PTpDwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Bb19cYRCW0EGNRrLCgBQXvH3/lQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQAfwJNr7nKi7AAAAABJRU5ErkJggg==",
@@ -30,66 +29,61 @@ function init() {
     eb.onopen = function () {
         initialize();
     };
-
     backgroundStuff();
     startGame();
     countdown(game.timer)
 }
 
 
-function senders() {
+function setGamePlay(infoBackend) {
+    game.fieldPlayer.name = infoBackend.players[0].name;
+    document.querySelector('#player1name').innerHTML = infoBackend.players[0].name;
+    game.fieldPlayer2.name = infoBackend.players[1].name;
+    document.querySelector('#player2name').innerHTML = infoBackend.players[1].name;
+    document.querySelector('#scoreplayer1').innerHTML = 0;
+    document.querySelector('#scoreplayer2').innerHTML = 0;
+    document.querySelector('#heroimgplayer1 p').innerHTML = infoBackend.players[0].hero.name;
+    document.querySelector('#heroimgplayer2 p').innerHTML = infoBackend.players[1].hero.name;
+
+    document.querySelector('#abilty1p1').innerHTML = infoBackend.players[0].hero.abilitySet[0].name;
+    document.querySelector('#abilty2p1').innerHTML = infoBackend.players[0].hero.abilitySet[1].name;
+    document.querySelector('#abilty1p2').innerHTML = infoBackend.players[1].hero.abilitySet[0].name;
+    document.querySelector('#abilty2p2').innerHTML = infoBackend.players[1].hero.abilitySet[1].name;
+
+
+    console.log(infoBackend);
+
+    console.log(game.fieldPlayer2.name);
 
 }
 
-function registers() {
-    // eb.registerHandler("tetris.infoBackend.homescreen", function (error, message) {
-    //     if (error) {
-    //         console.log(error)
-    //     }
-    //     let json = JSON.parse(message.body);
-    //     console.log("manuele handler:", json);
-    // });
+function updateGame(updateStuff) {
+    document.querySelector('#scoreplayer1').innerHTML = 0;
+    document.querySelector('#scoreplayer2').innerHTML = 0;
+    // todo
+}
 
+function registers() {
     eb.registerHandler("tetris.infoBackend.BattleField", function (error, message) {
         if (error) {
             console.log(error)
         }
-        console.log("test");
-        console.log(message.body);
-        // let json = JSON.parse(message.body);
-        // console.log("manuele handler:", json);
+        console.log(message);
+
     });
+
     eb.send("tetris.infoBackend.gamestart", "Im ready!", function (error, reply) {
         if (error) {
             console.log(error)
         }
-        // console.log(reply.body);
     });
-
-
-    let hallo = {
-        message : "hello",
-    };
-
-
-    // eb.send("tetris.infoBackend.game", hallo, function (error, reply) {
-    //     if (error) {
-    //         console.log(error)
-    //     }
-    //
-    //     console.log(reply.body);
-    // });
-
-
     eb.registerHandler("tetris.infoBackend.game", function (error, message) {
-        console.log(message.body);
-        // infoBackend = message.body;
+        setGamePlay(JSON.parse(message.body));
      });
 
 }
 
 function initialize() {
-    senders();
     registers();
 }
 
@@ -102,12 +96,13 @@ function backgroundStuff() {
     draw(game.fieldPlayer, game.context, game.area);
     draw(game.fieldPlayer2, game.context2, game.area2);
 
-    playerReset(game.fieldPlayer.name);
-    playerReset(game.fieldPlayer2.name);
+    nextBlock(game.fieldPlayer.name);
+    nextBlock(game.fieldPlayer2.name);
     draw(game.fieldPlayer, game.context, game.area);
     draw(game.fieldPlayer2, game.context2, game.area);
-
     const move = 1;
+
+
     document.addEventListener('keydown', function (e) {
         if (e.keyCode === 81) {
             playerMove(game.fieldPlayer, -move, game.area);
@@ -121,6 +116,7 @@ function backgroundStuff() {
         else if (e.keyCode === 39) {
             playerMove(game.fieldPlayer2, +move, game.area2);
         }
+
         else if (e.keyCode === 83) {
             playerDrop(game.fieldPlayer, game.context, game.area);
         }
@@ -133,14 +129,21 @@ function backgroundStuff() {
         else if (e.keyCode === 38) {
             playerRotate(game.fieldPlayer2, -move, game.area2);
         }
+
+        // todo
+        // eb.send("tetris.infoBackend.updateGame", "update!", function (error, reply) {
+        //     if (error) {
+        //         console.log(error)
+        //     }
+        // });
     });
 }
 
 function startGame() {
     game.gameRun = true;
     game.gameRun2 = true;
-    playerReset(game.fieldPlayer.name);
-    playerReset(game.fieldPlayer2.name);
+    nextBlock(game.fieldPlayer.name);
+    nextBlock(game.fieldPlayer2.name);
 
     let number = 0;
     game.gameLoop = setInterval(function () {
@@ -197,7 +200,7 @@ function countdown(durationInSeconds) {
 }
 
 
-function playerReset(player) {
+function nextBlock(player) {
     if (game.fieldPlayer.name === player) {
         makePieces(game.fieldPlayer, game.area);
     }
@@ -225,8 +228,19 @@ function points(player, area) {
         const row = area.splice(y, 1)[0].fill(0);
         area.unshift(row);
         ++y;
-        player.score += rowCount * 100;
+        // player.score += rowCount * 100;
+        let addScore = rowCount * 100;
         rowCount *= 2;
+
+        let object = JSON.parse('{ "score":"'+ addScore +'","player":"'+ player.name +'"}');
+        console.log(object);
+        eb.send("tetris.infoBackend.updateGame", object, function (error, reply) {
+            if (error) {
+                console.log(error)
+            }
+            console.log(reply.body);
+
+        });
     }
 }
 
@@ -292,7 +306,7 @@ function playerDrop(player, context, area) {
         player.pos.y--;
         merge(player, area);
         points(player, area);
-        playerReset(player.name);
+        nextBlock(player.name);
         updateScore(player, context);
     }
 }

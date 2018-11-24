@@ -3,21 +3,22 @@ package game.api.webapi;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
+import game.player.Player;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
-import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
-import io.vertx.core.parsetools.JsonParser;
 import io.vertx.ext.web.RoutingContext;
-import jdk.nashorn.internal.parser.JSONParser;
+
 
 import java.awt.*;
 
 public class Routes extends AbstractVerticle {
+    private Server server = new Server();
     private EventBus eb;
     private Game game;
+    private Player player;
 
     void rootHandler(RoutingContext routingContext){
         HttpServerResponse response = routingContext.response();
@@ -38,34 +39,88 @@ public class Routes extends AbstractVerticle {
     }
 
     public void addConsumers(){
+//        choose faction
+        eb.consumer("tetris.infoBackend.faction.choose", this::chooseFaction);
+
+
+
+
+//        playfield
         eb.consumer("tetris.infoBackend.gamestart",this::ImReady);
 //        eb.consumer("tetris.infoBackend.game",this::sendBack);
+
+        eb.consumer("tetris.infoBackend.updateGame",this::updateGame);
+        eb.consumer("tetris.infoBackend.game",this::sendBlockOneByOne);
+
+
     }
 
-    private void ImReady(Message message){
-        System.out.println(message);
+
+    public void chooseFaction(Message message) {
+        String faction = message.body().toString();
+        System.out.println(faction);
+//        TODO: pass faction to DB.
+        server.chooseFaction(faction);
+        message.reply(faction);
+    }
+
+
+
+
+
+    private void updateGame(Message message) {
+        JsonObject object =  new JsonObject(message.body().toString());
+
+        int number = game.getPlayers().indexOf(object.getString("player"));
+        player = game.getPlayers().get(number);
+        System.out.println(player.getPlayfields().getPlayfields().get(0));
+        player.getPlayfields().getPlayfields().get(0).updateScore(Integer.parseInt(object.getString("score")));
+        System.out.println(Integer.parseInt(object.getString("score")));
+        System.out.println(player.getPlayfields().getPlayfields().get(0));
+//        game.getPlayers().get(number).getPlayfields().getPlayfields().get(0).setScore();
+
+        message.reply(makeObjectJson(game));
+    }
+
+    private String makeObjectJson(Object info){
         ObjectMapper mapper = new ObjectMapper();
-        String json;
         try {
-            json = mapper.writeValueAsString(game);
-            eb.send("tetris.infoBackend.game", json);
-//            message.reply(json);
+            String json = mapper.writeValueAsString(info);
+            return json;
         } catch (JsonProcessingException e){
             e.printStackTrace();
         }
+        return null;
     }
 
-    private void sendBack(Message message) {
-        System.out.println(message);
-        JsonObject json = new JsonObject();
-        json.put("yeet","yeet");
-        message.reply(json.encode());
+
+    public void sendBlockOneByOne(Message message) {
+        System.out.println(message.body());
+
+//        eb.send("tetris.infoBackend.nextBlock", Json.encode(game));
+
     }
+
+
+
+    private void ImReady(Message message){
+        System.out.println(message.body());
+        eb.send("tetris.infoBackend.game", makeObjectJson(game));
+        message.reply("okey");
+
+    }
+
+//    private void sendBack(Message message) {
+//        System.out.println(message);
+//        JsonObject json = new JsonObject();
+//        json.put("yeet","yeet");
+//        message.reply(json.encode());
+//    }
 
     //
 //    public void battleFieldBlockPositioning() {
 //        eb.consumer("tetris.infoBackend.BattleField.positionBlock", message -> {
-//            game.getPlayers().get(1).getPlayfields().getPlayfields().get(1)
+//            game.getPlayers().get(1).getPlayfields().getPlayfields().get(1);
 //            String m = message.body().toString();
 //                    .put(OnPlayField(1, 1, new Block("block", TypesOfBlocks.lBlock, Color.RED)));
 //            message.reply(m);
@@ -73,13 +128,8 @@ public class Routes extends AbstractVerticle {
 //        });
 //
 //    }
-//    public void chooseFaction() {
-//            String faction = message.body().toString();
-//        eb.consumer("tetris.game.faction.choose", message -> {
-//            message.reply(faction);
-//        });
-//    }
-//    // TODO: pass faction to DB.
+
+
 //    public void getFactionInfo() {
 //
 //            String m = message.body().toString();
@@ -89,12 +139,5 @@ public class Routes extends AbstractVerticle {
 //    }
 //    // TODO: get faction from DB.
 //
-    public void sendBlockOneByOne(Game game) {
-        eb.send("tetris.infoBackend.test", Json.encode(game));
 
-        System.out.println(game.getPlayers().get(0));
-    }
-
-    public void homeScreen() {
-    }
 }
