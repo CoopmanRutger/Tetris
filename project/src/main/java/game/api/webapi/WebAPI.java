@@ -22,8 +22,8 @@ public class WebAPI extends AbstractVerticle {
         Routes routes = new Routes();
         router.route("/").handler(routes::rootHandler);
         router.route("/static/*").handler(StaticHandler.create());
-        router.route("/tetris/infoBackend/*").handler(new TetrisSockJSHandler(vertx).create());
-        server.requestHandler(router::accept).listen(8000);
+        router.route("/tetris-21/socket/*").handler(new TetrisSockJSHandler(vertx).create());
+        server.requestHandler(router::accept).listen(8021);
 //        router.route("/tetris/game/*").handler(new TetrisSockJSHandler(vertx).create());
 //
 //        router.route("/tetris/infoBackend/block").handler(Routes::homeScreen);

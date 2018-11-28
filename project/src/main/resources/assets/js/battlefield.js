@@ -1,7 +1,7 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8000/tetris/infoBackend");
+let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 // let eb = new EventBus("http://172.31.27.58:8080/tetris/infoBackend");
 let game = {
     gameRun: false, gameRun2: false, gameLoop: null,countdown: null, timer: 180, speed: 50,
@@ -64,7 +64,7 @@ function updateGame(updateStuff) {
 }
 
 function registers() {
-    eb.registerHandler("tetris.infoBackend.BattleField", function (error, message) {
+    eb.registerHandler("tetris-21.socket.BattleField", function (error, message) {
         if (error) {
             console.log(error)
         }
@@ -72,12 +72,12 @@ function registers() {
 
     });
 
-    eb.send("tetris.infoBackend.gamestart", "Im ready!", function (error, reply) {
+    eb.send("tetris-21.socket.gamestart", "Im ready!", function (error, reply) {
         if (error) {
             console.log(error)
         }
     });
-    eb.registerHandler("tetris.infoBackend.game", function (error, message) {
+    eb.registerHandler("tetris-21.socket.game", function (error, message) {
         setGamePlay(JSON.parse(message.body));
      });
 

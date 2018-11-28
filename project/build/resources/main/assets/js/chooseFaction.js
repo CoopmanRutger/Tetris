@@ -1,7 +1,7 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8000/tetris/infoBackend");
+let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 let faction;
 
 document.addEventListener("DOMContentLoaded", init);
@@ -19,10 +19,10 @@ function chooseFaction(e) {
 }
 
 function sendFactionToServer() {
-    eb.send("tetris.infoBackend.faction.choose", faction, function (error, reply) {
+    eb.send("tetris-21.socket.faction.choose", faction, function (error, reply) {
         if (error) {
             console.log(error);
         }
         console.log(reply.body);
-    })
+    });
 }

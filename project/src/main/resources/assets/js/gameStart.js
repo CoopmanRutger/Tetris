@@ -1,7 +1,7 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8080/tetris/game");
+let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -16,18 +16,20 @@ function init() {
 }
 
 function getFactionInfoFromDB() {
-    eb.registerHandler("tetris.game.faction.get", function (error, message) {
+    let playerName = "Rutger123";
+
+    eb.send("tetris-21.socket.faction", playerName , function (error, reply) {
         if (error) {
-            console.log(error);
+            console.log(error)
         }
-        console.log(message);
+        console.log(reply.body);
     });
-    eb.send("tetris.game.faction.get",  "faction",function (error, reply) {
+
+    eb.registerHandler("tetris-21.socket.faction.get", function (error, message) {
         if (error) {
             console.log(error);
         }
-        chosenFaction = reply.body;
-        console.log(chosenFaction);
+        console.log(message.body);
     });
 }
 

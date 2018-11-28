@@ -3,6 +3,9 @@ package game.api.webapi;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
+import game.api.jdbcinteractor.ConnectionDatabase;
+import game.api.jdbcinteractor.ConsumerHandlers;
+import game.api.jdbcinteractor.Database;
 import game.player.Player;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
@@ -10,6 +13,7 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
+import org.h2.command.ddl.DropAggregate;
 
 
 import java.awt.*;
@@ -39,20 +43,43 @@ public class Routes extends AbstractVerticle {
     }
 
     public void addConsumers(){
+        // faction yes/no
+        eb.consumer("tetris-21.socket.faction", this::getFaction);
+
+
 //        choose faction
-        eb.consumer("tetris.infoBackend.faction.choose", this::chooseFaction);
+        eb.consumer("tetris-21.socket.faction.choose", this::chooseFaction);
 
-
+//        gameStart
+//        eb.consumer()
 
 
 //        playfield
-        eb.consumer("tetris.infoBackend.gamestart",this::ImReady);
+        eb.consumer("tetris-21.socket.gamestart",this::ImReady);
 //        eb.consumer("tetris.infoBackend.game",this::sendBack);
 
-        eb.consumer("tetris.infoBackend.updateGame",this::updateGame);
-        eb.consumer("tetris.infoBackend.game",this::sendBlockOneByOne);
+        eb.consumer("tetris-21.socket.updateGame",this::updateGame);
+        eb.consumer("tetris-21.socket.game",this::sendBlockOneByOne);
 
 
+    }
+
+    private void getFaction(Message message) {
+        String playername = message.body().toString();
+        System.out.println(playername);
+
+        message.reply(playername);
+        eb.send("tetris-21.socket.faction.get", getFactionFromDB(playername));
+
+    }
+
+    private String getFactionFromDB(String playername) {
+
+//        System.out.println(Database.getDB().getConsumerHandlers().getFaction(playername));
+        return Database
+                .getDB()
+                .getConsumerHandlers()
+                .getFaction(playername);
     }
 
 
@@ -105,7 +132,7 @@ public class Routes extends AbstractVerticle {
 
     private void ImReady(Message message){
         System.out.println(message.body());
-        eb.send("tetris.infoBackend.game", makeObjectJson(game));
+        eb.send("tetris-21.socket.game", makeObjectJson(game));
         message.reply("okey");
 
     }

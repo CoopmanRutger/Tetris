@@ -15,7 +15,7 @@ public class TetrisSockJSHandler {
 
     private void addBridgeOptions() {
         final PermittedOptions inbound = new PermittedOptions()
-                .setAddressRegex("tetris\\.infoBackend\\..+");
+                .setAddressRegex("tetris-21\\.socket\\..+");
         final PermittedOptions outbound = inbound;
         final BridgeOptions options = new BridgeOptions()
                 .addInboundPermitted(inbound)
