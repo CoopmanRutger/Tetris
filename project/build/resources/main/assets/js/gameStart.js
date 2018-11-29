@@ -18,12 +18,24 @@ function init() {
 function getFactionInfoFromDB() {
     let playerName = "Rutger123";
 
+    // eb.registerHandler("tetris-21.socket.gameStart.get", function (error, message) {
+    //     if (error) {
+    //         console.log(error);
+    //     }
+    //     console.log(message.body);
+    //
+    // });
+
+
     eb.send("tetris-21.socket.faction", playerName , function (error, reply) {
         if (error) {
             console.log(error)
         }
         console.log(reply.body);
     });
+
+
+
 
     eb.registerHandler("tetris-21.socket.faction.get", function (error, message) {
         if (error) {

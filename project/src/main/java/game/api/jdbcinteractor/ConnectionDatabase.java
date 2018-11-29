@@ -1,5 +1,6 @@
 package game.api.jdbcinteractor;
 
+import game.api.webapi.GameController;
 import game.api.webapi.Routes;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
@@ -21,8 +22,8 @@ public class ConnectionDatabase extends AbstractVerticle {
     private ConsumerHandlers consumerHandlers;
 
 
-    public ConsumerHandlers getConsumerHandlers() {
-        ConsumerHandlers consumerHandlers = new ConsumerHandlers();
+    public ConsumerHandlers getConsumerHandlers(GameController controller) {
+        ConsumerHandlers consumerHandlers = new ConsumerHandlers(controller);
         return consumerHandlers;
     }
 

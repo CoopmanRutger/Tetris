@@ -3,8 +3,6 @@ package game.api.webapi;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
-import game.api.jdbcinteractor.ConnectionDatabase;
-import game.api.jdbcinteractor.ConsumerHandlers;
 import game.api.jdbcinteractor.Database;
 import game.player.Player;
 import io.vertx.core.AbstractVerticle;
@@ -13,14 +11,10 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import org.h2.command.ddl.DropAggregate;
-
-
-import java.awt.*;
 
 public class Routes extends AbstractVerticle {
-    private Server server = new Server();
     private EventBus eb;
+    private GameController controller;
     private Game game;
     private Player player;
 
@@ -37,12 +31,16 @@ public class Routes extends AbstractVerticle {
     }
 
 
-    public Routes() {
-        Server server = new Server();
-        this.game = server.getGame();
+    public Routes(GameController gameController) {
+        controller = gameController;
+        this.game = controller.getGame();
     }
 
     public void addConsumers(){
+//        homescreen
+        eb.consumer("tetris-21.socket.homescreen",this::getPlayerName);
+
+
         // faction yes/no
         eb.consumer("tetris-21.socket.faction", this::getFaction);
 
@@ -64,22 +62,25 @@ public class Routes extends AbstractVerticle {
 
     }
 
+    private void getPlayerName(Message message) {
+        String username = message.body().toString();
+        System.out.println(username);
+        message.reply(username);
+
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .getPlayerInfo(username, eb);
+    }
+
     private void getFaction(Message message) {
         String playername = message.body().toString();
         System.out.println(playername);
-
         message.reply(playername);
-        eb.send("tetris-21.socket.faction.get", getFactionFromDB(playername));
 
-    }
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .getFaction(playername, eb);
 
-    private String getFactionFromDB(String playername) {
-
-//        System.out.println(Database.getDB().getConsumerHandlers().getFaction(playername));
-        return Database
-                .getDB()
-                .getConsumerHandlers()
-                .getFaction(playername);
     }
 
 
@@ -87,7 +88,6 @@ public class Routes extends AbstractVerticle {
         String faction = message.body().toString();
         System.out.println(faction);
 //        TODO: pass faction to DB.
-        server.chooseFaction(faction);
         message.reply(faction);
     }
 
