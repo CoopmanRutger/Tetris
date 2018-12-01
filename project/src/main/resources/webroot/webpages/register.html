@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="../../assets/css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../../assets/css/login_register.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <h1>Register</h1>
+    <form>
+        <label for="registerUsername">Username:</label>
+        <input type="text" id="registerUsername" name="registerUsername" autofocus required placeholder="Username"/>
+
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" name="registerPassword" required placeholder="Password"/>
+
+        <label for="repeatPassword">Repeat password:</label>
+        <input type="password" id="repeatPassword" name="repeatPassword" required placeholder="Repeat Password" />
+
+        <input type="submit" id="registerSubmit" name="registerSubmit" value="Register"/>
+    </form>
+    <p>Back to <a href="login.html">login page</a>.</p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
+</body>
+</html>
