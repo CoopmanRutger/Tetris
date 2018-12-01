@@ -5,6 +5,8 @@ let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
 
+let loginMade = false;
+
 function init() {
     eb.onopen = function() {
         console.log("opened");
@@ -45,5 +47,16 @@ function register(email, username, password) {
             console.log(error);
         }
         console.log(reply.body);
+        loginMade = reply.body;
     });
+    registerMade();
+}
+
+function registerMade() {
+    if (loginMade === true) {
+        window.location.href = "login.html";
+    } else {
+        document.querySelector("#errorMessage").style.display = "block";
+        document.querySelector("#errorMessage").innerHTML = "Could not make login.";
+    }
 }

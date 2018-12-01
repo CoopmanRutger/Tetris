@@ -90,7 +90,7 @@ public class Routes extends AbstractVerticle {
         String email = userMessage.getString("email");
         String password = userMessage.getString("password");
         Login makeLogin = new Login();
-        makeLogin.makeLogin(username, email, password);
+        message.reply(makeLogin.makeLogin(username, email, password));
     }
 
     private void mayLogin(Message message) {

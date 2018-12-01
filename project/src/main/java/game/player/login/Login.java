@@ -14,8 +14,9 @@ public class Login {
         }
     }
 
-    public void makeLogin(String username, String email, String password) {
+    public Boolean makeLogin(String username, String email, String password) {
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(15));
-        Database.getDB().getConsumerHandler().makeUser(username, email, hashedPassword);
+        String canLogin = Database.getDB().getConsumerHandler().makeUser(username, email, hashedPassword);
+        return canLogin.equals("true");
     }
 }
