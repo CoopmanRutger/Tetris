@@ -2,9 +2,11 @@ package game.api.webapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import game.Game;
 import game.api.jdbcinteractor.Database;
 import game.player.Player;
+import game.player.login.Login;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
@@ -12,11 +14,14 @@ import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
+import javax.xml.crypto.Data;
+
 public class Routes extends AbstractVerticle {
     private EventBus eb;
     private GameController controller;
     private Game game;
     private Player player;
+    private Boolean login;
 
     void rootHandler(RoutingContext routingContext){
         HttpServerResponse response = routingContext.response();
@@ -59,7 +64,37 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.updateGame",this::updateGame);
         eb.consumer("tetris-21.socket.game",this::sendBlockOneByOne);
 
+        // Login
+        eb.consumer("tetirs-21.socket.login.get", this::login);
 
+        // Make login
+        eb.consumer("tetris-21.socket.login.make", this::makeLogin);
+
+        // May login
+        eb.consumer("tetris-21.socket.login.may", this::mayLogin);
+    }
+
+    private void login(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String username = userMessage.getString("username");
+        String password = userMessage.getString("password");
+        Login getLogin = new Login();
+        login = getLogin.checkLogin(username, password);
+        message.reply(login);
+    }
+    // TODO: check if function works.
+
+    private void makeLogin(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String username = userMessage.getString("username");
+        String email = userMessage.getString("email");
+        String password = userMessage.getString("password");
+        Login makeLogin = new Login();
+        makeLogin.makeLogin(username, email, password);
+    }
+
+    private void mayLogin(Message message) {
+        message.reply(login);
     }
 
     private void getPlayerName(Message message) {
