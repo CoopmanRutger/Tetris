@@ -7,6 +7,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.jdbc.JDBCClient;
 import io.vertx.ext.sql.ResultSet;
 import org.pmw.tinylog.Logger;
+import sun.rmi.runtime.Log;
 
 public class ConsumerHandlers {
 
@@ -24,6 +25,9 @@ public class ConsumerHandlers {
                 "WHERE username = ?";
     private final String MAKE_USER = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
     private final String GET_CLAN = "SELECT * FROM clans WHERE name = ?";
+    private final String GET_PASSWORD = "SELECT password FROM users WHERE Username = ?";
+    private final String MAKE_LOGIN = "INSERT INTO users (Username, email, password) " +
+            "VALUES (?, ?, ?)";
 
 
     public ConsumerHandlers(GameController controller) {
@@ -107,6 +111,32 @@ public class ConsumerHandlers {
 
                     eb.send("tetris-21.socket.faction.get", reponse.getString("factionName"));
                 });
+    }
+
+    public String getPasswordFor(String username) {
+        JsonObject password = new JsonObject();
+        final JsonArray[] params = {new JsonArray().add(username)};
+        jdbcClient.queryWithParams(GET_PASSWORD, params[0], res -> {
+            if (res.succeeded()) {
+                ResultSet rs = res.result();
+                password.put("password", rs.getResults().get(0).getString(0));
+            } else {
+                Logger.warn("Could not get info from DB: ", res.cause());
+            }
+        });
+        return password.getString("password");
+    }
+
+    public void makeUser(String username, String email, String hashedPassword) {
+        final JsonArray[] params = {new JsonArray()
+                .add(username)
+                .add(email)
+                .add(hashedPassword)};
+        jdbcClient.queryWithParams(MAKE_LOGIN, params[0], res -> {
+            if (!res.succeeded()) {
+                Logger.warn("Could not make login: ", res.cause());
+            }
+        });
     }
 
 
