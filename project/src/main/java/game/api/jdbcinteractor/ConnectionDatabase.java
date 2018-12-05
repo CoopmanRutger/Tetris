@@ -22,8 +22,8 @@ public class ConnectionDatabase extends AbstractVerticle {
     private ConsumerHandlers consumerHandlers;
 
 
-    public ConsumerHandlers getConsumerHandlers() {
-        ConsumerHandlers consumerHandlers = new ConsumerHandlers();
+    public ConsumerHandlers getConsumerHandlers(GameController controller) {
+        ConsumerHandlers consumerHandlers = new ConsumerHandlers(controller);
         return consumerHandlers;
     }
 

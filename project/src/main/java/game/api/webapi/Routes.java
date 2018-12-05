@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import game.Game;
+import game.api.jdbcinteractor.ConsumerHandlers;
 import game.api.jdbcinteractor.Database;
 import game.player.Player;
 import game.player.login.Login;

@@ -132,16 +132,17 @@ public class ConsumerHandlers {
 
     public String makeUser(String username, String email, String hashedPassword) {
         JsonObject couldLogin = new JsonObject();
-        final JsonArray[] params = {new JsonArray()
-                .add(username)
-                .add(email)
-                .add(hashedPassword)};
-        jdbcClient.queryWithParams(MAKE_LOGIN, params[0], res -> {
+//        final JsonArray[] params = {new JsonArray()
+//                .add(username)
+//                .add(email)
+//                .add(hashedPassword)};
+        jdbcClient.queryWithParams(MAKE_LOGIN, new JsonArray().add(username).add(email)
+                .add(hashedPassword), res -> {
             if (res.succeeded()) {
-                couldLogin.put("login", true);
+                couldLogin.put("login", "true");
 
             } else {
-                couldLogin.put("login", false);
+                couldLogin.put("login", "false");
                 Logger.warn("Could not make login: ", res.cause());
             }
         });
