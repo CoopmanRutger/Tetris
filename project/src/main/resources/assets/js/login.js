@@ -28,8 +28,10 @@ function checkValues(e) {
     login(username, password);
 }
 
-function mayPersonLogin() {
+function mayPersonLogin(username) {
     if (loginAllowed === true) {
+        let loginValues = { username: username, login: loginAllowed};
+        localStorage.setItem("login", JSON.stringify(loginValues));
         window.location.href = "gameStart.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";
@@ -39,12 +41,12 @@ function mayPersonLogin() {
 
 function login(username, password) {
     let loginValues = {username: username, password: password};
-    eb.send("tetris-21.socket.login.get", JSON.stringify(loginValues), function (error, reply) {
+    eb.send("tetris-21.socket.login", JSON.stringify(loginValues), function (error, reply) {
         if (error) {
             console.log(error);
         }
         console.log(reply.body);
         loginAllowed = reply.body;
     });
-    mayPersonLogin();
+    mayPersonLogin(username);
 }

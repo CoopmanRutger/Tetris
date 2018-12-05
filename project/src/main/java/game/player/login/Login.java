@@ -6,7 +6,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class Login {
 
     public boolean checkLogin(String username, String password) {
-        String passwordFromDb = Database.getDB().getConsumerHandler().getPasswordFor(username);
+        String passwordFromDb = Database.getDB().getConsumerHandlers().getPasswordFor(username);
         if (passwordFromDb != null) {
             return BCrypt.checkpw(password, passwordFromDb);
         } else {
@@ -15,8 +15,8 @@ public class Login {
     }
 
     public Boolean makeLogin(String username, String email, String password) {
-        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(15));
-        String canLogin = Database.getDB().getConsumerHandler().makeUser(username, email, hashedPassword);
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+        String canLogin = Database.getDB().getConsumerHandlers().makeUser(username, email, hashedPassword);
         return canLogin.equals("true");
     }
 }

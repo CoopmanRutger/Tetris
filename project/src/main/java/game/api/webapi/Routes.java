@@ -28,8 +28,8 @@ public class Routes extends AbstractVerticle {
         response.setChunked(true);
         response.write("hello tetris");
         response.end();
-
     }
+
     public void start(){
         eb = vertx.eventBus();
         addConsumers();
@@ -65,7 +65,7 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.game",this::sendBlockOneByOne);
 
         // Login
-        eb.consumer("tetirs-21.socket.login.get", this::login);
+        eb.consumer("tetirs-21.socket.login", this::login);
 
         // Make login
         eb.consumer("tetris-21.socket.login.make", this::makeLogin);

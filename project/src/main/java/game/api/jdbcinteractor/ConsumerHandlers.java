@@ -25,10 +25,13 @@ public class ConsumerHandlers {
                 "WHERE username = ?";
     private final String MAKE_USER = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
     private final String GET_CLAN = "SELECT * FROM clans WHERE name = ?";
-    private final String GET_PASSWORD = "SELECT password FROM users WHERE Username = ?";
-    private final String MAKE_LOGIN = "INSERT INTO users (Username, email, password) " +
-            "VALUES (?, ?, ?)";
+    private final String GET_PASSWORD = "SELECT password FROM users WHERE username = ?";
+    private final String MAKE_LOGIN = "INSERT INTO users (username, email, password) " +
+                                        "VALUES (?, ?, ?)";
 
+    public ConsumerHandlers() {
+        this(null);
+    }
 
     public ConsumerHandlers(GameController controller) {
         jdbcClient = ConnectionDatabase.jdbcClient;
