@@ -38,8 +38,24 @@ function init() {
 }
 
 
+function setPlayer1(player) {
+    console.log(player);
+    console.log(player.hero);
+
+
+
+
+}
+
+
 function setGamePlay(infoBackend) {
     let players = infoBackend.players;
+    console.log(infoBackend.players[0]);
+
+    setPlayer1(infoBackend.players[0]);
+
+
+
     game.fieldPlayer.name = players[0].name;
     select('#player1name').innerHTML = players[0].name;
     game.fieldPlayer2.name = players[1].name;
@@ -52,16 +68,17 @@ function setGamePlay(infoBackend) {
     setWidth(linesp1, "#abilty2p1");
     setWidth(linesp2, "#abilty1p2");
     setWidth(linesp2, "#abilty2p2");
-    select('#abilty1p1').innerHTML = players[0].hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
-        + "class='key' title='key1' alt='key1'>";
-    select('#abilty2p1').innerHTML = players[0].hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
-        "class='key' title='key2' alt='key2'>";
-    select('#abilty1p2').innerHTML = players[1].hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
-        "class='key' title='key9' alt='key9'>";
-    select('#abilty2p2').innerHTML = players[1].hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
-        "class='key' title='key0' alt='key0'>";
-    select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + players[0].hero.name + '.png">';
-    select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + players[1].hero.name + '.png">';
+    // console.log(players[0].hero.abilitySet[0]);
+    // select('#abilty1p1').innerHTML = players[0].hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
+    //     + "class='key' title='key1' alt='key1'>";
+    // select('#abilty2p1').innerHTML = players[0].hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
+    //     "class='key' title='key2' alt='key2'>";
+    // select('#abilty1p2').innerHTML = players[1].hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
+    //     "class='key' title='key9' alt='key9'>";
+    // select('#abilty2p2').innerHTML = players[1].hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
+    //     "class='key' title='key0' alt='key0'>";
+    // select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + players[0].hero.name + '.png">';
+    // select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + players[1].hero.name + '.png">';
 
     console.log(infoBackend);
 
@@ -132,29 +149,42 @@ function backgroundStuff() {
     const move = 1;
 
 
+
+
+
     document.addEventListener('keydown', function (e) {
+        //links Q
         if (e.keyCode === 81) {
             playerMove(game.fieldPlayer, -move, game.area);
         }
-        else if (e.keyCode === 37) {
-            playerMove(game.fieldPlayer2, -move, game.area2);
-        }
-        else if (e.keyCode === 68) {
-            playerMove(game.fieldPlayer, +move, game.area);
-        }
-        else if (e.keyCode === 39) {
-            playerMove(game.fieldPlayer2, +move, game.area2);
-        }
-
-        else if (e.keyCode === 83) {
-            playerDrop(game.fieldPlayer, game.context, game.area);
-        }
-        else if (e.keyCode === 40) {
-            playerDrop(game.fieldPlayer2, game.context2, game.area2);
-        }
+        // draai Z
         else if (e.keyCode === 90) {
             playerRotate(game.fieldPlayer, -move, game.area);
         }
+        // Beneden S
+        else if (e.keyCode === 83) {
+            playerDrop(game.fieldPlayer, game.context, game.area);
+        }
+        // rechts D
+        else if (e.keyCode === 68) {
+            playerMove(game.fieldPlayer, +move, game.area);
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        // links
+        if (e.keyCode === 37) {
+            playerMove(game.fieldPlayer2, -move, game.area2);
+        }
+        // rechts
+        else if (e.keyCode === 39) {
+            playerMove(game.fieldPlayer2, +move, game.area2);
+        }
+        // beneden
+        else if (e.keyCode === 40) {
+            playerDrop(game.fieldPlayer2, game.context2, game.area2);
+        }
+        // draaien
         else if (e.keyCode === 38) {
             playerRotate(game.fieldPlayer2, -move, game.area2);
         }
@@ -165,7 +195,9 @@ function backgroundStuff() {
         //         console.log(error)
         //     }
         // });
-    });
+    })
+
+
 }
 
 function startGame() {

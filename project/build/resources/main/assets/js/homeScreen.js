@@ -17,7 +17,7 @@ function init() {
 
 function f() {
     let username = "Rutger";
-    //louis of Rutger --> capslock
+    //Louis / Rutger / Jis -> zonder faction
 
     eb.send("tetris-21.socket.homescreen", username , function (error, reply) {
         if (error) {
@@ -33,8 +33,13 @@ function f() {
         let playerInfo = JSON.parse(message.body);
 
         console.log(playerInfo);
+        ResetPlayerInSession();
         SetPlayerInSession(playerInfo)
     });
+}
+
+function ResetPlayerInSession(){
+    sessionStorage.clear();
 }
 
 function SetPlayerInSession(player) {

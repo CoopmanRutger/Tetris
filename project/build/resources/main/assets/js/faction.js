@@ -13,10 +13,19 @@ function init() {
 }
 
 function getFactionFromDB() {
-    eb.registerHandler("tetris.infoBackend.faction.get", function (error, message) {
-        if (error) {
-            console.log(error);
-        }
-        console.log(message);
-    });
+
+
+    // eb.send("tetris.infobackend.faction.info", "rutger", function (error, reply) {
+    //     if (error) {
+    //         console.log(error)
+    //     }
+    //     console.log(reply.body);
+    // });
+
+    // eb.registerHandler("tetris.infoBackend.faction.get", function (error, message) {
+    //     if (error) {
+    //         console.log(error);
+    //     }
+    //     console.log(message);
+    // });
 }

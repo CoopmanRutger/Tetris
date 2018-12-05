@@ -16,8 +16,8 @@ function init() {
 }
 
 function f() {
-    let username = "Jis";
-    //louis of Rutger --> capslock
+    let username = "Rutger";
+    //Louis / Rutger / Jis -> zonder faction
 
     eb.send("tetris-21.socket.homescreen", username , function (error, reply) {
         if (error) {
