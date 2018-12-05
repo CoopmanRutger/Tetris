@@ -1,6 +1,7 @@
 package game.api.jdbcinteractor;
 
 import game.api.webapi.GameController;
+import game.player.login.Login;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.json.JsonArray;
@@ -117,7 +118,7 @@ public class ConsumerHandlers {
                 });
     }
 
-    public String getPasswordFor(String username) {
+    public void getPasswordFor(Login login, String username) {
         JsonObject password = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(username)};
         jdbcClient.queryWithParams(GET_PASSWORD, params[0], res -> {
@@ -127,11 +128,11 @@ public class ConsumerHandlers {
             } else {
                 Logger.warn("Could not get info from DB: ", res.cause());
             }
+            login.setPassword(password.getString("password"));
         });
-        return password.getString("password");
     }
 
-    public String makeUser(String username, String email, String hashedPassword) {
+    public void makeUser(Login login, String username, String email, String hashedPassword) {
         JsonObject couldLogin = new JsonObject();
         final JsonArray[] params = {new JsonArray()
                 .add(username)
@@ -144,8 +145,8 @@ public class ConsumerHandlers {
                 couldLogin.put("login", "false");
                 Logger.warn("Could not make login: ", res.cause());
             }
+            login.mayLogin(couldLogin.getString("login"));
         });
-        return couldLogin.getString("login");
     }
 
 

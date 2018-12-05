@@ -18,7 +18,7 @@ main {
     margin-right: auto;
     padding: 30px;
     width: 40%;
-    border: 8px rgb(154, 0, 1) solid;
+    border: 8px rgb(103, 0, 1) solid;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -36,13 +36,13 @@ input {
 }
 
 input:focus {
-    outline-color: rgba(131, 0, 1, 0.73);
+    outline-color: rgb(103, 0, 1);
 }
 
 #Login, #register {
     width: 80px;
     height: 30px;
-    background-color: rgb(154, 0, 1);
+    background-color: rgb(103, 0, 1);
     color: white;
     font-weight: bold;
     font-size: 1rem;
@@ -68,7 +68,7 @@ p {
 
 a {
     padding: 2px;
-    background-color: rgb(154, 0, 1);
+    background-color: rgb(103, 0, 1);
     color: white;
     text-decoration: none;
 }

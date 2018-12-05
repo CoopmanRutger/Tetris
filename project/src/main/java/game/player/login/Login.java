@@ -4,10 +4,15 @@ import game.api.jdbcinteractor.ConsumerHandlers;
 import game.api.jdbcinteractor.Database;
 import org.mindrot.jbcrypt.BCrypt;
 
+import java.util.concurrent.TimeUnit;
+
 public class Login {
 
+    private String canLogin;
+    private String passwordFromDb;
+
     public boolean checkLogin(String username, String password) {
-        String passwordFromDb = Database.getDB().getConsumerHandler().getPasswordFor(username);
+        new ConsumerHandlers().getPasswordFor(this, username);
         if (passwordFromDb != null) {
             return BCrypt.checkpw(password, passwordFromDb);
         } else {
@@ -15,15 +20,26 @@ public class Login {
         }
     }
 
-    public Boolean makeLogin(String username, String email, String password) {
+    public String makeLogin(String username, String email, String password) {
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-        String canLogin = new ConsumerHandlers().makeUser(username, email, hashedPassword);
-        //String canLogin = Database.getDB().getConsumerHandler().makeUser(username, email, hashedPassword);
-        System.out.println("login: " + canLogin);
-        if (canLogin == null){
-            return false;
-        } else {
-            return canLogin.equals("true");
-        }
+        new ConsumerHandlers().makeUser(this, username, email, hashedPassword);
+        return getCanLogin();
+    }
+
+    public void mayLogin(String login) {
+        System.out.println("login: " + login);
+        canLogin = login;
+    }
+
+    public void setPassword(String password) {
+        passwordFromDb = password;
+    }
+
+    public String getCanLogin() {
+        return canLogin;
+    }
+
+    public String getPasswordFromDb() {
+        return passwordFromDb;
     }
 }

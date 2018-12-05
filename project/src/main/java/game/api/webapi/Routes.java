@@ -11,6 +11,7 @@ import game.player.login.Login;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
+import io.vertx.core.eventbus.MessageConsumer;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
@@ -66,7 +67,7 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.game",this::sendBlockOneByOne);
 
         // Login
-        eb.consumer("tetirs-21.socket.login", this::login);
+        eb.consumer("tetris-21.socket.login", this::login);
 
         // Make login
         eb.consumer("tetris-21.socket.login.make", this::makeLogin);
@@ -76,22 +77,25 @@ public class Routes extends AbstractVerticle {
     }
 
     private void login(Message message) {
+        System.out.println(message);
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
         String password = userMessage.getString("password");
+        System.out.println(username);
         Login getLogin = new Login();
         login = getLogin.checkLogin(username, password);
         message.reply(login);
     }
-    // TODO: check if function works.
 
     private void makeLogin(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
         String email = userMessage.getString("email");
         String password = userMessage.getString("password");
-        Login makeLogin = new Login();
-        message.reply(makeLogin.makeLogin(username, email, password));
+        Login login = new Login();
+        String canLogin = login.makeLogin(username, email, password);
+        System.out.println("routes: " + canLogin);
+        //message.reply(makeLogin.makeLogin(username, email, password));
     }
 
     private void mayLogin(Message message) {

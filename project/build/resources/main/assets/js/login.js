@@ -41,6 +41,7 @@ function mayPersonLogin(username) {
 
 function login(username, password) {
     let loginValues = {username: username, password: password};
+    console.log(JSON.stringify(loginValues));
     eb.send("tetris-21.socket.login", JSON.stringify(loginValues), function (error, reply) {
         if (error) {
             console.log(error);
