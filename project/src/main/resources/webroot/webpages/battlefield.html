@@ -9,7 +9,7 @@
 <body>
 <main>
     <header>
-        <div><p>Countdown</p> <span id="time"></span> minutes</div>
+        <div><span id="time"></span></div>
     </header>
 
     <div class="canvas_wrap">
@@ -22,14 +22,14 @@
             <p id="scoreplayer1"></p>
         </aside>
 
-        <div id="heroplayer1">
-            <div id="heroimgplayer1">
-                <p></p>
-            </div>
-            <p id="abilty1p1"></p>
-            <p id="abilty2p1">test2</p>
+        <div id="heroimgplayer1">
+
         </div>
-        <!-- TODO: end infoBackend button-->
+
+        <div id="heroplayer1">
+            <p id="abilty1p1"> test test test</p>
+            <p id="abilty2p1">test2x</p>
+        </div>
     </div>
     <div class="canvas_wrap">
         <p id="player2name"></p>
@@ -40,14 +40,27 @@
             <p id="scoreplayer2"></p>
         </aside>
 
+        <div id="heroimgplayer2">
+        </div>
+
         <div id="heroplayer2">
-            <div id="heroimgplayer2">
-                <p></p>
-            </div>
             <p id="abilty1p2">test1</p>
             <p id="abilty2p2">test2</p>
         </div>
     </div>
+
+    <a href="#" id="openmodal">Concede</a>
+
+    <aside id="modaldiv" class="modal">
+
+        <div class="modal-content">
+            <p>Do you really want to concede?</p>
+            <a id="concede" class="close" href="loading%20screen.html">Concede</a>
+            <a id="keepplaying" class="close">Keep playing</a>
+        </div>
+
+    </aside>
+
 </main>
 <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>

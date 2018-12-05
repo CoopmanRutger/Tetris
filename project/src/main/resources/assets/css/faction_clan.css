@@ -1,0 +1,55 @@
+body {
+    color: white;
+}
+
+section {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer {
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+img {
+    width: 30%;
+    margin-top: 10px;
+    float: left;
+}
+
+table {
+    border: 3px solid black;
+    padding: 10px;
+    margin-left: 5%;
+    margin-bottom: 10px;
+}
+
+td {
+    padding: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#details {
+    margin-right: 7px;
+}
+
+#details h2, #details p, #clandetails h2, #clandetails p {
+    width: 65%;
+    text-align: justify;
+    margin-left: 35%;
+    overflow: hidden;
+}
+
+#chat a, #clanchat a {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 5px;
+    border-radius: 25px;
+}
