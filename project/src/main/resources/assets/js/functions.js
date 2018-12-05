@@ -45,12 +45,21 @@ function addEventHandler(selector, event, handler) {
 /*------- Open and close modal -------*/
 
 /**************************************/
-function closeModal() {
-    select("#modaldiv").style.display = "none";
-}
+
+let modal = document.getElementById('modaldiv');
 
 function openModal() {
-    select("#modaldiv").style.display = "block";
+    modal.style.display = "block";
+}
+
+function keepPlaying() {
+    modal.style.display = "none";
+}
+
+function onModalClose(event) {
+    if (event.target === modal) {
+        closeModal();
+    }
 }
 
 /*******************************/
