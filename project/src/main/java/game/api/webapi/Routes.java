@@ -17,13 +17,15 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
 import javax.xml.crypto.Data;
+import java.util.concurrent.TimeUnit;
 
 public class Routes extends AbstractVerticle {
     private EventBus eb;
     private GameController controller;
     private Game game;
     private Player player;
-    private Boolean login;
+    private String canLogin;
+    private String passwordFromDb;
 
     void rootHandler(RoutingContext routingContext){
         HttpServerResponse response = routingContext.response();
@@ -69,11 +71,23 @@ public class Routes extends AbstractVerticle {
         // Login
         eb.consumer("tetris-21.socket.login", this::login);
 
+        eb.consumer("tetirs-21.socket.login.server", this::getPasswordFromDb);
         // Make login
         eb.consumer("tetris-21.socket.login.make", this::makeLogin);
 
+        eb.consumer("tetris-21.socket.login.make.server", this::canLogin);
         // May login
-        eb.consumer("tetris-21.socket.login.may", this::mayLogin);
+        //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
+
+    }
+
+    private void getPasswordFromDb(Message message) {
+        passwordFromDb = new JsonObject(message.body().toString()).getString("password");
+        System.out.println(passwordFromDb);
+    }
+
+    private void canLogin(Message message) {
+        canLogin = message.body().toString();
     }
 
     private void login(Message message) {
@@ -83,8 +97,12 @@ public class Routes extends AbstractVerticle {
         String password = userMessage.getString("password");
         System.out.println(username);
         Login getLogin = new Login();
-        login = getLogin.checkLogin(username, password);
-        message.reply(login);
+        getLogin.getPasswordFromDb(username, eb);
+        checkLogin(getLogin, password);
+    }
+
+    private void checkLogin(Login login, String password) {
+        System.out.println(login.checkLogin(password, passwordFromDb));
     }
 
     private void makeLogin(Message message) {
@@ -92,15 +110,16 @@ public class Routes extends AbstractVerticle {
         String username = userMessage.getString("username");
         String email = userMessage.getString("email");
         String password = userMessage.getString("password");
+        System.out.println("login: " + message);
         Login login = new Login();
-        String canLogin = login.makeLogin(username, email, password);
-        System.out.println("routes: " + canLogin);
-        //message.reply(makeLogin.makeLogin(username, email, password));
+        System.out.println(password);
+        login.makeLogin(username, email, password, eb);
+        message.reply(canLogin);
     }
 
-    private void mayLogin(Message message) {
-        message.reply(login);
-    }
+//    private void mayLogin(Message message) {
+//        message.reply(login);
+//    }
 
     private void getPlayerName(Message message) {
         String username = message.body().toString();

@@ -1,6 +1,7 @@
 package game.api.jdbcinteractor;
 
 import game.api.webapi.GameController;
+import game.events.event.Event;
 import game.player.login.Login;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.EventBus;
@@ -118,7 +119,7 @@ public class ConsumerHandlers {
                 });
     }
 
-    public void getPasswordFor(Login login, String username) {
+    public void getPasswordFor(Login login, String username, EventBus eb) {
         JsonObject password = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(username)};
         jdbcClient.queryWithParams(GET_PASSWORD, params[0], res -> {
@@ -128,11 +129,12 @@ public class ConsumerHandlers {
             } else {
                 Logger.warn("Could not get info from DB: ", res.cause());
             }
-            login.setPassword(password.getString("password"));
+            eb.send("tetris-21.socket.login.server", password.getString("password"));
+            //login.setPassword(password.getString("password"));
         });
     }
 
-    public void makeUser(Login login, String username, String email, String hashedPassword) {
+    public void makeUser(Login login, String username, String email, String hashedPassword, EventBus eb) {
         JsonObject couldLogin = new JsonObject();
         final JsonArray[] params = {new JsonArray()
                 .add(username)
@@ -145,12 +147,14 @@ public class ConsumerHandlers {
                 couldLogin.put("login", "false");
                 Logger.warn("Could not make login: ", res.cause());
             }
-            login.mayLogin(couldLogin.getString("login"));
+            System.out.println("consumerhandler" + couldLogin.getString("login"));
+            eb.send("tetris-21.socket.login.make.server", couldLogin.getString("login"));
+            //login.mayLogin(couldLogin.getString("login"));
         });
     }
 
 
-//
+
 //    public boolean chooseFaction(String playerName, String clanName) {
 //        final boolean[] happened = new boolean[1];
 //        JsonArray params = new JsonArray().add(getClanNr(clanName)).add(getUserid(playerName));

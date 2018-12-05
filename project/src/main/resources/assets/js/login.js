@@ -48,6 +48,6 @@ function login(username, password) {
         }
         console.log(reply.body);
         loginAllowed = reply.body;
+        mayPersonLogin(username);
     });
-    mayPersonLogin(username);
 }

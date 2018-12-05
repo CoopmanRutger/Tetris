@@ -2,17 +2,13 @@ package game.player.login;
 
 import game.api.jdbcinteractor.ConsumerHandlers;
 import game.api.jdbcinteractor.Database;
+import game.events.event.Event;
+import io.vertx.core.eventbus.EventBus;
 import org.mindrot.jbcrypt.BCrypt;
-
-import java.util.concurrent.TimeUnit;
 
 public class Login {
 
-    private String canLogin;
-    private String passwordFromDb;
-
-    public boolean checkLogin(String username, String password) {
-        new ConsumerHandlers().getPasswordFor(this, username);
+    public boolean checkLogin(String password, String passwordFromDb) {
         if (passwordFromDb != null) {
             return BCrypt.checkpw(password, passwordFromDb);
         } else {
@@ -20,26 +16,13 @@ public class Login {
         }
     }
 
-    public String makeLogin(String username, String email, String password) {
+    public void getPasswordFromDb(String username, EventBus eb) {
+        new ConsumerHandlers().getPasswordFor(this, username, eb);
+    }
+
+    public void makeLogin(String username, String email, String password, EventBus eb) {
+        System.out.println(password);
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-        new ConsumerHandlers().makeUser(this, username, email, hashedPassword);
-        return getCanLogin();
-    }
-
-    public void mayLogin(String login) {
-        System.out.println("login: " + login);
-        canLogin = login;
-    }
-
-    public void setPassword(String password) {
-        passwordFromDb = password;
-    }
-
-    public String getCanLogin() {
-        return canLogin;
-    }
-
-    public String getPasswordFromDb() {
-        return passwordFromDb;
+        new ConsumerHandlers().makeUser(this, username, email, hashedPassword, eb);
     }
 }

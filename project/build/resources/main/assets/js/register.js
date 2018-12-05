@@ -48,8 +48,8 @@ function register(email, username, password) {
         }
         console.log(reply.body);
         loginMade = reply.body;
+        registerMade();
     });
-    registerMade();
 }
 
 function registerMade() {
