@@ -19,6 +19,7 @@ public class Login {
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         String canLogin = new ConsumerHandlers().makeUser(username, email, hashedPassword);
         //String canLogin = Database.getDB().getConsumerHandler().makeUser(username, email, hashedPassword);
+        System.out.println("login: " + canLogin);
         if (canLogin == null){
             return false;
         } else {
