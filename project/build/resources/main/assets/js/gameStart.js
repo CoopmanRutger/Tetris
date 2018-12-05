@@ -16,7 +16,8 @@ function init() {
 }
 
 function getFactionInfoFromDB() {
-    let playerName = "Rutger123";
+    let playerName = sessionStorage.getItem('PlayerName');
+    console.log(playerName);
 
     // eb.registerHandler("tetris-21.socket.gameStart.get", function (error, message) {
     //     if (error) {
@@ -25,6 +26,9 @@ function getFactionInfoFromDB() {
     //     console.log(message.body);
     //
     // });
+
+
+
 
 
     eb.send("tetris-21.socket.faction", playerName , function (error, reply) {
@@ -41,9 +45,29 @@ function getFactionInfoFromDB() {
         if (error) {
             console.log(error);
         }
+
         console.log(message.body);
+        let faction = message.body;
+
+        SetFactionInSession(faction);
     });
 }
+
+
+function SetFactionInSession(faction) {
+    console.log(faction.userNr);
+
+    sessionStorage.setItem('ClanNr', faction.clanNr);
+    sessionStorage.setItem('ClanName', faction.clanName);
+    sessionStorage.setItem('FactionName', faction.factionName);
+    sessionStorage.setItem('FactionNr', faction.factionNr);
+    sessionStorage.setItem('UserNr', faction.userNr);
+//     sessionStorage.setItem('heroExp', player.heroExp);
+}
+
+
+
+
 
 function goToFaction(e) {
     e.preventDefault();

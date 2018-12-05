@@ -16,6 +16,7 @@ function chooseFaction(e) {
     e.preventDefault();
     faction = e.target.alt;
     sendFactionToServer();
+
 }
 
 function sendFactionToServer() {

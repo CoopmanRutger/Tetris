@@ -13,9 +13,9 @@ public class ConsumerHandlers {
     private JDBCClient jdbcClient;
     private GameController controller;
 
-    private final String GET_FACTION = "SELECT * FROM faction " +
-            "Left JOIN clans ON faction.factionNr = clans.factionNr " +
-            "Left JOIN clan_users ON clans.clanNr = clan_users.clanNr " +
+        private final String GET_FACTION = "SELECT * FROM faction " +
+                "Left JOIN clans ON faction.factionNr = clans.factionNr " +
+                "Left JOIN clan_users ON clans.clanNr = clan_users.clanNr " +
             "WHERE clan_users.usernr = (SELECT users.userId FROM users " +
                 "left join player on users.userid = player.userid WHERE playerName = ?)";
     private final String CHOOSE_FACTION = "INSERT INTO clan_user(clanNr, userId) VALUES (?, ?)";
@@ -40,7 +40,7 @@ public class ConsumerHandlers {
                     if (res.succeeded()) {
                         ResultSet rs = res.result();
 
-                        System.out.println(rs.getResults().get(0));
+                        System.out.println("result" + rs.getResults().get(0));
                         player.put("playerId", rs.getResults().get(0).getInteger(0));
                         player.put("username", rs.getResults().get(0).getString(1));
                         player.put("email", rs.getResults().get(0).getString(2));
@@ -91,12 +91,15 @@ public class ConsumerHandlers {
                     if (res.succeeded()) {
                         ResultSet rs = res.result();
                         System.out.println("rs: " + rs.getResults());
-                        reponse.put("faction", rs.getResults().get(0));
                         JsonArray jsonArray = rs.getResults().get(0);
+                        System.out.println(jsonArray);
 
                         if (jsonArray.getString(1) != null) {
                             reponse.put("factionName",jsonArray.getString(1));
-                            System.out.println(jsonArray.getString(1));
+                            reponse.put("clanNr",jsonArray.getInteger(2));
+                            reponse.put("clanName",jsonArray.getString(3));
+                            reponse.put("factionNr",jsonArray.getInteger(4));
+                            reponse.put("userNr",jsonArray.getInteger(5));
                         } else {
                             reponse.put("factionName","none");
                         }
@@ -105,7 +108,7 @@ public class ConsumerHandlers {
                     Logger.warn("Could not get info from DB: ", res.cause());
                     }
 
-                    eb.send("tetris-21.socket.faction.get", reponse.getString("factionName"));
+                    eb.send("tetris-21.socket.faction.get", reponse);
                 });
     }
 
