@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="16" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="15" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/Routes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/player/login/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/jdbcinteractor/ConsumerHandlers.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/api/jdbcinteractor/ConsumerHandlers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/api/webapi/Routes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/player/login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/player/login/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/player/login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/player/login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/js/login.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -143,18 +153,18 @@
         <counts>
           <entry key="css" value="10" />
           <entry key="gradle" value="2" />
-          <entry key="html" value="14" />
+          <entry key="html" value="15" />
           <entry key="java" value="102" />
-          <entry key="js" value="11" />
+          <entry key="js" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="10" />
           <entry key="Groovy" value="2" />
-          <entry key="HTML" value="14" />
+          <entry key="HTML" value="15" />
           <entry key="JAVA" value="102" />
-          <entry key="JavaScript" value="11" />
+          <entry key="JavaScript" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -163,8 +173,8 @@
           <entry key="dummy" value="6" />
           <entry key="gradle" value="2" />
           <entry key="html" value="1150" />
-          <entry key="java" value="8652" />
-          <entry key="js" value="3005" />
+          <entry key="java" value="8921" />
+          <entry key="js" value="3077" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -172,8 +182,8 @@
           <entry key="CSS" value="669" />
           <entry key="Groovy" value="2" />
           <entry key="HTML" value="1150" />
-          <entry key="JAVA" value="8652" />
-          <entry key="JavaScript" value="3005" />
+          <entry key="JAVA" value="8921" />
+          <entry key="JavaScript" value="3077" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -184,8 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/player/login/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="233">
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,39 +206,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
-              <folding>
-                <element signature="e#2718#2719#0" expanded="true" />
-                <element signature="e#2770#2771#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="151" selection-start-line="151" selection-end-line="151" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="165">
+              <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/register.js">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+            <state relative-caret-position="202">
+              <caret line="135" selection-start-line="135" selection-end-line="135" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -236,8 +242,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="278">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -946,12 +952,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/register.html" />
         <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/css/login_register.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/register.js" />
+        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/login.js" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/login/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/register.js" />
       </list>
     </option>
   </component>
@@ -1149,7 +1155,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544015194743" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544177373952" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -1381,7 +1387,7 @@
       <workItem from="1544013159387" duration="2190000" />
       <workItem from="1544016374861" duration="7411000" />
       <workItem from="1544024868931" duration="1469000" />
-      <workItem from="1544174790186" duration="1189000" />
+      <workItem from="1544174790186" duration="2107000" />
     </task>
     <servers />
   </component>
@@ -1418,13 +1424,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207714000" />
+    <option name="totallyTimeSpent" value="208632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13233191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13233191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1433,7 +1439,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.19584955" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31566265" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31566265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1724,13 +1730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -1738,41 +1737,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/faction.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
-          <folding>
-            <element signature="e#2718#2719#0" expanded="true" />
-            <element signature="e#2770#2771#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/login/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="271">
+          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1783,17 +1754,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        <state relative-caret-position="278">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/register.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/login/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+        <state relative-caret-position="233">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
         </state>
       </provider>
     </entry>

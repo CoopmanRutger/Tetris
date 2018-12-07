@@ -17,7 +17,7 @@ public class Login {
     }
 
     public void getPasswordFromDb(String username, EventBus eb) {
-        new ConsumerHandlers().getPasswordFor(this, username, eb);
+        //new ConsumerHandlers().getPasswordFor(this, username, eb);
     }
 
     public void makeLogin(String username, String email, String password, EventBus eb) {

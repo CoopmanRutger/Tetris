@@ -54,13 +54,13 @@ function register(email, username, password) {
             console.log(error);
         }
         console.log(message.body);
-        loginMade = reply.body;
+        loginMade = message.body;
         registerMade();
     });
 }
 
 function registerMade() {
-    if (loginMade === true) {
+    if (loginMade === "true") {
         window.location.href = "login.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";

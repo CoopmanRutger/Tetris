@@ -2,7 +2,6 @@ package game.api.webapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import game.Game;
 import game.api.jdbcinteractor.ConsumerHandlers;
 import game.api.jdbcinteractor.Database;
@@ -24,8 +23,6 @@ public class Routes extends AbstractVerticle {
     private GameController controller;
     private Game game;
     private Player player;
-    private String canLogin;
-    private String passwordFromDb;
 
     void rootHandler(RoutingContext routingContext){
         HttpServerResponse response = routingContext.response();
@@ -71,36 +68,24 @@ public class Routes extends AbstractVerticle {
         // Login
         eb.consumer("tetris-21.socket.login", this::login);
 
-        eb.consumer("tetirs-21.socket.login.server", this::getPasswordFromDb);
         // Make login
         eb.consumer("tetris-21.socket.login.make", this::makeLogin);
 
-        //eb.consumer("tetris-21.socket.login.make.server", this::canLogin);
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
-    }
-
-    private void getPasswordFromDb(Message message) {
-        passwordFromDb = new JsonObject(message.body().toString()).getString("password");
-        System.out.println(passwordFromDb);
-    }
-
-    private void canLogin(Message message) {
-        canLogin = message.body().toString();
     }
 
     private void login(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
         String password = userMessage.getString("password");
-        Login getLogin = new Login();
-        getLogin.getPasswordFromDb(username, eb);
-        checkLogin(getLogin, password);
-    }
-
-    private void checkLogin(Login login, String password) {
-        System.out.println(login.checkLogin(password, passwordFromDb));
+//        Login getLogin = new Login();
+//        getLogin.getPasswordFromDb(username, eb);
+        message.reply(username);
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .checkPassword(username, password, eb);
     }
 
     private void makeLogin(Message message) {

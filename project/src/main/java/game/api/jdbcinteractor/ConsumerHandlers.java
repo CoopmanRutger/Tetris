@@ -11,7 +11,6 @@ import io.vertx.ext.jdbc.JDBCClient;
 import io.vertx.ext.sql.ResultSet;
 import org.mindrot.jbcrypt.BCrypt;
 import org.pmw.tinylog.Logger;
-import sun.rmi.runtime.Log;
 
 public class ConsumerHandlers {
 
@@ -120,17 +119,21 @@ public class ConsumerHandlers {
                 });
     }
 
-    public void getPasswordFor(Login login, String username, EventBus eb) {
-        JsonObject password = new JsonObject();
+    public void checkPassword(String username, String password, EventBus eb) {
+        JsonObject passwordFromDb = new JsonObject();
+        JsonObject passwordResult = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(username)};
         jdbcClient.queryWithParams(GET_PASSWORD, params[0], res -> {
             if (res.succeeded()) {
                 ResultSet rs = res.result();
-                password.put("password", rs.getResults().get(0).getString(0));
+                passwordFromDb.put("password", rs.getResults().get(0).getString(0));
+                boolean samePassword = BCrypt.checkpw(password, passwordFromDb.getString("password"));
+                passwordResult.put("canLogin", "" + samePassword);
             } else {
                 Logger.warn("Could not get info from DB: ", res.cause());
+                passwordResult.put("canLogin", "false");
             }
-            eb.send("tetris-21.socket.login.server", password.getString("password"));
+            eb.send("tetris-21.socket.login.server", passwordResult.getString("canLogin"));
             //login.setPassword(password.getString("password"));
         });
     }
