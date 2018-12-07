@@ -23,6 +23,6 @@ public class Login {
     public void makeLogin(String username, String email, String password, EventBus eb) {
         System.out.println(password);
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-        new ConsumerHandlers().makeUser(this, username, email, hashedPassword, eb);
+        //new ConsumerHandlers().makeUser(this, username, email, hashedPassword, eb);
     }
 }

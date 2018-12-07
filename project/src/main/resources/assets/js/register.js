@@ -47,13 +47,20 @@ function register(email, username, password) {
             console.log(error);
         }
         console.log(reply.body);
-        loginMade = reply.body;
+    });
+
+    eb.registerHandler("tetris-21.socket.login.make.server", function (error, message) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(message.body);
+        loginMade = message.body;
         registerMade();
     });
 }
 
 function registerMade() {
-    if (loginMade === true) {
+    if (loginMade === "true") {
         window.location.href = "login.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";

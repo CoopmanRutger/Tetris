@@ -75,7 +75,7 @@ public class Routes extends AbstractVerticle {
         // Make login
         eb.consumer("tetris-21.socket.login.make", this::makeLogin);
 
-        eb.consumer("tetris-21.socket.login.make.server", this::canLogin);
+        //eb.consumer("tetris-21.socket.login.make.server", this::canLogin);
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
@@ -91,11 +91,9 @@ public class Routes extends AbstractVerticle {
     }
 
     private void login(Message message) {
-        System.out.println(message);
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
         String password = userMessage.getString("password");
-        System.out.println(username);
         Login getLogin = new Login();
         getLogin.getPasswordFromDb(username, eb);
         checkLogin(getLogin, password);
@@ -110,11 +108,13 @@ public class Routes extends AbstractVerticle {
         String username = userMessage.getString("username");
         String email = userMessage.getString("email");
         String password = userMessage.getString("password");
-        System.out.println("login: " + message);
-        Login login = new Login();
-        System.out.println(password);
-        login.makeLogin(username, email, password, eb);
-        message.reply(canLogin);
+//        Login login = new Login();
+//        login.makeLogin(username, email, password, eb);
+//        message.reply(canLogin);
+        message.reply(username);
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .makeUser(username, email, password, eb);
     }
 
 //    private void mayLogin(Message message) {

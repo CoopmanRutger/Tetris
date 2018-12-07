@@ -9,6 +9,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.jdbc.JDBCClient;
 import io.vertx.ext.sql.ResultSet;
+import org.mindrot.jbcrypt.BCrypt;
 import org.pmw.tinylog.Logger;
 import sun.rmi.runtime.Log;
 
@@ -134,21 +135,21 @@ public class ConsumerHandlers {
         });
     }
 
-    public void makeUser(Login login, String username, String email, String hashedPassword, EventBus eb) {
+    public void makeUser(String username, String email, String password, EventBus eb) {
         JsonObject couldLogin = new JsonObject();
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         final JsonArray[] params = {new JsonArray()
                 .add(username)
                 .add(email)
                 .add(hashedPassword)};
         jdbcClient.queryWithParams(MAKE_LOGIN, params[0], res -> {
             if (res.succeeded()) {
-                couldLogin.put("login", "true");
+                couldLogin.put("register", "true");
             } else {
-                couldLogin.put("login", "false");
+                couldLogin.put("register", "false");
                 Logger.warn("Could not make login: ", res.cause());
             }
-            System.out.println("consumerhandler" + couldLogin.getString("login"));
-            eb.send("tetris-21.socket.login.make.server", couldLogin.getString("login"));
+            eb.send("tetris-21.socket.login.make.server", couldLogin.getString("register"));
             //login.mayLogin(couldLogin.getString("login"));
         });
     }

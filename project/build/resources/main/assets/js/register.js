@@ -47,6 +47,13 @@ function register(email, username, password) {
             console.log(error);
         }
         console.log(reply.body);
+    });
+
+    eb.registerHandler("tetris-21.socket.login.make.server", function (error, message) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(message.body);
         loginMade = reply.body;
         registerMade();
     });
