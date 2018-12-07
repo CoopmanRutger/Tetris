@@ -3,20 +3,14 @@ package game.api.webapi;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
-import game.api.jdbcinteractor.ConsumerHandlers;
 import game.api.jdbcinteractor.Database;
 import game.player.Player;
-import game.player.login.Login;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-
-import javax.xml.crypto.Data;
-import java.util.concurrent.TimeUnit;
 
 public class Routes extends AbstractVerticle {
     private EventBus eb;
@@ -80,8 +74,7 @@ public class Routes extends AbstractVerticle {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
         String password = userMessage.getString("password");
-//        Login getLogin = new Login();
-//        getLogin.getPasswordFromDb(username, eb);
+
         message.reply(username);
         Database.getDB()
                 .getConsumerHandlers(controller)
@@ -93,9 +86,7 @@ public class Routes extends AbstractVerticle {
         String username = userMessage.getString("username");
         String email = userMessage.getString("email");
         String password = userMessage.getString("password");
-//        Login login = new Login();
-//        login.makeLogin(username, email, password, eb);
-//        message.reply(canLogin);
+
         message.reply(username);
         Database.getDB()
                 .getConsumerHandlers(controller)

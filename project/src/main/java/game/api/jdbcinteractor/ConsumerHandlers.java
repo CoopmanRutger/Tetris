@@ -1,9 +1,6 @@
 package game.api.jdbcinteractor;
 
 import game.api.webapi.GameController;
-import game.events.event.Event;
-import game.player.login.Login;
-import io.vertx.core.Future;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
