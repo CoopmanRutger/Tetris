@@ -13,13 +13,12 @@ public class Score {
         return score;
     }
 
-    private void setScore(int score) {
+    void setScore(int score) {
         this.score = score;
     }
 
-    void updateScore() {
+    public void updateScore(int extraScore) {
         int previousScore = getScore();
-        int extraScore = 100;
         setScore(previousScore + extraScore);
     }
 

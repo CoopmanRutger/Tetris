@@ -7,22 +7,48 @@
     <title>To battle!!!!!</title>
 </head>
 <body>
+<script src="../../assets/js/mayPersonLogin.js"></script>
 <main>
     <header>
         <div><p>Countdown</p> <span id="time"></span> minutes</div>
     </header>
 
-<div class="canvas_wrap">
-    <canvas id="player1" width="240" height="400"></canvas>
+    <div class="canvas_wrap">
+        <p id="player1name"></p>
+        <canvas id="player1" width="240" height="400"></canvas>
 
-    <aside>
-        <!-- TODO:  hero, score and abilities-->
-    </aside>
-    <!-- TODO: end infoBackend button-->
-</div>
-<div class="canvas_wrap">
-    <canvas id="player2" width="240" height="400"></canvas>
-</div>
+        <aside id="linesPlayer1">
+            <p>lines: <span>0</span></p>
+            <br>
+            <p id="scoreplayer1"></p>
+        </aside>
+
+        <div id="heroplayer1">
+            <div id="heroimgplayer1">
+                <p></p>
+            </div>
+            <p id="abilty1p1"></p>
+            <p id="abilty2p1">test2</p>
+        </div>
+        <!-- TODO: end infoBackend button-->
+    </div>
+    <div class="canvas_wrap">
+        <p id="player2name"></p>
+        <canvas id="player2" width="240" height="400"></canvas>
+        <aside id="linesPlayer2">
+            <p>lines: <span>0</span></p>
+            <br>
+            <p id="scoreplayer2"></p>
+        </aside>
+
+        <div id="heroplayer2">
+            <div id="heroimgplayer2">
+                <p></p>
+            </div>
+            <p id="abilty1p2">test1</p>
+            <p id="abilty2p2">test2</p>
+        </div>
+    </div>
 </main>
 <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>

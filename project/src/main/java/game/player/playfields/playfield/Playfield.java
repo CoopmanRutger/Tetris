@@ -13,6 +13,20 @@ public class Playfield {
     private PointsForAbilities points;
     private Blocks blocks;
 
+    public void setScore(Score score) {
+        this.score = score;
+    }
+
+    public void setPoints(PointsForAbilities points) {
+        this.points = points;
+    }
+
+    public void updateScore(int extraScore) {
+        int previousScore = score.getScore();
+        score.setScore(previousScore + extraScore);
+    }
+
+
     public Playfield() {
         playfield = new ArrayList<>();
         score = new Score();
@@ -109,7 +123,7 @@ public class Playfield {
     }
 
     private void scoreForCompletedLine() {
-        score.updateScore();
+        score.updateScore(100);
     }
 
     private void removeCompletedLines(List<Integer> completedLines) {
@@ -138,6 +152,7 @@ public class Playfield {
     Score getScore() {
         return score;
     }
+
 
     public PointsForAbilities getPoints() {
         return points;
@@ -168,4 +183,5 @@ public class Playfield {
     void putLineOnField(int line, List<Integer> completeLine) {
         playfield.set(line, completeLine);
     }
+
 }

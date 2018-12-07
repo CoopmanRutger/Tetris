@@ -3,6 +3,7 @@ package game.events;
 import game.events.event.Event;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Events {
 
@@ -26,11 +27,8 @@ public class Events {
 
     @Override
     public String toString() {
-        StringBuilder res = new StringBuilder();
-        for (Event event : events) {
-            res.append(event)
-                    .append("\n");
-        }
-        return res.toString();
+        return events.stream()
+                .map(Event::toString)
+                .collect(Collectors.joining("\n"));
     }
 }

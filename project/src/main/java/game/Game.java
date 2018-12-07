@@ -9,7 +9,6 @@ public class Game {
     private List<Player> players;
     private Events events;
 
-
     public Game(Events events) {
         players = new ArrayList<>();
         this.events = events;

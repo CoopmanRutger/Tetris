@@ -1,36 +1,37 @@
 "use strict";
+
 /* global EventBus */
+let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
-
-let eb = new EventBus("http://localhost:8080/tetris/infoBackend");
 
 
 function init() {
     console.log("home screen");
-    f;
+    eb.onopen = function () {
+        f();
+    };
 
 }
 
-
 function f() {
-    let sendMessage = function (val) {
-        eb.send("tetris.infoBackend.homeScreen", {user : document.getElementById("play").value, content : val},
-            function(err, reply) {
-                console.log("message broadcasted: " + JSON.stringify(reply));
+    let username = document.querySelector("main header p span").innerHTML;
 
-            });
-    };
-    eb.onopen = function() {
-        eb.registerHandler("tetris.infoBackend.homeScreen", function (error, message) {
-            if (error) {
-                console.log("error: " + JSON.stringify(error));
-            };
-            console.log("message: " + JSON.stringify(message.body));
-            let newMessage = document.createElement("li");
-            newMessage.innerHTML = JSON.stringify(message.body);
-            messagelist.prepend(newMessage);
-        });
-    };
+    eb.send("tetris-21.socket.homescreen", username , function (error, reply) {
+        if (error) {
+            console.log(error)
+        }
+        console.log(reply.body);
+    });
+
+    eb.registerHandler("tetris-21.socket.homescreen.playerinfo", function (error, message) {
+        if (error) {
+            console.log(error);
+        }
+        let playerInfo = JSON.parse(message.body);
+
+        console.log(playerInfo);
+    });
+
 
 }
