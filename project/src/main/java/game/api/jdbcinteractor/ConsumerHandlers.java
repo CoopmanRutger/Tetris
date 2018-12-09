@@ -56,10 +56,10 @@ public class ConsumerHandlers {
                         player.put("username", rs.getResults().get(0).getString(1));
                         player.put("email", rs.getResults().get(0).getString(2));
 //                        player.put("playerid", rs.getResults().get(0).getInteger(3));
-                        player.put("playerName", rs.getResults().get(0).getString(4));
-                        player.put("heroNr", rs.getResults().get(0).getInteger(5));
-                        player.put("heroExp", rs.getResults().get(0).getInteger(6));
-                        player.put("heroLvl", rs.getResults().get(0).getInteger(7));
+                        player.put("playerName", rs.getResults().get(0).getString(5));
+                        player.put("heroNr", rs.getResults().get(0).getInteger(6));
+                        player.put("heroExp", rs.getResults().get(0).getInteger(7));
+                        player.put("heroLvl", rs.getResults().get(0).getInteger(8));
 
                     } else {
                         Logger.warn("Could not get info from DB: ", res.cause());
@@ -101,10 +101,10 @@ public class ConsumerHandlers {
                 res -> {
                     if (res.succeeded()) {
                         ResultSet rs = res.result();
-                        System.out.println("rs: " + rs.getResults());
+//                        System.out.println("rs: " + rs.getResults());
                         JsonArray jsonArray = rs.getResults().get(0);
-                        System.out.println(rs.getColumnNames());
-                        System.out.println(jsonArray);
+//                        System.out.println(rs.getColumnNames());
+//                        System.out.println(jsonArray);
 
                         if (jsonArray.getString(1) != null) {
                             reponse.put("FactionNr", jsonArray.getInteger(0));
@@ -114,13 +114,13 @@ public class ConsumerHandlers {
                             reponse.put("UserId", jsonArray.getInteger(7));
                             reponse.put("Username", jsonArray.getString(8));
                             reponse.put("Email", jsonArray.getString(9));
-                            reponse.put("Playername", jsonArray.getString(11));
-                            reponse.put("PlayerXP", jsonArray.getInteger(13));
-                            reponse.put("PlayerLvl", jsonArray.getInteger(14));
-                            reponse.put("HeroNr", jsonArray.getInteger(15));
-                            reponse.put("HeroName", jsonArray.getString(16));
+                            reponse.put("Playername", jsonArray.getString(12));
+                            reponse.put("PlayerXP", jsonArray.getInteger(14));
+                            reponse.put("PlayerLvl", jsonArray.getInteger(15));
+                            reponse.put("HeroNr", jsonArray.getInteger(16));
+                            reponse.put("HeroName", jsonArray.getString(17));
                         }
-                        System.out.println("result!!! " + reponse);
+//                        System.out.println("result    !!! " + reponse);
                     } else {
                     Logger.warn("Could not get info from DB: ", res.cause());
                     }

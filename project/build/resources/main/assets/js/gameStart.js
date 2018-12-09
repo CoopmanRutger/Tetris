@@ -15,7 +15,6 @@ function init() {
 
 function getFactionInfoFromDB() {
     let playerName = sessionStorage.getItem('PlayerName');
-    console.log(playerName);
 
     eb.send("tetris-21.socket.faction", playerName , function (error, reply) {
         if (error) {

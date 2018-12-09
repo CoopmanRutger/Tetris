@@ -34,14 +34,10 @@ function f() {
         let playerInfo = JSON.parse(message.body);
 
         console.log(playerInfo);
-        ResetPlayerInSession();
         SetPlayerInSession(playerInfo)
     });
 }
 
-function ResetPlayerInSession(){
-    sessionStorage.clear();
-}
 
 function SetPlayerInSession(player) {
     console.log(player);
@@ -60,6 +56,6 @@ function SetPlayerInSession(player) {
 function printPlayerName(){
     console.log(sessionStorage.getItem('PlayerName'));
     let playerName = sessionStorage.getItem('PlayerName');
-    document.querySelector("main header p").innerHTML = playerName;
+    document.querySelector("main header p").innerHTML = 'Welkom ' + playerName;
     document.querySelector("main header p").style.color = "white";
 }

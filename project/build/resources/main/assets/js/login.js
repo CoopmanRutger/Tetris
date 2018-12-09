@@ -8,10 +8,15 @@ document.addEventListener("DOMContentLoaded", init);
 let loginAllowed = false;
 
 function init() {
+    ResetPlayerInSession();
     eb.onopen = function() {
         console.log("opened");
     };
     document.querySelector("#Login").addEventListener("click", checkValues);
+}
+
+function ResetPlayerInSession(){
+    sessionStorage.clear();
 }
 
 function checkValues(e) {

@@ -63,7 +63,7 @@ public class GameController extends AbstractVerticle {
    public void gamePlay(){
 
 //        String usernamePlayer1 = username1;
-        String usernamePlayer2 = username2;
+//        String usernamePlayer2 = username2;
 
         Trigger trigger1 = Trigger.SCORE;
         Trigger trigger2 = Trigger.TIME;
@@ -78,46 +78,46 @@ public class GameController extends AbstractVerticle {
         hero1 = new Hero("Mathias de boer");
         hero2 = new Hero("Jillke de ridder");
 
-       player1 = new Player(username1);
-       player2 = new Player(username2);
+//       player1 = new Player(username1);
+//       player2 = new Player(username2);
+       player1 = new Player("Rutger123");
+       player2 = new Player("louis");
 
+        player1.setHero(hero1);
+        player2.setHero(hero2);
 
-        //player1.setHero(hero1);
-        //player2.setHero(hero2);
+        Ability ability1 = new AbilityLvl1("destruction");
+        Ability ability2 = new AbilityLvl2("tornado");
+        Ability ability3 = new AbilityLvl3("spook");
 
-//
-//        Ability ability1 = new AbilityLvl1("destruction");
-//        Ability ability2 = new AbilityLvl2("tornado");
-//        Ability ability3 = new AbilityLvl3("spook");
-//
-//        hero1.addAbility(ability1);
-//        hero1.addAbility(ability2);
-//        hero2.addAbility(ability1);
-//        hero2.addAbility(ability3);
-//
-//        Info info = new Info();
-//        Gold gold = new Gold();
-//        gold.addGold(500);
-//
-//        Lifepoints lifepoints = new Lifepoints();
-//
-//        Info info1 = new Info();
-//
-//        player1.setInfo(info);
-//        player2.setInfo(info1);
-//
-//        Playfields playfields = new Playfields();
-//
-//        Playfield playfield = new Playfield();
-//
-//        PointsForAbilities points = new PointsForAbilities();
-//        points.addPoints(200);
-//        playfield.getPoints().addPoints(points.getPoints());
-//
-//        playfields.addPlayfield(playfield);
-//
-//        player1.setPlayfields(playfields);
-//
+        hero1.addAbility(ability1);
+        hero1.addAbility(ability2);
+        hero2.addAbility(ability1);
+        hero2.addAbility(ability3);
+
+        Info info = new Info();
+        Gold gold = new Gold();
+        gold.addGold(500);
+
+        Lifepoints lifepoints = new Lifepoints();
+
+        Info info1 = new Info();
+
+        player1.setInfo(info);
+        player2.setInfo(info1);
+
+        Playfields playfields = new Playfields();
+
+        Playfield playfield = new Playfield();
+
+        PointsForAbilities points = new PointsForAbilities();
+        points.addPoints(200);
+        playfield.getPoints().addPoints(points.getPoints());
+
+        playfields.addPlayfield(playfield);
+
+        player1.setPlayfields(playfields);
+
 
         game = new Game(events);
         game.addPlayer(player1);

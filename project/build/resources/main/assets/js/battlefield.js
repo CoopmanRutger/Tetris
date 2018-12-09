@@ -37,65 +37,42 @@ function init() {
     addEventHandler("#keepplaying", "click", keepPlaying);
 }
 
+function setGamePlay(infoBackend) {
+
+    console.log(infoBackend);
+    setPlayer1(infoBackend.players[0]);
+    setPlayer2(infoBackend.players[1]);
+
+    setEvents(infoBackend.events);
+
+
+
+    // console.log(infoBackend);
+
+
+}
 
 function setPlayer1(player) {
     console.log(player);
-    console.log(player.hero);
 
-
+    game.fieldPlayer.name = sessionStorage.getItem("PlayerName");
     select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
-    console.log(select('#player1name').innerHTML);
-
-
-    console.log()
 }
+
 function setPlayer2(player) {
-    console.log(player)
+    console.log(player);
+    game.fieldPlayer2.name = 'louis';
+    select('#player2name').innerHTML = 'louis';
 }
 
 function setEvents(events) {
     console.log(events);
+    console.log(events.events);
+    console.log(events.events[0].name);
+    console.log(events.events[1].name);
 }
 
-function setGamePlay(infoBackend) {
 
-    setPlayer1(infoBackend.players[0]);
-    setPlayer2(infoBackend.players[1]);
-    setEvents(infoBackend.events);
-
-    // console.log(infoBackend);
-
-
-
-    // game.fieldPlayer.name = players[0].name;
-    // select('#player1name').innerHTML = players[0].name;
-    // game.fieldPlayer2.name = players[1].name;
-    // select('#player2name').innerHTML = players[1].name;
-    // select('#scoreplayer1').innerHTML = 0;
-    // select('#scoreplayer2').innerHTML = 0;
-    // let linesp2 = 6;
-    // let linesp1 = 2;
-    // setWidth(linesp1, "#abilty1p1");
-    // setWidth(linesp1, "#abilty2p1");
-    // setWidth(linesp2, "#abilty1p2");
-    // setWidth(linesp2, "#abilty2p2");
-    // console.log(players[0].hero.abilitySet[0]);
-    // select('#abilty1p1').innerHTML = players[0].hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
-    //     + "class='key' title='key1' alt='key1'>";
-    // select('#abilty2p1').innerHTML = players[0].hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
-    //     "class='key' title='key2' alt='key2'>";
-    // select('#abilty1p2').innerHTML = players[1].hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
-    //     "class='key' title='key9' alt='key9'>";
-    // select('#abilty2p2').innerHTML = players[1].hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
-    //     "class='key' title='key0' alt='key0'>";
-    // select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + players[0].hero.name + '.png">';
-    // select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + players[1].hero.name + '.png">';
-
-    // console.log(infoBackend);
-
-    // console.log(game.fieldPlayer2.name);
-
-}
 
 function setWidth(lines, id) {
     let multiply = 0 ;
@@ -112,12 +89,6 @@ function setWidth(lines, id) {
     } else {
         select(id).style.width = 100 + "%";
     }
-}
-
-function updateGame(updateStuff) {
-    document.querySelector('#scoreplayer1').innerHTML = 0;
-    document.querySelector('#scoreplayer2').innerHTML = 0;
-    // todo
 }
 
 function registers() {
@@ -219,17 +190,17 @@ function startGame() {
             playerDrop(game.fieldPlayer, game.context, game.area);
             playerDrop(game.fieldPlayer2, game.context2, game.area2)
         }
-        if (game.gameRun && game.gameRun2) {
-            draw(game.fieldPlayer, game.context, game.area);
-            draw(game.fieldPlayer2, game.context2, game.area2)
-        }
-        else if (!game.gameRun) {
+        if (!game.gameRun) {
             youLose(game.context);
             youWon(game.context2);
         }
         else if (!game.gameRun2) {
             youLose(game.context2);
             youWon(game.context);
+        }
+        else if (game.gameRun && game.gameRun2) {
+                draw(game.fieldPlayer, game.context, game.area);
+                draw(game.fieldPlayer2, game.context2, game.area2);
         }
     }, 10);
 }
@@ -285,6 +256,8 @@ function makeMatrix(width, height) {
 }
 
 function points(player, area) {
+
+    let addScore = 0;
     let rowCount = 1;
     outer:for (let y = area.length - 1; y > 0; --y) {
         for (let x = 0; x < area[y].length; ++x) {
@@ -295,21 +268,78 @@ function points(player, area) {
         const row = area.splice(y, 1)[0].fill(0);
         area.unshift(row);
         ++y;
-        // player.score += rowCount * 100;
-        let addScore = rowCount * 100;
-        rowCount *= 2;
 
-        let object = JSON.parse('{ "score":"' + addScore + '","player":"' + player.name + '"}');
+        addScore = rowCount * 100;
+        rowCount *= 2;
+        console.log(addScore);
+
+        let object = JSON.stringify({score: addScore, player: player.name});
         console.log(object);
-        eb.send("tetris.infoBackend.updateGame", object, function (error, reply) {
+        eb.send("tetris-21.socket.updateScore", object, function (error, reply) {
             if (error) {
                 console.log(error)
             }
             console.log(reply.body);
+            let info = JSON.parse(reply.body);
+            console.log(info);
+            addScoreToPlayer(player, info)
 
         });
     }
 }
+
+function addScoreToPlayer(player, info) {
+    console.log(player);
+
+    if (player.name === game.fieldPlayer2.name ){
+
+        let score = select('#scoreplayer2').innerHTML;
+        select('#scoreplayer2').innerHTML = parseInt(score) + info.addToScore;
+        player.score += info.addToScore;
+
+        let numberOfLines = parseInt(select('#linesPlayer2 p span').innerHTML) + info.addlines;
+        select('#linesPlayer2 p span').innerHTML = numberOfLines;
+        abilityBars(player, numberOfLines);
+
+
+    } else if(player.name === game.fieldPlayer.name){
+
+        let score = select('#scoreplayer1').innerHTML;
+        select('#scoreplayer1').innerHTML = parseInt(score) + info.addToScore;
+        player.score += info.addToScore;
+
+        let numberOfLines = parseInt(select('#linesPlayer1 p span').innerHTML)+ info.addlines;
+        select('#linesPlayer1 p span').innerHTML = numberOfLines;
+        abilityBars(player, numberOfLines);
+
+    }
+
+}
+
+function abilityBars(player, lines){
+    let linesp = lines;
+    if(player.name === game.fieldPlayer.name ){
+        setWidth(linesp, "#abilty1p1");
+        setWidth(linesp, "#abilty2p1");
+    } else {
+        setWidth(linesp, "#abilty1p2");
+        setWidth(linesp, "#abilty2p2");
+    }
+
+    // select('#abilty1p1').innerHTML = players[0].hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
+    //     + "class='key' title='key1' alt='key1'>";
+    // select('#abilty2p1').innerHTML = players[0].hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
+    //     "class='key' title='key2' alt='key2'>";
+    // select('#abilty1p2').innerHTML = players[1].hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
+    //     "class='key' title='key9' alt='key9'>";
+    // select('#abilty2p2').innerHTML = players[1].hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
+    //     "class='key' title='key0' alt='key0'>";
+    // select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + players[0].hero.name + '.png">';
+    // select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + players[1].hero.name + '.png">';
+
+}
+
+
 
 function collide(player, area) {
     const [m, o] = [player.matrix, player.pos];
@@ -374,7 +404,6 @@ function playerDrop(player, context, area) {
         merge(player, area);
         points(player, area);
         nextBlock(player.name);
-        updateScore(player, context);
     }
 }
 
@@ -405,19 +434,10 @@ function draw(player, context, area) {
     context.fillStyle = "#000000";
     context.fillRect(0, 0, player2.width, player2.height);
 
-    updateScore(player, context);
     drawMatrix(area, {x: 0, y: 0}, context);
     if (player.matrix != null) {
         drawMatrix(player.matrix, player.pos, context);
     }
-}
-
-function updateScore(player, context) {
-    context.font = "bold 1px Comic Sans MS";
-    context.fillStyle = "#ffffff";
-    context.textAlign = "left";
-    context.textBaseline = "top";
-    context.fillText("Score:" + player.score, 0.2, 0);
 }
 
 function resultscore(context) {
