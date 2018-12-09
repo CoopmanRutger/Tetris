@@ -31,8 +31,8 @@ function checkValues(e) {
 function mayPersonLogin(username) {
     if (loginAllowed === "true") {
         let loginValues = { username: username, login: loginAllowed};
-        localStorage.setItem("login", JSON.stringify(loginValues));
-        window.location.href = "gameStart.html";
+        sessionStorage.setItem("login", JSON.stringify(loginValues));
+        window.location.href = "homescreen.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";
         document.querySelector("#errorMessage").innerHTML = "Cannot sign in, username or password is wrong.";
