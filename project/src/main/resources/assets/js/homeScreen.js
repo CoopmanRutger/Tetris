@@ -16,7 +16,8 @@ function init() {
 }
 
 function f() {
-    let username = "Rutger";
+    console.log(JSON.parse(sessionStorage.getItem('login')).username);
+    let username = JSON.parse(sessionStorage.getItem('login')).username;
     //Louis / Rutger / Jis -> zonder faction
 
     eb.send("tetris-21.socket.homescreen", username , function (error, reply) {
