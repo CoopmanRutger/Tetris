@@ -74,6 +74,7 @@ function goToFaction(e) {
 
 function goToClan(e) {
     e.preventDefault();
+    let chosenFaction = sessionStorage.getItem('FactionName');
     if (chosenFaction === null) {
         window.location.href = "chooseFaction.html";
     } else {

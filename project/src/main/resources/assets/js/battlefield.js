@@ -43,31 +43,42 @@ function setPlayer1(player) {
     console.log(player.hero);
 
 
+    select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
+    console.log(select('#player1name').innerHTML);
 
 
+    console.log()
+}
+function setPlayer2(player) {
+    console.log(player)
 }
 
+function setEvents(events) {
+    console.log(events);
+}
 
 function setGamePlay(infoBackend) {
-    let players = infoBackend.players;
-    console.log(infoBackend.players[0]);
 
     setPlayer1(infoBackend.players[0]);
+    setPlayer2(infoBackend.players[1]);
+    setEvents(infoBackend.events);
+
+    // console.log(infoBackend);
 
 
 
-    game.fieldPlayer.name = players[0].name;
-    select('#player1name').innerHTML = players[0].name;
-    game.fieldPlayer2.name = players[1].name;
-    select('#player2name').innerHTML = players[1].name;
-    select('#scoreplayer1').innerHTML = 0;
-    select('#scoreplayer2').innerHTML = 0;
-    let linesp2 = 6;
-    let linesp1 = 2;
-    setWidth(linesp1, "#abilty1p1");
-    setWidth(linesp1, "#abilty2p1");
-    setWidth(linesp2, "#abilty1p2");
-    setWidth(linesp2, "#abilty2p2");
+    // game.fieldPlayer.name = players[0].name;
+    // select('#player1name').innerHTML = players[0].name;
+    // game.fieldPlayer2.name = players[1].name;
+    // select('#player2name').innerHTML = players[1].name;
+    // select('#scoreplayer1').innerHTML = 0;
+    // select('#scoreplayer2').innerHTML = 0;
+    // let linesp2 = 6;
+    // let linesp1 = 2;
+    // setWidth(linesp1, "#abilty1p1");
+    // setWidth(linesp1, "#abilty2p1");
+    // setWidth(linesp2, "#abilty1p2");
+    // setWidth(linesp2, "#abilty2p2");
     // console.log(players[0].hero.abilitySet[0]);
     // select('#abilty1p1').innerHTML = players[0].hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
     //     + "class='key' title='key1' alt='key1'>";
@@ -80,9 +91,9 @@ function setGamePlay(infoBackend) {
     // select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + players[0].hero.name + '.png">';
     // select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + players[1].hero.name + '.png">';
 
-    console.log(infoBackend);
+    // console.log(infoBackend);
 
-    console.log(game.fieldPlayer2.name);
+    // console.log(game.fieldPlayer2.name);
 
 }
 
@@ -149,9 +160,6 @@ function backgroundStuff() {
     const move = 1;
 
 
-
-
-
     document.addEventListener('keydown', function (e) {
         //links Q
         if (e.keyCode === 81) {
@@ -196,8 +204,6 @@ function backgroundStuff() {
         //     }
         // });
     })
-
-
 }
 
 function startGame() {

@@ -32,24 +32,29 @@ function getFactionInfoFromDB() {
             console.log(error);
         }
 
-        console.log(message.body);
-        let faction = message.body;
-
-        SetFactionInSession(faction);
+        // console.log(message.body);
+        let player = message.body;
+        SetFactionInSession(player);
     });
 }
 
 
-function SetFactionInSession(faction) {
-    console.log(faction.userId);
+function SetFactionInSession(player) {
+    console.log(player);
 
-    sessionStorage.setItem('FactionNr', faction.factionNr);
-    sessionStorage.setItem('FactionName', faction.factionName);
-    sessionStorage.setItem('ClanNr', faction.clanNr);
-    sessionStorage.setItem('ClanName', faction.clanName);
-    sessionStorage.setItem('UserNr', faction.userNr);
-    sessionStorage.setItem('Username', faction.username);
-    sessionStorage.setItem('heroExp', player.heroExp);
+    sessionStorage.setItem('FactionNr', player.FactionNr);
+    sessionStorage.setItem('FactionName', player.FactionName);
+    sessionStorage.setItem('ClanNr', player.ClanNr);
+    sessionStorage.setItem('ClanName', player.ClanName);
+
+    sessionStorage.setItem('UserId', player.UserId);
+    sessionStorage.setItem('Email', player.Email);
+    sessionStorage.setItem('PlayerLvl', player.PlayerLvl);
+    sessionStorage.setItem('PlayerXp', player.PlayerXP);
+
+
+    sessionStorage.setItem('heroName', player.HeroName);
+
 
 }
 
