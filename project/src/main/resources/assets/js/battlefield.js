@@ -4,7 +4,7 @@
 let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 // let eb = new EventBus("http://172.31.27.58:8080/tetris/infoBackend");
 let game = {
-    gameRun: false, gameRun2: false, gameLoop: null,countdown: null, timer: 180, speed: 50,
+    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50,
     area: makeMatrix(12, 20),
     area2: makeMatrix(12, 20),
     context: player1.getContext("2d"),
@@ -31,30 +31,87 @@ function init() {
     };
     backgroundStuff();
     startGame();
-    countdown(game.timer)
+    countdown(game.timer);
+    addEventHandler("#openmodal", "click", openModal);
+    addEventHandler("body", "click", onModalClose);
+    addEventHandler("#keepplaying", "click", keepPlaying);
 }
 
 
+function setPlayer1(player) {
+    console.log(player);
+    console.log(player.hero);
+
+
+    select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
+    console.log(select('#player1name').innerHTML);
+
+
+    console.log()
+}
+function setPlayer2(player) {
+    console.log(player)
+}
+
+function setEvents(events) {
+    console.log(events);
+}
+
 function setGamePlay(infoBackend) {
-    game.fieldPlayer.name = infoBackend.players[0].name;
-    document.querySelector('#player1name').innerHTML = infoBackend.players[0].name;
-    game.fieldPlayer2.name = infoBackend.players[1].name;
-    document.querySelector('#player2name').innerHTML = infoBackend.players[1].name;
-    document.querySelector('#scoreplayer1').innerHTML = 0;
-    document.querySelector('#scoreplayer2').innerHTML = 0;
-    document.querySelector('#heroimgplayer1 p').innerHTML = infoBackend.players[0].hero.name;
-    document.querySelector('#heroimgplayer2 p').innerHTML = infoBackend.players[1].hero.name;
 
-    document.querySelector('#abilty1p1').innerHTML = infoBackend.players[0].hero.abilitySet[0].name;
-    document.querySelector('#abilty2p1').innerHTML = infoBackend.players[0].hero.abilitySet[1].name;
-    document.querySelector('#abilty1p2').innerHTML = infoBackend.players[1].hero.abilitySet[0].name;
-    document.querySelector('#abilty2p2').innerHTML = infoBackend.players[1].hero.abilitySet[1].name;
+    setPlayer1(infoBackend.players[0]);
+    setPlayer2(infoBackend.players[1]);
+    setEvents(infoBackend.events);
+
+    // console.log(infoBackend);
 
 
-    console.log(infoBackend);
 
-    console.log(game.fieldPlayer2.name);
+    // game.fieldPlayer.name = players[0].name;
+    // select('#player1name').innerHTML = players[0].name;
+    // game.fieldPlayer2.name = players[1].name;
+    // select('#player2name').innerHTML = players[1].name;
+    // select('#scoreplayer1').innerHTML = 0;
+    // select('#scoreplayer2').innerHTML = 0;
+    // let linesp2 = 6;
+    // let linesp1 = 2;
+    // setWidth(linesp1, "#abilty1p1");
+    // setWidth(linesp1, "#abilty2p1");
+    // setWidth(linesp2, "#abilty1p2");
+    // setWidth(linesp2, "#abilty2p2");
+    // console.log(players[0].hero.abilitySet[0]);
+    // select('#abilty1p1').innerHTML = players[0].hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
+    //     + "class='key' title='key1' alt='key1'>";
+    // select('#abilty2p1').innerHTML = players[0].hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
+    //     "class='key' title='key2' alt='key2'>";
+    // select('#abilty1p2').innerHTML = players[1].hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
+    //     "class='key' title='key9' alt='key9'>";
+    // select('#abilty2p2').innerHTML = players[1].hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
+    //     "class='key' title='key0' alt='key0'>";
+    // select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + players[0].hero.name + '.png">';
+    // select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + players[1].hero.name + '.png">';
 
+    // console.log(infoBackend);
+
+    // console.log(game.fieldPlayer2.name);
+
+}
+
+function setWidth(lines, id) {
+    let multiply = 0 ;
+    let maxVal = 0;
+    if (id === "#abilty1p1" || id === "#abilty1p2") {
+        multiply = 10;
+        maxVal = 10
+    } else if (id === "#abilty2p1" || id === "#abilty2p2") {
+        multiply = 5;
+        maxVal = 20;
+    }
+    if(0 <= lines < maxVal) {
+        select(id).style.backgroundSize = lines * multiply + "%";
+    } else {
+        select(id).style.width = 100 + "%";
+    }
 }
 
 function updateGame(updateStuff) {
@@ -79,7 +136,7 @@ function registers() {
     });
     eb.registerHandler("tetris-21.socket.game", function (error, message) {
         setGamePlay(JSON.parse(message.body));
-     });
+    });
 
 }
 
@@ -104,28 +161,38 @@ function backgroundStuff() {
 
 
     document.addEventListener('keydown', function (e) {
+        //links Q
         if (e.keyCode === 81) {
             playerMove(game.fieldPlayer, -move, game.area);
         }
-        else if (e.keyCode === 37) {
-            playerMove(game.fieldPlayer2, -move, game.area2);
-        }
-        else if (e.keyCode === 68) {
-            playerMove(game.fieldPlayer, +move, game.area);
-        }
-        else if (e.keyCode === 39) {
-            playerMove(game.fieldPlayer2, +move, game.area2);
-        }
-
-        else if (e.keyCode === 83) {
-            playerDrop(game.fieldPlayer, game.context, game.area);
-        }
-        else if (e.keyCode === 40) {
-            playerDrop(game.fieldPlayer2, game.context2, game.area2);
-        }
+        // draai Z
         else if (e.keyCode === 90) {
             playerRotate(game.fieldPlayer, -move, game.area);
         }
+        // Beneden S
+        else if (e.keyCode === 83) {
+            playerDrop(game.fieldPlayer, game.context, game.area);
+        }
+        // rechts D
+        else if (e.keyCode === 68) {
+            playerMove(game.fieldPlayer, +move, game.area);
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        // links
+        if (e.keyCode === 37) {
+            playerMove(game.fieldPlayer2, -move, game.area2);
+        }
+        // rechts
+        else if (e.keyCode === 39) {
+            playerMove(game.fieldPlayer2, +move, game.area2);
+        }
+        // beneden
+        else if (e.keyCode === 40) {
+            playerDrop(game.fieldPlayer2, game.context2, game.area2);
+        }
+        // draaien
         else if (e.keyCode === 38) {
             playerRotate(game.fieldPlayer2, -move, game.area2);
         }
@@ -136,7 +203,7 @@ function backgroundStuff() {
         //         console.log(error)
         //     }
         // });
-    });
+    })
 }
 
 function startGame() {
@@ -175,7 +242,7 @@ function countdown(durationInSeconds) {
         seconds = parseInt(timer % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + (seconds-1) : seconds;
+        seconds = seconds < 10 ? "0" + (seconds - 1) : seconds;
 
         document.querySelector("#time").textContent = minutes + ":" + seconds;
 
@@ -232,7 +299,7 @@ function points(player, area) {
         let addScore = rowCount * 100;
         rowCount *= 2;
 
-        let object = JSON.parse('{ "score":"'+ addScore +'","player":"'+ player.name +'"}');
+        let object = JSON.parse('{ "score":"' + addScore + '","player":"' + player.name + '"}');
         console.log(object);
         eb.send("tetris.infoBackend.updateGame", object, function (error, reply) {
             if (error) {
@@ -270,7 +337,7 @@ function merge(player, area) {
 function rotate(matrix, dir) {
     for (let y = 0; y < matrix.length; ++y) {
         for (let x = 0; x < y; ++x) {
-            [matrix[x][y], matrix[y][x]] = [ matrix[y][x], matrix[x][y]]
+            [matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]]
         }
     }
     if (dir > 0) {

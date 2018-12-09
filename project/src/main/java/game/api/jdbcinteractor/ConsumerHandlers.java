@@ -14,14 +14,18 @@ public class ConsumerHandlers {
     private JDBCClient jdbcClient;
     private GameController controller;
 
-    private final String GET_FACTION = "SELECT * FROM faction " +
-            "Left JOIN clans ON faction.factionNr = clans.factionNr " +
-            "Left JOIN clan_users ON clans.clanNr = clan_users.clanNr " +
-            "WHERE clan_users.usernr = (SELECT users.userId FROM users " +
-                "left join player on users.userid = player.userid WHERE playerName = ?)";
+        private final String GET_BASIC = "SELECT * FROM factions " +
+                "Left join clans on factions.factionnr = clans.factionnr " +
+                "Left join factions_users ON factions.factionNr= factions_users.factionNr " +
+                "Left Join users on factions_users.userid = users.userid " +
+                "Left Join players on users.userid = players.userid " +
+                "Left Join Heroes on players.heronr = heroes.heronr " +
+                " WHERE playername = ? ";
+
     private final String CHOOSE_FACTION = "INSERT INTO clan_user(clanNr, userId) VALUES (?, ?)";
+
     private final String GET_USER = "select * from users " +
-                "left join player on users.userid = player.userid " +
+                "left join players on users.userid = players.userid " +
                 "WHERE username = ?";
     private final String MAKE_USER = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
     private final String GET_CLAN = "SELECT * FROM clans WHERE name = ?";
@@ -47,7 +51,7 @@ public class ConsumerHandlers {
                     if (res.succeeded()) {
                         ResultSet rs = res.result();
 
-                        System.out.println(rs.getResults().get(0));
+                        System.out.println("result" + rs.getResults().get(0));
                         player.put("playerId", rs.getResults().get(0).getInteger(0));
                         player.put("username", rs.getResults().get(0).getString(1));
                         player.put("email", rs.getResults().get(0).getString(2));
@@ -93,26 +97,35 @@ public class ConsumerHandlers {
     public void getFaction(String playerName, EventBus eb) {
         JsonObject reponse = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(playerName)};
-        jdbcClient.queryWithParams(GET_FACTION, params[0],
+        jdbcClient.queryWithParams(GET_BASIC, params[0],
                 res -> {
                     if (res.succeeded()) {
                         ResultSet rs = res.result();
                         System.out.println("rs: " + rs.getResults());
-                        reponse.put("faction", rs.getResults().get(0));
                         JsonArray jsonArray = rs.getResults().get(0);
+                        System.out.println(rs.getColumnNames());
+                        System.out.println(jsonArray);
 
                         if (jsonArray.getString(1) != null) {
-                            reponse.put("factionName",jsonArray.getString(1));
-                            System.out.println(jsonArray.getString(1));
-                        } else {
-                            reponse.put("factionName","none");
+                            reponse.put("FactionNr", jsonArray.getInteger(0));
+                            reponse.put("FactionName", jsonArray.getString(1));
+                            reponse.put("ClanNr", jsonArray.getInteger(2));
+                            reponse.put("ClanName", jsonArray.getString(3));
+                            reponse.put("UserId", jsonArray.getInteger(7));
+                            reponse.put("Username", jsonArray.getString(8));
+                            reponse.put("Email", jsonArray.getString(9));
+                            reponse.put("Playername", jsonArray.getString(11));
+                            reponse.put("PlayerXP", jsonArray.getInteger(13));
+                            reponse.put("PlayerLvl", jsonArray.getInteger(14));
+                            reponse.put("HeroNr", jsonArray.getInteger(15));
+                            reponse.put("HeroName", jsonArray.getString(16));
                         }
                         System.out.println("result!!! " + reponse);
                     } else {
                     Logger.warn("Could not get info from DB: ", res.cause());
                     }
 
-                    eb.send("tetris-21.socket.faction.get", reponse.getString("factionName"));
+                    eb.send("tetris-21.socket.faction.get", reponse);
                 });
     }
 

@@ -2,7 +2,7 @@
 
 /* global EventBus */
 let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-let faction;
+
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -14,11 +14,17 @@ function init() {
 
 function chooseFaction(e) {
     e.preventDefault();
-    faction = e.target.alt;
-    sendFactionToServer();
+
+    let faction = e.target.alt;
+    sessionStorage.setItem('FactionName', faction);
+    sendFactionToServer(faction);
+    
+    if (sessionStorage.getItem('FactionName') != null){
+        window.location.href = "faction_clan.html";
+    }
 }
 
-function sendFactionToServer() {
+function sendFactionToServer(faction) {
     eb.send("tetris-21.socket.faction.choose", faction, function (error, reply) {
         if (error) {
             console.log(error);
