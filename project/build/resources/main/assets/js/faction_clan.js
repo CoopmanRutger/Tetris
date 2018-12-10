@@ -11,8 +11,18 @@ function init() {
 }
 
 function getFactionFromDB() {
-    // TODO: get faction from database.
+    let factionName = sessionStorage.getItem('FactionName').replace(" ","");
+
+    let html = '<img src="../../images/' + factionName + '.png" alt="'
+            + sessionStorage.getItem('FactionName')
+            + '_img" title="' + sessionStorage.getItem('FactionName') + '">';
+
+    select("#clandetails div").innerHTML = html;
 }
+
+
+
+
 
 function setTitle() {
     if (isHidden("#faction")) {

@@ -40,16 +40,17 @@ public class Routes extends AbstractVerticle {
 //        homescreen
         eb.consumer("tetris-21.socket.homescreen",this::getPlayerName);
 
+//        shop get gold
+        eb.consumer("tetris-21.socket.gold", this::getGold);
 
-        // faction yes/no
-        eb.consumer("tetris-21.socket.faction", this::getFaction);
-
+//        gameStart
+        eb.consumer("tetris-21.socket.gameStart.faction", this::getFaction);
 
 //        choose faction
         eb.consumer("tetris-21.socket.faction.choose", this::chooseFaction);
 
-//        gameStart
-//        eb.consumer()
+
+
 
 
 //        playfield
@@ -68,6 +69,14 @@ public class Routes extends AbstractVerticle {
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
+    }
+
+    private void getGold(Message message) {
+        System.out.println(message.body());
+        int UserId = (int) message.body();
+        Database.getDB().getConsumerHandlers(controller).getGold(UserId, eb);
+
+        message.reply("I will get the gold :D");
     }
 
     private void updateScore(Message message) {
@@ -119,22 +128,25 @@ public class Routes extends AbstractVerticle {
     }
 
     private void getFaction(Message message) {
-        String playername = message.body().toString();
-        System.out.println(playername);
-        message.reply(playername);
+        int playerId = (int) message.body();
+        System.out.println(playerId);
+        message.reply("going to look for " + playerId);
 
         Database.getDB()
                 .getConsumerHandlers(controller)
-                .getFaction(playername, eb);
+                .getBasic(playerId, eb);
 
     }
 
 
     public void chooseFaction(Message message) {
-        String faction = message.body().toString();
-        System.out.println(faction);
-//        TODO: pass faction to DB.
-        message.reply(faction);
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        System.out.println(userMessage);
+        int factionId = userMessage.getInteger("factionId");
+        int userId = Integer.parseInt(userMessage.getString("userID"));
+
+        Database.getDB().getConsumerHandlers(controller).insertFaction( factionId, userId, eb);
+        message.reply("Lets add" + factionId + " and " + userId);
     }
 
 

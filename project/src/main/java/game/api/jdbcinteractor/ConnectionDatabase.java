@@ -42,7 +42,7 @@ public class ConnectionDatabase extends AbstractVerticle {
                             "create table if not exists heroes(heroNr int not null primary key auto_increment,name varchar(40))engine=InnoDB;" +
                             "create table if not exists events (eventNr int not null primary key auto_increment,name varchar(40),eventTrigger varchar(20))engine=InnoDB;" +
                             "create table if not exists blocks (blockNr int not null primary key auto_increment,typeOfBlock varchar(50))engine=InnoDB;" +
-                            "create table if not exists users (userId int not null primary key auto_increment, userName varchar(40), email varchar(100), password varchar(200))engine=InnoDB;" +
+                            "create table if not exists users (userId int not null primary key auto_increment, userName varchar(40), email varchar(100), password varchar(200), gold int not null ) engine=InnoDB;" +
                             "create table if not exists abilities (abilityNr int not null primary key auto_increment,name varchar(40),startValue int not null,level int)engine=InnoDB;" +
                             "create table if not exists clans (clanNr int not null primary key,name varchar(50),factionNr int not null,constraint fk_factionNr4 foreign key (factionNr) references factions(factionNr))engine=InnoDB;" +
                             "create table if not exists heroes_abilities (heroNr int not null,abilityNr int not null,constraint pk_heroesAbilities primary key (heroNr, abilityNr), constraint fk_heroNr1 foreign key (heroNr) references heroes(heroNr),constraint fk_abilityNr1 foreign key (abilityNr) references abilities(abilityNr))engine=InnoDB;" +

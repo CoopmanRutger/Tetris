@@ -14,9 +14,9 @@ function init() {
 }
 
 function getFactionInfoFromDB() {
-    let playerName = sessionStorage.getItem('PlayerName');
-
-    eb.send("tetris-21.socket.faction", playerName , function (error, reply) {
+    let userId = parseInt(sessionStorage.getItem('UserId'));
+    console.log(userId);
+    eb.send("tetris-21.socket.gameStart.faction", userId , function (error, reply) {
         if (error) {
             console.log(error)
         }
@@ -25,13 +25,12 @@ function getFactionInfoFromDB() {
 
 
 
-
-    eb.registerHandler("tetris-21.socket.faction.get", function (error, message) {
+    eb.registerHandler("tetris-21.socket.gameStart.faction.get", function (error, message) {
         if (error) {
             console.log(error);
         }
 
-        // console.log(message.body);
+        console.log(message.body);
         let player = message.body;
         SetFactionInSession(player);
     });
@@ -40,31 +39,16 @@ function getFactionInfoFromDB() {
 
 function SetFactionInSession(player) {
     console.log(player);
-
     sessionStorage.setItem('FactionNr', player.FactionNr);
     sessionStorage.setItem('FactionName', player.FactionName);
     sessionStorage.setItem('ClanNr', player.ClanNr);
     sessionStorage.setItem('ClanName', player.ClanName);
-
-    sessionStorage.setItem('UserId', player.UserId);
-    sessionStorage.setItem('Email', player.Email);
-    sessionStorage.setItem('PlayerLvl', player.PlayerLvl);
-    sessionStorage.setItem('PlayerXp', player.PlayerXP);
-
-
-    sessionStorage.setItem('heroName', player.HeroName);
-
-
 }
-
-
-
-
 
 function goToFaction(e) {
     e.preventDefault();
     let chosenFaction = sessionStorage.getItem('FactionName');
-    if (chosenFaction === null) {
+    if (chosenFaction === "Dark") {
         window.location.href = "chooseFaction.html";
     } else {
         window.location.href = "faction_clan.html";
@@ -74,9 +58,10 @@ function goToFaction(e) {
 function goToClan(e) {
     e.preventDefault();
     let chosenFaction = sessionStorage.getItem('FactionName');
-    if (chosenFaction === null) {
+    if (chosenFaction === "Dark") {
         window.location.href = "chooseFaction.html";
     } else {
-        window.location.href = "faction_clan.html"; // TODO: make clan html page.
+        window.location.href = "faction_clan.html";
+        // TODO: make clan html page.
     }
 }

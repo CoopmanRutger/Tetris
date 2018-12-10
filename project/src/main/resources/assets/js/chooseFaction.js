@@ -12,20 +12,38 @@ function init() {
     };
 }
 
+function getUserId() {
+    return sessionStorage.getItem('UserId');
+}
+
+function getFactionId(factionName) {
+
+    if (factionName === "dark green"){
+        return 1;
+    } else if (factionName === "dark red"){
+        return 2;
+    } else if(factionName === "dark blue"){
+        return 3;
+    } else if (factionName === "dark yellow"){
+        return 4;
+    }
+}
+
 function chooseFaction(e) {
     e.preventDefault();
 
     let faction = e.target.alt;
     sessionStorage.setItem('FactionName', faction);
-    sendFactionToServer(faction);
-    
-    if (sessionStorage.getItem('FactionName') != null){
+    sendFactionToServer(getFactionId(faction), getUserId());
+
+    if (sessionStorage.getItem('FactionName') != 'Dark'){
         window.location.href = "faction_clan.html";
     }
 }
 
-function sendFactionToServer(faction) {
-    eb.send("tetris-21.socket.faction.choose", faction, function (error, reply) {
+function sendFactionToServer(faction, user) {
+    let object = {factionId: faction, userID: user};
+    eb.send("tetris-21.socket.faction.choose", JSON.stringify(object), function (error, reply) {
         if (error) {
             console.log(error);
         }

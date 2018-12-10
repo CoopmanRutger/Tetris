@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", init);
 
 
 function init() {
-
-    console.log("home screen");
     eb.onopen = function () {
         f();
     };
@@ -16,10 +14,7 @@ function init() {
 }
 
 function f() {
-    console.log(JSON.parse(sessionStorage.getItem('login')).username);
     let username = JSON.parse(sessionStorage.getItem('login')).username;
-    //Louis / Rutger / Jis -> zonder faction
-
     eb.send("tetris-21.socket.homescreen", username , function (error, reply) {
         if (error) {
             console.log(error)
@@ -38,24 +33,16 @@ function f() {
     });
 }
 
-
 function SetPlayerInSession(player) {
     console.log(player);
     sessionStorage.setItem('Username', player.username);
     sessionStorage.setItem('PlayerId', player.playerId);
     sessionStorage.setItem('PlayerName', player.playerName);
-    sessionStorage.setItem('HeroNr', player.heroNr);
-    sessionStorage.setItem('heroLvl', player.heroLvl);
-    sessionStorage.setItem('heroExp', player.heroExp);
-
-    // sessionStorage.removeItem('username')
+    sessionStorage.setItem('UserId', player.userId);
     printPlayerName();
 }
 
-
 function printPlayerName(){
-    console.log(sessionStorage.getItem('PlayerName'));
-    let playerName = sessionStorage.getItem('PlayerName');
-    document.querySelector("main header p").innerHTML = 'Welkom ' + playerName;
+    document.querySelector("main header p").innerHTML = 'Welkom ' + sessionStorage.getItem('Username');
     document.querySelector("main header p").style.color = "white";
 }
