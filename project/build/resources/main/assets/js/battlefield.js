@@ -39,7 +39,7 @@ function init() {
 
 function setGamePlay(infoBackend) {
 
-    console.log(infoBackend);
+    // console.log(infoBackend);
     setPlayer1(infoBackend.players[0]);
     setPlayer2(infoBackend.players[1]);
 
@@ -53,26 +53,37 @@ function setGamePlay(infoBackend) {
 }
 
 function setPlayer1(player) {
-    console.log(player);
+    // console.log(player);
 
     game.fieldPlayer.name = sessionStorage.getItem("PlayerName");
     select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
+    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
+        + "class='key' title='key1' alt='key1'>";
+    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
+        "class='key' title='key2' alt='key2'>";
+
+    select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
 }
 
 function setPlayer2(player) {
-    console.log(player);
-    game.fieldPlayer2.name = 'louis';
-    select('#player2name').innerHTML = 'louis';
+    // console.log(player);
+
+    game.fieldPlayer2.name = 'Patron';
+    select('#player2name').innerHTML = 'Patron';
+    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
+        "class='key' title='key9' alt='key9'>";
+    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
+        "class='key' title='key0' alt='key0'>";
+    select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
+
 }
 
 function setEvents(events) {
-    console.log(events);
-    console.log(events.events);
-    console.log(events.events[0].name);
-    console.log(events.events[1].name);
+    // console.log(events);
+    // console.log(events.events);
+    // console.log(events.events[0].name);
+    // console.log(events.events[1].name);
 }
-
-
 
 function setWidth(lines, id) {
     let multiply = 0 ;
@@ -115,22 +126,18 @@ function initialize() {
     registers();
 }
 
+function f(context, fieldPlayer, area) {
+    context.scale(20, 20);
+    nextBlock(fieldPlayer.name);
+    draw(fieldPlayer, context, area);
+}
+
+
 function backgroundStuff() {
-    const player1 = document.getElementById("player1");
-    const player2 = document.getElementById("player2");
-    game.context.scale(20, 20);
-    game.context2.scale(20, 20);
+    f(game.context, game.fieldPlayer, game.area);
+    f(game.context2, game.fieldPlayer2, game.area2);
 
-    draw(game.fieldPlayer, game.context, game.area);
-    draw(game.fieldPlayer2, game.context2, game.area2);
-
-    nextBlock(game.fieldPlayer.name);
-    nextBlock(game.fieldPlayer2.name);
-    draw(game.fieldPlayer, game.context, game.area);
-    draw(game.fieldPlayer2, game.context2, game.area);
     const move = 1;
-
-
     document.addEventListener('keydown', function (e) {
         //links Q
         if (e.keyCode === 81) {
@@ -271,26 +278,20 @@ function points(player, area) {
 
         addScore = rowCount * 100;
         rowCount *= 2;
-        console.log(addScore);
 
         let object = JSON.stringify({score: addScore, player: player.name});
-        console.log(object);
         eb.send("tetris-21.socket.updateScore", object, function (error, reply) {
             if (error) {
                 console.log(error)
             }
-            console.log(reply.body);
+            // console.log(reply.body);
             let info = JSON.parse(reply.body);
-            console.log(info);
             addScoreToPlayer(player, info)
-
         });
     }
 }
 
 function addScoreToPlayer(player, info) {
-    console.log(player);
-
     if (player.name === game.fieldPlayer2.name ){
 
         let score = select('#scoreplayer2').innerHTML;
@@ -311,7 +312,6 @@ function addScoreToPlayer(player, info) {
         let numberOfLines = parseInt(select('#linesPlayer1 p span').innerHTML)+ info.addlines;
         select('#linesPlayer1 p span').innerHTML = numberOfLines;
         abilityBars(player, numberOfLines);
-
     }
 
 }
@@ -325,18 +325,6 @@ function abilityBars(player, lines){
         setWidth(linesp, "#abilty1p2");
         setWidth(linesp, "#abilty2p2");
     }
-
-    // select('#abilty1p1').innerHTML = players[0].hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
-    //     + "class='key' title='key1' alt='key1'>";
-    // select('#abilty2p1').innerHTML = players[0].hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
-    //     "class='key' title='key2' alt='key2'>";
-    // select('#abilty1p2').innerHTML = players[1].hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
-    //     "class='key' title='key9' alt='key9'>";
-    // select('#abilty2p2').innerHTML = players[1].hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
-    //     "class='key' title='key0' alt='key0'>";
-    // select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + players[0].hero.name + '.png">';
-    // select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + players[1].hero.name + '.png">';
-
 }
 
 
@@ -531,10 +519,10 @@ function makePiece(type) {
         ];
     } else if (type === "b") {
         return [
-            [7, 0, 0, 0],
             [0, 7, 0, 0],
-            [0, 7, 0, 0],
-            [7, 0, 0, 0]
+            [7, 7, 0, 0],
+            [7, 7, 0, 0],
+            [0, 7, 0, 0]
         ];
         // TODO: eigen block draai niet correct
     }
