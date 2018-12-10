@@ -23,8 +23,8 @@ public class Routes extends AbstractVerticle {
         response.setChunked(true);
         response.write("hello tetris");
         response.end();
-
     }
+
     public void start(){
         eb = vertx.eventBus();
         addConsumers();
@@ -54,13 +54,59 @@ public class Routes extends AbstractVerticle {
 
 //        playfield
         eb.consumer("tetris-21.socket.gamestart",this::ImReady);
-//        eb.consumer("tetris.infoBackend.game",this::sendBack);
+        eb.consumer("tetris-21.socket.updateScore",this::updateScore);
 
-        eb.consumer("tetris-21.socket.updateGame",this::updateGame);
-        eb.consumer("tetris-21.socket.game",this::sendBlockOneByOne);
+//        eb.consumer("tetris-21.socket.updateGame",this::updateGame);
+//        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
 
+        // Login
+        eb.consumer("tetris-21.socket.login", this::login);
+
+        // Make login
+        eb.consumer("tetris-21.socket.login.make", this::makeLogin);
+
+        // May login
+        //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
     }
+
+    private void updateScore(Message message) {
+        System.out.println(message.body());
+        JsonObject json = new JsonObject();
+        json.put("playerName", "test");
+        json.put("addToScore", 100);
+        json.put("addlines", 1);
+        message.reply(json.encode());
+    }
+
+
+
+    private void login(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String username = userMessage.getString("username");
+        String password = userMessage.getString("password");
+
+        message.reply(username);
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .checkPassword(username, password, eb);
+    }
+
+    private void makeLogin(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String username = userMessage.getString("username");
+        String email = userMessage.getString("email");
+        String password = userMessage.getString("password");
+
+        message.reply(username);
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .makeUser(username, email, password, eb);
+    }
+
+//    private void mayLogin(Message message) {
+//        message.reply(login);
+//    }
 
     private void getPlayerName(Message message) {
         String username = message.body().toString();
@@ -95,19 +141,21 @@ public class Routes extends AbstractVerticle {
 
 
 
-    private void updateGame(Message message) {
-        JsonObject object =  new JsonObject(message.body().toString());
-
-        int number = game.getPlayers().indexOf(object.getString("player"));
-        player = game.getPlayers().get(number);
-        System.out.println(player.getPlayfields().getPlayfields().get(0));
-        player.getPlayfields().getPlayfields().get(0).updateScore(Integer.parseInt(object.getString("score")));
-        System.out.println(Integer.parseInt(object.getString("score")));
-        System.out.println(player.getPlayfields().getPlayfields().get(0));
+//    private void updateGame(Message message) {
+//        JsonObject object =  new JsonObject(message.body().toString());
+//
+//        System.out.println(object);
+//        int number = game.getPlayers().indexOf(object.getString("player"));
+//        player = game.getPlayers().get(number);
+//        System.out.println(player.getPlayfields().getPlayfields().get(0));
+//        player.getPlayfields().getPlayfields().get(0).updateScore(Integer.parseInt(object.getString("score")));
+//        System.out.println(Integer.parseInt(object.getString("score")));
+//        System.out.println(player.getPlayfields().getPlayfields().get(0));
 //        game.getPlayers().get(number).getPlayfields().getPlayfields().get(0).setScore();
+//
+//        message.reply(makeObjectJson(game));
+//    }
 
-        message.reply(makeObjectJson(game));
-    }
 
     private String makeObjectJson(Object info){
         ObjectMapper mapper = new ObjectMapper();
@@ -136,13 +184,6 @@ public class Routes extends AbstractVerticle {
         message.reply("okey");
 
     }
-
-//    private void sendBack(Message message) {
-//        System.out.println(message);
-//        JsonObject json = new JsonObject();
-//        json.put("yeet","yeet");
-//        message.reply(json.encode());
-//    }
 
     //
 //    public void battleFieldBlockPositioning() {
