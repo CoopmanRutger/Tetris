@@ -6,12 +6,14 @@ let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 document.addEventListener("DOMContentLoaded", init);
 
 let loginMade = false;
+let usernameExists = false;
 
 function init() {
     eb.onopen = function() {
         console.log("opened");
     };
     document.querySelector("#register").addEventListener("click", checkValues);
+    document.querySelector("#registerUsername").addEventListener("focusout", checkUsername);
 }
 
 function checkValues(e) {
@@ -25,6 +27,9 @@ function checkValues(e) {
     if (email === "" || username === "" || password === "" || repeatPassword === "") {
         errorMessageElement.style.display = "block";
         errorMessageElement.innerHTML = "Not all fields are filled out, please fill in all fields.";
+        return;
+    } else if (usernameExists === true){
+        errorMessageElement.innerHTML += "Username allready exists, try other username.";
         return;
     }
 
@@ -65,5 +70,32 @@ function registerMade() {
     } else {
         document.querySelector("#errorMessage").style.display = "block";
         document.querySelector("#errorMessage").innerHTML = "Could not make login.";
+    }
+}
+
+function checkUsername(e) {
+    e.preventDefault();
+    let username = document.querySelector("#registerUsername").value;
+    eb.send("tetris-21.socket.login.username", JSON.stringify({username: username}), function (error, reply) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(reply.body);
+    });
+    eb.registerHandler("tetris-21.socket.login.username.server", function (error, message) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(message.body);
+        usernameChecker(message.body);
+    })
+}
+
+function usernameChecker(exists) {
+    if (exists === "true") {
+        usernameExists = true;
+        document.querySelector("#userError").innerHTML = "Username does allready exists, use other username.";
+    } else {
+        usernameExists = false;
     }
 }

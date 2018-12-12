@@ -66,6 +66,9 @@ public class Routes extends AbstractVerticle {
         // Make login
         eb.consumer("tetris-21.socket.login.make", this::makeLogin);
 
+        // Check username
+        eb.consumer("tetris-21.socket.login.username", this::checkUsername);
+
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
@@ -88,8 +91,6 @@ public class Routes extends AbstractVerticle {
         message.reply(json.encode());
     }
 
-
-
     private void login(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
@@ -111,6 +112,15 @@ public class Routes extends AbstractVerticle {
         Database.getDB()
                 .getConsumerHandlers(controller)
                 .makeUser(username, email, password, eb);
+    }
+
+    private void checkUsername(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String username = userMessage.getString("username");
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .checkUsername(username, eb);
+        message.reply(username);
     }
 
 //    private void mayLogin(Message message) {
