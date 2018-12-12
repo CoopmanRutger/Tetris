@@ -12,6 +12,7 @@ function init() {
 
 function getFactionFromDB() {
     let factionName = sessionStorage.getItem('FactionName');
+    console.log(factionName);
     let factionNameString = factionName.replace(" ","");
 
     let html = '<img src="../../images/' + factionNameString + '.png" alt="'
