@@ -61,10 +61,6 @@ public class GameController extends AbstractVerticle {
     }
 
    public void gamePlay(){
-
-//        String usernamePlayer1 = username1;
-//        String usernamePlayer2 = username2;
-
         Trigger trigger1 = Trigger.SCORE;
         Trigger trigger2 = Trigger.TIME;
 

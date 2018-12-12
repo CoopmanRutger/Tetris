@@ -5,6 +5,9 @@ import game.player.Player;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author      Remote Access Tetris aka RAT
+ */
 public class Game {
 
     private List<Player> players;
@@ -45,5 +48,4 @@ public class Game {
                 + "players=" + players
                 + ", events=" + events + '}';
     }
-//    ctrl + shift + alt + u ==> uml schema maken  dan e of c
 }
