@@ -1,6 +1,6 @@
 #homebot {
     margin-bottom: 10px;
-    margin-top: 140px;
+    margin-top: 100px;
 }
 
 #homebot li {
@@ -14,5 +14,5 @@
 }
 
 #homebot li:first-child {
-    margin-left: 85%;
+    margin-left: 80%;
 }

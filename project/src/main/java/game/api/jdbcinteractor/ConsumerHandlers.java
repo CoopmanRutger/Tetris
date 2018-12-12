@@ -195,17 +195,17 @@ public class ConsumerHandlers {
                 passwordResult.put("canLogin", "false");
             }
             eb.send("tetris-21.socket.login.server", passwordResult.getString("canLogin"));
-            //login.setPassword(password.getString("password"));
         });
     }
 
-    public void makeUser(String username, String email, String password, EventBus eb) {
+    public void makeUser(String username, String email, String password, String playername, EventBus eb) {
         JsonObject couldLogin = new JsonObject();
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         final JsonArray[] params = {new JsonArray()
                 .add(username)
                 .add(email)
                 .add(hashedPassword)
+                .add(playername)
                 .add(0)};
         jdbcClient.queryWithParams(makeLogin, params[0], res -> {
             if (res.succeeded()) {
@@ -215,7 +215,25 @@ public class ConsumerHandlers {
                 Logger.warn("Could not make login: ", res.cause());
             }
             eb.send("tetris-21.socket.login.make.server", couldLogin.getString("register"));
-            //login.mayLogin(couldLogin.getString("login"));
+        });
+    }
+
+    public void checkUsername(String username, EventBus eb) {
+        JsonObject loginExists = new JsonObject();
+        final JsonArray[] params = {new JsonArray()
+                .add(username)};
+        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
+            if (res.succeeded()) {
+                ResultSet rs = res.result();
+                if (rs.getResults().size() == 0) {
+                    loginExists.put("username", "false");
+                } else {
+                    loginExists.put("username", "true");
+                }
+            } else {
+                Logger.warn("Could not check username: ", res.cause());
+            }
+            eb.send("tetris-21.socket.login.username.server", loginExists.getString("username"));
         });
     }
 
