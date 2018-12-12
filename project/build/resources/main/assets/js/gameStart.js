@@ -23,8 +23,6 @@ function getFactionInfoFromDB() {
         console.log(reply.body);
     });
 
-
-
     eb.registerHandler("tetris-21.socket.gameStart.faction.get", function (error, message) {
         if (error) {
             console.log(error);
@@ -48,7 +46,7 @@ function SetFactionInSession(player) {
 function goToFaction(e) {
     e.preventDefault();
     let chosenFaction = sessionStorage.getItem('FactionName');
-    if (chosenFaction === "Dark") {
+    if (chosenFaction === "dark") {
         window.location.href = "chooseFaction.html";
     } else {
         window.location.href = "faction_clan.html";
@@ -58,7 +56,7 @@ function goToFaction(e) {
 function goToClan(e) {
     e.preventDefault();
     let chosenFaction = sessionStorage.getItem('FactionName');
-    if (chosenFaction === "Dark") {
+    if (chosenFaction === "dark") {
         window.location.href = "chooseFaction.html";
     } else {
         window.location.href = "faction_clan.html";

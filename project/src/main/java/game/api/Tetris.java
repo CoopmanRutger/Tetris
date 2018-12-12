@@ -17,7 +17,7 @@ public class Tetris extends AbstractVerticle {
     @Override
     public void start() {
         final ConnectionDatabase connectionDatabase = new ConnectionDatabase();
-        Database.setDB((ConsumerHandlers) connectionDatabase.getConsumerHandler());
+        Database.setDB(connectionDatabase.getConsumerHandler());
         final GameController gameController = new GameController();
 
         final Vertx vertx = Vertx.vertx();
