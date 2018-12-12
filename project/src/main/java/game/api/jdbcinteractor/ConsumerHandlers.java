@@ -32,8 +32,8 @@ public class ConsumerHandlers {
     private final String MAKE_USER = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
     private final String GET_CLAN = "SELECT * FROM clans WHERE name = ?";
     private final String GET_PASSWORD = "SELECT password FROM users WHERE username = ?";
-    private final String MAKE_LOGIN = "INSERT INTO users (username, email, password, gold) " +
-                                        "VALUES (?, ?, ?, ?)";
+    private final String MAKE_LOGIN = "INSERT INTO users (username, email, password, playername, gold) " +
+                                        "VALUES (?, ?, ?, ?, ?)";
 
     private  final String MAKE_FACTION = "UPDATE FACTIONS_USERS " +
                 "SET Factionnr = ?, userid= ? WHERE userid = ?";
@@ -43,6 +43,7 @@ public class ConsumerHandlers {
 
     private final  String MAKE_RANDOM_FACTION = "insert into FACTIONS_USERS  ( factionnr, userid) " +
                 "values( 5, ?)";
+    private final String USEREXISTS = "select * from users where username = ?";
 
 
 
@@ -197,19 +198,20 @@ public class ConsumerHandlers {
                 passwordResult.put("canLogin", "false");
             }
             eb.send("tetris-21.socket.login.server", passwordResult.getString("canLogin"));
-            //login.setPassword(password.getString("password"));
         });
     }
 
-    public void makeUser(String username, String email, String password, EventBus eb) {
+    public void makeUser(String username, String email, String password, String playername, EventBus eb) {
         JsonObject couldLogin = new JsonObject();
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         final JsonArray[] params = {new JsonArray()
                 .add(username)
                 .add(email)
                 .add(hashedPassword)
+                .add(playername)
                 .add(0)};
         jdbcClient.queryWithParams(MAKE_LOGIN, params[0], res -> {
+            System.out.println(res);
             if (res.succeeded()) {
                 couldLogin.put("register", "true");
             } else {
@@ -217,7 +219,25 @@ public class ConsumerHandlers {
                 Logger.warn("Could not make login: ", res.cause());
             }
             eb.send("tetris-21.socket.login.make.server", couldLogin.getString("register"));
-            //login.mayLogin(couldLogin.getString("login"));
+        });
+    }
+
+    public void checkUsername(String username, EventBus eb) {
+        JsonObject loginExists = new JsonObject();
+        final JsonArray[] params = {new JsonArray()
+                .add(username)};
+        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
+            if (res.succeeded()) {
+                ResultSet rs = res.result();
+                if (rs.getResults().size() == 0) {
+                    loginExists.put("username", "false");
+                } else {
+                    loginExists.put("username", "true");
+                }
+            } else {
+                Logger.warn("Could not check username: ", res.cause());
+            }
+            eb.send("tetris-21.socket.login.username.server", loginExists.getString("username"));
         });
     }
 
