@@ -103,9 +103,11 @@ public class ConnectionDatabase extends AbstractVerticle {
                         + "('Joker', 1000, 1),('Slow', 500, 1), ('Freeze', 750, 1);"
 
                         + "insert into users ( username, email, password, gold)\n"
-                        + "values ('Rutger', 'rc@abc.be', 'test', 1150), ('Louis', 'Lo@abc.be', 'test', 380),"
-                        + "('Jef', 'jef@abc.be', 'test', 0), ('Jos', 'jos@abc.be', 'test', 10),"
-                        + "('Jus', 'jus@abc.be', 'test', 250);"
+                        + "values ('Rutger', 'rc@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 1150),"
+                        + "('Louis', 'Lo@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 380),"
+                        + "('Jef', 'jef@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 0),"
+                        + "('Jos', 'jos@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 10),"
+                        + "('Jus', 'jus@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 250);"
 
                         + "insert into factions ( name)\n"
                         + "values ('Darkgreen'), ('darkblue'), ('darkred'), ('darkyellow');\n"
