@@ -5,9 +5,15 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="11" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="sql changes:&#10;- drop all tables when starting the server;&#10;- add standard data to the database;">
+    <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="passwords have been correctly entered">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/api/jdbcinteractor/ConnectionDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/api/jdbcinteractor/ConnectionDatabase.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -166,7 +172,7 @@
           <entry key="html" value="222" />
           <entry key="java" value="1053" />
           <entry key="js" value="1020" />
-          <entry key="txt" value="179" />
+          <entry key="txt" value="217" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -175,7 +181,7 @@
           <entry key="HTML" value="230" />
           <entry key="JAVA" value="1053" />
           <entry key="JavaScript" value="1012" />
-          <entry key="PLAIN_TEXT" value="179" />
+          <entry key="PLAIN_TEXT" value="217" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -221,7 +227,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -238,8 +244,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+            <state relative-caret-position="201">
+              <caret line="106" column="60" lean-forward="true" selection-start-line="106" selection-start-column="60" selection-end-line="106" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -265,8 +271,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="1666" column="42" selection-start-line="1666" selection-start-column="42" selection-end-line="1666" selection-end-column="42" />
+            <state relative-caret-position="643">
+              <caret line="1667" column="42" selection-start-line="1667" selection-start-column="42" selection-end-line="1667" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -1221,7 +1227,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544629259901" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544629373019" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -1475,7 +1481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544627970528</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="passwords have been correctly entered">
+      <created>1544629298123</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544629298123</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1511,11 +1524,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118643000" />
+    <option name="totallyTimeSpent" value="118934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19597316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1616,7 +1628,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="qualityMain and fixed workspace.xml" />
     <MESSAGE value="sql changes:&#10;- drop all tables when starting the server;&#10;- add standard data to the database;" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql changes:&#10;- drop all tables when starting the server;&#10;- add standard data to the database;" />
+    <MESSAGE value="passwords have been correctly entered" />
+    <option name="LAST_COMMIT_MESSAGE" value="passwords have been correctly entered" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Main.java" />
@@ -1845,8 +1858,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="1666" column="42" selection-start-line="1666" selection-start-column="42" selection-end-line="1666" selection-end-column="42" />
+        <state relative-caret-position="643">
+          <caret line="1667" column="42" selection-start-line="1667" selection-start-column="42" selection-end-line="1667" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1888,7 +1901,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -1912,8 +1925,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+        <state relative-caret-position="201">
+          <caret line="106" column="60" lean-forward="true" selection-start-line="106" selection-start-column="60" selection-end-line="106" selection-end-column="60" />
         </state>
       </provider>
     </entry>
