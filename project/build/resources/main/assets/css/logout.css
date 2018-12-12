@@ -2,6 +2,7 @@
     height: 70px;
     position: relative;
     display: inline-block;
+    margin: 10px;
 }
 
 .dropdown-logout {
@@ -23,7 +24,6 @@
     text-decoration: none;
 }
 
-#sing-out {
-    width: 35px;
-    height: 35px;
+#sign-out {
+    color: rgb(103, 0, 1);
 }
