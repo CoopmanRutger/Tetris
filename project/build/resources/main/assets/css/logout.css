@@ -1,0 +1,29 @@
+.logout {
+    height: 70px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-logout {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    width: 60px;
+    z-index: 1;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.logout:hover .dropdown-logout {
+    display: block;
+}
+
+.dropdown-logout:hover {
+    text-decoration: none;
+}
+
+#sing-out {
+    width: 35px;
+    height: 35px;
+}
