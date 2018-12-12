@@ -107,11 +107,12 @@ public class Routes extends AbstractVerticle {
         String username = userMessage.getString("username");
         String email = userMessage.getString("email");
         String password = userMessage.getString("password");
+        String playername = userMessage.getString("playername");
 
         message.reply(username);
         Database.getDB()
                 .getConsumerHandlers(controller)
-                .makeUser(username, email, password, eb);
+                .makeUser(username, email, password, playername, eb);
     }
 
     private void checkUsername(Message message) {

@@ -29,8 +29,8 @@ public class ConsumerHandlers {
     private final String MAKE_USER = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
     private final String GET_CLAN = "SELECT * FROM clans WHERE name = ?";
     private final String GET_PASSWORD = "SELECT password FROM users WHERE username = ?";
-    private final String MAKE_LOGIN = "INSERT INTO users (username, email, password, gold) " +
-                                        "VALUES (?, ?, ?, ?)";
+    private final String MAKE_LOGIN = "INSERT INTO users (username, email, password, playername, gold) " +
+                                        "VALUES (?, ?, ?, ?, ?)";
 
     private  final String MAKE_FACTION = "UPDATE FACTIONS_USERS " +
                 "SET Factionnr = ?, userid= ? WHERE userid = ?";
@@ -198,15 +198,17 @@ public class ConsumerHandlers {
         });
     }
 
-    public void makeUser(String username, String email, String password, EventBus eb) {
+    public void makeUser(String username, String email, String password, String playername, EventBus eb) {
         JsonObject couldLogin = new JsonObject();
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         final JsonArray[] params = {new JsonArray()
                 .add(username)
                 .add(email)
                 .add(hashedPassword)
+                .add(playername)
                 .add(0)};
         jdbcClient.queryWithParams(MAKE_LOGIN, params[0], res -> {
+            System.out.println(res);
             if (res.succeeded()) {
                 couldLogin.put("register", "true");
             } else {
