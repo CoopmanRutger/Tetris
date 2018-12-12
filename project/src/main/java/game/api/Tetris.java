@@ -9,23 +9,21 @@ import game.api.webapi.GameController;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 
-
+/**
+ * @author      Remote Access Tetris aka RAT
+ */
 public class Tetris extends AbstractVerticle {
 
     @Override
     public void start() {
-        ConnectionDatabase connectionDatabase = new ConnectionDatabase();
+        final ConnectionDatabase connectionDatabase = new ConnectionDatabase();
         Database.setDB((ConsumerHandlers) connectionDatabase.getConsumerHandler());
-        GameController gameController = new GameController();
+        final GameController gameController = new GameController();
 
-
-
-        Vertx vertx = Vertx.vertx();
+        final Vertx vertx = Vertx.vertx();
         vertx.deployVerticle(gameController);
         vertx.deployVerticle(new WebAPI(gameController));
         vertx.deployVerticle(connectionDatabase);
         vertx.deployVerticle(new Routes(gameController));
-
-
     }
 }

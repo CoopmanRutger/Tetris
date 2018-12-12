@@ -10,6 +10,9 @@ import io.vertx.ext.sql.UpdateResult;
 import org.mindrot.jbcrypt.BCrypt;
 import org.pmw.tinylog.Logger;
 
+/**
+ * @author      Remote Access Tetris aka RAT
+ */
 public class ConsumerHandlers {
 
     private JDBCClient jdbcClient;
@@ -49,7 +52,7 @@ public class ConsumerHandlers {
     }
 
     public ConsumerHandlers(GameController controller) {
-        jdbcClient = ConnectionDatabase.jdbcClient;
+        jdbcClient = ConnectionDatabase.getJdbcClient();
         this.controller = controller;
     }
 
