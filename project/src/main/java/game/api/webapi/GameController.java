@@ -87,7 +87,7 @@ public class GameController extends AbstractVerticle {
         player2.setHero(hero2);
 
         Ability ability1 = new AbilityLvl1("destruction");
-        Ability ability2 = new AbilityLvl2("tornado");
+        Ability ability2 = new AbilityLvl2("lol");
         Ability ability3 = new AbilityLvl3("spook");
 
         hero1.addAbility(ability1);

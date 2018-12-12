@@ -14,18 +14,14 @@ public class Tetris extends AbstractVerticle {
 
     @Override
     public void start() {
-        ConnectionDatabase connectionDatabase = new ConnectionDatabase();
+        final ConnectionDatabase connectionDatabase = new ConnectionDatabase();
         Database.setDB((ConsumerHandlers) connectionDatabase.getConsumerHandler());
-        GameController gameController = new GameController();
-
-
+        final GameController gameController = new GameController();
 
         Vertx vertx = Vertx.vertx();
         vertx.deployVerticle(gameController);
         vertx.deployVerticle(new WebAPI(gameController));
         vertx.deployVerticle(connectionDatabase);
         vertx.deployVerticle(new Routes(gameController));
-
-
     }
 }

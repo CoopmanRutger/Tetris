@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
+
     private List<Player> players;
     private Events events;
 
@@ -40,11 +41,9 @@ public class Game {
 
     @Override
     public String toString() {
-        return "Game{" +
-                "players=" + players +
-                ", events=" + events +
-                '}';
+        return "Game{"
+                + "players=" + players
+                + ", events=" + events + '}';
     }
-}
-
 //    ctrl + shift + alt + u ==> uml schema maken  dan e of c
+}
