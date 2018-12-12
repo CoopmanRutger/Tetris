@@ -109,17 +109,17 @@ public class ConnectionDatabase extends AbstractVerticle {
                         + "('Jos', 'jos@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 10),"
                         + "('Jus', 'jus@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 250);"
 
-                        + "insert into factions ( name)\n"
-                        + "values ('Darkgreen'), ('darkblue'), ('darkred'), ('darkyellow');\n"
+                        + "insert into factions ( name) "
+                        + "values ('Dark green'), ('Dark blue'), ('Dark red'), ('Dark yellow'), ('Dark');"
 
-                        + "insert into Clans( clannr ,name, factionnr )\n"
+                        + "insert into Clans( clannr ,name, factionnr ) "
                         + "values (1, 'Dragons', 3), (2, 'Masters', 3), (3, 'Kings', 3),"
                         + "(4, 'Queens', 3), (5, 'Ultra', 3);"
 
-                        + "insert into factions_users ( factionnr, userid)\n"
+                        + "insert into factions_users ( factionnr, userid) "
                         + "values (1,1), (2, 2), (2, 3), (3, 4), (4, 5);"
 
-                        + "insert into players (userid, playername , heronr , xp , level ) \n"
+                        + "insert into players (userid, playername , heronr , xp , level ) "
                         + "values (1, 'Rutger123', 1, 950, 2), (2, 'RipperLouis', 3, 250, 1);"
                     ,
                     queryResult -> {
