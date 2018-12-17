@@ -199,14 +199,13 @@ public class ConsumerHandlers {
         });
     }
 
-    public void makeUser(String username, String email, String password, String playername, EventBus eb) {
+    public void makeUser(String username, String email, String password, EventBus eb) {
         JsonObject couldLogin = new JsonObject();
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         final JsonArray[] params = {new JsonArray()
                 .add(username)
                 .add(email)
                 .add(hashedPassword)
-                .add(playername)
                 .add(0)};
         jdbcClient.queryWithParams(makeLogin, params[0], res -> {
             if (res.succeeded()) {

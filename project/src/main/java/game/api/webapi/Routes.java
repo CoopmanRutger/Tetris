@@ -1,5 +1,6 @@
 package game.api.webapi;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
@@ -11,6 +12,8 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
+import org.h2.message.Trace;
+import org.pmw.tinylog.Logger;
 
 public class Routes extends AbstractVerticle {
     private EventBus eb;
@@ -190,8 +193,11 @@ public class Routes extends AbstractVerticle {
         try {
             String json = mapper.writeValueAsString(info);
             return json;
-        } catch (JsonProcessingException e){
-            e.printStackTrace();
+        } catch (JsonProcessingException e) {
+            Trace LOGGER = null;
+            LOGGER.debug("your log message here");
+
+            // TODO: 17/12/2018  oplossen tiny logger
         }
         return null;
     }
