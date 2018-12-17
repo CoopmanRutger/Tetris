@@ -6,14 +6,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
 import game.api.jdbcinteractor.Database;
 import game.player.Player;
+import game.player.playfields.playfield.block.Block;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import org.h2.message.Trace;
-import org.pmw.tinylog.Logger;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class Routes extends AbstractVerticle {
     private EventBus eb;
@@ -59,8 +63,8 @@ public class Routes extends AbstractVerticle {
 //        playfield
         eb.consumer("tetris-21.socket.gamestart",this::ImReady);
         eb.consumer("tetris-21.socket.updateScore",this::updateScore);
+        eb.consumer("tetris-21.socket.battleField.rotate",this::rotateBlock);
 
-//        eb.consumer("tetris-21.socket.updateGame",this::updateGame);
 //        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
 
         // Login
@@ -75,6 +79,32 @@ public class Routes extends AbstractVerticle {
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
+    }
+
+    private void rotateBlock(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        System.out.println(userMessage);
+        JsonArray username = userMessage.getJsonArray("matrix");
+
+        List<List<Integer>> list = new LinkedList<>();
+        list.add(info(username.getJsonArray(0)));
+        list.add(info(username.getJsonArray(1)));
+
+        Block block = new Block(list);
+        block.rotateRight();
+        JsonObject json =  new JsonObject();
+        json.put("block",block.rotateRight());
+        System.out.println(block.rotateRight());
+        message.reply(json.encode());
+
+    }
+
+    private List<Integer> info (JsonArray json){
+        List<Integer> list = new LinkedList<>();
+        for (int i = 0; i <4 ; i++) {
+            list.add(json.getInteger(i));
+        }
+        return list;
     }
 
     private void getGold(Message message) {

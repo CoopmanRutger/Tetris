@@ -1,12 +1,13 @@
 "use strict";
 
 /* global EventBus */
-// let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+// let eb = new EventBus("http://192.168.0.251:8021/tetris-21/socket");
 let game = {
-    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50,
-    area: makeMatrix(10,10),
-    area2: makeMatrix(10,10),
+    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 500,
+    area: makeMatrix(1, 1),
+    area2: makeMatrix(1, 1),
     context: player1.getContext("2d"),
     context2: player2.getContext("2d"),
     fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0},
@@ -29,8 +30,6 @@ function init() {
     eb.onopen = function () {
         initialize();
     };
-    // backgroundStuff();
-    startGame();
     countdown(game.timer);
     addEventHandler("#openmodal", "click", openModal);
     addEventHandler("body", "click", onModalClose);
@@ -43,7 +42,7 @@ function initialize() {
 
 
 function registers() {
-    eb.send("tetris-21.socket.gamestart", "Im ready!", function (error, reply) {
+    eb.send("tetris-21.socket.gamestart", "Im ready!", function (error) {
         if (error) {
             console.log(error)
         }
@@ -54,28 +53,15 @@ function registers() {
         let gameInfo = JSON.parse(message.body);
         // console.log(gameInfo);
 
-        let playfieldheight = gameInfo.players[0].playfields.playfields[0].playfield.length;
-        let playfieldWidth = gameInfo.players[0].playfields.playfields[0].playfield[0].length;
-        // console.log(playfieldWidth);
-        // console.log(playfieldheight);
-        let playfield2Height = gameInfo.players[0].playfields.playfields[1].playfield.length;
-        let playfield2Width = gameInfo.players[0].playfields.playfields[1].playfield[0].length;
-        // console.log(playfield2Height);
-        // console.log(playfield2Height);
+        giveMatrixNumbers(gameInfo);
 
-        game.area2 = makeMatrix(playfield2Width, playfield2Height);
-        game.area = makeMatrix(playfieldWidth, playfieldheight);
-        // console.log(game.area);
-        // console.log(game.area2);
+        let aBlock = makePiece(gameInfo.blocks[gerandomNumber(5)].block);
+        console.log(aBlock);
 
-        // console.log(gameInfo.blocks[0].block);
-        let aBlock = makePiece(gameInfo.blocks[0].block);
-        // console.log(gameInfo.blocks[0].block);
-        // console.log(gameInfo.blocks[1].block);
-        // console.log(gameInfo.blocks[2].block);
+        game.block = [gameInfo.blocks[0].block, gameInfo.blocks[1].block, gameInfo.blocks[2].block,gameInfo.blocks[3].block,gameInfo.blocks[4].block,gameInfo.blocks[5].block];
+        console.log(game.block);
 
-        // makePieces(game.fieldPlayer, game.area, makePiece(gameInfo.blocks[5].block));
-        backgroundStuff(makePiece(gameInfo.blocks[4].block));
+        backgroundStuff();
     });
 
 
@@ -89,9 +75,27 @@ function registers() {
 
 }
 
-function f(context, fieldPlayer, area,block ) {
+
+function gerandomNumber(max) {
+    return Math.floor(Math.random() * max);
+
+}
+
+function giveMatrixNumbers(gameInfo) {
+    let playfieldheight = gameInfo.players[0].playfields.playfields[0].playfield.length;
+    let playfieldWidth = gameInfo.players[0].playfields.playfields[0].playfield[0].length;
+    let playfield2Height = gameInfo.players[0].playfields.playfields[1].playfield.length;
+    let playfield2Width = gameInfo.players[0].playfields.playfields[1].playfield[0].length;
+
+    game.area2 = makeMatrix(playfield2Width, playfield2Height);
+    game.area = makeMatrix(playfieldWidth, playfieldheight);
+
+}
+
+
+function f(context, fieldPlayer, area) {
     context.scale(20, 20);
-    nextBlock(fieldPlayer.name, block);
+    nextBlock(fieldPlayer.name);
     draw(fieldPlayer, context, area);
 }
 
@@ -104,18 +108,26 @@ function makeMatrix(width, height) {
     return matrix;
 }
 
+function drawMatrix(matrix, offset, context) {
+    matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                context.fillStyle = game.colors[value];
+                context.fillRect(x + offset.x, y + offset.y, 1, 1);
+                let imgTag = document.createElement("IMG");
+                imgTag.src = game.colors[value];
+                context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
+            }
+        });
+    });
+}
 
-
-
-
-
-
-
-
-
-
-
-
+function makePiece(type) {
+    return [
+        type[0],
+        type[1],
+    ];
+}
 
 
 
@@ -130,8 +142,6 @@ function setGamePlay(infoBackend) {
 
 
     // console.log(infoBackend);
-
-
 }
 
 function setPlayer1(player) {
@@ -186,12 +196,11 @@ function setWidth(lines, id) {
 
 
 
+function backgroundStuff() {
 
-
-
-function backgroundStuff(block) {
-    f(game.context, game.fieldPlayer, game.area, block);
-    f(game.context2, game.fieldPlayer2, game.area2, block);
+    f(game.context, game.fieldPlayer, game.area);
+    f(game.context2, game.fieldPlayer2, game.area2);
+    startGame();
 
     const move = 1;
     document.addEventListener('keydown', function (e) {
@@ -201,7 +210,7 @@ function backgroundStuff(block) {
         }
         // draai Z
         else if (e.keyCode === 90) {
-            playerRotate(game.fieldPlayer, -move, game.area);
+            playerRotate(game.fieldPlayer, game.area);
         }
         // Beneden S
         else if (e.keyCode === 83) {
@@ -228,7 +237,7 @@ function backgroundStuff(block) {
         }
         // draaien
         else if (e.keyCode === 38) {
-            playerRotate(game.fieldPlayer2, -move, game.area2);
+            playerRotate(game.fieldPlayer2, game.area2);
         }
 
         // todo
@@ -243,8 +252,6 @@ function backgroundStuff(block) {
 function startGame() {
     game.gameRun = true;
     game.gameRun2 = true;
-    // nextBlock(game.fieldPlayer.name);
-    // nextBlock(game.fieldPlayer2.name);
 
     let number = 0;
     game.gameLoop = setInterval(function () {
@@ -265,7 +272,8 @@ function startGame() {
                 draw(game.fieldPlayer, game.context, game.area);
                 draw(game.fieldPlayer2, game.context2, game.area2);
         }
-    }, 10);
+        // console.log(game.area2)
+    }, 100);
 }
 
 function countdown(durationInSeconds) {
@@ -301,12 +309,12 @@ function countdown(durationInSeconds) {
 }
 
 
-function nextBlock(player, block) {
+function nextBlock(player) {
     if (game.fieldPlayer.name === player) {
-        makePieces(game.fieldPlayer, game.area, block);
+        makePieces(game.fieldPlayer, game.area);
     }
     if (game.fieldPlayer2.name === player) {
-        makePieces(game.fieldPlayer2, game.area2, block);
+        makePieces(game.fieldPlayer2, game.area2);
     }
 }
 
@@ -380,6 +388,8 @@ function abilityBars(player, lines){
 
 
 function collide(player, area) {
+    console.log(player);
+    console.log(area);
     const [m, o] = [player.matrix, player.pos];
     for (let y = 0; y < m.length; ++y) {
         for (let x = 0; x < m[y].length; ++x) {
@@ -402,31 +412,35 @@ function merge(player, area) {
     });
 }
 
-function rotate(matrix, dir) {
-    for (let y = 0; y < matrix.length; ++y) {
-        for (let x = 0; x < y; ++x) {
-            [matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]]
-        }
-    }
-    if (dir > 0) {
-        matrix.forEach(row => row.reverse());
-    } else {
-        matrix.reverse();
-    }
+function rotate(matrix) {
+    console.log(matrix);
+    let object = JSON.stringify({matrix: matrix});
+    eb.send("tetris-21.socket.battleField.rotate", object, function (error, reply) {
+            if (error) {
+                console.log(error)
+            }
+        let info = JSON.parse(reply.body);
+        console.log(info);
+
+    })
+
+    // Todo  send to backend en terug!
 }
 
-function makePieces(player, area, block) {
 
-    player.matrix = block;
+
+function makePieces(player, area) {
+
+    player.matrix = game.block[gerandomNumber(5)];
     player.pos.y = 0;
-    player.pos.x = (5);
+    player.pos.x = 5;
     collidefunction(player, area);
 }
 
 function collidefunction(player, area) {
     if (collide(player, area)) {
         area.forEach(row => row.fill(0));
-        player.score = 0;
+        // player.score = 0;
         if (player.name === "player1") {
             game.gameRun = false;
         } else if (player.name === "player2") {
@@ -441,7 +455,7 @@ function playerDrop(player, context, area) {
         player.pos.y--;
         merge(player, area);
         points(player, area);
-        // nextBlock(player.name);
+        nextBlock(player.name);
     }
 }
 
@@ -452,15 +466,15 @@ function playerMove(player, dir, area) {
     }
 }
 
-function playerRotate(player, dir, area) {
+function playerRotate(player, area) {
     const pos = player.pos.x;
     let offset = 1;
-    rotate(player.matrix, dir);
+    rotate(player.matrix);
     while (collide(player, area)) {
         player.pos.x += offset;
         offset = -(offset + (offset > 0 ? 1 : -1));
         if (offset > player.matrix[0].length) {
-            rotate(player.matrix, -dir);
+            rotate(player.matrix);
             player.pos.x = pos;
             return;
         }
@@ -478,49 +492,28 @@ function draw(player, context, area) {
     }
 }
 
-// function resultscore(context) {
-//     clearInterval(game.gameLoop);
-//     clearInterval(game.countdown);
-//     context.font = "2px Comic Sans MS";
-//     context.fillStyle = "#ffffff";
-//     context.textAlign = "center";
-//     context.textBaseline = "middle";
-// }
-//
-// function youLose(context) {
-//     resultscore(context);
-//     context.fillText("YOU LOSE!", (player1.width / 20) / 2, (player1.width / 20) / 2);
-// }
-//
-// function youWon(context) {
-//     resultscore(context);
-//     context.fillText("YOU WON!", (player1.width / 20) / 2, (player1.width / 20) / 2);
-// }
-//
-// function Tie() {
-//     resultscore(game.context);
-//     resultscore(game.context2);
-//     game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
-//     game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
-// }
-
-function drawMatrix(matrix, offset, context) {
-    matrix.forEach((row, y) => {
-        row.forEach((value, x) => {
-            if (value !== 0) {
-                context.fillStyle = game.colors[value];
-                context.fillRect(x + offset.x, y + offset.y, 1, 1);
-                let imgTag = document.createElement("IMG");
-                imgTag.src = game.colors[value];
-                context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
-            }
-        });
-    });
+function resultscore(context) {
+    clearInterval(game.gameLoop);
+    clearInterval(game.countdown);
+    context.font = "2px Comic Sans MS";
+    context.fillStyle = "#ffffff";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
 }
 
-function makePiece(type) {
-    return [
-        type[0],
-        type[1],
-    ];
+function youLose(context) {
+    resultscore(context);
+    context.fillText("YOU LOSE!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+}
+
+function youWon(context) {
+    resultscore(context);
+    context.fillText("YOU WON!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+}
+
+function Tie() {
+    resultscore(game.context);
+    resultscore(game.context2);
+    game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
+    game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
 }
