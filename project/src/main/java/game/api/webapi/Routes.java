@@ -125,9 +125,9 @@ public class Routes extends AbstractVerticle {
     private void checkUsername(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
-//        Database.getDB()
-//                .getConsumerHandlers(controller)
-//                .checkUsername(username, eb);
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .checkUsername(username, eb);
         message.reply(username);
     }
 
