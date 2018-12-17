@@ -45,20 +45,20 @@ public class ConnectionDatabase extends AbstractVerticle {
         jdbcClient.getConnection(res -> {
             if (res.succeeded()) {
                 final SQLConnection conn = res.result();
-                conn.query("drop table if exists abilities;\n"
-                        + "drop table if exists blocks;\n"
-                        + "drop table if exists clans;\n"
-                        + "drop table if exists events;\n"
-                        + "drop table if exists factions;\n"
-                        + "drop table if exists factions_users;\n"
-                        + "drop table if exists heroes;\n"
-                        + "drop table if exists heroes_abilities;\n"
-                        + "drop table if exists players;\n"
+                conn.query("drop table if exists abilities;"
+                        + "drop table if exists blocks;"
+                        + "drop table if exists clans;"
+                        + "drop table if exists events;"
+                        + "drop table if exists factions;"
+                        + "drop table if exists factions_users;"
+                        + "drop table if exists heroes;"
+                        + "drop table if exists heroes_abilities;"
+                        + "drop table if exists players;"
                         + "drop table if exists users;"
                         + "create table if not exists factions (factionNr int not null primary key auto_increment "
                         + ",name varchar(40))engine=InnoDB;"
-                        + "create table if not exists heroes(heroNr int not null primary key auto_increment "
-                        + ",name varchar(40))engine=InnoDB;"
+                        + "create table if not exists heroes(heroNr int not null primary key "
+                        + "auto_increment ,name varchar(40))engine=InnoDB;"
 
                         + "create table if not exists events (eventNr int not null primary key auto_increment "
                         + ",name varchar(40),eventTrigger varchar(20))engine=InnoDB;"
@@ -93,35 +93,35 @@ public class ConnectionDatabase extends AbstractVerticle {
                         + ", constraint fk_heroNr4 foreign key (heroNr) references heroes(heroNr))engine=InnoDB;"
 
                         + "insert into heroes(name)\n"
-                        + "values ('Matthias de boer'), ('Ann de boerin'), ('Jillke de ridder'), ('Christian de ridder'),"
-                        + "('Heidi de kokin'), ('Frederick de kok'), ('x de jokster'), ('x de joker'), ('x de wizard'), "
-                        + "('x de wizard');"
+                        + "values ('Matthias de boer'), ('Ann de boerin'), ('Jillke de ridder'), "
+                        + "('Christian de ridder'), ('Heidi de kokin'), ('Frederick de kok'), ('x de jokster'),"
+                        + " ('x de joker'), ('x de wizard'), ('x de wizard'), ('empty');"
 
                         + "insert into abilities(name, startvalue, level)"
-                        + "values ('Hay Bale', 750, 1), ('Pitchfork', 500, 1), ('Slash', 500, 1), ('Big Swing', 500, 1),"
-                        + "('Steal Ingredients', 500, 1), ('Fury Cooking', 1000, 1), ('Cheering Crowd', 750, 1),"
-                        + "('Joker', 1000, 1),('Slow', 500, 1), ('Freeze', 750, 1);"
+                        + "values ('Hay Bale', 750, 1), ('Pitchfork', 500, 1), ('Slash', 500, 1), "
+                        + "('Big Swing', 500, 1), ('Steal Ingredients', 500, 1), ('Fury Cooking', 1000, 1), "
+                        + "('Cheering Crowd', 750, 1), ('Joker', 1000, 1),('Slow', 500, 1), ('Freeze', 750, 1);"
 
-                        + "insert into users ( username, email, password, gold)\n"
-                        + "values ('Rutger', 'rc@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 1150),"
+                        + "insert into users ( username, email, password, gold) "
+                        + "values ('Rutger', 'rc@abc.be', "
+                        + "'$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 1150),"
                         + "('Louis', 'Lo@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 380),"
                         + "('Jef', 'jef@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 0),"
                         + "('Jos', 'jos@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 10),"
                         + "('Jus', 'jus@abc.be', '$2a$10$dwHsENkVpDMf0rCuX/QViOutTCWRqI7BKRaICRTdHWQeeQL6G2E2S', 250);"
 
-                        + "insert into factions ( name) "
-                        + "values ('Dark green'), ('Dark blue'), ('Dark red'), ('Dark yellow'), ('Dark');"
+                        + "insert into factions (name) "
+                        + "values ('dark green'), ('dark blue'), ('dark red'), ('dark yellow'), ('dark');"
 
-                        + "insert into Clans( clannr ,name, factionnr ) "
+                        + "insert into Clans( clannr, name, factionnr ) "
                         + "values (1, 'Dragons', 3), (2, 'Masters', 3), (3, 'Kings', 3),"
                         + "(4, 'Queens', 3), (5, 'Ultra', 3);"
 
                         + "insert into factions_users ( factionnr, userid) "
-                        + "values (1,1), (2, 2), (2, 3), (3, 4), (4, 5);"
+                        + "values (1, 1), (2, 2), (2, 3), (3, 4), (4, 5);"
 
-                        + "insert into players (userid, playername , heronr , xp , level ) "
-                        + "values (1, 'Rutger123', 1, 950, 2), (2, 'RipperLouis', 3, 250, 1);"
-                    ,
+                        + "insert into players (userid, playername, heronr, xp, level ) "
+                        + "values (1, 'Rutger123', 1, 950, 2), (2, 'RipperLouis', 3, 250, 1);",
                     queryResult -> {
                         if (queryResult.succeeded()) {
                             Logger.info("Database started");

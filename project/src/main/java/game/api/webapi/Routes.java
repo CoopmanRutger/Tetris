@@ -160,10 +160,11 @@ public class Routes extends AbstractVerticle {
         JsonObject userMessage = new JsonObject(message.body().toString());
         System.out.println(userMessage);
         int factionId = userMessage.getInteger("factionId");
-        int userId = Integer.parseInt(userMessage.getString("userID"));
+        int userId = Integer.parseInt(userMessage.getString("userId"));
 
-        Database.getDB().getConsumerHandlers(controller).insertFaction( factionId, userId, eb);
-        message.reply("Lets add" + factionId + " and " + userId);
+
+        Database.getDB().getConsumerHandlers(controller).insertFaction( factionId, userId);
+        message.reply("Lets add factionId: " + factionId + " to userId: " + userId);
     }
 
 
