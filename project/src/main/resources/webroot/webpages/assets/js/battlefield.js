@@ -1,4 +1,4 @@
-"use strict";
+ "use strict";
 
 /* global EventBus */
 // let eb = new EventBus("http://localhost:8021/tetris-21/socket");
@@ -57,12 +57,12 @@ function setPlayer1(player) {
 
     game.fieldPlayer.name = sessionStorage.getItem("PlayerName");
     select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
-    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
+    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/1.png\" "
         + "class='key' title='key1' alt='key1'>";
-    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
+    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/2.png\" " +
         "class='key' title='key2' alt='key2'>";
 
-    select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
+    select("#heroimgplayer1").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
 }
 
 function setPlayer2(player) {
@@ -70,11 +70,11 @@ function setPlayer2(player) {
 
     game.fieldPlayer2.name = 'Patron';
     select('#player2name').innerHTML = 'Patron';
-    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
+    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/9.png\" " +
         "class='key' title='key9' alt='key9'>";
-    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
+    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/0.png\" " +
         "class='key' title='key0' alt='key0'>";
-    select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
+    select("#heroimgplayer2").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
 
 }
 
