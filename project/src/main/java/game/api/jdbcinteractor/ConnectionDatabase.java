@@ -95,7 +95,7 @@ public class ConnectionDatabase extends AbstractVerticle {
                         + "insert into heroes(name)\n"
                         + "values ('Matthias de boer'), ('Ann de boerin'), ('Jillke de ridder'), "
                         + "('Christian de ridder'), ('Heidi de kokin'), ('Frederick de kok'), ('x de jokster'),"
-                        + " ('x de joker'), ('x de wizard'), ('x de wizard');"
+                        + " ('x de joker'), ('x de wizard'), ('x de wizard'), ('empty');"
 
                         + "insert into abilities(name, startvalue, level)"
                         + "values ('Hay Bale', 750, 1), ('Pitchfork', 500, 1), ('Slash', 500, 1), "
