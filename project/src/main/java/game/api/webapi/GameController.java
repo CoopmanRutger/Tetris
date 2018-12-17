@@ -74,10 +74,8 @@ public class GameController extends AbstractVerticle {
         hero1 = new Hero("Mathias de boer");
         hero2 = new Hero("Jillke de ridder");
 
-//       player1 = new Player(username1);
-//       player2 = new Player(username2);
-       player1 = new Player("Rutger123");
-       player2 = new Player("louis");
+       player1 = new Player(username1);
+       player2 = new Player(username2);
 
         player1.setHero(hero1);
         player2.setHero(hero2);
@@ -104,13 +102,15 @@ public class GameController extends AbstractVerticle {
 
         Playfields playfields = new Playfields();
 
-        Playfield playfield = new Playfield();
+        Playfield playfield = new Playfield(20,10);
+        Playfield playfield1 = new Playfield(5,5);
 
         PointsForAbilities points = new PointsForAbilities();
         points.addPoints(200);
         playfield.getPoints().addPoints(points.getPoints());
 
         playfields.addPlayfield(playfield);
+        playfields.addPlayfield(playfield1);
 
         player1.setPlayfields(playfields);
 

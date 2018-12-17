@@ -12,7 +12,6 @@ public class Playfields {
 
     public Playfields() {
         playfields = new ArrayList<>();
-        addPlayfield(new Playfield());
     }
 
     public List<Playfield> getPlayfields() {

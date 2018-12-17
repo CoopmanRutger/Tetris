@@ -30,16 +30,83 @@ function init() {
         initialize();
     };
     backgroundStuff();
-    startGame();
-    countdown(game.timer);
-    addEventHandler("#openmodal", "click", openModal);
-    addEventHandler("body", "click", onModalClose);
-    addEventHandler("#keepplaying", "click", keepPlaying);
+    // startGame();
+    // countdown(game.timer);
+    // addEventHandler("#openmodal", "click", openModal);
+    // addEventHandler("body", "click", onModalClose);
+    // addEventHandler("#keepplaying", "click", keepPlaying);
 }
+
+function initialize() {
+    registers();
+}
+
+
+function registers() {
+    eb.send("tetris-21.socket.gamestart", "Im ready!", function (error, reply) {
+        if (error) {
+            console.log(error)
+        }
+    });
+
+    eb.registerHandler("tetris-21.socket.game", function (error, message) {
+        // setGamePlay(JSON.parse(message.body));
+        let game = JSON.parse(message.body);
+        console.log(game);
+        console.log(game.players[0].playfields.playfields[0].playfield);
+        console.log(game.players[0].playfields.playfields[0].playfield.length);
+        let playfieldheight = game.players[0].playfields.playfields[0].playfield.length;
+
+        console.log(game.players[0].playfields.playfields[0].playfield[0].length);
+        let playfieldWidth = game.players[0].playfields.playfields[0].playfield[0].length;
+        console.log(game.players[0].playfields.playfields[1].playfield.length);
+        console.log(game.players[0].playfields.playfields[1].playfield[0].length);
+        game.area = makeMatrix(playfieldheight, playfieldWidth)
+    });
+
+
+    eb.registerHandler("tetris-21.socket.BattleField", function (error, message) {
+        if (error) {
+            console.log(error)
+        }
+        console.log(message);
+
+    });
+
+}
+
+
+function backgroundStuff() {
+    f(game.context, game.fieldPlayer, game.area);
+    f(game.context2, game.fieldPlayer2, game.area2);
+}
+
+function f(context, fieldPlayer, area) {
+    context.scale(20, 20);
+    nextBlock(fieldPlayer.name);
+    draw(fieldPlayer, context, area);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function setGamePlay(infoBackend) {
 
-    // console.log(infoBackend);
+    console.log(infoBackend);
     setPlayer1(infoBackend.players[0]);
     setPlayer2(infoBackend.players[1]);
 
@@ -102,38 +169,17 @@ function setWidth(lines, id) {
     }
 }
 
-function registers() {
-    eb.registerHandler("tetris-21.socket.BattleField", function (error, message) {
-        if (error) {
-            console.log(error)
-        }
-        console.log(message);
 
-    });
 
-    eb.send("tetris-21.socket.gamestart", "Im ready!", function (error, reply) {
-        if (error) {
-            console.log(error)
-        }
-    });
-    eb.registerHandler("tetris-21.socket.game", function (error, message) {
-        setGamePlay(JSON.parse(message.body));
-    });
-
-}
-
-function initialize() {
-    registers();
-}
 
 function f(context, fieldPlayer, area) {
     context.scale(20, 20);
     nextBlock(fieldPlayer.name);
     draw(fieldPlayer, context, area);
-}
+// }
 
 
-function backgroundStuff() {
+// function backgroundStuff() {
     f(game.context, game.fieldPlayer, game.area);
     f(game.context2, game.fieldPlayer2, game.area2);
 

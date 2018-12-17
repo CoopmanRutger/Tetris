@@ -27,16 +27,16 @@ public class Playfield {
     }
 
 
-    public Playfield() {
+    public Playfield(int height, int width) {
         playfield = new ArrayList<>();
         score = new Score();
         points = new PointsForAbilities();
         blocks = new Blocks();
-        makeStandardPlayfield();
+        makeStandardPlayfield(height,width);
     }
 
-    private void makeStandardPlayfield() {
-        makePlayfield(20, 10);
+    private void makeStandardPlayfield(int height, int width) {
+        makePlayfield(height, width);
     }
 
     public void makePlayfield(int height, int width) {
