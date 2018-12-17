@@ -43,7 +43,8 @@ public class ConsumerHandlers {
 
     private final String makeRandomFaction = "insert into FACTIONS_USERS  ( factionnr, userid) "
             + "values( 5, ?)";
-
+    private final String USEREXISTS = "select * from users where username = ?";
+    private final String MAKEPLAYERNAME = "INSERT INTO players (userid, PLAYERNAME, xp, level) VALUES ((select max(userid) from users), ?, 0 , 1)";
 
 
 
@@ -215,6 +216,18 @@ public class ConsumerHandlers {
                 Logger.warn("Could not make login: ", res.cause());
             }
             eb.send("tetris-21.socket.login.make.server", couldLogin.getString("register"));
+        });
+    }
+
+    public void makePlayer(String playername) {
+        JsonObject couldMakePlayername = new JsonObject();
+        final JsonArray[] params = {new JsonArray().add(playername)};
+        jdbcClient.queryWithParams(MAKEPLAYERNAME, params[0], res -> {
+            if (res.succeeded()) {
+                Logger.info("Player was made.");
+            } else {
+                Logger.warn("Could not make player.");
+            }
         });
     }
 
