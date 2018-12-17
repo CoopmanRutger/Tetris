@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris- Options</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link href="assets/css/logout.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
+</head>
+<body>
+<script src="assets/js/mayPersonLogin.js"></script>
+
+
+<header>
+    <p class="logout">
+        <i class="far fa-user-circle fa-lg" id="sign-out"></i>
+        <a href="#" class="dropdown-logout" id="logout">Sign out</a>
+    </p>
+    <h1>Settings</h1>
+    <div class="tab">
+        <button class="tablinks" onclick="openMenu(event, 'audio')">Audio</button>
+        <button class="tablinks" onclick="openMenu(event, 'graphics')">Graphics</button>
+        <button class="tablinks" onclick="openMenu(event, 'controls')">Controls</button>
+        <button class="tablinks" onclick="openMenu(event, 'network')">Network</button>
+    </div>
+</header>
+
+<!-- Tab content -->
+<main>
+    <article id="audio" class="tabcontent">
+        <h2>Audio</h2>
+        <p>Some settings for audio</p>
+    </article>
+
+    <article id="graphics" class="tabcontent">
+        <h2>Graphics</h2>
+        <p>Some settings for graphics</p>
+    </article>
+
+    <article id="controls" class="tabcontent">
+        <h2>Controls</h2>
+        <p>Some controls settings</p>
+    </article>
+
+    <article id="network" class="tabcontent">
+        <h2>Network</h2>
+        <p>Some network settings</p>
+    </article>
+
+</main>
+
+<footer>
+    <a id="home" href="homescreen.html">Home</a>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
+<script src="assets/js/functions.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/logout.js"></script>
+
+</body>
+</html>
