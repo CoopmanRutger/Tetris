@@ -66,6 +66,9 @@ public class Routes extends AbstractVerticle {
         // Make login
         eb.consumer("tetris-21.socket.login.make", this::makeLogin);
 
+        // Check username
+        eb.consumer("tetris-21.socket.login.username", this::checkUsername);
+
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
@@ -88,8 +91,6 @@ public class Routes extends AbstractVerticle {
         message.reply(json.encode());
     }
 
-
-
     private void login(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
@@ -106,11 +107,21 @@ public class Routes extends AbstractVerticle {
         String username = userMessage.getString("username");
         String email = userMessage.getString("email");
         String password = userMessage.getString("password");
+        String playername = userMessage.getString("playername");
 
         message.reply(username);
         Database.getDB()
                 .getConsumerHandlers(controller)
-                .makeUser(username, email, password, eb);
+                .makeUser(username, email, password, playername, eb);
+    }
+
+    private void checkUsername(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String username = userMessage.getString("username");
+        Database.getDB()
+                .getConsumerHandlers(controller)
+                .checkUsername(username, eb);
+        message.reply(username);
     }
 
 //    private void mayLogin(Message message) {
@@ -143,10 +154,11 @@ public class Routes extends AbstractVerticle {
         JsonObject userMessage = new JsonObject(message.body().toString());
         System.out.println(userMessage);
         int factionId = userMessage.getInteger("factionId");
-        int userId = Integer.parseInt(userMessage.getString("userID"));
+        int userId = Integer.parseInt(userMessage.getString("userId"));
 
-        Database.getDB().getConsumerHandlers(controller).insertFaction( factionId, userId, eb);
-        message.reply("Lets add" + factionId + " and " + userId);
+
+        Database.getDB().getConsumerHandlers(controller).insertFaction( factionId, userId);
+        message.reply("Lets add factionId: " + factionId + " to userId: " + userId);
     }
 
 

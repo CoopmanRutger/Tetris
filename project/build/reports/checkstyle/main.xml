@@ -1,69 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.12">
 <file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep-21\project\src\main\java\game\Game.java">
-<error line="0" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 </file>
 <file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep-21\project\src\main\java\game\api\Tetris.java">
 </file>
 <file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep-21\project\src\main\java\game\api\jdbcinteractor\ConnectionDatabase.java">
-<error line="49" column="35" severity="error" message="The String &quot;,name varchar(40))engine=InnoDB;&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="83" column="118" severity="error" message="&apos;,&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.NoWhitespaceBeforeCheck"/>
-<error line="90" severity="error" message="&apos;block rcurly&apos; has incorrect indentation level 16, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 </file>
 <file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep-21\project\src\main\java\game\api\jdbcinteractor\ConsumerHandlers.java">
-<error line="21" severity="error" message="&apos;member def modifier&apos; has incorrect indentation level 8, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="21" column="30" severity="error" message="Name &apos;GET_BASIC&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="21" column="68" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="22" column="76" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="23" column="93" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="24" column="76" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="27" column="26" severity="error" message="Name &apos;CHOOSE_FACTION&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="29" column="26" severity="error" message="Name &apos;GET_USER&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="29" column="60" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="30" column="71" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="32" column="26" severity="error" message="Name &apos;MAKE_USER&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="33" column="26" severity="error" message="Name &apos;GET_CLAN&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="34" column="26" severity="error" message="Name &apos;GET_PASSWORD&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="35" column="26" severity="error" message="Name &apos;MAKE_LOGIN&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="35" column="94" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="38" column="13" severity="error" message="Use a single space to separate non-whitespace characters." source="com.puppycrawl.tools.checkstyle.checks.whitespace.SingleSpaceSeparatorCheck"/>
-<error line="38" column="27" severity="error" message="Name &apos;MAKE_FACTION&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="38" column="67" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="41" column="19" severity="error" message="Use a single space to separate non-whitespace characters." source="com.puppycrawl.tools.checkstyle.checks.whitespace.SingleSpaceSeparatorCheck"/>
-<error line="41" column="27" severity="error" message="Name &apos;GET_GOLD&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="41" column="64" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="44" column="19" severity="error" message="Use a single space to separate non-whitespace characters." source="com.puppycrawl.tools.checkstyle.checks.whitespace.SingleSpaceSeparatorCheck"/>
-<error line="44" column="27" severity="error" message="Name &apos;MAKE_RANDOM_FACTION&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
-<error line="44" column="101" severity="error" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
-<error line="63" severity="error" message="&apos;lambda arguments&apos; has incorrect indentation level 16, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="64" severity="error" message="&apos;block&apos; child has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="64" column="32" severity="error" message="Variable &apos;player&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="65" severity="error" message="&apos;if&apos; has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="66" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="66" column="35" severity="error" message="Variable &apos;rs&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="67" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="68" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="68" column="36" severity="error" message="The String &quot;username&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="69" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="70" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="70" column="36" severity="error" message="The String &quot;playerName&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="71" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="72" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="74" severity="error" message="&apos;if rcurly&apos; has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="75" severity="error" message="&apos;else&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="75" column="37" severity="error" message="The String &quot;Could not get info from DB: &quot; appears 6 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="76" severity="error" message="&apos;else rcurly&apos; has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="77" severity="error" message="&apos;block&apos; child has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="78" severity="error" message="&apos;block&apos; child has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="80" severity="error" message="&apos;block&apos; child has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="80" column="29" severity="error" message="The String &quot;tetris-21.socket.homescreen.playerinfo&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="81" severity="error" message="&apos;block rcurly&apos; has incorrect indentation level 16, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-<error line="85" column="20" severity="error" message="Variable &apos;reponse&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="80" column="25" severity="error" message="The String &quot;tetris-21.socket.homescreen.playerinfo&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
 <error line="88" severity="error" message="&apos;lambda arguments&apos; has incorrect indentation level 16, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="89" severity="error" message="&apos;if&apos; has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="90" severity="error" message="&apos;if&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="92" severity="error" message="&apos;if rcurly&apos; has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="93" severity="error" message="&apos;else&apos; child has incorrect indentation level 24, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="93" column="37" severity="error" message="The String &quot;Could not get info from DB: &quot; appears 5 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
 <error line="94" severity="error" message="&apos;else rcurly&apos; has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="95" severity="error" message="&apos;block rcurly&apos; has incorrect indentation level 16, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="98" column="29" severity="error" message="Name &apos;UserId&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
@@ -81,7 +31,6 @@
 <error line="109" severity="error" message="&apos;block&apos; child has incorrect indentation level 20, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="110" severity="error" message="&apos;block rcurly&apos; has incorrect indentation level 16, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="116" column="19" severity="error" message="Variable &apos;params&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
-<error line="117" column="58" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
 <error line="119" column="30" severity="error" message="Variable &apos;updateResult&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
 <error line="122" column="33" severity="error" message="The String &quot;Could not insert into faction.&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
 <error line="139" severity="error" message="&apos;lambda arguments&apos; has incorrect indentation level 16, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>

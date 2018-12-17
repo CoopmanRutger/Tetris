@@ -33,16 +33,17 @@ function chooseFaction(e) {
     e.preventDefault();
 
     let faction = e.target.alt;
+    console.log(faction);
     sessionStorage.setItem('FactionName', faction);
     sendFactionToServer(getFactionId(faction), getUserId());
 
-    if (sessionStorage.getItem('FactionName') != 'Dark'){
+    if (sessionStorage.getItem('FactionName') !== "dark"){
         window.location.href = "faction_clan.html";
     }
 }
 
 function sendFactionToServer(faction, user) {
-    let object = {factionId: faction, userID: user};
+    let object = {factionId: faction, userId: user};
     eb.send("tetris-21.socket.faction.choose", JSON.stringify(object), function (error, reply) {
         if (error) {
             console.log(error);

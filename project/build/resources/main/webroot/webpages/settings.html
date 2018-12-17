@@ -5,19 +5,26 @@
     <title>Tetris- Options</title>
     <link rel="stylesheet" href="../../assets/css/common.css">
     <link rel="stylesheet" href="../../assets/css/menu.css">
+    <link href="../../assets/css/logout.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
 </head>
 <body>
 <script src="../../assets/js/mayPersonLogin.js"></script>
 
 
 <header>
+    <p class="logout">
+        <i class="far fa-user-circle fa-lg" id="sign-out"></i>
+        <a href="#" class="dropdown-logout" id="logout">Sign out</a>
+    </p>
+    <h1>Settings</h1>
     <div class="tab">
         <button class="tablinks" onclick="openMenu(event, 'audio')">Audio</button>
         <button class="tablinks" onclick="openMenu(event, 'graphics')">Graphics</button>
         <button class="tablinks" onclick="openMenu(event, 'controls')">Controls</button>
         <button class="tablinks" onclick="openMenu(event, 'network')">Network</button>
     </div>
-    <h1>Settings</h1>
 </header>
 
 <!-- Tab content -->
@@ -53,5 +60,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
 <script src="../../assets/js/functions.js"></script>
 <script src="../../assets/js/menu.js"></script>
+<script src="../../assets/js/logout.js"></script>
+
 </body>
 </html>
