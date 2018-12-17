@@ -12,8 +12,6 @@ import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
-import javax.xml.crypto.Data;
-
 public class Routes extends AbstractVerticle {
     private EventBus eb;
     private GameController controller;
@@ -114,11 +112,7 @@ public class Routes extends AbstractVerticle {
         message.reply(username);
         Database.getDB()
                 .getConsumerHandlers(controller)
-                .makeUser(username, email, password, eb);
-
-        Database.getDB()
-                .getConsumerHandlers(controller)
-                .makePlayer(playername);
+                .makeUser(username, email, password, playername, eb);
     }
 
     private void checkUsername(Message message) {
