@@ -1,7 +1,7 @@
 package game.player.playfields.playfield.block;
 
 public enum TypesOfBlocks {
-    lineBlock, inverseLBlock, lBlock, squareBlock, leftNBlock, tBlock, zBlock;
+    lineBlock, inverseLBlock, lBlock, squareBlock, leftNBlock, tBlock, zBlock, specialBlock
 
     // lineblock { 1, 1, 1, 1}
     // inverseLBlock { 1, 0, 0 , 0 }

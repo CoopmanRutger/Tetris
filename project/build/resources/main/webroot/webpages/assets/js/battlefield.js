@@ -5,8 +5,8 @@
 let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
 let game = {
     gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50,
-    area: makeMatrix(12, 20),
-    area2: makeMatrix(12, 20),
+    area: makeMatrix(10,10),
+    area2: makeMatrix(10,10),
     context: player1.getContext("2d"),
     context2: player2.getContext("2d"),
     fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0},
@@ -29,12 +29,12 @@ function init() {
     eb.onopen = function () {
         initialize();
     };
-    backgroundStuff();
-    // startGame();
-    // countdown(game.timer);
-    // addEventHandler("#openmodal", "click", openModal);
-    // addEventHandler("body", "click", onModalClose);
-    // addEventHandler("#keepplaying", "click", keepPlaying);
+    // backgroundStuff();
+    startGame();
+    countdown(game.timer);
+    addEventHandler("#openmodal", "click", openModal);
+    addEventHandler("body", "click", onModalClose);
+    addEventHandler("#keepplaying", "click", keepPlaying);
 }
 
 function initialize() {
@@ -50,18 +50,32 @@ function registers() {
     });
 
     eb.registerHandler("tetris-21.socket.game", function (error, message) {
-        // setGamePlay(JSON.parse(message.body));
-        let game = JSON.parse(message.body);
-        console.log(game);
-        console.log(game.players[0].playfields.playfields[0].playfield);
-        console.log(game.players[0].playfields.playfields[0].playfield.length);
-        let playfieldheight = game.players[0].playfields.playfields[0].playfield.length;
+        setGamePlay(JSON.parse(message.body));
+        let gameInfo = JSON.parse(message.body);
+        // console.log(gameInfo);
 
-        console.log(game.players[0].playfields.playfields[0].playfield[0].length);
-        let playfieldWidth = game.players[0].playfields.playfields[0].playfield[0].length;
-        console.log(game.players[0].playfields.playfields[1].playfield.length);
-        console.log(game.players[0].playfields.playfields[1].playfield[0].length);
-        game.area = makeMatrix(playfieldheight, playfieldWidth)
+        let playfieldheight = gameInfo.players[0].playfields.playfields[0].playfield.length;
+        let playfieldWidth = gameInfo.players[0].playfields.playfields[0].playfield[0].length;
+        // console.log(playfieldWidth);
+        // console.log(playfieldheight);
+        let playfield2Height = gameInfo.players[0].playfields.playfields[1].playfield.length;
+        let playfield2Width = gameInfo.players[0].playfields.playfields[1].playfield[0].length;
+        // console.log(playfield2Height);
+        // console.log(playfield2Height);
+
+        game.area2 = makeMatrix(playfield2Width, playfield2Height);
+        game.area = makeMatrix(playfieldWidth, playfieldheight);
+        // console.log(game.area);
+        // console.log(game.area2);
+
+        // console.log(gameInfo.blocks[0].block);
+        let aBlock = makePiece(gameInfo.blocks[0].block);
+        // console.log(gameInfo.blocks[0].block);
+        // console.log(gameInfo.blocks[1].block);
+        // console.log(gameInfo.blocks[2].block);
+
+        // makePieces(game.fieldPlayer, game.area, makePiece(gameInfo.blocks[5].block));
+        backgroundStuff(makePiece(gameInfo.blocks[4].block));
     });
 
 
@@ -75,19 +89,20 @@ function registers() {
 
 }
 
-
-function backgroundStuff() {
-    f(game.context, game.fieldPlayer, game.area);
-    f(game.context2, game.fieldPlayer2, game.area2);
-}
-
-function f(context, fieldPlayer, area) {
+function f(context, fieldPlayer, area,block ) {
     context.scale(20, 20);
-    nextBlock(fieldPlayer.name);
+    nextBlock(fieldPlayer.name, block);
     draw(fieldPlayer, context, area);
 }
 
 
+function makeMatrix(width, height) {
+    const matrix = [];
+    while (height--) {
+        matrix.push(new Array(width).fill(0));
+    }
+    return matrix;
+}
 
 
 
@@ -124,24 +139,24 @@ function setPlayer1(player) {
 
     game.fieldPlayer.name = sessionStorage.getItem("PlayerName");
     select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
-    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
+    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/1.png\" "
         + "class='key' title='key1' alt='key1'>";
-    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
+    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/2.png\" " +
         "class='key' title='key2' alt='key2'>";
 
-    select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
+    select("#heroimgplayer1").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
 }
 
 function setPlayer2(player) {
     // console.log(player);
 
-    game.fieldPlayer2.name = 'Patron';
+    game.fieldPlayer2.name = 'User2';
     select('#player2name').innerHTML = 'Patron';
-    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
+    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/9.png\" " +
         "class='key' title='key9' alt='key9'>";
-    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
+    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/0.png\" " +
         "class='key' title='key0' alt='key0'>";
-    select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
+    select("#heroimgplayer2").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
 
 }
 
@@ -172,16 +187,11 @@ function setWidth(lines, id) {
 
 
 
-function f(context, fieldPlayer, area) {
-    context.scale(20, 20);
-    nextBlock(fieldPlayer.name);
-    draw(fieldPlayer, context, area);
-// }
 
 
-// function backgroundStuff() {
-    f(game.context, game.fieldPlayer, game.area);
-    f(game.context2, game.fieldPlayer2, game.area2);
+function backgroundStuff(block) {
+    f(game.context, game.fieldPlayer, game.area, block);
+    f(game.context2, game.fieldPlayer2, game.area2, block);
 
     const move = 1;
     document.addEventListener('keydown', function (e) {
@@ -233,8 +243,8 @@ function f(context, fieldPlayer, area) {
 function startGame() {
     game.gameRun = true;
     game.gameRun2 = true;
-    nextBlock(game.fieldPlayer.name);
-    nextBlock(game.fieldPlayer2.name);
+    // nextBlock(game.fieldPlayer.name);
+    // nextBlock(game.fieldPlayer2.name);
 
     let number = 0;
     game.gameLoop = setInterval(function () {
@@ -291,22 +301,16 @@ function countdown(durationInSeconds) {
 }
 
 
-function nextBlock(player) {
+function nextBlock(player, block) {
     if (game.fieldPlayer.name === player) {
-        makePieces(game.fieldPlayer, game.area);
+        makePieces(game.fieldPlayer, game.area, block);
     }
     if (game.fieldPlayer2.name === player) {
-        makePieces(game.fieldPlayer2, game.area2);
+        makePieces(game.fieldPlayer2, game.area2, block);
     }
 }
 
-function makeMatrix(width, height) {
-    const matrix = [];
-    while (height--) {
-        matrix.push(new Array(width).fill(0));
-    }
-    return matrix;
-}
+
 
 function points(player, area) {
 
@@ -411,11 +415,11 @@ function rotate(matrix, dir) {
     }
 }
 
-function makePieces(player, area) {
-    let pieces = "ijlostzb";
-    player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
+function makePieces(player, area, block) {
+
+    player.matrix = block;
     player.pos.y = 0;
-    player.pos.x = (Math.floor(area[0].length / 2)) - (Math.floor(player.matrix[0].length / 2));
+    player.pos.x = (5);
     collidefunction(player, area);
 }
 
@@ -437,7 +441,7 @@ function playerDrop(player, context, area) {
         player.pos.y--;
         merge(player, area);
         points(player, area);
-        nextBlock(player.name);
+        // nextBlock(player.name);
     }
 }
 
@@ -464,9 +468,9 @@ function playerRotate(player, dir, area) {
 }
 
 function draw(player, context, area) {
-    context.clearRect(0, 0, player1.width, player1.height);
+    context.clearRect(0, 0, player.width, player.height);
     context.fillStyle = "#000000";
-    context.fillRect(0, 0, player2.width, player2.height);
+    context.fillRect(0 , 0, player.width, player.height);
 
     drawMatrix(area, {x: 0, y: 0}, context);
     if (player.matrix != null) {
@@ -474,31 +478,31 @@ function draw(player, context, area) {
     }
 }
 
-function resultscore(context) {
-    clearInterval(game.gameLoop);
-    clearInterval(game.countdown);
-    context.font = "2px Comic Sans MS";
-    context.fillStyle = "#ffffff";
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-}
-
-function youLose(context) {
-    resultscore(context);
-    context.fillText("YOU LOSE!", (player1.width / 20) / 2, (player1.width / 20) / 2);
-}
-
-function youWon(context) {
-    resultscore(context);
-    context.fillText("YOU WON!", (player1.width / 20) / 2, (player1.width / 20) / 2);
-}
-
-function Tie() {
-    resultscore(game.context);
-    resultscore(game.context2);
-    game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
-    game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
-}
+// function resultscore(context) {
+//     clearInterval(game.gameLoop);
+//     clearInterval(game.countdown);
+//     context.font = "2px Comic Sans MS";
+//     context.fillStyle = "#ffffff";
+//     context.textAlign = "center";
+//     context.textBaseline = "middle";
+// }
+//
+// function youLose(context) {
+//     resultscore(context);
+//     context.fillText("YOU LOSE!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+// }
+//
+// function youWon(context) {
+//     resultscore(context);
+//     context.fillText("YOU WON!", (player1.width / 20) / 2, (player1.width / 20) / 2);
+// }
+//
+// function Tie() {
+//     resultscore(game.context);
+//     resultscore(game.context2);
+//     game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
+//     game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
+// }
 
 function drawMatrix(matrix, offset, context) {
     matrix.forEach((row, y) => {
@@ -515,61 +519,8 @@ function drawMatrix(matrix, offset, context) {
 }
 
 function makePiece(type) {
-    if (type === "t") {
-        return [
-            [0, 0, 0],
-            [5, 5, 5],
-            [0, 5, 0]
-        ];
-    }
-    else if (type === "o") {
-        return [
-            [7, 7],
-            [7, 7]
-        ];
-    }
-    else if (type === "l") {
-        return [
-            [0, 4, 0],
-            [0, 4, 0],
-            [0, 4, 4]
-        ];
-    }
-    else if (type === "j") {
-        return [
-            [0, 1, 0],
-            [0, 1, 0],
-            [1, 1, 0]
-        ];
-    }
-    else if (type === "i") {
-        return [
-            [0, 2, 0, 0],
-            [0, 2, 0, 0],
-            [0, 2, 0, 0],
-            [0, 2, 0, 0]
-        ];
-    }
-    else if (type === "s") {
-        return [
-            [0, 3, 3],
-            [3, 3, 0],
-            [0, 0, 0]
-        ];
-    }
-    else if (type === "z") {
-        return [
-            [6, 6, 0],
-            [0, 6, 6],
-            [0, 0, 0]
-        ];
-    } else if (type === "b") {
-        return [
-            [0, 7, 0, 0],
-            [7, 7, 0, 0],
-            [7, 7, 0, 0],
-            [0, 7, 0, 0]
-        ];
-        // TODO: eigen block draai niet correct
-    }
+    return [
+        type[0],
+        type[1],
+    ];
 }
