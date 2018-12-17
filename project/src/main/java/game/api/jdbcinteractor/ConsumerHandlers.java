@@ -43,7 +43,8 @@ public class ConsumerHandlers {
 
     private final String makeRandomFaction = "insert into FACTIONS_USERS  ( factionnr, userid) "
             + "values( 5, ?)";
-
+    private final String USEREXISTS = "select * from users where username = ?";
+    private final String MAKEPLAYERNAME = "INSERT INTO players (userid, PLAYERNAME, xp, level) VALUES ((select max(userid) from users), ?, 0 , 1)";
 
 
 
@@ -218,24 +219,36 @@ public class ConsumerHandlers {
         });
     }
 
-//    public void checkUsername(String username, EventBus eb) {
-//        JsonObject loginExists = new JsonObject();
-//        final JsonArray[] params = {new JsonArray()
-//                .add(username)};
-//        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
-//            if (res.succeeded()) {
-//                ResultSet rs = res.result();
-//                if (rs.getResults().size() == 0) {
-//                    loginExists.put("username", "false");
-//                } else {
-//                    loginExists.put("username", "true");
-//                }
-//            } else {
-//                Logger.warn("Could not check username: ", res.cause());
-//            }
-//            eb.send("tetris-21.socket.login.username.server", loginExists.getString("username"));
-//        });
-//    }
+    public void makePlayer(String playername) {
+        JsonObject couldMakePlayername = new JsonObject();
+        final JsonArray[] params = {new JsonArray().add(playername)};
+        jdbcClient.queryWithParams(MAKEPLAYERNAME, params[0], res -> {
+            if (res.succeeded()) {
+                Logger.info("Player was made.");
+            } else {
+                Logger.warn("Could not make player.");
+            }
+        });
+    }
+
+    public void checkUsername(String username, EventBus eb) {
+        JsonObject loginExists = new JsonObject();
+        final JsonArray[] params = {new JsonArray()
+                .add(username)};
+        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
+            if (res.succeeded()) {
+                ResultSet rs = res.result();
+                if (rs.getResults().size() == 0) {
+                    loginExists.put("username", "false");
+                } else {
+                    loginExists.put("username", "true");
+                }
+            } else {
+                Logger.warn("Could not check username: ", res.cause());
+            }
+            eb.send("tetris-21.socket.login.username.server", loginExists.getString("username"));
+        });
+    }
 
 
 
