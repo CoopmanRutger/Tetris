@@ -218,24 +218,24 @@ public class ConsumerHandlers {
         });
     }
 
-    public void checkUsername(String username, EventBus eb) {
-        JsonObject loginExists = new JsonObject();
-        final JsonArray[] params = {new JsonArray()
-                .add(username)};
-        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
-            if (res.succeeded()) {
-                ResultSet rs = res.result();
-                if (rs.getResults().size() == 0) {
-                    loginExists.put("username", "false");
-                } else {
-                    loginExists.put("username", "true");
-                }
-            } else {
-                Logger.warn("Could not check username: ", res.cause());
-            }
-            eb.send("tetris-21.socket.login.username.server", loginExists.getString("username"));
-        });
-    }
+//    public void checkUsername(String username, EventBus eb) {
+//        JsonObject loginExists = new JsonObject();
+//        final JsonArray[] params = {new JsonArray()
+//                .add(username)};
+//        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
+//            if (res.succeeded()) {
+//                ResultSet rs = res.result();
+//                if (rs.getResults().size() == 0) {
+//                    loginExists.put("username", "false");
+//                } else {
+//                    loginExists.put("username", "true");
+//                }
+//            } else {
+//                Logger.warn("Could not check username: ", res.cause());
+//            }
+//            eb.send("tetris-21.socket.login.username.server", loginExists.getString("username"));
+//        });
+//    }
 
 
 
