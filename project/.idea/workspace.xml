@@ -1,27 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-<<<<<<< HEAD
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="85" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="11" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="88" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="12" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="">
+    <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="passwords have been correctly entered">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/battlefield.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/chooseFaction.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/common.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/faction_clan.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/gamestart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/homescreen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/loader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/login_register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/logout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/css/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/battlefield.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/chooseFaction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/clan.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/faction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/faction_clan.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/functions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/gameStart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/homeScreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/loadingScreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/logout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/mayPersonLogin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/js/shop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/Jillke de ridder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/Mathias de boer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/Preloader_5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/bgHome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/font/Orbitron-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/font/Orbitron-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/font/Orbitron-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/font/Orbitron-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/media/user_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/darkblue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/darkgreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/darkred.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/darkyellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/battlefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/battlefield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/chooseFaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/chooseFaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/faction_clan.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/faction_clan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/gameStart.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/gameStart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/homescreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/homescreen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/loading screen.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/loading screen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/webroot/webpages/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/webroot/webpages/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/battlefield.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/battlefield.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/chooseFaction.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/chooseFaction.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/faction_clan.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/faction_clan.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/gamestart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/gamestart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/homescreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/homescreen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/login_register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/login_register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/logout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/logout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/battlefield.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/chooseFaction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/clan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/clan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/faction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/faction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/faction_clan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/faction_clan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/gameStart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/homeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/loadingScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/loadingScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/mayPersonLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/mayPersonLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/Jillke de ridder.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/Jillke de ridder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/Mathias de boer.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/Mathias de boer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/Preloader_5.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/Preloader_5.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/bgHome.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/bgHome.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/font/Orbitron-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/font/Orbitron-Black.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/font/Orbitron-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/font/Orbitron-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/font/Orbitron-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/font/Orbitron-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/font/Orbitron-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/font/Orbitron-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/media/user_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/media/user_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Darkblue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/images/Darkblue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Darkgreen.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/images/Darkgreen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Darkred.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/images/Darkred.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Darkyellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/images/Darkyellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-    </list>
-=======
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" line="13" />
-  </component>
-  <component name="ChangeListManager">
-    <list default="true" id="4b531844-5650-442f-a954-fa3b23e7c11c" name="Default" comment="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" afterDir="false" />
 >>>>>>> vertixCommunication
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,13 +188,7 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="project" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="project" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
+                <item name="other" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -135,8 +243,8 @@
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -173,33 +281,35 @@
         <counts>
           <entry key="css" value="796" />
           <entry key="html" value="222" />
-          <entry key="js" value="980" />
-          <entry key="txt" value="37" />
+          <entry key="java" value="1053" />
+          <entry key="js" value="1020" />
+          <entry key="txt" value="217" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="796" />
           <entry key="HTML" value="230" />
-          <entry key="JavaScript" value="972" />
-          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="JAVA" value="1053" />
+          <entry key="JavaScript" value="1012" />
+          <entry key="PLAIN_TEXT" value="217" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="8" />
-          <entry key="html" value="3" />
-          <entry key="java" value="1" />
-          <entry key="js" value="7" />
+          <entry key="html" value="4" />
+          <entry key="java" value="4" />
+          <entry key="js" value="10" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="3" />
-          <entry key="JAVA" value="1" />
-          <entry key="JavaScript" value="7" />
+          <entry key="HTML" value="4" />
+          <entry key="JAVA" value="4" />
+          <entry key="JavaScript" value="10" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
@@ -214,56 +324,44 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
-      <file leaf-file-name="Routes.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3823">
+              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2124#2125#0" expanded="true" />
+                <element signature="e#2150#2151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-=======
-      <file leaf-file-name="homescreen.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
->>>>>>> vertixCommunication
+            <state relative-caret-position="233">
+              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="homeScreen.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-=======
-      <file leaf-file-name="battlefield.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="battlefield.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
->>>>>>> vertixCommunication
+            <state>
+              <caret column="15" selection-start-column="15" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+>>>>>>> vertixCommunication
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -284,12 +382,12 @@
     <findStrings>
       <find>addeventH</find>
       <find>clear</find>
-      <find>inter</find>
-<<<<<<< HEAD
-=======
       <find>update</find>
       <find>player</find>
->>>>>>> vertixCommunication
+      <find>pla</find>
+      <find>player</find>
+      <find>tetris-21.socket.homescreen.playerinfo</find>
+      <find>&quot;passwor</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -306,11 +404,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-<<<<<<< HEAD
-        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4" />
-=======
-        <entry key="$PROJECT_DIR$" value="C:\Users\gerba\.gradle\wrapper\dists\gradle-4.4-all\9br9xq1tocpiv8o6njlyu5op1\gradle-4.4" />
->>>>>>> vertixCommunication
+        <entry key="$PROJECT_DIR$" value="C:\Users\rutge\.gradle\wrapper\dists\gradle-4.4-all\9br9xq1tocpiv8o6njlyu5op1\gradle-4.4" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -669,7 +763,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4628764939426" />
+        <entry key="$PROJECT_DIR$" value="4627828962000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="1088036127" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2083459160" />
@@ -689,74 +783,74 @@
                         <option name="entries">
                           <list>
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jengelman.gradle.plugins/shadow/4.0.1/de9a9e3e5590ece063faca228dfa6236cb105e95/shadow-4.0.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/ru.vyarus/gradle-quality-plugin/3.2.0/eef53e1718ac837c3859924766201f467bcb89ea/gradle-quality-plugin-3.2.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eriwen/gradle-js-plugin/2.14.1/b6851ab4f565eb478616ba6baf483a67f46db017/gradle-js-plugin-2.14.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eriwen/gradle-css-plugin/2.14.0/e4aad4c1f03ed153ffda0f7fcf5408272f45d011/gradle-css-plugin-2.14.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/3dcf8ba7582eeac3b67ed5155ee3659e16c8dadc/jdom2-2.0.6-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/6.2.1/cee28077ac7a63d3de0b205ec314d83944ff6267/asm-6.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/6.2.1/667fa0f9d370e7848b0e3d173942855a91fd1daf/asm-commons-6.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.6/2566800dc841d9d2c5a0d34d807e45d4107dbbdf/commons-io-2.6-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.9.7/c8c6f25c99bc5fcb1acb13f09f11d0045bedc256/ant-1.9.7-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.0.24/325807d7e6393ae4f0f389277d7ef993e3aebdfe/plexus-utils-3.0.24-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.11.0/932392dc515dae4e750ac4a96c39ba69d5e81db3/log4j-core-2.11.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.vafer/jdependency/1.3/7d6693dd33cd5178dcf8fd1c22e9a407964e316/jdependency-1.3-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.com.github.spotbugs/spotbugs-gradle-plugin/1.6.3/e0203329fa4ed10976978d788b59908b62967e23/spotbugs-gradle-plugin-1.6.3-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.javascript/closure-compiler/v20160208/d00008b38351a9a7b6b2b4adb107f99127cd427a/closure-compiler-v20160208-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.jdev.html2js/html2js/0.1/2a8a982c39df8f6d17e23bbff73669d0d8a462b7/html2js-0.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yahoo.platform.yui/yuicompressor/2.4.8/dc3ec5c8cc3463219902497dec8fed0a434d00fb/yuicompressor-2.4.8-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.asual.lesscss/lesscss-engine/1.3.3/fe1931daaaab50dcb3958259f54af3291b9ef8ff/lesscss-engine-1.3.3-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/6.2.1/72bd64989090e4ed58e4657e3d4481d96f643af/asm-tree-6.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/6.2.1/b0b249bd185677648692e7c57b488b6d7c2a6653/asm-analysis-6.2.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.9.7/74cef5ca08d158fa5dc0d31a40a75c893ca00e6e/ant-launcher-1.9.7-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.11.0/97f6fb29d69b48fe4bdb47cc21c834b4536cf752/log4j-api-2.11.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/6.2/99279ff8e20fc248dd013f07232810bdb03ab5a3/asm-util-6.2-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs/3.1.6/cdaeaf9c32d4c61a8fa63a10b65eb54a99dcf8c0/spotbugs-3.1.6-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/rhino/js/1.7R2/88a99147faee9b49f40cb4f27d4628d688be9af3/js-1.7R2-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mozilla/rhino/1.7R4/f0bd5ea08604d7a674606064649292a740f5cf1f/rhino-1.7R4-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/f3f156cbff0e0fb0d64bfce31a352cce4a33bc19/commons-logging-1.1.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-xml/6.2/12a58b397b9203cff621b81b423d8edc92bd2ba5/asm-xml-6.2-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.bcel/bcel/6.2/df05f2afa0f58aefe5c3344fc67295ffc2050d53/bcel-6.2-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/d853625d8001c00d40abed553e670279504699f9/jcip-annotations-1.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.dom4j/dom4j/2.1.0/cd9dd50ec645ff43aea4072d7067174e6c78a720/dom4j-2.1.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jFormatString/3.0.0/936f4430478909ed7b138d42f9ad73c919a87b26/jFormatString-3.0.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs-annotations/3.1.6/e451c67e276df878103c9f9f044806abe74c264/spotbugs-annotations-3.1.6-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaxen/jaxen/1.1.6/cba7b9bc023466992a4686e328fc61954e448d30/jaxen-1.1.6-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jengelman.gradle.plugins/shadow/4.0.1/21f1262e29c65eb26f5190ef68b36d4820ca4e3a/shadow-4.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/ru.vyarus/gradle-quality-plugin/3.2.0/eef53e1718ac837c3859924766201f467bcb89ea/gradle-quality-plugin-3.2.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/ru.vyarus/gradle-quality-plugin/3.2.0/80fd8ebeb22379acd1f9e7e62547f0aa7b2c047c/gradle-quality-plugin-3.2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eriwen/gradle-js-plugin/2.14.1/b6851ab4f565eb478616ba6baf483a67f46db017/gradle-js-plugin-2.14.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eriwen/gradle-js-plugin/2.14.1/170c770cb42f6fdee7bdf4579131d63cbad8eec2/gradle-js-plugin-2.14.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eriwen/gradle-css-plugin/2.14.0/e4aad4c1f03ed153ffda0f7fcf5408272f45d011/gradle-css-plugin-2.14.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eriwen/gradle-css-plugin/2.14.0/bbb170d52ddb5f0bea280ef969f84f577de3ae78/gradle-css-plugin-2.14.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/3dcf8ba7582eeac3b67ed5155ee3659e16c8dadc/jdom2-2.0.6-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/6f14738ec2e9dd0011e343717fa624a10f8aab64/jdom2-2.0.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/6.2.1/cee28077ac7a63d3de0b205ec314d83944ff6267/asm-6.2.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/6.2.1/c01b6798f81b0fc2c5faa70cbe468c275d4b50c7/asm-6.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/6.2.1/667fa0f9d370e7848b0e3d173942855a91fd1daf/asm-commons-6.2.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/6.2.1/eaf31376d741a3e2017248a4c759209fe25c77d3/asm-commons-6.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.6/2566800dc841d9d2c5a0d34d807e45d4107dbbdf/commons-io-2.6-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.6/815893df5f31da2ece4040fe0a12fd44b577afaf/commons-io-2.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.9.7/c8c6f25c99bc5fcb1acb13f09f11d0045bedc256/ant-1.9.7-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.9.7/3b2a10512ee6537d3852c9b693a0284dcab5de68/ant-1.9.7.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.0.24/325807d7e6393ae4f0f389277d7ef993e3aebdfe/plexus-utils-3.0.24-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.0.24/b4ac9780b37cb1b736eae9fbcef27609b7c911ef/plexus-utils-3.0.24.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.11.0/932392dc515dae4e750ac4a96c39ba69d5e81db3/log4j-core-2.11.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.11.0/e6b751e02120c08702d98750f6a80bc25343b7f5/log4j-core-2.11.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.vafer/jdependency/1.3/7d6693dd33cd5178dcf8fd1c22e9a407964e316/jdependency-1.3-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.vafer/jdependency/1.3/634ecea62502edecc1a284d26fba45357f4f9a20/jdependency-1.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.com.github.spotbugs/spotbugs-gradle-plugin/1.6.3/e0203329fa4ed10976978d788b59908b62967e23/spotbugs-gradle-plugin-1.6.3-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.com.github.spotbugs/spotbugs-gradle-plugin/1.6.3/3b746f37d6f9d98a407a27134f8e50d0ea170668/spotbugs-gradle-plugin-1.6.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.javascript/closure-compiler/v20160208/d00008b38351a9a7b6b2b4adb107f99127cd427a/closure-compiler-v20160208-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.javascript/closure-compiler/v20160208/5a2f4be6cf41e27ed7119d26cb8f106300d87d91/closure-compiler-v20160208.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.jdev.html2js/html2js/0.1/2a8a982c39df8f6d17e23bbff73669d0d8a462b7/html2js-0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.jdev.html2js/html2js/0.1/800009a1d8e54c935cb29aca67b565d6afa3568e/html2js-0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yahoo.platform.yui/yuicompressor/2.4.8/dc3ec5c8cc3463219902497dec8fed0a434d00fb/yuicompressor-2.4.8-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yahoo.platform.yui/yuicompressor/2.4.8/900a7296bb52d740418d53274c1ecac5c83c760e/yuicompressor-2.4.8.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.asual.lesscss/lesscss-engine/1.3.3/fe1931daaaab50dcb3958259f54af3291b9ef8ff/lesscss-engine-1.3.3-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.asual.lesscss/lesscss-engine/1.3.3/f81858252ba31ecfd878859ed40d228e027cb36/lesscss-engine-1.3.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/6.2.1/72bd64989090e4ed58e4657e3d4481d96f643af/asm-tree-6.2.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/6.2.1/332b022092ecec53cdb6272dc436884b2d940615/asm-tree-6.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/6.2.1/b0b249bd185677648692e7c57b488b6d7c2a6653/asm-analysis-6.2.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/6.2.1/e8b876c5ccf226cae2f44ed2c436ad3407d0ec1d/asm-analysis-6.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.9.7/74cef5ca08d158fa5dc0d31a40a75c893ca00e6e/ant-launcher-1.9.7-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.9.7/224857a490283e72da13ffe3082dea62c558ec76/ant-launcher-1.9.7.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.11.0/97f6fb29d69b48fe4bdb47cc21c834b4536cf752/log4j-api-2.11.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.11.0/bede79a3f150711634a3047985517431bf6499f2/log4j-api-2.11.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/6.2/99279ff8e20fc248dd013f07232810bdb03ab5a3/asm-util-6.2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/6.2/a9690730f92cc79eeadc20e400ebb41eccce10b1/asm-util-6.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs/3.1.6/cdaeaf9c32d4c61a8fa63a10b65eb54a99dcf8c0/spotbugs-3.1.6-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs/3.1.6/3b1baea54e103f330e5b2eb470654de52d480214/spotbugs-3.1.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/rhino/js/1.7R2/88a99147faee9b49f40cb4f27d4628d688be9af3/js-1.7R2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/rhino/js/1.7R2/b95d5212ff4cea92cee1c3c6fa50aa82c9d4905b/js-1.7R2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mozilla/rhino/1.7R4/f0bd5ea08604d7a674606064649292a740f5cf1f/rhino-1.7R4-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mozilla/rhino/1.7R4/e982f2136574b9a423186fbaeaaa98dc3e5a5288/rhino-1.7R4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/f3f156cbff0e0fb0d64bfce31a352cce4a33bc19/commons-logging-1.1.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-xml/6.2/12a58b397b9203cff621b81b423d8edc92bd2ba5/asm-xml-6.2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-xml/6.2/11cbb555182f8998eb6d7dfef17a22070e627846/asm-xml-6.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.bcel/bcel/6.2/df05f2afa0f58aefe5c3344fc67295ffc2050d53/bcel-6.2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.bcel/bcel/6.2/2c1499b28bf2638cbdb5fa94350d41a46d2bd4e0/bcel-6.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/d853625d8001c00d40abed553e670279504699f9/jcip-annotations-1.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/afba4942caaeaf46aab0b976afd57cc7c181467e/jcip-annotations-1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.dom4j/dom4j/2.1.0/cd9dd50ec645ff43aea4072d7067174e6c78a720/dom4j-2.1.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.dom4j/dom4j/2.1.0/6ad46940de4d721df3d6bbcd2977149742095445/dom4j-2.1.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jFormatString/3.0.0/d3995f9be450813bc2ccee8f0774c1a3033a0f30/jFormatString-3.0.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs-annotations/3.1.6/47389e74292decf6946b828e0dd75cc1dc3d70cc/spotbugs-annotations-3.1.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaxen/jaxen/1.1.6/cba7b9bc023466992a4686e328fc61954e448d30/jaxen-1.1.6-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaxen/jaxen/1.1.6/3f8c36d9a0578e8e98f030c662b69888b1430ac0/jaxen-1.1.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jFormatString/3.0.0/936f4430478909ed7b138d42f9ad73c919a87b26/jFormatString-3.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jFormatString/3.0.0/d3995f9be450813bc2ccee8f0774c1a3033a0f30/jFormatString-3.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs-annotations/3.1.6/e451c67e276df878103c9f9f044806abe74c264/spotbugs-annotations-3.1.6-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs-annotations/3.1.6/47389e74292decf6946b828e0dd75cc1dc3d70cc/spotbugs-annotations-3.1.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar" />
                           </list>
                         </option>
@@ -769,152 +863,151 @@
               <option name="name" value="project" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ide" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/reporting" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-option" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/launcher" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-base" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/announce" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/signing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/installation-beacon" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/jvm-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/tooling-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ivy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/wrapper" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/process-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/plugins" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/antlr" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/plugin-use" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/maven" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/testing-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/version-control" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/osgi" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/composite-builds" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/model-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/test-kit" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/cli" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-init" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ear" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/jacoco" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/persistent-cache" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-comparison" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/publish" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-sftp" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/base-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/model-core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/diagnostics" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/dependency-management" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ide-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/workers" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/code-quality" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-java" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-cache" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/plugin-development" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/core-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/javascript" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-gcs" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/testing-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ide-native" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/base-services-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/messaging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/testing-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/logging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-s3" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-cache" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-cache-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-wrapper-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-logging-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-native-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-runtime-api-info-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-builders-0.13.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-build-cache-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-process-services-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-base-services-groovy-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-installation-beacon-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/groovy-all-2.4.12.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/ant-launcher-1.9.9.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-model-core-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/build-option" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/composite-builds" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/core-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/jvm-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/persistent-cache" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-gcs" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/version-control" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/wrapper" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/ant-1.9.9.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/ant-launcher-1.9.9.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-base-services-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-0.13.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-launcher-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-jvm-services-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-messaging-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-base-services-groovy-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-build-cache-4.4.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-build-option-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-models-0.13.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-persistent-cache-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-docs-4.4.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-cli-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-4.4.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-core-api-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-tooling-api-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-resources-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-docs-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-installation-beacon-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-jvm-services-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-0.13.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-builders-0.13.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-kotlin-dsl-tooling-models-0.13.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-launcher-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-logging-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-messaging-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-model-core-4.4.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-model-groovy-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-native-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-persistent-cache-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-process-services-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-resources-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-runtime-api-info-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-tooling-api-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/gradle-wrapper-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/groovy-all-2.4.12.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-announce-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-tooling-api-builders-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-play-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-scala-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugin-use-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-version-control-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-native-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-comparison-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugins-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-jacoco-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-native-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-javascript-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-workers-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-cache-http-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-native-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-diagnostics-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugin-development-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-jvm-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-base-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-native-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-dependency-management-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-composite-builds-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-publish-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ear-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-http-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-scala-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-gcs-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-play-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-reporting-4.4.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-antlr-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-java-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-groovy-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-osgi-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ivy-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-test-kit-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-code-quality-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-s3-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-signing-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-sftp-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-maven-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-cache-http-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-comparison-4.4.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-build-init-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-jvm-4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/ivy-2.2.0.jar" />
-<<<<<<< HEAD
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-base-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-code-quality-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-composite-builds-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-dependency-management-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-diagnostics-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ear-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-native-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ide-play-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-ivy-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-jacoco-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-javascript-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-groovy-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-java-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-jvm-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-native-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-language-scala-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-maven-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-osgi-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-base-4.4.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-jvm-4.4.jar" />
-=======
->>>>>>> vertixCommunication
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-native-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-platform-play-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugin-development-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugin-use-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-plugins-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-publish-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-reporting-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-gcs-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-http-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-s3-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-resources-sftp-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-scala-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-signing-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-test-kit-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-base-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-jvm-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-testing-native-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-tooling-api-builders-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-version-control-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/gradle-workers-4.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
               </option>
             </ExternalProjectBuildClasspathPojo>
@@ -935,61 +1028,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/block/Block.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/data/MySQLUsage.java" />
-        <option value="$PROJECT_DIR$/src/main/js/webpages/battelefield.js" />
-        <option value="$PROJECT_DIR$/src/main/js/webpages/chooseFaction.js" />
-        <option value="$PROJECT_DIR$/src/main/js/webpages/faction_clan.html.js" />
-        <option value="$PROJECT_DIR$/src/main/js/webpages/gameStart.js" />
-        <option value="$PROJECT_DIR$/src/main/js/webpages/homeScreen.js" />
-        <option value="$PROJECT_DIR$/src/main/js/webpages/loadingScreen.js" />
-        <option value="$PROJECT_DIR$/src/main/js/webpages/shop.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/loadingScreen.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/clan.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/faction.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js" />
-=======
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/clan.js" />
->>>>>>> vertixCommunication
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js" />
-        <option value="$PROJECT_DIR$/src/main/js/messagehandler.js" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Consumers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" />
-        <option value="$PROJECT_DIR$/src/main/java/game/data/MySQLUseExample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/data/Repositories.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/data/MySQLTetris.java" />
-        <option value="$PROJECT_DIR$/src/test/java/game/data/MySQLTetrisTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/data/ConsumerHandlers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/data/MySQLConnection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Tetris.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/data/ConnectionDatababase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatababase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/Start.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/Start.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/conf/config.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/Tetris.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/events/event/Event.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
-=======
         <option value="$PROJECT_DIR$/src/main/java/game/api/Start.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -1002,28 +1046,39 @@
         <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/faction.js" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/Database.java" />
         <option value="$PROJECT_DIR$/conf/config.json" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Server.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/faction.js" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/GameController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/faction_clan.js" />
+        <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js" />
+        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" />
->>>>>>> vertixCommunication
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/settings.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/register.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html" />
       </list>
     </option>
   </component>
@@ -1038,29 +1093,104 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-<<<<<<< HEAD
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
-=======
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1090" />
->>>>>>> vertixCommunication
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Abstraction issuesJava</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Assignment issuesJava</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 8Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>Method metricsJava</id>
+          </State>
+          <State>
+            <id>Naming conventionsJava</id>
+          </State>
+          <State>
+            <id>PerformanceJava</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Probable bugsKotlin</id>
+          </State>
+          <State>
+            <id>Redundant constructsKotlin</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+          <State>
+            <id>Style issuesKotlin</id>
+          </State>
+          <State>
+            <id>Verbose or redundant code constructsJava</id>
+          </State>
+          <State>
+            <id>VisibilityJava</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
 <<<<<<< HEAD
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
 =======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
 >>>>>>> vertixCommunication
       <pane id="ProjectPane">
         <subPane>
@@ -1068,16 +1198,6 @@
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
@@ -1139,73 +1259,7 @@
               <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-=======
-              <item name="events" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
->>>>>>> vertixCommunication
-              <item name="player" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-<<<<<<< HEAD
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-=======
               <item name="resources" type="462c0819:PsiDirectoryNode" />
->>>>>>> vertixCommunication
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
@@ -1215,15 +1269,94 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="webpages" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webpages" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webpages" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.h2database:h2:1.4.197" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.h2database:h2:1.4.197" type="70bed36:NamedLibraryElementNode" />
+              <item name="h2-1.4.197.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.h2database:h2:1.4.197" type="70bed36:NamedLibraryElementNode" />
+              <item name="h2-1.4.197.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="h2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: com.h2database:h2:1.4.197" type="70bed36:NamedLibraryElementNode" />
+              <item name="h2-1.4.197.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="h2" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vertx:vertx-core:3.5.4" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vertx:vertx-core:3.5.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="vertx-core-3.5.4.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vertx:vertx-core:3.5.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="vertx-core-3.5.4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vertx:vertx-core:3.5.4" type="70bed36:NamedLibraryElementNode" />
+              <item name="vertx-core-3.5.4.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="eventbus" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
 <<<<<<< HEAD
+      <pane id="Scope" />
 =======
-      <pane id="AndroidView" />
 >>>>>>> vertixCommunication
     </panes>
   </component>
@@ -1231,7 +1364,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544018827045" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545041351335" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -1250,22 +1383,20 @@
       <recent name="game.player.hero.ability" />
       <recent name="game.player.playfields.playfield.block" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="game.data" />
-<<<<<<< HEAD
-=======
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep-21\project\src\main\resources\webroot\webpages" />
+      <recent name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\project\Groep21\groep-21\project\src\main\resources\assets\js" />
+      <recent name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\project\groep-21\backend\src\main\js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\documenten\18-19\ADP_Tetris\groep21\project\src\main\resources\assets\js" />
       <recent name="D:\documenten\18-19\ADP_Tetris\groep21\project\src\main\resources\assets\css" />
->>>>>>> vertixCommunication
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\project\Groep21\groep-21\project\src\main\resources\assets\js" />
-      <recent name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\project\groep-21\backend\src\main\js" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="game.data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1283,21 +1414,9 @@
   <component name="RunManager" selected="Gradle.project [run]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="game.api.Start" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
     </configuration>
     <configuration name="Tetris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.api.Tetris" />
@@ -1309,12 +1428,33 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="project [checkQualityMain]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="checkQualityMain" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="project [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -1332,6 +1472,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="project [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -1349,6 +1490,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="build" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="project" />
@@ -1357,48 +1499,23 @@
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$" />
       <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
@@ -1407,24 +1524,24 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Start" />
       <item itemvalue="Gradle.project [run]" />
       <item itemvalue="Application.Tetris" />
       <item itemvalue="Gradle.project [clean]" />
       <item itemvalue="Groovy.build" />
+      <item itemvalue="Gradle.project [checkQualityMain]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.project [run]" />
+        <item itemvalue="Gradle.project [checkQualityMain]" />
         <item itemvalue="Groovy.build" />
         <item itemvalue="Gradle.project [clean]" />
         <item itemvalue="Application.Tetris" />
-        <item itemvalue="Application.Start" />
       </list>
     </recent_temporary>
   </component>
@@ -1464,10 +1581,8 @@
       <workItem from="1542812652213" duration="5488000" />
       <workItem from="1542976461320" duration="1329000" />
       <workItem from="1543057860387" duration="5595000" />
-<<<<<<< HEAD
       <workItem from="1544178266013" duration="68000" />
       <workItem from="1544356661266" duration="800000" />
-=======
       <workItem from="1543064191805" duration="14984000" />
       <workItem from="1543081237420" duration="3462000" />
       <workItem from="1543402333017" duration="1009000" />
@@ -1482,6 +1597,18 @@
       <workItem from="1544121721789" duration="2421000" />
       <workItem from="1544188757701" duration="84000" />
       <workItem from="1544355664455" duration="200000" />
+      <workItem from="1544647696236" duration="86000" />
+      <workItem from="1544647805932" duration="8000" />
+      <workItem from="1544647983981" duration="1478000" />
+      <workItem from="1544723255171" duration="366000" />
+      <workItem from="1544723809397" duration="891000" />
+      <workItem from="1545038082767" duration="3907000" />
+      <workItem from="1545043055730" duration="1139000" />
+<<<<<<< HEAD
+      <workItem from="1545044809591" duration="2221000" />
+=======
+      <workItem from="1545050614258" duration="316000" />
+>>>>>>> vertixCommunication
     </task>
     <task id="LOCAL-00001" summary="fgbbxfbfgfsqdfqqsd">
       <created>1544013198739</created>
@@ -1489,9 +1616,29 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1544013198739</updated>
->>>>>>> vertixCommunication
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="qualityMain and fixed workspace.xml">
+      <created>1544622984334</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544622984334</updated>
+    </task>
+    <task id="LOCAL-00003" summary="sql changes:&#10;- drop all tables when starting the server;&#10;- add standard data to the database;">
+      <created>1544627970528</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544627970528</updated>
+    </task>
+    <task id="LOCAL-00004" summary="passwords have been correctly entered">
+      <created>1544629298123</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544629298123</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1528,291 +1675,107 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
-    <option name="totallyTimeSpent" value="110480000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="0" />
+    <option name="totallyTimeSpent" value="129030000" />
 =======
-    <option name="totallyTimeSpent" value="206650000" />
+    <option name="totallyTimeSpent" value="127125000" />
+>>>>>>> vertixCommunication
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
->>>>>>> vertixCommunication
     <layout>
+<<<<<<< HEAD
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50130206" side_tool="true" weight="0.28145266" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50201344" side_tool="true" weight="0.19432624" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3294423" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30383092" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28777924" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.31740198" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.13797635" />
-=======
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986979" weight="0.19455253" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" weight="0.4150454" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2233073" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19596355" />
       <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.075520836" />
+      <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.048177082" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
 >>>>>>> vertixCommunication
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3294423" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.19584955" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" weight="0.41445783" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.31445783" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50201344" side_tool="true" weight="0.19432624" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3294423" />
+      <window_info anchor="right" id="Cargo" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" visible="true" weight="0.04148784" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-<<<<<<< HEAD
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="58" column="68" lean-forward="true" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/events/Events.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/hero/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Lifepoints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/info/XpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/info/Xp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Blocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-=======
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fgbbxfbfgfsqdfqqsd" />
-    <option name="LAST_COMMIT_MESSAGE" value="fgbbxfbfgfsqdfqqsd" />
+    <MESSAGE value="qualityMain and fixed workspace.xml" />
+    <MESSAGE value="sql changes:&#10;- drop all tables when starting the server;&#10;- add standard data to the database;" />
+    <MESSAGE value="passwords have been correctly entered" />
+    <option name="LAST_COMMIT_MESSAGE" value="passwords have been correctly entered" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.4/7aebf47c0b9f35b297276eb006b91151a2f756e5/vertx-core-3.5.4-sources.jar!/io/vertx/core/json/Json.java">
->>>>>>> vertixCommunication
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/Playfields.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/playfields/playfield/Playfield.java">
-=======
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Consumers.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.197/23b998de929dba8b42a815057517f997d8b148e9/h2-1.4.197-sources.jar!/org/h2/tools/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="415" column="25" selection-start-line="415" selection-start-column="25" selection-end-line="415" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-web/3.5.4/92d582ddec7328f6f7a7071d5c9a10c3514d41a0/vertx-web-3.5.4-sources.jar!/io/vertx/ext/web/handler/StaticHandler.java">
->>>>>>> vertixCommunication
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1824">
-          <caret line="104" column="41" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/player/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/block/BlockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/test/java/game/player/playfields/playfield/ScoreTest.java">
-=======
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/events/event/Event.java">
->>>>>>> vertixCommunication
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-jdbc-client/3.5.4/ac3387d077f7e8c5003e3082841a5c2545f4efdf/vertx-jdbc-client-3.5.4-sources.jar!/io/vertx/ext/jdbc/impl/JDBCClientImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-jdbc-client/3.5.4/ac3387d077f7e8c5003e3082841a5c2545f4efdf/vertx-jdbc-client-3.5.4-sources.jar!/io/vertx/ext/jdbc/JDBCClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Thread.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Tetris.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
->>>>>>> vertixCommunication
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Main.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.4/7aebf47c0b9f35b297276eb006b91151a2f756e5/vertx-core-3.5.4-sources.jar!/io/vertx/core/json/JsonObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="209" column="20" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.4/7aebf47c0b9f35b297276eb006b91151a2f756e5/vertx-core-3.5.4-sources.jar!/io/vertx/core/AbstractVerticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="128" column="14" selection-start-line="128" selection-start-column="14" selection-end-line="128" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.4/7aebf47c0b9f35b297276eb006b91151a2f756e5/vertx-core-3.5.4-sources.jar!/io/vertx/core/json/Json.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="320">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
-=======
-        <state relative-caret-position="260">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
->>>>>>> vertixCommunication
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.4/7aebf47c0b9f35b297276eb006b91151a2f756e5/vertx-core-3.5.4-sources.jar!/io/vertx/core/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="660">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Consumers.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.197/23b998de929dba8b42a815057517f997d8b148e9/h2-1.4.197-sources.jar!/org/h2/tools/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="415" column="25" selection-start-line="415" selection-start-column="25" selection-end-line="415" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-web/3.5.4/92d582ddec7328f6f7a7071d5c9a10c3514d41a0/vertx-web-3.5.4-sources.jar!/io/vertx/ext/web/handler/StaticHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -1831,13 +1794,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/game/data/Repositories.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/game/data/MySQLUseExample.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/game/data/MySQLTetris.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="96" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/events/event/Trigger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -1845,59 +1801,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/events/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Tetris.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1910,141 +1818,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Server.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Thread.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/player/login/Login.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
-=======
-        <state relative-caret-position="340">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-752">
           <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/menu.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="96" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
+        <state relative-caret-position="480">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/css/homescreen.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/homescreen.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="33" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/faction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="152" column="32" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/css/chooseFaction.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/chooseFaction.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <caret line="6" column="13" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/battlefield.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        <state relative-caret-position="3500">
+          <caret line="175" selection-start-line="175" selection-end-line="175" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/faction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/css/battlefield.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/chooseFaction.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/chooseFaction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2055,95 +1868,241 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
->>>>>>> vertixCommunication
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/api/Tetris.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="1120">
           <caret line="56" column="23" lean-forward="true" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/homeScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-=======
-        <state relative-caret-position="380">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/functions.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="53" selection-start-line="53" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/gameStart.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/gameStart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/battlefield.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/loadingScreen.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/loadingScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/css/faction_clan.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="20" selection-end-line="54" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33720">
+          <caret line="1686" column="16" selection-start-line="1686" selection-start-column="16" selection-end-line="1686" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/faction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/homeScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/faction_clan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="88" column="48" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/shop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="96" column="7" lean-forward="true" selection-start-line="96" selection-start-column="7" selection-end-line="96" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/loading screen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/homescreen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        <state relative-caret-position="266">
+          <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/TetrisSockJSHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="18" column="50" lean-forward="true" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.4/7aebf47c0b9f35b297276eb006b91151a2f756e5/vertx-core-3.5.4-sources.jar!/io/vertx/core/eventbus/EventBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="126" column="25" selection-start-line="126" selection-start-column="25" selection-end-line="126" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.197/23b998de929dba8b42a815057517f997d8b148e9/h2-1.4.197-sources.jar!/org/h2/tools/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="415" column="25" selection-start-line="415" selection-start-column="25" selection-end-line="415" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/faction_clan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5900">
+          <caret line="295" column="96" lean-forward="true" selection-start-line="295" selection-start-column="96" selection-end-line="295" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/chooseFaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="140">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+=======
+        <state relative-caret-position="1672">
+          <caret line="88" column="48" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+>>>>>>> vertixCommunication
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/assets/js/battlefield.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="73" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/battlefield.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="160">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/WebAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConnectionDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/jdbcinteractor/ConsumerHandlers.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1180">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+=======
+        <state relative-caret-position="-3823">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
 >>>>>>> vertixCommunication
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2124#2125#0" expanded="true" />
+            <element signature="e#2150#2151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/api/webapi/Routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2180">
+          <caret line="109" column="28" lean-forward="true" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2124#2125#0" expanded="true" />
+            <element signature="e#2150#2151#0" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="233">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+>>>>>>> vertixCommunication
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/webpages/gameStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>

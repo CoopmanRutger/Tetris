@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link href="../../assets/css/reset.css" type="text/css" rel="stylesheet">
-    <link href="../../assets/css/login_register.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/login_register.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <main>
@@ -15,6 +15,10 @@
 
         <label for="registerUsername">Username:</label>
         <input type="text" id="registerUsername" name="registerUsername" required placeholder="Username"/>
+        <p id="userError"></p>
+
+        <label for="registerPlayername">Playername:</label>
+        <input type="text" id="registerPlayername" name="registerPlayername" required placeholder="Playername" />
 
         <label for="registerPassword">Password:</label>
         <input type="password" id="registerPassword" name="registerPassword" required placeholder="Password"/>
@@ -30,6 +34,6 @@
 
 <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
-<script src="../../assets/js/register.js"></script>
+<script src="assets/js/register.js"></script>
 </body>
 </html>
