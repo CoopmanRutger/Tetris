@@ -32,8 +32,8 @@ public class ConsumerHandlers {
     private final String MAKE_USER = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
     private final String GET_CLAN = "SELECT * FROM clans WHERE name = ?";
     private final String GET_PASSWORD = "SELECT password FROM users WHERE username = ?";
-    private final String MAKE_LOGIN = "INSERT INTO users (username, email, password, playername, gold) " +
-                                        "VALUES (?, ?, ?, ?, ?)";
+    private final String MAKE_LOGIN = "INSERT INTO users (username, email, password, gold) " +
+                                        "VALUES (?, ?, ?, ?)";
 
     private  final String MAKE_FACTION = "UPDATE FACTIONS_USERS " +
                 "SET Factionnr = ?, userid= ? WHERE userid = ?";
@@ -44,6 +44,7 @@ public class ConsumerHandlers {
     private final  String MAKE_RANDOM_FACTION = "insert into FACTIONS_USERS  ( factionnr, userid) " +
                 "values( 5, ?)";
     private final String USEREXISTS = "select * from users where username = ?";
+    private final String MAKEPLAYERNAME = "INSERT INTO players (userid, PLAYERNAME, xp, level) VALUES ((select max(userid) from users), ?, 0 , 1)";
 
 
 
@@ -201,17 +202,15 @@ public class ConsumerHandlers {
         });
     }
 
-    public void makeUser(String username, String email, String password, String playername, EventBus eb) {
+    public void makeUser(String username, String email, String password, EventBus eb) {
         JsonObject couldLogin = new JsonObject();
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         final JsonArray[] params = {new JsonArray()
                 .add(username)
                 .add(email)
                 .add(hashedPassword)
-                .add(playername)
                 .add(0)};
         jdbcClient.queryWithParams(MAKE_LOGIN, params[0], res -> {
-            System.out.println(res);
             if (res.succeeded()) {
                 couldLogin.put("register", "true");
             } else {
@@ -219,6 +218,18 @@ public class ConsumerHandlers {
                 Logger.warn("Could not make login: ", res.cause());
             }
             eb.send("tetris-21.socket.login.make.server", couldLogin.getString("register"));
+        });
+    }
+
+    public void makePlayer(String playername) {
+        JsonObject couldMakePlayername = new JsonObject();
+        final JsonArray[] params = {new JsonArray().add(playername)};
+        jdbcClient.queryWithParams(MAKEPLAYERNAME, params[0], res -> {
+           if (res.succeeded()) {
+               Logger.info("Player was made.");
+           } else {
+               Logger.warn("Could not make player.");
+           }
         });
     }
 
