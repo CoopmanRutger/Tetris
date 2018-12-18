@@ -1,9 +1,8 @@
-package game.player.playfields.playfield.block;
+package game.player.playfield.block;
 
 import org.junit.Test;
 
 import java.awt.*;
-import java.util.List;
 
 import static org.junit.Assert.*;
 

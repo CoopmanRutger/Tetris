@@ -1,6 +1,6 @@
 package game.player.hero.ability;
 
-import game.player.playfields.playfield.PointsForAbilities;
+import game.player.playfield.PointsForAbilities;
 import org.junit.Before;
 import org.junit.Test;
 

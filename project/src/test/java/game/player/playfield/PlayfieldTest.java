@@ -1,7 +1,7 @@
-package game.player.playfields.playfield;
+package game.player.playfield;
 
-import game.player.playfields.playfield.block.Block;
-import game.player.playfields.playfield.block.TypesOfBlocks;
+import game.player.playfield.block.TypesOfBlocks;
+import game.player.playfield.block.Block;
 import org.junit.Before;
 import org.junit.Test;
 import java.awt.*;

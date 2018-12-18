@@ -1,4 +1,4 @@
-package game.player.playfields.playfield;
+package game.player.playfield;
 
 public class Score {
 

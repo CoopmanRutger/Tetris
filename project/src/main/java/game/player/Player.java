@@ -2,20 +2,22 @@ package game.player;
 
 import game.player.hero.Hero;
 import game.player.info.Info;
-import game.player.playfields.Playfields;
+import game.player.playfield.Playfield;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Player {
 
     private String name;
     private Hero hero;
-    private Playfields playfields;
+    private Map<String, Playfield> playfields;
     private Info info;
 
     public Player(String name) {
         this.name = name;
-        playfields = new Playfields();
+        playfields = new HashMap<>();
         info = new Info();
     }
 
@@ -35,12 +37,20 @@ public class Player {
         this.hero = hero;
     }
 
-    public Playfields getPlayfields() {
+    public Map<String, Playfield> getPlayfields() {
         return playfields;
     }
 
-    public void setPlayfields(Playfields playfields) {
+    public Playfield getPlayfieldByName(String playername) {
+        return playfields.get(playername);
+    }
+
+    public void setPlayfields(Map<String, Playfield> playfields) {
         this.playfields = playfields;
+    }
+
+    public void addPlayfield(String playername, Playfield playfield){
+        playfields.put(playername, playfield);
     }
 
     public Info getInfo() {

@@ -53,14 +53,11 @@ function registers() {
         let gameInfo = JSON.parse(message.body);
         // console.log(gameInfo);
 
-        giveMatrixNumbers(gameInfo);
+        let playfieldInfo = gameInfo.players[0].playfields;
+        let firstName = gameInfo.players[0].name;
+        let secName = gameInfo.players[1].name;
 
-        let aBlock = makePiece(gameInfo.blocks[gerandomNumber(5)].block);
-        console.log(aBlock);
-
-        game.block = [gameInfo.blocks[0].block, gameInfo.blocks[1].block, gameInfo.blocks[2].block,gameInfo.blocks[3].block,gameInfo.blocks[4].block,gameInfo.blocks[5].block];
-        console.log(game.block);
-
+        giveMatrixNumbers(playfieldInfo, firstName, secName);
         backgroundStuff();
     });
 
@@ -81,11 +78,11 @@ function gerandomNumber(max) {
 
 }
 
-function giveMatrixNumbers(gameInfo) {
-    let playfieldheight = gameInfo.players[0].playfields.playfields[0].playfield.length;
-    let playfieldWidth = gameInfo.players[0].playfields.playfields[0].playfield[0].length;
-    let playfield2Height = gameInfo.players[0].playfields.playfields[1].playfield.length;
-    let playfield2Width = gameInfo.players[0].playfields.playfields[1].playfield[0].length;
+function giveMatrixNumbers(playfields, firstPlayerName, secPlayerName) {
+    let playfieldheight = playfields[firstPlayerName].playfield.length;
+    let playfieldWidth = playfields[firstPlayerName].playfield[0].length;
+    let playfield2Height = playfields[secPlayerName].playfield.length;
+    let playfield2Width = playfields[secPlayerName].playfield[0].length;
 
     game.area2 = makeMatrix(playfield2Width, playfield2Height);
     game.area = makeMatrix(playfieldWidth, playfieldheight);
@@ -161,7 +158,7 @@ function setPlayer2(player) {
     // console.log(player);
 
     game.fieldPlayer2.name = 'User2';
-    select('#player2name').innerHTML = 'Patron';
+    select('#player2name').innerHTML = 'User2';
     select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/9.png\" " +
         "class='key' title='key9' alt='key9'>";
     select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/0.png\" " +
@@ -388,16 +385,16 @@ function abilityBars(player, lines){
 
 
 function collide(player, area) {
-    console.log(player);
-    console.log(area);
-    const [m, o] = [player.matrix, player.pos];
-    for (let y = 0; y < m.length; ++y) {
-        for (let x = 0; x < m[y].length; ++x) {
-            if (m[y][x] !== 0 && (area[y + o.y] && area[y + o.y][x + o.x]) !== 0) {
-                return true;
-            }
-        }
-    }
+//     console.log(player);
+//     console.log(area);
+//     const [m, o] = [player.matrix, player.pos];
+//     for (let y = 0; y < m.length; ++y) {
+//         for (let x = 0; x < m[y].length; ++x) {
+//             if (m[y][x] !== 0 && (area[y + o.y] && area[y + o.y][x + o.x]) !== 0) {
+//                 return true;
+//             }
+//         }
+//     }
     return false;
 }
 
@@ -419,19 +416,30 @@ function rotate(matrix) {
             if (error) {
                 console.log(error)
             }
-        let info = JSON.parse(reply.body);
-        console.log(info);
-
+        let rotatedBlock = JSON.parse(reply.body);
+        console.log(rotatedBlock);
+        return rotatedBlock
     })
 
-    // Todo  send to backend en terug!
 }
 
 
+function getNewBlock(playername) {
+    let object = JSON.stringify({playername: playername});
+    eb.send("tetris-21.socket.battleField.getNewBlock", object, function (error, reply) {
+        if (error) {
+            console.log(error)
+        }
+        let newBlock = JSON.parse(reply.body);
+        console.log(newBlock);
+        return newBlock;
+    })
+}
+
 
 function makePieces(player, area) {
-
-    player.matrix = game.block[gerandomNumber(5)];
+    console.log(player);
+    player.matrix = getNewBlock(player.name);
     player.pos.y = 0;
     player.pos.x = 5;
     collidefunction(player, area);
@@ -469,12 +477,12 @@ function playerMove(player, dir, area) {
 function playerRotate(player, area) {
     const pos = player.pos.x;
     let offset = 1;
-    rotate(player.matrix);
+    player.matrix = rotate(player.matrix);
     while (collide(player, area)) {
         player.pos.x += offset;
         offset = -(offset + (offset > 0 ? 1 : -1));
         if (offset > player.matrix[0].length) {
-            rotate(player.matrix);
+            player.matrix = rotate(player.matrix);
             player.pos.x = pos;
             return;
         }
@@ -482,6 +490,11 @@ function playerRotate(player, area) {
 }
 
 function draw(player, context, area) {
+    console.log("hello");
+    console.log(player);
+    console.log(context);
+    console.log(area);
+
     context.clearRect(0, 0, player.width, player.height);
     context.fillStyle = "#000000";
     context.fillRect(0 , 0, player.width, player.height);

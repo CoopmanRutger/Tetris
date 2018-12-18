@@ -1,6 +1,7 @@
-package game.player.playfields.playfield;
+package game.player.playfield;
 
-import game.player.playfields.playfield.block.Block;
+import game.player.playfield.block.Block;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,6 +13,11 @@ public class Playfield {
     private Score score;
     private PointsForAbilities points;
     private Blocks blocks;
+
+
+    public Blocks getBlocks() {
+        return blocks;
+    }
 
     public void setScore(Score score) {
         this.score = score;
@@ -53,10 +59,11 @@ public class Playfield {
         return Collections.unmodifiableList(playfield);
     }
 
-    public void newBlock() {
+    public Block newBlock() {
         Block randomBlock = blocks.getBlock();
 
         putOnPlayField(18, 3, randomBlock);
+        return randomBlock;
     }
 
     public void putOnPlayField(int xPos, int yPos, Block randomBlock) {

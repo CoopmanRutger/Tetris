@@ -1,4 +1,4 @@
-package game.player.playfields.playfield;
+package game.player.playfield;
 
 import org.junit.Before;
 import org.junit.Test;

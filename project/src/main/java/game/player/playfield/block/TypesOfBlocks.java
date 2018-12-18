@@ -1,4 +1,4 @@
-package game.player.playfields.playfield.block;
+package game.player.playfield.block;
 
 public enum TypesOfBlocks {
     lineBlock, inverseLBlock, lBlock, squareBlock, leftNBlock, tBlock, zBlock, specialBlock

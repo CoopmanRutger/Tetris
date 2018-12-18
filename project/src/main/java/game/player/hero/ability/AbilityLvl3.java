@@ -1,6 +1,6 @@
 package game.player.hero.ability;
 
-import game.player.playfields.playfield.PointsForAbilities;
+import game.player.playfield.PointsForAbilities;
 
 public class AbilityLvl3 implements Ability {
 

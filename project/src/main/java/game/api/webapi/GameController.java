@@ -13,9 +13,8 @@ import game.player.hero.ability.AbilityLvl3;
 import game.player.info.Gold;
 import game.player.info.Info;
 import game.player.info.Lifepoints;
-import game.player.playfields.Playfields;
-import game.player.playfields.playfield.Playfield;
-import game.player.playfields.playfield.PointsForAbilities;
+import game.player.playfield.Playfield;
+import game.player.playfield.PointsForAbilities;
 import io.vertx.core.AbstractVerticle;
 
 /**
@@ -41,7 +40,6 @@ public class GameController extends AbstractVerticle {
 
     public Game getGame(){
         gamePlay();
-        System.out.println(game);
         return game;
     }
 
@@ -64,6 +62,9 @@ public class GameController extends AbstractVerticle {
     }
 
    private void gamePlay(){
+        setUsername1("Rutger123");
+        setUsername2("User2");
+
         Trigger trigger1 = Trigger.SCORE;
         Trigger trigger2 = Trigger.TIME;
 
@@ -103,7 +104,6 @@ public class GameController extends AbstractVerticle {
         player1.setInfo(info);
         player2.setInfo(info1);
 
-        Playfields playfields = new Playfields();
 
         Playfield playfield = new Playfield(20,12);
         Playfield playfield1 = new Playfield(20,12);
@@ -112,10 +112,11 @@ public class GameController extends AbstractVerticle {
         points.addPoints(200);
         playfield.getPoints().addPoints(points.getPoints());
 
-        playfields.addPlayfield(playfield);
-        playfields.addPlayfield(playfield1);
+        player1.addPlayfield(username1, playfield);
+        player1.addPlayfield(username2,playfield1);
 
-        player1.setPlayfields(playfields);
+        player2.addPlayfield(username2, playfield1);
+        player2.addPlayfield(username1, playfield);
 
         game = new Game(events);
         game.addPlayer(player1);

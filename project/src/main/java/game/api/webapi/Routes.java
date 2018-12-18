@@ -6,15 +6,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
 import game.api.jdbcinteractor.Database;
 import game.player.Player;
-import game.player.playfields.playfield.block.Block;
+import game.player.playfield.Playfield;
+import game.player.playfield.block.Block;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
+import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import org.h2.message.Trace;
+import org.pmw.tinylog.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -62,8 +64,11 @@ public class Routes extends AbstractVerticle {
 
 //        playfield
         eb.consumer("tetris-21.socket.gamestart",this::ImReady);
-        eb.consumer("tetris-21.socket.updateScore",this::updateScore);
+
+        eb.consumer("tetris-21.socket.battleField.getNewBlock",this::getNewBlock);
         eb.consumer("tetris-21.socket.battleField.rotate",this::rotateBlock);
+
+        eb.consumer("tetris-21.socket.updateScore",this::updateScore);
 
 //        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
 
@@ -81,31 +86,44 @@ public class Routes extends AbstractVerticle {
 
     }
 
-    private void rotateBlock(Message message) {
+    private void getNewBlock(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         System.out.println(userMessage);
-        JsonArray username = userMessage.getJsonArray("matrix");
+        String playername = userMessage.getString("playername");
+        System.out.println(playername);
+        Playfield playfield = null;
 
-        List<List<Integer>> list = new LinkedList<>();
-        list.add(info(username.getJsonArray(0)));
-        list.add(info(username.getJsonArray(1)));
-
-        Block block = new Block(list);
-        block.rotateRight();
-        JsonObject json =  new JsonObject();
-        json.put("block",block.rotateRight());
-        System.out.println(block.rotateRight());
-        message.reply(json.encode());
-
-    }
-
-    private List<Integer> info (JsonArray json){
-        List<Integer> list = new LinkedList<>();
-        for (int i = 0; i <4 ; i++) {
-            list.add(json.getInteger(i));
+        for (int i = 0; i < game.getPlayers().size() ; i++) {
+            if (game.getPlayers().get(0).getName().equals(playername)){
+                playfield = game.getPlayers().get(i).getPlayfieldByName(playername);
+            }
         }
-        return list;
+        System.out.println(playfield.newBlock());
+        Block block = playfield.newBlock();
+
+        JsonObject json = new JsonObject();
+        json.put("block", block.getBlock());
+        json.put("color", block.getColor().toString());
+
+        message.reply(json.encode());
     }
+
+
+
+    private void rotateBlock(Message message) {
+
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        System.out.println(userMessage);
+
+
+//        Block rotateBlock = (Block) playfield.getBlocks().getCurrentBlock().rotateRight();
+//        JsonObject json = new JsonObject();
+//        json.put("new block", rotateBlock );
+//        System.out.println(rotateBlock);
+//        message.reply(json.encode());
+
+    }
+
 
     private void getGold(Message message) {
         System.out.println(message.body());
@@ -208,11 +226,11 @@ public class Routes extends AbstractVerticle {
 //        System.out.println(object);
 //        int number = game.getPlayers().indexOf(object.getString("player"));
 //        player = game.getPlayers().get(number);
-//        System.out.println(player.getPlayfields().getPlayfields().get(0));
-//        player.getPlayfields().getPlayfields().get(0).updateScore(Integer.parseInt(object.getString("score")));
+//        System.out.println(player.getPlayfieldByName().getPlayfieldByName().get(0));
+//        player.getPlayfieldByName().getPlayfieldByName().get(0).updateScore(Integer.parseInt(object.getString("score")));
 //        System.out.println(Integer.parseInt(object.getString("score")));
-//        System.out.println(player.getPlayfields().getPlayfields().get(0));
-//        game.getPlayers().get(number).getPlayfields().getPlayfields().get(0).setScore();
+//        System.out.println(player.getPlayfieldByName().getPlayfieldByName().get(0));
+//        game.getPlayers().get(number).getPlayfieldByName().getPlayfieldByName().get(0).setScore();
 //
 //        message.reply(makeObjectJson(game));
 //    }
@@ -221,11 +239,12 @@ public class Routes extends AbstractVerticle {
     private String makeObjectJson(Object info){
         ObjectMapper mapper = new ObjectMapper();
         try {
+            System.out.println(info);
             String json = mapper.writeValueAsString(info);
+            System.out.println(json);
             return json;
         } catch (JsonProcessingException e) {
-            Trace LOGGER = null;
-            LOGGER.debug("your log message here");
+            Logger.debug("makeObjectJson fail");
 
             // TODO: 17/12/2018  oplossen tiny logger
         }
@@ -244,7 +263,9 @@ public class Routes extends AbstractVerticle {
 
     private void ImReady(Message message){
         System.out.println(message.body());
-        eb.send("tetris-21.socket.game", makeObjectJson(game));
+        System.out.println(game);
+        System.out.println(Json.encode(game));
+        eb.send("tetris-21.socket.game", Json.encode(game));
         message.reply("okey");
 
     }
@@ -252,7 +273,7 @@ public class Routes extends AbstractVerticle {
     //
 //    public void battleFieldBlockPositioning() {
 //        eb.consumer("tetris.infoBackend.BattleField.positionBlock", message -> {
-//            game.getPlayers().get(1).getPlayfields().getPlayfields().get(1);
+//            game.getPlayers().get(1).getPlayfieldByName().getPlayfieldByName().get(1);
 //            String m = message.body().toString();
 //                    .put(OnPlayField(1, 1, new Block("block", TypesOfBlocks.lBlock, Color.RED)));
 //            message.reply(m);

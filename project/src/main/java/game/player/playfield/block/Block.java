@@ -1,4 +1,4 @@
-package game.player.playfields.playfield.block;
+package game.player.playfield.block;
 
 
 import java.awt.*;
