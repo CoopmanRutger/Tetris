@@ -78,8 +78,8 @@ public class GameController extends AbstractVerticle {
         hero1 = new Hero("Mathias de boer");
         hero2 = new Hero("Jillke de ridder");
 
-       player1 = new Player(username1);
-       player2 = new Player(username2);
+        player1 = new Player(username1);
+        player2 = new Player(username2);
 
         player1.setHero(hero1);
         player2.setHero(hero2);
