@@ -18,9 +18,12 @@ import game.player.playfields.playfield.Playfield;
 import game.player.playfields.playfield.PointsForAbilities;
 import io.vertx.core.AbstractVerticle;
 
+/**
+ * @author      Remote Access Tetris aka RAT
+ */
 public class GameController extends AbstractVerticle {
 
-    Game game = null;
+    private Game game = null;
     private String username1;
     private Player player1;
     private Hero hero1;
@@ -60,7 +63,7 @@ public class GameController extends AbstractVerticle {
         this.username2 = username;
     }
 
-   public void gamePlay(){
+   private void gamePlay(){
         Trigger trigger1 = Trigger.SCORE;
         Trigger trigger2 = Trigger.TIME;
 
@@ -102,8 +105,8 @@ public class GameController extends AbstractVerticle {
 
         Playfields playfields = new Playfields();
 
-        Playfield playfield = new Playfield(20,10);
-        Playfield playfield1 = new Playfield(5,5);
+        Playfield playfield = new Playfield(20,12);
+        Playfield playfield1 = new Playfield(20,12);
 
         PointsForAbilities points = new PointsForAbilities();
         points.addPoints(200);
@@ -113,7 +116,6 @@ public class GameController extends AbstractVerticle {
         playfields.addPlayfield(playfield1);
 
         player1.setPlayfields(playfields);
-
 
         game = new Game(events);
         game.addPlayer(player1);

@@ -1,12 +1,13 @@
 "use strict";
 
 /* global EventBus */
-// let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+// let eb = new EventBus("http://192.168.0.251:8021/tetris-21/socket");
 let game = {
-    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50,
-    area: makeMatrix(12, 20),
-    area2: makeMatrix(12, 20),
+    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 500,
+    area: makeMatrix(1, 1),
+    area2: makeMatrix(1, 1),
     context: player1.getContext("2d"),
     context2: player2.getContext("2d"),
     fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0},
@@ -29,12 +30,10 @@ function init() {
     eb.onopen = function () {
         initialize();
     };
-    backgroundStuff();
-    // startGame();
-    // countdown(game.timer);
-    // addEventHandler("#openmodal", "click", openModal);
-    // addEventHandler("body", "click", onModalClose);
-    // addEventHandler("#keepplaying", "click", keepPlaying);
+    countdown(game.timer);
+    addEventHandler("#openmodal", "click", openModal);
+    addEventHandler("body", "click", onModalClose);
+    addEventHandler("#keepplaying", "click", keepPlaying);
 }
 
 function initialize() {
@@ -43,25 +42,26 @@ function initialize() {
 
 
 function registers() {
-    eb.send("tetris-21.socket.gamestart", "Im ready!", function (error, reply) {
+    eb.send("tetris-21.socket.gamestart", "Im ready!", function (error) {
         if (error) {
             console.log(error)
         }
     });
 
     eb.registerHandler("tetris-21.socket.game", function (error, message) {
-        // setGamePlay(JSON.parse(message.body));
-        let game = JSON.parse(message.body);
-        console.log(game);
-        console.log(game.players[0].playfields.playfields[0].playfield);
-        console.log(game.players[0].playfields.playfields[0].playfield.length);
-        let playfieldheight = game.players[0].playfields.playfields[0].playfield.length;
+        setGamePlay(JSON.parse(message.body));
+        let gameInfo = JSON.parse(message.body);
+        // console.log(gameInfo);
 
-        console.log(game.players[0].playfields.playfields[0].playfield[0].length);
-        let playfieldWidth = game.players[0].playfields.playfields[0].playfield[0].length;
-        console.log(game.players[0].playfields.playfields[1].playfield.length);
-        console.log(game.players[0].playfields.playfields[1].playfield[0].length);
-        game.area = makeMatrix(playfieldheight, playfieldWidth)
+        giveMatrixNumbers(gameInfo);
+
+        let aBlock = makePiece(gameInfo.blocks[gerandomNumber(5)].block);
+        console.log(aBlock);
+
+        game.block = [gameInfo.blocks[0].block, gameInfo.blocks[1].block, gameInfo.blocks[2].block,gameInfo.blocks[3].block,gameInfo.blocks[4].block,gameInfo.blocks[5].block];
+        console.log(game.block);
+
+        backgroundStuff();
     });
 
 
@@ -76,16 +76,29 @@ function registers() {
 }
 
 
-function backgroundStuff() {
-    f(game.context, game.fieldPlayer, game.area);
-    f(game.context2, game.fieldPlayer2, game.area2);
+function gerandomNumber(max) {
+    return Math.floor(Math.random() * max);
+
 }
+
+function giveMatrixNumbers(gameInfo) {
+    let playfieldheight = gameInfo.players[0].playfields.playfields[0].playfield.length;
+    let playfieldWidth = gameInfo.players[0].playfields.playfields[0].playfield[0].length;
+    let playfield2Height = gameInfo.players[0].playfields.playfields[1].playfield.length;
+    let playfield2Width = gameInfo.players[0].playfields.playfields[1].playfield[0].length;
+
+    game.area2 = makeMatrix(playfield2Width, playfield2Height);
+    game.area = makeMatrix(playfieldWidth, playfieldheight);
+
+}
+
 
 function f(context, fieldPlayer, area) {
     context.scale(20, 20);
     nextBlock(fieldPlayer.name);
     draw(fieldPlayer, context, area);
 }
+
 
 function makeMatrix(width, height) {
     const matrix = [];
@@ -95,18 +108,26 @@ function makeMatrix(width, height) {
     return matrix;
 }
 
+function drawMatrix(matrix, offset, context) {
+    matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                context.fillStyle = game.colors[value];
+                context.fillRect(x + offset.x, y + offset.y, 1, 1);
+                let imgTag = document.createElement("IMG");
+                imgTag.src = game.colors[value];
+                context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
+            }
+        });
+    });
+}
 
-
-
-
-
-
-
-
-
-
-
-
+function makePiece(type) {
+    return [
+        type[0],
+        type[1],
+    ];
+}
 
 
 
@@ -121,8 +142,6 @@ function setGamePlay(infoBackend) {
 
 
     // console.log(infoBackend);
-
-
 }
 
 function setPlayer1(player) {
@@ -130,24 +149,24 @@ function setPlayer1(player) {
 
     game.fieldPlayer.name = sessionStorage.getItem("PlayerName");
     select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
-    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/1.png\" "
+    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/1.png\" "
         + "class='key' title='key1' alt='key1'>";
-    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/2.png\" " +
+    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/2.png\" " +
         "class='key' title='key2' alt='key2'>";
 
-    select("#heroimgplayer1").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
+    select("#heroimgplayer1").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
 }
 
 function setPlayer2(player) {
     // console.log(player);
 
-    game.fieldPlayer2.name = 'Patron';
+    game.fieldPlayer2.name = 'User2';
     select('#player2name').innerHTML = 'Patron';
-    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"../../assets/media/9.png\" " +
+    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/9.png\" " +
         "class='key' title='key9' alt='key9'>";
-    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"../../assets/media/0.png\" " +
+    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/0.png\" " +
         "class='key' title='key0' alt='key0'>";
-    select("#heroimgplayer2").innerHTML = '<img src="../../assets/media/' + player.hero.name + '.png">';
+    select("#heroimgplayer2").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
 
 }
 
@@ -177,17 +196,11 @@ function setWidth(lines, id) {
 
 
 
+function backgroundStuff() {
 
-function f(context, fieldPlayer, area) {
-    context.scale(20, 20);
-    nextBlock(fieldPlayer.name);
-    draw(fieldPlayer, context, area);
-// }
-
-
-// function backgroundStuff() {
     f(game.context, game.fieldPlayer, game.area);
     f(game.context2, game.fieldPlayer2, game.area2);
+    startGame();
 
     const move = 1;
     document.addEventListener('keydown', function (e) {
@@ -197,7 +210,7 @@ function f(context, fieldPlayer, area) {
         }
         // draai Z
         else if (e.keyCode === 90) {
-            playerRotate(game.fieldPlayer, -move, game.area);
+            playerRotate(game.fieldPlayer, game.area);
         }
         // Beneden S
         else if (e.keyCode === 83) {
@@ -224,7 +237,7 @@ function f(context, fieldPlayer, area) {
         }
         // draaien
         else if (e.keyCode === 38) {
-            playerRotate(game.fieldPlayer2, -move, game.area2);
+            playerRotate(game.fieldPlayer2, game.area2);
         }
 
         // todo
@@ -239,8 +252,6 @@ function f(context, fieldPlayer, area) {
 function startGame() {
     game.gameRun = true;
     game.gameRun2 = true;
-    nextBlock(game.fieldPlayer.name);
-    nextBlock(game.fieldPlayer2.name);
 
     let number = 0;
     game.gameLoop = setInterval(function () {
@@ -261,7 +272,8 @@ function startGame() {
                 draw(game.fieldPlayer, game.context, game.area);
                 draw(game.fieldPlayer2, game.context2, game.area2);
         }
-    }, 10);
+        // console.log(game.area2)
+    }, 100);
 }
 
 function countdown(durationInSeconds) {
@@ -376,6 +388,8 @@ function abilityBars(player, lines){
 
 
 function collide(player, area) {
+    console.log(player);
+    console.log(area);
     const [m, o] = [player.matrix, player.pos];
     for (let y = 0; y < m.length; ++y) {
         for (let x = 0; x < m[y].length; ++x) {
@@ -398,31 +412,34 @@ function merge(player, area) {
     });
 }
 
-function rotate(matrix, dir) {
-    for (let y = 0; y < matrix.length; ++y) {
-        for (let x = 0; x < y; ++x) {
-            [matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]]
-        }
-    }
-    if (dir > 0) {
-        matrix.forEach(row => row.reverse());
-    } else {
-        matrix.reverse();
-    }
+function rotate(matrix) {
+    console.log(matrix);
+    let object = JSON.stringify({matrix: matrix});
+    eb.send("tetris-21.socket.battleField.rotate", object, function (error, reply) {
+            if (error) {
+                console.log(error)
+            }
+        let info = JSON.parse(reply.body);
+        console.log(info);
+        return info;
+    })
+
 }
 
+
+
 function makePieces(player, area) {
-    let pieces = "ijlostzb";
-    player.matrix = makePiece(pieces[Math.floor(Math.random() * pieces.length)]);
+
+    player.matrix = game.block[gerandomNumber(5)];
     player.pos.y = 0;
-    player.pos.x = (Math.floor(area[0].length / 2)) - (Math.floor(player.matrix[0].length / 2));
+    player.pos.x = 5;
     collidefunction(player, area);
 }
 
 function collidefunction(player, area) {
     if (collide(player, area)) {
         area.forEach(row => row.fill(0));
-        player.score = 0;
+        // player.score = 0;
         if (player.name === "player1") {
             game.gameRun = false;
         } else if (player.name === "player2") {
@@ -448,15 +465,15 @@ function playerMove(player, dir, area) {
     }
 }
 
-function playerRotate(player, dir, area) {
+function playerRotate(player, area) {
     const pos = player.pos.x;
     let offset = 1;
-    rotate(player.matrix, dir);
+    player.matrix = rotate(player.matrix);
     while (collide(player, area)) {
         player.pos.x += offset;
         offset = -(offset + (offset > 0 ? 1 : -1));
         if (offset > player.matrix[0].length) {
-            rotate(player.matrix, -dir);
+            player.matrix = rotate(player.matrix);
             player.pos.x = pos;
             return;
         }
@@ -464,9 +481,9 @@ function playerRotate(player, dir, area) {
 }
 
 function draw(player, context, area) {
-    context.clearRect(0, 0, player1.width, player1.height);
+    context.clearRect(0, 0, player.width, player.height);
     context.fillStyle = "#000000";
-    context.fillRect(0, 0, player2.width, player2.height);
+    context.fillRect(0 , 0, player.width, player.height);
 
     drawMatrix(area, {x: 0, y: 0}, context);
     if (player.matrix != null) {
@@ -498,78 +515,4 @@ function Tie() {
     resultscore(game.context2);
     game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
     game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
-}
-
-function drawMatrix(matrix, offset, context) {
-    matrix.forEach((row, y) => {
-        row.forEach((value, x) => {
-            if (value !== 0) {
-                context.fillStyle = game.colors[value];
-                context.fillRect(x + offset.x, y + offset.y, 1, 1);
-                let imgTag = document.createElement("IMG");
-                imgTag.src = game.colors[value];
-                context.drawImage(imgTag, x + offset.x, y + offset.y, 1, 1);
-            }
-        });
-    });
-}
-
-function makePiece(type) {
-    if (type === "t") {
-        return [
-            [0, 0, 0],
-            [5, 5, 5],
-            [0, 5, 0]
-        ];
-    }
-    else if (type === "o") {
-        return [
-            [7, 7],
-            [7, 7]
-        ];
-    }
-    else if (type === "l") {
-        return [
-            [0, 4, 0],
-            [0, 4, 0],
-            [0, 4, 4]
-        ];
-    }
-    else if (type === "j") {
-        return [
-            [0, 1, 0],
-            [0, 1, 0],
-            [1, 1, 0]
-        ];
-    }
-    else if (type === "i") {
-        return [
-            [0, 2, 0, 0],
-            [0, 2, 0, 0],
-            [0, 2, 0, 0],
-            [0, 2, 0, 0]
-        ];
-    }
-    else if (type === "s") {
-        return [
-            [0, 3, 3],
-            [3, 3, 0],
-            [0, 0, 0]
-        ];
-    }
-    else if (type === "z") {
-        return [
-            [6, 6, 0],
-            [0, 6, 6],
-            [0, 0, 0]
-        ];
-    } else if (type === "b") {
-        return [
-            [0, 7, 0, 0],
-            [7, 7, 0, 0],
-            [7, 7, 0, 0],
-            [0, 7, 0, 0]
-        ];
-        // TODO: eigen block draai niet correct
-    }
 }

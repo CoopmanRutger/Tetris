@@ -15,6 +15,10 @@ public class Block {
     private int yValue;
     private List<List<Integer>> block;
 
+    public Block(List<List<Integer>> block){
+        this.block = block;
+    }
+
     public Block(String name, TypesOfBlocks typeOfBlock, Color color) {
         this.name = name;
         this.typeOfBlock = typeOfBlock;
@@ -93,13 +97,14 @@ public class Block {
         return valuesAfterTurn;
     }
 
-    public void rotateRight() {
+    public List<List<Integer>> rotateRight() {
         List<List<Integer>> blockAfterTurn = new ArrayList<>();
 
         for (int i = 0; i < block.get(0).size(); i++) {
             blockAfterTurn.add(makeLineForRightRotation(i));
         }
         block = blockAfterTurn;
+        return  block;
     }
 
     private List<Integer> makeLineForRightRotation(int index) {
