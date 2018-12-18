@@ -421,10 +421,9 @@ function rotate(matrix) {
             }
         let info = JSON.parse(reply.body);
         console.log(info);
-
+        return info;
     })
 
-    // Todo  send to backend en terug!
 }
 
 
@@ -469,12 +468,12 @@ function playerMove(player, dir, area) {
 function playerRotate(player, area) {
     const pos = player.pos.x;
     let offset = 1;
-    rotate(player.matrix);
+    player.matrix = rotate(player.matrix);
     while (collide(player, area)) {
         player.pos.x += offset;
         offset = -(offset + (offset > 0 ? 1 : -1));
         if (offset > player.matrix[0].length) {
-            rotate(player.matrix);
+            player.matrix = rotate(player.matrix);
             player.pos.x = pos;
             return;
         }

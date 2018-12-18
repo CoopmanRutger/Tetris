@@ -188,9 +188,13 @@ public class ConsumerHandlers {
         jdbcClient.queryWithParams(getPassword, params[0], res -> {
             if (res.succeeded()) {
                 ResultSet rs = res.result();
-                passwordFromDb.put("password", rs.getResults().get(0).getString(0));
-                boolean samePassword = BCrypt.checkpw(password, passwordFromDb.getString("password"));
-                passwordResult.put("canLogin", "" + samePassword);
+                if (rs.getResults().size() == 0) {
+                    passwordResult.put("canLogin", "false");
+                } else {
+                    passwordFromDb.put("password", rs.getResults().get(0).getString(0));
+                    boolean samePassword = BCrypt.checkpw(password, passwordFromDb.getString("password"));
+                    passwordResult.put("canLogin", "" + samePassword);
+                }
             } else {
                 Logger.warn("Could not get info from DB: ", res.cause());
                 passwordResult.put("canLogin", "false");
