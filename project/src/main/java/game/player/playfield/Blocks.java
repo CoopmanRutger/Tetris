@@ -27,7 +27,7 @@ public class Blocks {
         Long randomNumber = Math.round((Math.random() * amountOfBlocks));
         int randomNumberToInt = randomNumber.intValue();
         currentBlock = blocks.get(randomNumberToInt);
-        return currentBlock;
+        return new Block(currentBlock);
     }
 
     public void addBlock(Block block) {
@@ -40,14 +40,14 @@ public class Blocks {
 
 
     private void MakeBlocks(){
-        Block Lblock = new Block("L-blok", TypesOfBlocks.lBlock, Color.red);
-        Block LineBlock = new Block("Line-blok", TypesOfBlocks.lineBlock, Color.blue);
-        Block Sblok = new Block("Square-blok", TypesOfBlocks.squareBlock, Color.magenta);
-        Block Tblok = new Block("T-blok", TypesOfBlocks.tBlock, Color.orange);
-        Block Zblok = new Block("Z-blok", TypesOfBlocks.zBlock, Color.yellow);
-        Block ILblock= new Block("IL-block", TypesOfBlocks.inverseLBlock, Color.GREEN);
-        Block Nblock = new Block("N-blok", TypesOfBlocks.leftNBlock, Color.pink);
-        Block specialBock = new Block("SP-blok", TypesOfBlocks.leftNBlock, Color.white);
+        Block Lblock = new Block(TypesOfBlocks.lBlock, Color.red);
+        Block LineBlock = new Block(TypesOfBlocks.lineBlock, Color.blue);
+        Block Sblok = new Block(TypesOfBlocks.squareBlock, Color.magenta);
+        Block Tblok = new Block(TypesOfBlocks.tBlock, Color.orange);
+        Block Zblok = new Block(TypesOfBlocks.zBlock, Color.yellow);
+        Block ILblock= new Block(TypesOfBlocks.inverseLBlock, Color.GREEN);
+        Block Nblock = new Block(TypesOfBlocks.leftNBlock, Color.pink);
+        Block specialBock = new Block(TypesOfBlocks.leftNBlock, Color.white);
 
         Lblock.makeBlock(2,0,1,3);
         LineBlock.makeBlock(0,0,4,0);

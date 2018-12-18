@@ -5,10 +5,11 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Block {
 
-    private String name;
+
     private TypesOfBlocks typeOfBlock;
     private Color color;
     private int xValue;
@@ -19,13 +20,19 @@ public class Block {
         this.block = block;
     }
 
-    public Block(String name, TypesOfBlocks typeOfBlock, Color color) {
-        this.name = name;
+    public Block(TypesOfBlocks typeOfBlock, Color color) {
         this.typeOfBlock = typeOfBlock;
         this.color = color;
         this.xValue = 0;
         this.yValue = 0;
         block = new ArrayList<>();
+    }
+
+    public Block(Block newblock) {
+        this.xValue = 0;
+        this.yValue = 0;
+        this.color = newblock.color;
+        this.block = new ArrayList<>(newblock.getBlock());
     }
 
     public void makeBlock(int startPositionForTopLine, int startPositionForBottomLine,
@@ -97,14 +104,14 @@ public class Block {
         return valuesAfterTurn;
     }
 
-    public List<List<Integer>> rotateRight() {
+    public void rotateRight() {
         List<List<Integer>> blockAfterTurn = new ArrayList<>();
 
         for (int i = 0; i < block.get(0).size(); i++) {
             blockAfterTurn.add(makeLineForRightRotation(i));
         }
         block = blockAfterTurn;
-        return  block;
+        System.out.println(block);
     }
 
     private List<Integer> makeLineForRightRotation(int index) {

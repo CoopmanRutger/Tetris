@@ -18,9 +18,6 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import org.pmw.tinylog.Logger;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Routes extends AbstractVerticle {
     private EventBus eb;
     private GameController controller;
@@ -88,17 +85,14 @@ public class Routes extends AbstractVerticle {
 
     private void getNewBlock(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        System.out.println(userMessage);
         String playername = userMessage.getString("playername");
-        System.out.println(playername);
-        Playfield playfield = null;
 
-        for (int i = 0; i < game.getPlayers().size() ; i++) {
-            if (game.getPlayers().get(0).getName().equals(playername)){
-                playfield = game.getPlayers().get(i).getPlayfieldByName(playername);
+        Playfield playfield = null;
+        for (Player player:game.getPlayers()) {
+            if (player.getName().equals(playername)){
+                playfield = player.getPlayfieldByName(playername);
             }
         }
-        System.out.println(playfield.newBlock());
         Block block = playfield.newBlock();
 
         JsonObject json = new JsonObject();
@@ -111,16 +105,25 @@ public class Routes extends AbstractVerticle {
 
 
     private void rotateBlock(Message message) {
-
         JsonObject userMessage = new JsonObject(message.body().toString());
-        System.out.println(userMessage);
+        String playername = userMessage.getString("playerName");
+        JsonArray matrix = userMessage.getJsonArray("matrix");
 
+        System.out.println("player: " + playername);
+        System.out.println(matrix);
 
-//        Block rotateBlock = (Block) playfield.getBlocks().getCurrentBlock().rotateRight();
-//        JsonObject json = new JsonObject();
-//        json.put("new block", rotateBlock );
-//        System.out.println(rotateBlock);
-//        message.reply(json.encode());
+        Playfield playfield = null;
+
+        for (Player player:game.getPlayers()) {
+            if (player.getName().equals(playername)){
+                playfield = player.getPlayfieldByName(playername);
+            }
+        }
+
+        playfield.getBlocks().getCurrentBlock().rotateRight();
+        Block rotateBlock = playfield.getBlocks().getCurrentBlock();
+        System.out.println(rotateBlock);
+        message.reply(Json.encode(rotateBlock));
 
     }
 

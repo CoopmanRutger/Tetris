@@ -60,7 +60,7 @@ public class Playfield {
     }
 
     public Block newBlock() {
-        Block randomBlock = blocks.getBlock();
+        Block randomBlock = new Block(blocks.getBlock());
 
         putOnPlayField(18, 3, randomBlock);
         return randomBlock;

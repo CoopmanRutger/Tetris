@@ -5,13 +5,13 @@ let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 // let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
 // let eb = new EventBus("http://192.168.0.251:8021/tetris-21/socket");
 let game = {
-    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 500,
+    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50,
     area: makeMatrix(1, 1),
     area2: makeMatrix(1, 1),
     context: player1.getContext("2d"),
     context2: player2.getContext("2d"),
-    fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0},
-    fieldPlayer2: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0},
+    fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0, width:12,height:20},
+    fieldPlayer2: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0,width:12,height:20},
     colors: [
         null,
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Jz34T+Ifv3kGIOojBWYBgFkNlgADfTUeTEygjQLC3Iz3Li8G5sanGIauq5gPYwlTdvAtpMLwC6AORlkKjEA2bUYBvDxsYDN+PTpDwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Bb19cYRCW0EGNRrLCgBQXvH3/lQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQAfwJNr7nKi7AAAAABJRU5ErkJggg==",
@@ -106,7 +106,7 @@ function makeMatrix(width, height) {
 }
 
 function drawMatrix(matrix, offset, context) {
-    matrix.forEach((row, y) => {
+      matrix.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value !== 0) {
                 context.fillStyle = game.colors[value];
@@ -119,13 +119,6 @@ function drawMatrix(matrix, offset, context) {
     });
 }
 
-function makePiece(type) {
-    return [
-        type[0],
-        type[1],
-    ];
-}
-
 
 
 function setGamePlay(infoBackend) {
@@ -135,10 +128,6 @@ function setGamePlay(infoBackend) {
     setPlayer2(infoBackend.players[1]);
 
     setEvents(infoBackend.events);
-
-
-
-    // console.log(infoBackend);
 }
 
 function setPlayer1(player) {
@@ -270,7 +259,7 @@ function startGame() {
                 draw(game.fieldPlayer2, game.context2, game.area2);
         }
         // console.log(game.area2)
-    }, 100);
+    }, 10);
 }
 
 function countdown(durationInSeconds) {
@@ -385,19 +374,17 @@ function abilityBars(player, lines){
 
 
 function collide(player, area) {
-//     console.log(player);
-//     console.log(area);
-//     const [m, o] = [player.matrix, player.pos];
-//     for (let y = 0; y < m.length; ++y) {
-//         for (let x = 0; x < m[y].length; ++x) {
-//             if (m[y][x] !== 0 && (area[y + o.y] && area[y + o.y][x + o.x]) !== 0) {
-//                 return true;
-//             }
-//         }
-//     }
+    console.log(player);
+    const [m, o] = [player.matrix, player.pos];
+    for (let y = 0; y < m.length; ++y) {
+        for (let x = 0; x < m[y].length; ++x) {
+            if (m[y][x] !== 0 && (area[y + o.y] && area[y + o.y][x + o.x]) !== 0) {
+                return true;
+            }
+        }
+    }
     return false;
 }
-
 
 function merge(player, area) {
     player.matrix.forEach((row, y) => {
@@ -409,40 +396,50 @@ function merge(player, area) {
     });
 }
 
-function rotate(matrix) {
-    console.log(matrix);
-    let object = JSON.stringify({matrix: matrix});
+function rotate(player, area) {
+    let object = JSON.stringify({matrix: player.matrix, playerName:player.name});
+
     eb.send("tetris-21.socket.battleField.rotate", object, function (error, reply) {
             if (error) {
-                console.log(error)
+                console.log(error);
             }
-        let rotatedBlock = JSON.parse(reply.body);
-        console.log(rotatedBlock);
-        return rotatedBlock
+
+            let rotatedBlock = JSON.parse(reply.body);
+            console.log(rotatedBlock.block);
+            player.matrix = rotatedBlock.block;
+            collide2(player, area);
     })
 
 }
 
 
-function getNewBlock(playername) {
-    let object = JSON.stringify({playername: playername});
+function collide2(player, area, rotatedBlock) {
+    while (collide(player, area)) {
+        player.pos.x += offset;
+        offset = -(offset + (offset > 0 ? 1 : -1));
+        if (offset > player.matrix[0].length) {
+            player.pos.x = 5;
+                return;
+            }
+    }
+}
+
+function makePieces(player, area) {
+    let object = JSON.stringify({playername: player.name});
     eb.send("tetris-21.socket.battleField.getNewBlock", object, function (error, reply) {
         if (error) {
             console.log(error)
         }
-        let newBlock = JSON.parse(reply.body);
-        console.log(newBlock);
-        return newBlock;
-    })
-}
+        let block = JSON.parse(reply.body);
+        let newBlock = block.block;
+        let color = block.color;
 
+        player.matrix = newBlock;
+        player.pos.y = 0;
+        player.pos.x = 5;
 
-function makePieces(player, area) {
-    console.log(player);
-    player.matrix = getNewBlock(player.name);
-    player.pos.y = 0;
-    player.pos.x = 5;
-    collidefunction(player, area);
+        collidefunction(player, area);
+    });
 }
 
 function collidefunction(player, area) {
@@ -477,28 +474,13 @@ function playerMove(player, dir, area) {
 function playerRotate(player, area) {
     const pos = player.pos.x;
     let offset = 1;
-    player.matrix = rotate(player.matrix);
-    while (collide(player, area)) {
-        player.pos.x += offset;
-        offset = -(offset + (offset > 0 ? 1 : -1));
-        if (offset > player.matrix[0].length) {
-            player.matrix = rotate(player.matrix);
-            player.pos.x = pos;
-            return;
-        }
-    }
+    player.matrix = rotate(player, area);
 }
 
 function draw(player, context, area) {
-    console.log("hello");
-    console.log(player);
-    console.log(context);
-    console.log(area);
-
     context.clearRect(0, 0, player.width, player.height);
     context.fillStyle = "#000000";
     context.fillRect(0 , 0, player.width, player.height);
-
     drawMatrix(area, {x: 0, y: 0}, context);
     if (player.matrix != null) {
         drawMatrix(player.matrix, player.pos, context);
