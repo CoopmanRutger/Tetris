@@ -1,18 +1,24 @@
 package game.player.hero.ability;
 
 import game.player.playfields.playfield.PointsForAbilities;
+import org.pmw.tinylog.Logger;
+
+/**
+ * @author Remote Access Tetris aka RAT
+ */
 
 public class AbilityLvl1 implements Ability {
 
-    private String name = null;
-    private int startValue;
+    private int numberOfTimesUsed;
+    private final String name;
+    private final int startValue;
     private Boolean available;
-    private static int numberOfTimesUsed = 0;
 
-    public AbilityLvl1(String name) {
+    public AbilityLvl1(final String name) {
         this.name = name;
         this.startValue = 500;
         this.available = false;
+        numberOfTimesUsed = 0;
     }
 
     @Override
@@ -36,8 +42,8 @@ public class AbilityLvl1 implements Ability {
     }
 
     @Override
-    public void abilityIsReadyToUse(PointsForAbilities points) {
-        if (points.getPoints() >= startValue){
+    public void abilityIsReadyToUse(final PointsForAbilities points) {
+        if (points.getPoints() >= startValue) {
             available = true;
         }
         // TODO
@@ -49,13 +55,14 @@ public class AbilityLvl1 implements Ability {
     }
 
     @Override
-    public void activate(PointsForAbilities points) {
-        if (available){
+    public void activate(final PointsForAbilities points) {
+        if (available) {
             usedAbility();
             points.removePoints(startValue);
             action();
         } else {
-            System.out.println("activate? nope");
+            //System.out.println("activate? nope");
+            Logger.info("activate? nope");
         }
         // TODO hier activeer je hem
     }
@@ -67,10 +74,10 @@ public class AbilityLvl1 implements Ability {
 
     @Override
     public String toString() {
-        return "AbilityLvl1{" +
-                "name='" + name + '\'' +
-                ", startValue=" + startValue +
-                ", available=" + available +
-                '}';
+        return "AbilityLvl1{"
+            + "name='" + name + '\''
+            + ", startValue=" + startValue
+            + ", available=" + available
+            + '}';
     }
 }

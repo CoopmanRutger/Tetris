@@ -1,18 +1,24 @@
 package game.player.hero.ability;
 
 import game.player.playfields.playfield.PointsForAbilities;
+import org.pmw.tinylog.Logger;
+
+/**
+ * @author Remote Access Tetris aka RAT
+ */
 
 public class AbilityLvl2 implements Ability {
 
-    private String name = null;
-    private int startValue;
+    private int numberOfTimesUsed;
+    private final String name;
+    private final int startValue;
     private Boolean available;
-    private static int numberOfTimesUsed = 0;
 
-    public AbilityLvl2(String name) {
+    public AbilityLvl2(final String name) {
         this.name = name;
         this.startValue = 750;
         this.available = false;
+        numberOfTimesUsed = 0;
     }
 
     @Override
@@ -26,7 +32,6 @@ public class AbilityLvl2 implements Ability {
     }
 
 
-
     @Override
     public Boolean isAvailable() {
         return available;
@@ -38,8 +43,8 @@ public class AbilityLvl2 implements Ability {
     }
 
     @Override
-    public void abilityIsReadyToUse(PointsForAbilities points) {
-        if (points.getPoints() >= startValue){
+    public void abilityIsReadyToUse(final PointsForAbilities points) {
+        if (points.getPoints() >= startValue) {
             available = true;
         }
         // TODO
@@ -51,13 +56,14 @@ public class AbilityLvl2 implements Ability {
     }
 
     @Override
-    public void activate(PointsForAbilities points) {
-        if (available){
+    public void activate(final PointsForAbilities points) {
+        if (available) {
             usedAbility();
             points.removePoints(startValue);
             action();
         } else {
-            System.out.println("nope can't");
+            //System.out.println("nope can't");
+            Logger.info("nope can't");
         }
         // TODO hier activeer je hem
     }
@@ -69,10 +75,10 @@ public class AbilityLvl2 implements Ability {
 
     @Override
     public String toString() {
-        return "AbilityLvl1{" +
-                "name='" + name + '\'' +
-                ", startValue=" + startValue +
-                ", available=" + available +
-                '}';
+        return "AbilityLvl1{"
+            + "name='" + name + '\''
+            + ", startValue=" + startValue
+            + ", available=" + available
+            + '}';
     }
 }

@@ -2,7 +2,6 @@ package game.api.jdbcinteractor;
 
 import game.api.webapi.GameController;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.jdbc.JDBCClient;
 import io.vertx.ext.sql.SQLConnection;
@@ -25,13 +24,12 @@ public class ConnectionDatabase extends AbstractVerticle {
         return jdbcClient;
     }
 
-    public static void setJdbcClient(JDBCClient jdbcClient) {
+    public static void setJdbcClient(final JDBCClient jdbcClient) {
         ConnectionDatabase.jdbcClient = jdbcClient;
     }
 
-    public ConsumerHandlers getConsumerHandlers(GameController controller) {
-        final ConsumerHandlers consumerHandlers = new ConsumerHandlers(controller);
-        return consumerHandlers;
+    public ConsumerHandlers getConsumerHandlers(final GameController controller) {
+        return new ConsumerHandlers(controller);
     }
 
 
@@ -148,7 +146,7 @@ public class ConnectionDatabase extends AbstractVerticle {
     public void start() {
         startServer();
         initializeDB();
-        final EventBus eb = vertx.eventBus();
+        //final EventBus eb = vertx.eventBus();
     }
 
     @Override
@@ -162,7 +160,7 @@ public class ConnectionDatabase extends AbstractVerticle {
         return consumerHandlers;
     }
 
-    public void setConsumerHandler(ConsumerHandlers consumerHandler) {
+    public void setConsumerHandler(final ConsumerHandlers consumerHandler) {
         this.consumerHandlers = consumerHandler;
     }
 }

@@ -13,7 +13,7 @@ public class Game {
     private List<Player> players;
     private Events events;
 
-    public Game(Events events) {
+    public Game(final Events events) {
         players = new ArrayList<>();
         this.events = events;
     }
@@ -22,7 +22,7 @@ public class Game {
         return players;
     }
 
-    public void setPlayers(List<Player> players) {
+    public void setPlayers(final List<Player> players) {
         this.players = players;
     }
 
@@ -30,15 +30,15 @@ public class Game {
         return events;
     }
 
-    public void setEvents(Events events) {
+    public void setEvents(final Events events) {
         this.events = events;
     }
 
-    public void addPlayer(Player player) {
+    public void addPlayer(final Player player) {
         players.add(player);
     }
 
-    public void removePlayer(Player player) {
+    public void removePlayer(final Player player) {
         players.remove(player);
     }
 

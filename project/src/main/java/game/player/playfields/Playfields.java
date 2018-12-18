@@ -3,34 +3,37 @@ package game.player.playfields;
 import game.player.playfields.playfield.Playfield;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
+
+/**
+ * @author Remote Access Tetris aka RAT
+ */
 
 public class Playfields {
 
-    private List<Playfield> playfields;
+    private final List<Playfield> playfieldsList;
 
     public Playfields() {
-        playfields = new ArrayList<>();
+        playfieldsList = new ArrayList<>();
         addPlayfield(new Playfield());
     }
 
     public List<Playfield> getPlayfields() {
-        return playfields;
+        return playfieldsList;
     }
 
-    public void addPlayfield(Playfield playfield){
-        playfields.add(playfield);
+    public void addPlayfield(final Playfield playfield) {
+        playfieldsList.add(playfield);
     }
 
-    public void removePlayfield(Playfield playfield){
-        playfields.remove(playfield);
+    public void removePlayfield(final Playfield playfield) {
+        playfieldsList.remove(playfield);
     }
 
     @Override
     public String toString() {
         return "Playfields{"
-                + playfields
-                + '}';
+            + playfieldsList
+            + '}';
     }
 }

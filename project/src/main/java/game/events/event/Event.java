@@ -1,11 +1,15 @@
 package game.events.event;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class Event {
 
-    private String name;
-    private Trigger trigger;
+    private final String name;
+    private final Trigger trigger;
 
-    public Event(String name, Trigger trigger) {
+    public Event(final String name, final Trigger trigger) {
         this.name = name;
         this.trigger = trigger;
     }
@@ -36,9 +40,9 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" +
-                "name='" + name + '\'' +
-                ", trigger=" + trigger +
-                '}';
+        return "Event{"
+            + "name='" + name + '\''
+            + ", trigger=" + trigger
+            + '}';
     }
 }

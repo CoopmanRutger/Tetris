@@ -1,37 +1,41 @@
 package game.player.playfields.playfield.block;
 
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class Block {
 
-    private String name;
-    private TypesOfBlocks typeOfBlock;
-    private Color color;
+    private static final String BRACE = " }";
+    private final String name;
+    private final TypesOfBlocks typeOfBlock;
+    private final Color color;
     private int xValue;
     private int yValue;
-    private List<List<Integer>> block;
+    private List<List<Integer>> blockList;
 
-    public Block(String name, TypesOfBlocks typeOfBlock, Color color) {
+    public Block(final String name, final TypesOfBlocks typeOfBlock, final Color color) {
         this.name = name;
         this.typeOfBlock = typeOfBlock;
         this.color = color;
         this.xValue = 0;
         this.yValue = 0;
-        block = new ArrayList<>();
+        blockList = new ArrayList<>();
     }
 
-    public void makeBlock(int startPositionForTopLine, int startPositionForBottomLine,
-                          int amountOfBlocksOnTopLine, int amountOfBlocksInBottomLine) {
+    public void makeBlock(final int startPositionForTopLine, final int startPositionForBottomLine,
+                          final int amountOfBlocksOnTopLine, final int amountOfBlocksInBottomLine) {
         makeWidthOrHeight(startPositionForTopLine, amountOfBlocksOnTopLine);
         makeWidthOrHeight(startPositionForBottomLine, amountOfBlocksInBottomLine);
     }
 
-    private void makeWidthOrHeight(int startPos, int amountOfBlocks) {
-        List<Integer> blockSize = new ArrayList<>();
+    private void makeWidthOrHeight(final int startPos, final int amountOfBlocks) {
+        final List<Integer> blockSize = new ArrayList<>();
         int indexWidth = 0;
         for (int j = 0; j < 4; j++) {
             if (indexWidth < amountOfBlocks) {
@@ -45,11 +49,11 @@ public class Block {
                 blockSize.add(0);
             }
         }
-        block.add(blockSize);
+        blockList.add(blockSize);
     }
 
     public List<List<Integer>> getBlock() {
-        return Collections.unmodifiableList(block);
+        return Collections.unmodifiableList(blockList);
     }
 
     public Color getColor() {
@@ -60,7 +64,7 @@ public class Block {
         return xValue;
     }
 
-    public void setXValue(int xValue) {
+    public void setXValue(final int xValue) {
         this.xValue = xValue;
     }
 
@@ -68,44 +72,52 @@ public class Block {
         return yValue;
     }
 
-    public void setYValue(int yValue) {
+    public void setYValue(final int yValue) {
         this.yValue = yValue;
     }
 
-    public void rotateLeft() {
-        List<List<Integer>> blockAfterTurn = new ArrayList<>();
-
-        for (int i = block.get(0).size() - 1; i >= 0; i--) {
-            blockAfterTurn.add(makeLineForLeftRotation(i));
-        }
-        block = blockAfterTurn;
+    public String getName() {
+        return name;
     }
 
-    private List<Integer> makeLineForLeftRotation(int i) {
-        List<Integer> valuesAfterTurn = new ArrayList<>();
-        for (int j = 0; j < block.size(); j++) {
-            if (block.get(j).get(i) != 0) {
-            valuesAfterTurn.add(1);
+    public TypesOfBlocks getTypeOfBlock() {
+        return typeOfBlock;
+    }
+
+    public void rotateLeft() {
+        final List<List<Integer>> blockAfterTurn = new ArrayList<>();
+
+        for (int i = blockList.get(0).size() - 1; i >= 0; i--) {
+            blockAfterTurn.add(makeLineForLeftRotation(i));
+        }
+        blockList = blockAfterTurn;
+    }
+
+    private List<Integer> makeLineForLeftRotation(final int i) {
+        final List<Integer> valuesAfterTurn = new ArrayList<>();
+        for (List<Integer> aBlockList : blockList) {
+            if (aBlockList.get(i) != 0) {
+                valuesAfterTurn.add(1);
             } else {
-            valuesAfterTurn.add(0);
+                valuesAfterTurn.add(0);
             }
         }
         return valuesAfterTurn;
     }
 
     public void rotateRight() {
-        List<List<Integer>> blockAfterTurn = new ArrayList<>();
+        final List<List<Integer>> blockAfterTurn = new ArrayList<>();
 
-        for (int i = 0; i < block.get(0).size(); i++) {
+        for (int i = 0; i < blockList.get(0).size(); i++) {
             blockAfterTurn.add(makeLineForRightRotation(i));
         }
-        block = blockAfterTurn;
+        blockList = blockAfterTurn;
     }
 
-    private List<Integer> makeLineForRightRotation(int index) {
-        List<Integer> valuesAfterTurn = new ArrayList<>();
-        for (int j = block.size() - 1; j >= 0; j--) {
-            if (block.get(j).get(index) != 0) {
+    private List<Integer> makeLineForRightRotation(final int index) {
+        final List<Integer> valuesAfterTurn = new ArrayList<>();
+        for (int j = blockList.size() - 1; j >= 0; j--) {
+            if (blockList.get(j).get(index) != 0) {
                 valuesAfterTurn.add(1);
             } else {
                 valuesAfterTurn.add(0);
@@ -116,15 +128,14 @@ public class Block {
 
     @Override
     public String toString() {
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i < block.size(); i++) {
+        final StringBuilder res = new StringBuilder();
+        for (List<Integer> aBlock : blockList) {
             res.append("{ ");
-            for (int j = 0; j < block.get(i).size(); j++) {
-                res.append(block.get(i).get(j));
+            for (Integer anABlock : aBlock) {
+                res.append(anABlock);
                 res.append(", ");
             }
-            res.append(" }");
-            res.append('\n');
+            res.append(BRACE).append('\n');
         }
         return res.toString();
     }

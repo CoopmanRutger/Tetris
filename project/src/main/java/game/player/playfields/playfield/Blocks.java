@@ -5,26 +5,30 @@ import game.player.playfields.playfield.block.Block;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class Blocks {
 
-    private List<Block> blocks;
+    private final List<Block> blocksList;
 
-    Blocks() {
-        blocks = new ArrayList<>();
+    public Blocks() {
+        blocksList = new ArrayList<>();
     }
 
-    Block getBlock() {
-        int amountOfBlocks = blocks.size() - 1;
-        Long randomNumber = Math.round((Math.random() * amountOfBlocks));
-        int randomNumberToInt = randomNumber.intValue();
-        return blocks.get(randomNumberToInt);
+    public Block getBlock() {
+        final int amountOfBlocks = blocksList.size() - 1;
+        final Long randomNumber = Math.round(Math.random() * amountOfBlocks);
+        final int randomNumberToInt = randomNumber.intValue();
+        return blocksList.get(randomNumberToInt);
     }
 
-    public void addBlock(Block block) {
-        blocks.add(block);
+    public void addBlock(final Block block) {
+        blocksList.add(block);
     }
 
-    public void removeBlock(Block block) {
-        blocks.remove(block);
+    public void removeBlock(final Block block) {
+        blocksList.remove(block);
     }
 }

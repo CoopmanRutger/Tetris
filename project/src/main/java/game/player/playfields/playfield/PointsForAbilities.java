@@ -1,5 +1,9 @@
 package game.player.playfields.playfield;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class PointsForAbilities {
 
     private int points;
@@ -12,13 +16,14 @@ public class PointsForAbilities {
         return points;
     }
 
-    public void addPoints(int points){
-        if (points > 0){
+    public void addPoints(final int points) {
+        if (points > 0) {
             this.points += points;
         }
     }
-    public void removePoints(int points){
-        if (points > 0){
+
+    public void removePoints(final int points) {
+        if (points > 0) {
             this.points -= points;
         }
     }

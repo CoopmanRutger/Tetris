@@ -1,41 +1,48 @@
 package game.player.playfields.playfield;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class Score {
 
-    private int score;
+    private static final int TWO = 2;
+    private static final int THREE = 3;
+    private static final int FOUR = 4;
+    private int scores;
 
     public Score() {
-        score = 0;
+        scores = 0;
     }
 
 
     public int getScore() {
-        return score;
+        return scores;
     }
 
-    void setScore(int score) {
-        this.score = score;
+    public void setScore(final int scores) {
+        this.scores = scores;
     }
 
-    public void updateScore(int extraScore) {
-        int previousScore = getScore();
+    public void updateScore(final int extraScore) {
+        final int previousScore = getScore();
         setScore(previousScore + extraScore);
     }
 
-    void extraScoreForMultipleLines(int amountOfCompletedLines) {
+    public void extraScoreForMultipleLines(final int amountOfCompletedLines) {
         int extraScore = 0;
-        if (amountOfCompletedLines == 2) {
-            extraScore = 200*2-200;
-        } else if (amountOfCompletedLines == 3) {
-            extraScore = 300*3-300;
-        } else if (amountOfCompletedLines == 4) {
-            extraScore = 400*4-400;
+        if (amountOfCompletedLines == TWO) {
+            extraScore = 200 * 2 - 200;
+        } else if (amountOfCompletedLines == THREE) {
+            extraScore = 300 * 3 - 300;
+        } else if (amountOfCompletedLines == FOUR) {
+            extraScore = 400 * 4 - 400;
         }
         setScore(getScore() + extraScore);
     }
 
     @Override
     public String toString() {
-        return " " + score;
+        return " " + scores;
     }
 }

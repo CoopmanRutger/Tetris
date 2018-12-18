@@ -1,14 +1,21 @@
 package game.api.jdbcinteractor;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
 
-public class Database {
+public final class Database {
     private static ConnectionDatabase connectionDatabase;
 
-    public static ConnectionDatabase getDB(){
+    private Database() {
+
+    }
+
+    public static ConnectionDatabase getDB() {
         return connectionDatabase;
     }
 
-    public static void setDB(ConsumerHandlers consumerHandler) {
+    public static void setDB(final ConsumerHandlers consumerHandler) {
         connectionDatabase = new ConnectionDatabase();
         connectionDatabase.setConsumerHandler(consumerHandler);
     }

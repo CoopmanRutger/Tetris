@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LifepointsTest {
+public class LifePointsTest {
 
-    private Lifepoints lifepoints;
+    private LifePoints lifepoints;
 
     @Before
     public void before(){
-        lifepoints = new Lifepoints();
+        lifepoints = new LifePoints();
     }
 
     @Test

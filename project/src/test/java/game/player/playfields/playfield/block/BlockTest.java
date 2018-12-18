@@ -11,7 +11,7 @@ public class BlockTest {
 
     @Test
     public void testMakeBlock() {
-        Block block = new Block("tblock", TypesOfBlocks.tBlock, Color.BLUE);
+        Block block = new Block("TBLOCK", TypesOfBlocks.TBLOCK, Color.BLUE);
         block.makeBlock(1, 0, 1, 3);
 
         int blockValue = block.getBlock().get(0).get(0);
@@ -41,7 +41,7 @@ public class BlockTest {
 
     @Test
     public void testRotateRight() {
-        Block block = new Block("inverseLBlock", TypesOfBlocks.inverseLBlock, Color.BLUE);
+        Block block = new Block("INVERSELBLOCK", TypesOfBlocks.INVERSELBLOCK, Color.BLUE);
         block.makeBlock(0, 0, 1, 3);
         block.rotateRight();
 
@@ -72,7 +72,7 @@ public class BlockTest {
 
     @Test
     public void testRotateLeft() {
-        Block block = new Block("inverseLBlock", TypesOfBlocks.inverseLBlock, Color.BLUE);
+        Block block = new Block("INVERSELBLOCK", TypesOfBlocks.INVERSELBLOCK, Color.BLUE);
         block.makeBlock(0, 0, 1, 3);
         block.rotateLeft();
 

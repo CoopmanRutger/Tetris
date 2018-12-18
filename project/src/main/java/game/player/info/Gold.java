@@ -1,31 +1,33 @@
 package game.player.info;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class Gold {
 
-    private int gold;
+    private int money;
 
     public Gold() {
-        gold = 0;
+        money = 0;
     }
 
     public int getGold() {
-        return gold;
+        return money;
     }
 
 
-    public void addGold(int gold){
-        this.gold += gold;
+    public void addGold(final int gold) {
+        this.money += gold;
     }
 
-    public boolean removeGold(int gold){
-        if ((this.gold -= gold)>= 0){
-            return true; // het is gekocht
-        }
-        return false; // het is niet gekocht, te weinig geld.
+    public boolean removeGold(final int gold) {
+        final int remainingGold = this.money - gold;
+        return remainingGold >= 0;
     }
 
     @Override
     public String toString() {
-        return Integer.toString(gold);
+        return Integer.toString(money);
     }
 }

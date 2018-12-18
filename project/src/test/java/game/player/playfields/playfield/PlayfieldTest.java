@@ -17,14 +17,14 @@ public class PlayfieldTest  {
     @Before
     public void initiate() {
         playfield = new Playfield();
-        block = new Block("Lblock", TypesOfBlocks.lBlock, Color.BLACK);
+        block = new Block("LBLOCK", TypesOfBlocks.LBLOCK, Color.BLACK);
         block.makeBlock(2, 0, 1, 3);
     }
 
     @Test
     public void testMakeField() {
-        assertEquals(20,playfield.getPlayfield().size());
-        assertEquals(10, playfield.getPlayfield().get(2).size());
+        assertEquals(20,playfield.getPlayfieldList().size());
+        assertEquals(10, playfield.getPlayfieldList().get(2).size());
     }
 
     @Test
@@ -36,19 +36,19 @@ public class PlayfieldTest  {
     public void testPutBlockOnField() {
         playfield.putOnPlayField(2, 4, block);
 
-        int valueOfPlayfield = playfield.getPlayfield().get(2).get(4);
+        int valueOfPlayfield = playfield.getPlayfieldList().get(2).get(4);
         assertEquals(1, valueOfPlayfield);
 
-        int valueOfPlayfield1 = playfield.getPlayfield().get(2).get(5);
+        int valueOfPlayfield1 = playfield.getPlayfieldList().get(2).get(5);
         assertEquals(1, valueOfPlayfield1);
 
-        int valueOfPlayfield2 = playfield.getPlayfield().get(2).get(6);
+        int valueOfPlayfield2 = playfield.getPlayfieldList().get(2).get(6);
         assertEquals(1, valueOfPlayfield2);
 
-        int valueOfPlayfield3 = playfield.getPlayfield().get(3).get(6);
+        int valueOfPlayfield3 = playfield.getPlayfieldList().get(3).get(6);
         assertEquals(1, valueOfPlayfield3);
 
-        int valueOfPlayfield4 = playfield.getPlayfield().get(3).get(4);
+        int valueOfPlayfield4 = playfield.getPlayfieldList().get(3).get(4);
         assertEquals(0, valueOfPlayfield4);
     }
 
@@ -63,16 +63,16 @@ public class PlayfieldTest  {
 
         playfield.checkForCompletedLine();
 
-        int valueOnRemovedLine = playfield.getPlayfield().get(0).get(3);
+        int valueOnRemovedLine = playfield.getPlayfieldList().get(0).get(3);
         assertEquals(0, valueOnRemovedLine);
 
-        int heightOfPlayingField = playfield.getPlayfield().size();
+        int heightOfPlayingField = playfield.getPlayfieldList().size();
         assertEquals(20, heightOfPlayingField);
 
-        int widthOfPlayingfield1 = playfield.getPlayfield().get(19).size();
+        int widthOfPlayingfield1 = playfield.getPlayfieldList().get(19).size();
         assertEquals(10, widthOfPlayingfield1);
 
-        int widthOfPlayingfield2 = playfield.getPlayfield().get(0).size();
+        int widthOfPlayingfield2 = playfield.getPlayfieldList().get(0).size();
         assertEquals(10, widthOfPlayingfield2);
 
         Score score = playfield.getScore();
