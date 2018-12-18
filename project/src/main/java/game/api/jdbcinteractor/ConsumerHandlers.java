@@ -46,8 +46,8 @@ public class ConsumerHandlers {
                     player.put("playerName", rs.getResults().get(0).getString(6));
                     //System.out.println(player);
                     insertRandomFaction(rs.getResults().get(0).getInteger(0));
-                    //controller.setPlayer1(rs.getResults().get(0).getString(6));
-                    //controller.setUsername1(player.getString(rs.getResults().get(0).getString(1)));
+                    controller.setPlayer1(rs.getResults().get(0).getString(6));
+                    controller.setUsername1(player.getString(rs.getResults().get(0).getString(1)));
 
                 } else {
                     Logger.warn("Could not get player info from DB: ", res.cause());
@@ -107,27 +107,27 @@ public class ConsumerHandlers {
     }
 
 
-    //    private void makeNewplayerUsername(final String username, final EventBus eb) {
-    //        final JsonArray[] params = {new JsonArray().add(username)};
-    //        jdbcClient.queryWithParams(sqlLines.getMakeUser(), params[0],
-    //            res -> {
-    //                final JsonObject player = new JsonObject();
-    //                if (res.succeeded()) {
-    //                    final ResultSet rs = res.result();
-    //                    player.put(strings.getPlayerString(), rs.getResults().get(0));
-    //                    //System.out.println(rs.getResults().get(0).getString(1));
-    //                    Logger.info(rs.getResults().get(0).getString(1));
-    //
-    //                    //System.out.println("result!!! " + player);
-    //                    Logger.info("result!!! " + player);
-    //                } else {
-    //                    Logger.warn(strings.getDbInfoString(), res.cause());
-    //                }
-    //
-    //                //controller.setUsername1(player.getJsonArray(strings.getPlayerString()).getString(1));
-    //                eb.send(strings.getPlayerInfoSockerString(), player.encode());
-    //            });
-    //    }
+    private void makeNewplayerUsername(final String username, final EventBus eb) {
+        final JsonArray[] params = {new JsonArray().add(username)};
+        jdbcClient.queryWithParams(sqlLines.getMakeUser(), params[0],
+            res -> {
+                final JsonObject player = new JsonObject();
+                if (res.succeeded()) {
+                    final ResultSet rs = res.result();
+                    player.put(strings.getPlayerString(), rs.getResults().get(0));
+                    //System.out.println(rs.getResults().get(0).getString(1));
+                    Logger.info(rs.getResults().get(0).getString(1));
+
+                    //System.out.println("result!!! " + player);
+                    Logger.info("result!!! " + player);
+                } else {
+                    Logger.warn(strings.getDbInfoString(), res.cause());
+                }
+
+                controller.setUsername1(player.getJsonArray(strings.getPlayerString()).getString(1));
+                eb.send(strings.getPlayerInfoSockerString(), player.encode());
+            });
+        }
 
 
     public void receiveBasic(final int playerId, final EventBus eb) {
@@ -202,7 +202,7 @@ public class ConsumerHandlers {
     }
 
     public void makePlayer(final String playername) {
-        //final JsonObject couldMakePlayername = new JsonObject();
+        final JsonObject couldMakePlayername = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(playername)};
         jdbcClient.queryWithParams(sqlLines.getMakePlayerName(), params[0], res -> {
             if (res.succeeded()) {

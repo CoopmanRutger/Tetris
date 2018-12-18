@@ -14,12 +14,11 @@
     </module>
     <!-- disabled in favour of PMD ExcessiveClassLength check, which correctly checks class length not file length -->
     <!--<module name="FileLength">-->
-        <!--<property name="max" value="500"/>-->
+    <!--<property name="max" value="500"/>-->
     <!--</module>-->
     <module name="FileTabCharacter"/>
     <module name="Translation"/>
     <module name="UniqueProperties"/>
-
     <module name="TreeWalker">
         <!-- http://checkstyle.sourceforge.net/config_filters.html#SuppressionCommentFilter -->
         <module name="SuppressionCommentFilter"/>
@@ -233,7 +232,7 @@
         <module name="SeparatorWrap">
             <property name="tokens" value="COMMA"/>
             <property name="option" value="eol"/>
-            </module>
+        </module>
         <module name="SeparatorWrap">
             <property name="tokens" value="DOT"/>
             <property name="option" value="nl"/>

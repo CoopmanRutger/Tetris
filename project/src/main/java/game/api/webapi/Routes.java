@@ -12,7 +12,6 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
-import org.h2.message.Trace;
 import org.pmw.tinylog.Logger;
 
 /**
@@ -196,8 +195,7 @@ public class Routes extends AbstractVerticle {
         try {
             return mapper.writeValueAsString(info);
         } catch (JsonProcessingException e) {
-            final Trace logger = null;
-            logger.debug("your log message here");
+            Logger.debug("your log message here");
 
             // TODO: 17/12/2018  oplossen tiny logger
         }

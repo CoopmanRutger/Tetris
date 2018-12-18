@@ -21,19 +21,18 @@ public class SqlLines {
         + "left join players on users.userid = players.userid "
         + "WHERE username = ?";
 
-    private final String makeLogin = "INSERT INTO users (username, email, password, gold) "
+    private static final String GOLD = "SELECT gold FROM USERS "
+        + "WHERE Userid = ?";
+    private static final String MAKELOGIN = "INSERT INTO users (username, email, password, gold) "
         + "VALUES (?, ?, ?, ?)";
 
-    private final String makeFaction = "UPDATE FACTIONS_USERS "
+    private static final String MAKEFACTIION = "UPDATE FACTIONS_USERS "
         + "SET Factionnr = ?, userid= ? WHERE userid = ?";
 
-    private final String gold = "SELECT gold FROM USERS "
-        + "WHERE Userid = ?";
-
-    private final String makeRandomFaction = "insert into FACTIONS_USERS  ( factionnr, userid) "
+    private static final String MAKERANDOMFACTION = "insert into FACTIONS_USERS  ( factionnr, userid) "
         + "values( 5, ?)";
 
-    private final String makePlayerName = "INSERT INTO players (userid, PLAYERNAME, xp, level) VALUES"
+    private static final String MAKEPLAYERNAME = "INSERT INTO players (userid, PLAYERNAME, xp, level) VALUES"
         + "((select max(userid) from users), ?, 0 , 1)";
 
     public String getBasic() {
@@ -61,19 +60,19 @@ public class SqlLines {
     }
 
     public String getMakeLogin() {
-        return makeLogin;
+        return MAKELOGIN;
     }
 
     public String getMakeFaction() {
-        return makeFaction;
+        return MAKEFACTIION;
     }
 
     public String getGold() {
-        return gold;
+        return GOLD;
     }
 
     public String getMakeRandomFaction() {
-        return makeRandomFaction;
+        return MAKERANDOMFACTION;
     }
 
     public String getUserExists() {
@@ -81,6 +80,6 @@ public class SqlLines {
     }
 
     public String getMakePlayerName() {
-        return makePlayerName;
+        return MAKEPLAYERNAME;
     }
 }

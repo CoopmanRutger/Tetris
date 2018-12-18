@@ -1,35 +1,46 @@
 package game.player.info;
 
-public class Lifepoints {
+import org.pmw.tinylog.Logger;
 
-    private int lifePoints;
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
+public class LifePoints {
+
+    private static final int FIFTEEN = 15;
+    private int lifeScore;
     private Thread thread;
 
-    public Lifepoints() {
-        lifePoints = 10;
+
+    public LifePoints() {
+        lifeScore = 10;
     }
 
     public int getLifePoints() {
-        if (lifePoints < 15){
+        if (lifeScore < FIFTEEN) {
             addAutomaticLifePoints();
         }
-        return lifePoints;
+        return lifeScore;
     }
 
-    public void addLifePoint(){
-        if (lifePoints < 15){ // max 15 levens
-            lifePoints ++;
+    public void addLifePoint() {
+        // max 15 levens
+        if (lifeScore < FIFTEEN) {
+            lifeScore++;
         } else {
             thread.interrupt();
         }
     }
 
-    public boolean removeLifePoint(){
-        if (lifePoints > 0){
-            lifePoints --;
-            return true; // you can play
+    public boolean removeLifePoint() {
+        if (lifeScore > 0) {
+            lifeScore--;
+            return true;
+            // you can play
         }
-        return false; // you can't play
+        return false;
+        // you can't play
     }
 
     // elke x min krijg je een leven bij
@@ -38,18 +49,17 @@ public class Lifepoints {
             try {
                 while (true) {
                     addLifePoint();
-//                    new Timer().wait(500);
+                    //                    new Timer().wait(500);
                     Thread.sleep(500);
                 }
             } catch (InterruptedException ignored) {
-                ignored.getMessage();
+                Logger.info(ignored.getMessage());
             }
         });
     }
 
     @Override
     public String toString() {
-        return  Integer.toString(lifePoints);
+        return Integer.toString(lifeScore);
     }
 }
-
