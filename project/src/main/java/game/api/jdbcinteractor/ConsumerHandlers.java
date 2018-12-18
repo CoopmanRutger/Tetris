@@ -127,7 +127,7 @@ public class ConsumerHandlers {
                 controller.setUsername1(player.getJsonArray(strings.getPlayerString()).getString(1));
                 eb.send(strings.getPlayerInfoSockerString(), player.encode());
             });
-        }
+    }
 
 
     public void receiveBasic(final int playerId, final EventBus eb) {

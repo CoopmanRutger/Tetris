@@ -15,6 +15,25 @@
 <file name="D:\documenten\18-19\ADP_Tetris\groep21\project\src\main\java\game\api\jdbcinteractor\SqlLines.java">
 </file>
 <file name="D:\documenten\18-19\ADP_Tetris\groep21\project\src\main\java\game\api\webapi\GameController.java">
+<error line="25" column="1" severity="error" message="Class Data Abstraction Coupling is 14 (max allowed is 7) classes [AbilityLvl1, AbilityLvl2, AbilityLvl3, Event, Events, Game, Gold, Hero, Info, LifePoints, Player, Playfield, Playfields, PointsForAbilities]." source="com.puppycrawl.tools.checkstyle.checks.metrics.ClassDataAbstractionCouplingCheck"/>
+<error line="27" column="10" severity="error" message="Variable &apos;game&apos; explicitly initialized to &apos;null&apos; (default value for its type)." source="com.puppycrawl.tools.checkstyle.checks.coding.ExplicitInitializationCheck"/>
+<error line="27" column="10" severity="error" message="Variable &apos;game&apos; must be private and have accessor methods." source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+<error line="65" column="5" severity="error" message="Executable statement count is 39 (max allowed is 30)." source="com.puppycrawl.tools.checkstyle.checks.sizes.ExecutableStatementCountCheck"/>
+<error line="66" column="17" severity="error" message="Variable &apos;trigger1&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="67" column="17" severity="error" message="Variable &apos;trigger2&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="69" column="15" severity="error" message="Variable &apos;event1&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="70" column="15" severity="error" message="Variable &apos;event2&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="72" column="16" severity="error" message="Variable &apos;events&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="87" column="17" severity="error" message="Variable &apos;ability1&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="88" column="17" severity="error" message="Variable &apos;ability2&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="89" column="17" severity="error" message="Variable &apos;ability3&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="96" column="14" severity="error" message="Variable &apos;info&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="97" column="14" severity="error" message="Variable &apos;gold&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="100" column="20" severity="error" message="Variable &apos;lifepoints&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="102" column="14" severity="error" message="Variable &apos;info1&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="107" column="20" severity="error" message="Variable &apos;playfields&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="109" column="19" severity="error" message="Variable &apos;playfield&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="111" column="28" severity="error" message="Variable &apos;points&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
 </file>
 <file name="D:\documenten\18-19\ADP_Tetris\groep21\project\src\main\java\game\api\webapi\Routes.java">
 </file>
