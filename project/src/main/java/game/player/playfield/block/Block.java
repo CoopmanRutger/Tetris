@@ -1,17 +1,15 @@
 package game.player.playfield.block;
 
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Block {
 
 
     private TypesOfBlocks typeOfBlock;
-    private Color color;
+    private String color;
     private int xValue;
     private int yValue;
     private List<List<Integer>> block;
@@ -20,7 +18,7 @@ public class Block {
         this.block = block;
     }
 
-    public Block(TypesOfBlocks typeOfBlock, Color color) {
+    public Block(TypesOfBlocks typeOfBlock, String color) {
         this.typeOfBlock = typeOfBlock;
         this.color = color;
         this.xValue = 0;
@@ -29,6 +27,7 @@ public class Block {
     }
 
     public Block(Block newblock) {
+        this.typeOfBlock = newblock.typeOfBlock;
         this.xValue = 0;
         this.yValue = 0;
         this.color = newblock.color;
@@ -63,7 +62,7 @@ public class Block {
         return Collections.unmodifiableList(block);
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
@@ -83,7 +82,7 @@ public class Block {
         this.yValue = yValue;
     }
 
-    public void rotateLeft() {
+    void rotateLeft() {
         List<List<Integer>> blockAfterTurn = new ArrayList<>();
 
         for (int i = block.get(0).size() - 1; i >= 0; i--) {
@@ -94,11 +93,11 @@ public class Block {
 
     private List<Integer> makeLineForLeftRotation(int i) {
         List<Integer> valuesAfterTurn = new ArrayList<>();
-        for (int j = 0; j < block.size(); j++) {
-            if (block.get(j).get(i) != 0) {
-            valuesAfterTurn.add(1);
+        for (List<Integer> aBlock : block) {
+            if (aBlock.get(i) != 0) {
+                valuesAfterTurn.add(1);
             } else {
-            valuesAfterTurn.add(0);
+                valuesAfterTurn.add(0);
             }
         }
         return valuesAfterTurn;
@@ -129,10 +128,10 @@ public class Block {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        for (int i = 0; i < block.size(); i++) {
+        for (List<Integer> aBlock : block) {
             res.append("{ ");
-            for (int j = 0; j < block.get(i).size(); j++) {
-                res.append(block.get(i).get(j));
+            for (int j = 0; j < aBlock.size(); j++) {
+                res.append(aBlock.get(j));
                 res.append(", ");
             }
             res.append(" }");
