@@ -16,18 +16,18 @@ public class ScoreTest {
 
     @Test
     public void testUpdateScore() {
-        score.updateScore();
+        score.updateScore(10);
         assertEquals(100, score.getScore());
-        score.updateScore();
+        score.updateScore(10);
         assertEquals(200, score.getScore());
     }
 
     @Test
     public void testUpdateScoreForMultipleLines() {
-        score.updateScore();
-        score.updateScore();
+        score.updateScore(10);
+        score.updateScore(10);
         score.extraScoreForMultipleLines(2);
-        assertEquals(400, score.getScore());
+        assertEquals(220, score.getScore());
     }
 
 }
