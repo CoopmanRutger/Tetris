@@ -22,7 +22,6 @@ public class Routes extends AbstractVerticle {
     private EventBus eb;
     private GameController controller;
     private Game game;
-    private Player player;
 
     void rootHandler(RoutingContext routingContext){
         HttpServerResponse response = routingContext.response();
@@ -42,7 +41,7 @@ public class Routes extends AbstractVerticle {
         this.game = controller.getGame();
     }
 
-    public void addConsumers(){
+    private void addConsumers(){
 //        homescreen
         eb.consumer("tetris-21.socket.homescreen",this::getPlayerName);
 
