@@ -26,8 +26,9 @@ public class Blocks {
         int amountOfBlocks = blocks.size() - 1;
         Long randomNumber = Math.round((Math.random() * amountOfBlocks));
         int randomNumberToInt = randomNumber.intValue();
-        currentBlock = blocks.get(randomNumberToInt);
-        return new Block(currentBlock);
+        Block newBlock = blocks.get(randomNumberToInt);
+        currentBlock = new Block(newBlock);
+        return currentBlock;
     }
 
     public void addBlock(Block block) {
