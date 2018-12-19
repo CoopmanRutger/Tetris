@@ -62,26 +62,28 @@ public class Playfield {
     public Block newBlock() {
         Block randomBlock = new Block(blocks.getBlock());
 
-        putOnPlayField(18, 3, randomBlock);
+        putOnPlayField(18, 3);
         return randomBlock;
     }
 
-    public void putOnPlayField(int xPos, int yPos, Block randomBlock) {
-        if (positionAvailable(xPos, yPos, randomBlock)) {
-            List<List<Integer>> block = randomBlock.getBlock();
+    public void putOnPlayField(int xPos, int yPos) {
+        Block currentBlock = blocks.getCurrentBlock();
+        if (positionAvailable(xPos, yPos, currentBlock)) {
+            List<List<Integer>> block = currentBlock.getBlock();
             int newYPos = yPos;
             int newXPos = xPos;
             for (int i = block.size() - 1; i >= 0; i--) {
                 for (int j = 0; j < block.get(i).size(); j++) {
                     if (block.get(i).get(j) != 0) {
-                        playfield.get(newXPos).set(newYPos, 1);
+                        playfield.get(newYPos).set(newXPos, 1);
                     }
-                    newYPos++;
+                    newXPos++;
                 }
-                newYPos = yPos;
-                newXPos++;
+                newXPos = xPos;
+                newYPos++;
             }
         }
+        checkForCompletedLine();
     }
 
     public Boolean positionAvailable(int positionX, int positionY, Block block) {
@@ -156,6 +158,10 @@ public class Playfield {
         return blocks;
     }
 
+    void putLineOnField(int line, List<Integer> completeLine) {
+        playfield.set(line, completeLine);
+    }
+
     Score getScore() {
         return score;
     }
@@ -186,9 +192,4 @@ public class Playfield {
                 ", score=" + score +
                 '}';
     }
-
-    void putLineOnField(int line, List<Integer> completeLine) {
-        playfield.set(line, completeLine);
-    }
-
 }

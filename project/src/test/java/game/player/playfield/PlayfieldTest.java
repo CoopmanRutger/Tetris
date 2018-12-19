@@ -16,8 +16,8 @@ public class PlayfieldTest  {
 
     @Before
     public void initiate() {
-        playfield = new Playfield();
-        block = new Block("Lblock", TypesOfBlocks.lBlock, Color.BLACK);
+        playfield = new Playfield(20, 10);
+        block = new Block(TypesOfBlocks.lBlock, Color.BLACK);
         block.makeBlock(2, 0, 1, 3);
     }
 
@@ -34,7 +34,7 @@ public class PlayfieldTest  {
 
     @Test
     public void testPutBlockOnField() {
-        playfield.putOnPlayField(2, 4, block);
+        playfield.putOnPlayField(4, 2, block);
 
         int valueOfPlayfield = playfield.getPlayfield().get(2).get(4);
         assertEquals(1, valueOfPlayfield);
