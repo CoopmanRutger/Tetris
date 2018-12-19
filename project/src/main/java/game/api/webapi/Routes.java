@@ -85,17 +85,18 @@ public class Routes extends AbstractVerticle {
 
     private void blockOnField(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        String playername = userMessage.getString("playerName");
-        Integer xPosition = userMessage.getInteger("x");
-        Integer yPosition = userMessage.getInteger("y");
+        JsonObject player = userMessage.getJsonObject("player");
 
-        Playfield playfield = getPlayfieldByPlayerName(playername);
-        playfield.putOnPlayField(xPosition, yPosition);
+        String playerName = player.getString("name");
 
-        System.out.println(playername + "\n" + playfield.toString());
+        JsonObject pos = player.getJsonObject("pos");
+        Integer xPosition = pos.getInteger("x");
+        Integer yPosition = pos.getInteger("y");
 
-        message.reply("hello");
+        Playfield playfield = getPlayfieldByPlayerName(playerName);
 
+        message.reply(playfield.putOnPlayField(xPosition, yPosition));
+        System.out.println(playerName + "\n" + playfield.toString());
     }
 
     private void getNewBlock(Message message) {

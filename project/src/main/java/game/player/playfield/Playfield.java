@@ -69,9 +69,11 @@ public class Playfield {
         return getCurrentBlock();
     }
 
-    public void putOnPlayField(int xPos, int yPos) {
+    public boolean putOnPlayField(int xPos, int yPos) {
+        boolean putItOnField = false;
         System.out.println("block" + currentBlock);
         if (positionAvailable(xPos, yPos, currentBlock)) {
+            putItOnField = positionAvailable(xPos, yPos, currentBlock);
             System.out.println("avaible YES");
             List<List<Integer>> block = currentBlock.getBlock();
             int newYPos = yPos;
@@ -89,6 +91,8 @@ public class Playfield {
         }
         System.out.println("avaible?");
         checkForCompletedLine();
+        return putItOnField;
+
     }
 
     public Boolean positionAvailable(int positionX, int positionY, Block block) {

@@ -281,11 +281,11 @@ function countdown(durationInSeconds) {
 }
 
 
-function nextBlock(player) {
-    if (game.fieldPlayer.name === player) {
+function nextBlock(playerName) {
+    if (game.fieldPlayer.name === playerName) {
         makePieces(game.fieldPlayer, game.area);
     }
-    if (game.fieldPlayer2.name === player) {
+    if (game.fieldPlayer2.name === playerName) {
         makePieces(game.fieldPlayer2, game.area2);
     }
 }
@@ -371,30 +371,29 @@ function collide(player, area) {
     return false;
 }
 
-function merge(player, area) {
-    player.matrix.forEach((row, y) => {
-        row.forEach((value, x) => {
-            if (value !== 0) {
-                area[y + player.pos.y][x + player.pos.x] = value;
-            }
-        });
-    });
-    let object = JSON.stringify({playerName:player.name ,x: player.pos.x, y:player.pos.y});
+function merge(player, area, context) {
+
+        let object = JSON.stringify({player:player ,area: area});
     eb.send("tetris-21.socket.battleField.blockOnField", object, function (error, reply) {
         if (error) {
             console.log(error);
         }
         console.log(reply.body);
 
+        if (reply.body){
+            collidefunction(player, area);
+            player.matrix.forEach((row, y) => {
+                row.forEach((value, x) => {
+                    if (value !== 0) {
+                        area[y + player.pos.y][x + player.pos.x] = value;
+                    }
+                });
+            });
+        }
     });
-
-    console.log(player.name + "  y: " + player.pos.y);
-    console.log(player.name + "  x: " + player.pos.x);
 }
 
 function rotate(player, area) {
-    console.log("old    ");
-    console.log(player.matrix);
     let object = JSON.stringify({matrix: player.matrix, playerName:player.name});
 
     eb.send("tetris-21.socket.battleField.rotate", object, function (error, reply) {
@@ -402,8 +401,6 @@ function rotate(player, area) {
                 console.log(error);
             }
             let rotatedBlock = JSON.parse(reply.body);
-            console.log("new    ");
-            console.log(rotatedBlock.block);
             player.matrix = rotatedBlock.block;
             collide2(player, area);
     })
@@ -439,13 +436,6 @@ function makePieces(player, area) {
     });
 }
 
-
-// function makeStringAColor(string) {
-//     console.log(string);
-//
-//     return "rgb(255,255,0)"
-// }
-
 function collidefunction(player, area) {
     if (collide(player, area)) {
         area.forEach(row => row.fill(0));
@@ -462,7 +452,7 @@ function playerDrop(player, context, area) {
     player.pos.y++;
     if (collide(player, area)) {
         player.pos.y--;
-        merge(player, area);
+        merge(player, area, context);
         points(player, area);
         nextBlock(player.name);
     }
