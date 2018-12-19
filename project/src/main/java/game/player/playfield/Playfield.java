@@ -13,8 +13,12 @@ public class Playfield {
     private Score score;
     private PointsForAbilities points;
     private Blocks blocks;
+    private Block currentBlock;
 
 
+    public Block getCurrentBlock() {
+        return currentBlock;
+    }
     public Blocks getBlocks() {
         return blocks;
     }
@@ -60,14 +64,12 @@ public class Playfield {
     }
 
     public Block newBlock() {
-        //Block randomBlock = new Block(blocks.getBlock());
-
-        //putOnPlayField(18, 3);
-        return blocks.getBlock();
+        currentBlock = blocks.getBlock();
+        System.out.println(currentBlock);
+        return getCurrentBlock();
     }
 
     public void putOnPlayField(int xPos, int yPos) {
-        Block currentBlock = blocks.getCurrentBlock();
         if (positionAvailable(xPos, yPos, currentBlock)) {
             List<List<Integer>> block = currentBlock.getBlock();
             int newYPos = yPos;
@@ -83,7 +85,7 @@ public class Playfield {
                 newYPos++;
             }
         }
-        checkForCompletedLine();
+//        checkForCompletedLine();
     }
 
     public Boolean positionAvailable(int positionX, int positionY, Block block) {
@@ -93,15 +95,15 @@ public class Playfield {
         for (int i = controlBlock.size() - 1; i >= 0; i--) {
             for (int j = 0; j < controlBlock.get(i).size(); j++) {
                 if (controlBlock.get(i).get(j) != 0) {
-                    if (playfield.get(newXPos).get(newYPos) == 0) {
-                        newYPos++;
+                    if (playfield.get(newYPos).get(newXPos) == 0) {
+                        newXPos++;
                     } else {
                         return false;
                     }
                 }
             }
-            newYPos = positionY;
-            newXPos++;
+            newXPos = positionX;
+            newYPos++;
         }
         return true;
     }
@@ -188,8 +190,14 @@ public class Playfield {
 
     @Override
     public String toString() {
-        return "Playfield{" + playfield +
-                ", score=" + score +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append("playfield ")
+                .append("\n");
+        for (List<Integer> list: playfield){
+            stringBuilder.append(list).append("\n");
+        }
+
+        return stringBuilder.toString();
     }
 }

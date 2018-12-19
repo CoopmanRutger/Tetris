@@ -63,6 +63,7 @@ public class Routes extends AbstractVerticle {
 
         eb.consumer("tetris-21.socket.battleField.getNewBlock",this::getNewBlock);
         eb.consumer("tetris-21.socket.battleField.rotate",this::rotateBlock);
+        eb.consumer("tetris-21.socket.battleField.blockOnField",this::blockOnField);
 
         eb.consumer("tetris-21.socket.updateScore",this::updateScore);
 
@@ -82,48 +83,53 @@ public class Routes extends AbstractVerticle {
 
     }
 
+    private void blockOnField(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String playername = userMessage.getString("playerName");
+        Integer xPosition = userMessage.getInteger("x");
+        Integer yPosition = userMessage.getInteger("y");
+
+        Playfield playfield = getPlayfieldByPlayerName(playername);
+        playfield.putOnPlayField(xPosition, yPosition);
+
+        System.out.println(playername + "\n" + playfield.toString());
+
+    }
+
     private void getNewBlock(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("playername");
 
-        Playfield playfield = null;
-        for (Player player:game.getPlayers()) {
-            if (player.getName().equals(playername)){
-                playfield = player.getPlayfieldByName(playername);
-            }
-        }
+       Playfield playfield = getPlayfieldByPlayerName(playername);
         Block block = playfield.newBlock();
 
         JsonObject json = new JsonObject();
         json.put("block", block.getBlock());
-        json.put("color", block.getColor().toString());
+        json.put("color", block.getColor());
 
         message.reply(json.encode());
     }
 
+    private Playfield getPlayfieldByPlayerName(String playerName){
+        Playfield playfield = null;
+        for (Player player:game.getPlayers()) {
+            if (player.getName().equals(playerName)){
+                playfield = player.getPlayfieldByName(playerName);
+            }
+        }
+        return playfield;
+    }
 
 
     private void rotateBlock(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("playerName");
-        JsonArray matrix = userMessage.getJsonArray("matrix");
 
-        System.out.println("player: " + playername);
-        System.out.println(matrix);
+        Playfield playfield = getPlayfieldByPlayerName(playername);
+        playfield.getCurrentBlock().rotateRight();
+        Block rotateBlock = playfield.getCurrentBlock();
 
-        Playfield playfield = null;
-
-        for (Player player:game.getPlayers()) {
-            if (player.getName().equals(playername)){
-                playfield = player.getPlayfieldByName(playername);
-            }
-        }
-
-        playfield.getBlocks().getCurrentBlock().rotateRight();
-        Block rotateBlock = playfield.getBlocks().getCurrentBlock();
-        System.out.println(rotateBlock);
         message.reply(Json.encode(rotateBlock));
-
     }
 
 
@@ -253,20 +259,8 @@ public class Routes extends AbstractVerticle {
         return null;
     }
 
-
-    public void sendBlockOneByOne(Message message) {
-        System.out.println(message.body());
-
-//        eb.send("tetris.infoBackend.nextBlock", Json.encode(game));
-
-    }
-
-
-
     private void ImReady(Message message){
-        System.out.println(message.body());
         System.out.println(game);
-        System.out.println(Json.encode(game));
         eb.send("tetris-21.socket.game", Json.encode(game));
         message.reply("okey");
 

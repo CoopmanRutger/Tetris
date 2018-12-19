@@ -379,6 +379,17 @@ function merge(player, area) {
             }
         });
     });
+    let object = JSON.stringify({playerName:player.name ,x: player.pos.x, y:player.pos.y});
+    eb.send("tetris-21.socket.battleField.blockOnField", object, function (error, reply) {
+        if (error) {
+            console.log(error);
+        }
+        let rotatedBlock = JSON.parse(reply.body);
+
+    });
+
+    console.log(player.name + "  y: " + player.pos.y);
+    console.log(player.name + "  x: " + player.pos.x);
 }
 
 function rotate(player, area) {
@@ -388,10 +399,7 @@ function rotate(player, area) {
             if (error) {
                 console.log(error);
             }
-
             let rotatedBlock = JSON.parse(reply.body);
-            console.log(rotatedBlock.block);
-            console.log(rotatedBlock.color);
             player.matrix = rotatedBlock.block;
             collide2(player, area);
     })

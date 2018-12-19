@@ -9,13 +9,15 @@ import java.util.List;
 
 public class Blocks {
 
-    private List<Block> blocks;
-    private Block currentBlock;
-
-
-    public Block getCurrentBlock() {
-        return currentBlock;
+    public List<Block> getBlocks() {
+        return blocks;
     }
+
+    public void setBlocks(List<Block> blocks) {
+        this.blocks = blocks;
+    }
+
+    private List<Block> blocks;
 
     Blocks() {
         blocks = new ArrayList<>();
@@ -27,18 +29,8 @@ public class Blocks {
         Long randomNumber = Math.round((Math.random() * amountOfBlocks));
         int randomNumberToInt = randomNumber.intValue();
         Block newBlock = blocks.get(randomNumberToInt);
-        currentBlock = new Block(newBlock);
-        return currentBlock;
+        return new Block(newBlock);
     }
-
-    public void addBlock(Block block) {
-        blocks.add(block);
-    }
-
-    public void removeBlock(Block block) {
-        blocks.remove(block);
-    }
-
 
     private void MakeBlocks(){
         Block Lblock = new Block(TypesOfBlocks.lBlock,"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVQ4T2NkYGBg6Jz34T+Ifv3kGIOojBWYBgFkNlgADfTUeTEygjQLC3Iz3Li8G5sanGIauq5gPYwlTdvAtpMLwC6AORlkKjEA2bUYBvDxsYDN+PTpDwOIDaLRAYoByF4AuQCXJmRDCLoAm604DUB3AclhQK4Bb19cYRCW0EGNRrLCgBQXvH3/lQE90aEkJGzpAKYJRIMAzACcXiA2ELEaABIkBoACDwbAXoBlDGI0w9TAMxNIgFCGgjkX5kKYC0DZGQAfwJNr7nKi7AAAAABJRU5ErkJggg==");

@@ -36,14 +36,29 @@ public class Block {
 
     public void makeBlock(int startPositionForTopLine, int startPositionForBottomLine,
                           int amountOfBlocksOnTopLine, int amountOfBlocksInBottomLine) {
-        makeWidthOrHeight(startPositionForTopLine, amountOfBlocksOnTopLine);
-        makeWidthOrHeight(startPositionForBottomLine, amountOfBlocksInBottomLine);
+        int amount = 0;
+        if (amountOfBlocksInBottomLine > amountOfBlocksOnTopLine) {
+            amount = amountOfBlocksInBottomLine;
+
+        } else if (amountOfBlocksInBottomLine == amountOfBlocksOnTopLine){
+            if (startPositionForTopLine != startPositionForBottomLine){
+                amount = amountOfBlocksInBottomLine +1;
+            } else {
+                amount = amountOfBlocksInBottomLine;
+            }
+        } else{
+            amount = amountOfBlocksOnTopLine;
+        }
+        makeWidthOrHeight(startPositionForTopLine, amountOfBlocksOnTopLine, amount);
+        if (amountOfBlocksInBottomLine > 0){
+            makeWidthOrHeight(startPositionForBottomLine, amountOfBlocksInBottomLine, amount);
+        }
     }
 
-    private void makeWidthOrHeight(int startPos, int amountOfBlocks) {
+    private void makeWidthOrHeight(int startPos, int amountOfBlocks, int maxAmount) {
         List<Integer> blockSize = new ArrayList<>();
         int indexWidth = 0;
-        for (int j = 0; j < 4; j++) {
+        for (int j = 0; j < maxAmount; j++) {
             if (indexWidth < amountOfBlocks) {
                 if (j < startPos) {
                     blockSize.add(0);
