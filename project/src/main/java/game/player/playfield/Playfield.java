@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class Playfield {
 
-    private List<List<Integer>> playfield; // hoogte 20 en breedte 10
+    private List<List<Integer>> playfield; // hoogte 20 en breedte 12
     private Score score;
     private PointsForAbilities points;
     private Blocks blocks;
@@ -64,17 +64,19 @@ public class Playfield {
     }
 
     public Block newBlock() {
-        currentBlock = blocks.getBlock();
+        currentBlock = new Block(blocks.getBlock());
         System.out.println(currentBlock);
         return getCurrentBlock();
     }
 
     public void putOnPlayField(int xPos, int yPos) {
+        System.out.println("block" + currentBlock);
         if (positionAvailable(xPos, yPos, currentBlock)) {
+            System.out.println("avaible YES");
             List<List<Integer>> block = currentBlock.getBlock();
             int newYPos = yPos;
             int newXPos = xPos;
-            for (int i = block.size() - 1; i >= 0; i--) {
+            for (int i = 0; i <= block.size() - 1; i++) {
                 for (int j = 0; j < block.get(i).size(); j++) {
                     if (block.get(i).get(j) != 0) {
                         playfield.get(newYPos).set(newXPos, 1);
@@ -85,7 +87,8 @@ public class Playfield {
                 newYPos++;
             }
         }
-//        checkForCompletedLine();
+        System.out.println("avaible?");
+        checkForCompletedLine();
     }
 
     public Boolean positionAvailable(int positionX, int positionY, Block block) {
@@ -111,52 +114,48 @@ public class Playfield {
     public void checkForCompletedLine() {
         int amountOf1s = 0;
         int amountOfCompletedLines = 0;
-        List<Integer> completedLines = new ArrayList<>();
+        int completedLine = -1;
         for (int i = 0; i < playfield.size(); i++) {
             for (int j = 0; j < playfield.get(i).size(); j++) {
                 if (playfield.get(i).get(j) == 1) {
                     amountOf1s++;
                 }
             }
-            if (amountOf1s == 10) {
+            System.out.println("width  " + (playfield.get(10).size()) + " ->  " + amountOf1s );
+            if (amountOf1s == playfield.get(10).size()) {
+                System.out.println("completedLines " + amountOf1s);
                 scoreForCompletedLine();
-                completedLines.add(i);
+                completedLine = i;
                 amountOfCompletedLines++;
+                removeCompletedLine(completedLine);
             }
             amountOf1s = 0;
         }
+//
+//        if (amountOfCompletedLines > 1) {
+//            score.extraScoreForMultipleLines(amountOfCompletedLines);
+//        }
 
-        if (amountOfCompletedLines > 1) {
-            score.extraScoreForMultipleLines(amountOfCompletedLines);
-        }
-
-        removeCompletedLines(completedLines);
     }
 
     private void scoreForCompletedLine() {
         score.updateScore(100);
     }
 
-    private void removeCompletedLines(List<Integer> completedLines) {
-        int deleted = 0;
-        for (Integer completedLine : completedLines) {
-            int lineToRemove = 0;
-            if (deleted > 0) {
-                lineToRemove = completedLine - deleted;
-            }
-            playfield.remove(lineToRemove);
-            int heightOfField = playfield.size();
-            int widthOfField = playfield.get(heightOfField - 1).size();
-            playfield.add(makeLine(widthOfField));
-            deleted++;
-        }
+    private void removeCompletedLine(int completedLine) {
+
+        System.out.println("1lijn: " + completedLine);
+        playfield.remove(completedLine);
+        int widthOfField = playfield.get(10).size();
+        playfield.add(1, makeLine(widthOfField));
     }
 
     private List<Integer> makeLine(int size) {
         List<Integer> blocks = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            blocks.add(0);
+            blocks.add(2);
         }
+        System.out.println(blocks);
         return blocks;
     }
 
@@ -194,8 +193,10 @@ public class Playfield {
         stringBuilder
                 .append("playfield ")
                 .append("\n");
+        int number = 0;
         for (List<Integer> list: playfield){
-            stringBuilder.append(list).append("\n");
+            stringBuilder.append(number).append(list).append("\n");
+            number++;
         }
 
         return stringBuilder.toString();

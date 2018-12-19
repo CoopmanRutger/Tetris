@@ -28,8 +28,7 @@ public class Blocks {
         int amountOfBlocks = blocks.size() - 1;
         Long randomNumber = Math.round((Math.random() * amountOfBlocks));
         int randomNumberToInt = randomNumber.intValue();
-        Block newBlock = blocks.get(randomNumberToInt);
-        return new Block(newBlock);
+        return blocks.get(randomNumberToInt);
     }
 
     private void MakeBlocks(){
@@ -55,10 +54,10 @@ public class Blocks {
         blocks.add(LineBlock);
         blocks.add(Sblok);
         blocks.add(Tblok);
-        blocks.add(Zblok);
+//        blocks.add(Zblok);
         blocks.add(ILblock);
-        blocks.add(Nblock);
-        blocks.add(specialBock);
+//        blocks.add(Nblock);
+//        blocks.add(specialBock);
     }
 }
 

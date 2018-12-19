@@ -40,7 +40,8 @@ public class Block {
         if (amountOfBlocksInBottomLine > amountOfBlocksOnTopLine) {
             amount = amountOfBlocksInBottomLine;
 
-        } else if (amountOfBlocksInBottomLine == amountOfBlocksOnTopLine){
+        }
+        else if (amountOfBlocksInBottomLine == amountOfBlocksOnTopLine){
             if (startPositionForTopLine != startPositionForBottomLine){
                 amount = amountOfBlocksInBottomLine +1;
             } else {
@@ -97,7 +98,7 @@ public class Block {
         this.yValue = yValue;
     }
 
-    void rotateLeft() {
+    public void rotateLeft() {
         List<List<Integer>> blockAfterTurn = new ArrayList<>();
 
         for (int i = block.get(0).size() - 1; i >= 0; i--) {

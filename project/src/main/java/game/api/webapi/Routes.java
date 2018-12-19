@@ -94,6 +94,8 @@ public class Routes extends AbstractVerticle {
 
         System.out.println(playername + "\n" + playfield.toString());
 
+        message.reply("hello");
+
     }
 
     private void getNewBlock(Message message) {
@@ -126,7 +128,7 @@ public class Routes extends AbstractVerticle {
         String playername = userMessage.getString("playerName");
 
         Playfield playfield = getPlayfieldByPlayerName(playername);
-        playfield.getCurrentBlock().rotateRight();
+        playfield.getCurrentBlock().rotateLeft();
         Block rotateBlock = playfield.getCurrentBlock();
 
         message.reply(Json.encode(rotateBlock));
@@ -243,21 +245,6 @@ public class Routes extends AbstractVerticle {
 //        message.reply(makeObjectJson(game));
 //    }
 
-
-    private String makeObjectJson(Object info){
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            System.out.println(info);
-            String json = mapper.writeValueAsString(info);
-            System.out.println(json);
-            return json;
-        } catch (JsonProcessingException e) {
-            Logger.debug("makeObjectJson fail");
-
-            // TODO: 17/12/2018  oplossen tiny logger
-        }
-        return null;
-    }
 
     private void ImReady(Message message){
         System.out.println(game);

@@ -384,7 +384,7 @@ function merge(player, area) {
         if (error) {
             console.log(error);
         }
-        let rotatedBlock = JSON.parse(reply.body);
+        console.log(reply.body);
 
     });
 
@@ -393,6 +393,8 @@ function merge(player, area) {
 }
 
 function rotate(player, area) {
+    console.log("old    ");
+    console.log(player.matrix);
     let object = JSON.stringify({matrix: player.matrix, playerName:player.name});
 
     eb.send("tetris-21.socket.battleField.rotate", object, function (error, reply) {
@@ -400,6 +402,8 @@ function rotate(player, area) {
                 console.log(error);
             }
             let rotatedBlock = JSON.parse(reply.body);
+            console.log("new    ");
+            console.log(rotatedBlock.block);
             player.matrix = rotatedBlock.block;
             collide2(player, area);
     })
