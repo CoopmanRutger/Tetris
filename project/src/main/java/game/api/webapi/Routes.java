@@ -3,11 +3,10 @@ package game.api.webapi;
 
 import game.Game;
 import game.api.jdbcinteractor.Database;
+import game.events.event.AbilityReset;
 import game.events.event.Tornado;
 import game.events.event.Trigger;
 import game.player.Player;
-import game.player.hero.ability.CheeringCrowd;
-import game.player.hero.ability.Joker;
 import game.player.playfield.Playfield;
 import game.player.playfield.block.Block;
 import io.vertx.core.AbstractVerticle;
@@ -68,9 +67,6 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.battleField.rotate",this::rotateBlock);
         eb.consumer("tetris-21.socket.battleField.blockOnField",this::blockOnField);
         eb.consumer("tetris-21.socket.battleField.evenements",this::evenements);
-        eb.consumer("tetris-21.socket.battleField.abilities", this::abilities);
-
-        eb.consumer("tetris-21.socket.updateScore",this::updateScore);
 
 //        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
 
@@ -86,22 +82,6 @@ public class Routes extends AbstractVerticle {
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
-    }
-
-    private void abilities(Message message) {
-        JsonObject userMessage = new JsonObject(message.body().toString());
-        String playerName = userMessage.getString("playername");
-        String ability = userMessage.getString("ability");
-        String canActivate = null;
-
-        if (ability.equals("Cheering Crowd")) {
-            CheeringCrowd cheeringCrowd = new CheeringCrowd(getPlayfieldByPlayerName(playerName));
-            canActivate = String.valueOf(cheeringCrowd.activate());
-        } else if (ability.equals("Joker")) {
-            Joker joker = new Joker(getPlayfieldByPlayerName(playerName));
-            canActivate = String.valueOf(joker.activate());
-        }
-        message.reply(Json.encode(canActivate));
     }
 
     private void evenements(Message message) {
@@ -130,14 +110,18 @@ public class Routes extends AbstractVerticle {
 
         Logger.info(evenementName+ " \n " + playerName + " \n " + playfield);
 
+        Trigger trigger = null;
         switch (evenementName) {
             case "tornado":
-                Trigger trigger = Trigger.TIME;
+                trigger = Trigger.TIME;
                 Tornado tornado = new Tornado(trigger,playfield);
                 tornado.activate();
                 Logger.info("Tornaadddoooooo");
                 break;
-            case "iets anders":
+            case "abilityReset":
+                trigger = Trigger.TIME;
+                AbilityReset abilityReset = new AbilityReset(trigger, playfield);
+                abilityReset.activate();
                 break;
             case "blabla":
                 // todo
@@ -165,9 +149,10 @@ public class Routes extends AbstractVerticle {
         Integer yPosition = pos.getInteger("y");
 
         Playfield playfield = getPlayfieldByPlayerName(playerName);
+        playfield.putOnPlayField(xPosition, yPosition);
 
-        message.reply(playfield.putOnPlayField(xPosition, yPosition));
-        System.out.println(playerName + "\n" + playfield.toString());
+
+        message.reply(Json.encode(playfield.getPlayfield()));
     }
 
 
@@ -175,13 +160,16 @@ public class Routes extends AbstractVerticle {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("playername");
 
-        Playfield playfield = getPlayfieldByPlayerName(playername);
+       Playfield playfield = getPlayfieldByPlayerName(playername);
         Block block = playfield.newBlock();
+        int score = playfield.getScore();
+        int points = playfield.getPoints();
 
         JsonObject json = new JsonObject();
         json.put("block", block.getBlock());
         json.put("color", block.getColor());
-        json.put("blinded", playfield.getBlinded());
+        json.put("score", score);
+        json.put("points", points);
 
         message.reply(json.encode());
     }
@@ -215,15 +203,6 @@ public class Routes extends AbstractVerticle {
         Database.getDB().getConsumerHandlers(controller).getGold(UserId, eb);
 
         message.reply("I will get the gold :D");
-    }
-
-    private void updateScore(Message message) {
-        System.out.println(message.body());
-        JsonObject json = new JsonObject();
-        json.put("playerName", "test");
-        json.put("addToScore", 100);
-        json.put("addlines", 1);
-        message.reply(json.encode());
     }
 
     private void login(Message message) {
@@ -262,10 +241,6 @@ public class Routes extends AbstractVerticle {
                 .checkUsername(username, eb);
         message.reply(username);
     }
-
-//    private void mayLogin(Message message) {
-//        message.reply(login);
-//    }
 
     private void getPlayerName(Message message) {
         String username = message.body().toString();

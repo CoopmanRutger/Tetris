@@ -1,6 +1,7 @@
 package game.player.playfield;
 
 import game.player.playfield.block.Block;
+import org.pmw.tinylog.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,8 +14,8 @@ public class Playfield {
     private Score score;
     private PointsForAbilities points;
     private Blocks blocks;
-    private Block currentBlock;
     private boolean blinded;
+    private Block currentBlock;
 
 
     public Block getCurrentBlock() {
@@ -42,8 +43,8 @@ public class Playfield {
         playfield = new ArrayList<>();
         score = new Score();
         points = new PointsForAbilities();
-        blocks = new Blocks();
         blinded = false;
+        blocks = new Blocks();
         makeStandardPlayfield(height,width);
     }
 
@@ -78,16 +79,16 @@ public class Playfield {
 
     public Block newBlock() {
         currentBlock = new Block(blocks.getBlock());
-        System.out.println(currentBlock);
+        Logger.info(currentBlock);
         return getCurrentBlock();
     }
 
-    public boolean putOnPlayField(int xPos, int yPos) {
+    public void putOnPlayField(int xPos, int yPos) {
         boolean putItOnField = false;
-        System.out.println("block" + currentBlock);
+        Logger.info("block" + currentBlock);
         if (positionAvailable(xPos, yPos, currentBlock)) {
             putItOnField = positionAvailable(xPos, yPos, currentBlock);
-            System.out.println("avaible YES");
+            Logger.info("avaible YES");
             List<List<Integer>> block = currentBlock.getBlock();
             int newYPos = yPos;
             int newXPos = xPos;
@@ -102,9 +103,8 @@ public class Playfield {
                 newYPos++;
             }
         }
-        System.out.println("avaible?");
+        Logger.warn("avaible?");
         checkForCompletedLine();
-        return putItOnField;
 
     }
 
@@ -138,9 +138,7 @@ public class Playfield {
                     amountOf1s++;
                 }
             }
-            System.out.println("width  " + (playfield.get(10).size()) + " ->  " + amountOf1s );
             if (amountOf1s == playfield.get(10).size()) {
-                System.out.println("completedLines " + amountOf1s);
                 scoreForCompletedLine();
                 completedLine = i;
                 amountOfCompletedLines++;
@@ -148,20 +146,18 @@ public class Playfield {
             }
             amountOf1s = 0;
         }
-//
-//        if (amountOfCompletedLines > 1) {
-//            score.extraScoreForMultipleLines(amountOfCompletedLines);
-//        }
+
+        if (amountOfCompletedLines > 1) {
+            score.extraScoreForMultipleLines(amountOfCompletedLines, points);
+        }
 
     }
 
     private void scoreForCompletedLine() {
-        score.updateScore(100);
+        score.updateScore(100 ,points);
     }
 
     private void removeCompletedLine(int completedLine) {
-
-        System.out.println("1lijn: " + completedLine);
         playfield.remove(completedLine);
         int widthOfField = playfield.get(10).size();
         playfield.add(1, makeLine(widthOfField));
@@ -170,7 +166,7 @@ public class Playfield {
     private List<Integer> makeLine(int size) {
         List<Integer> blocks = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            blocks.add(2);
+            blocks.add(0);
         }
         System.out.println(blocks);
         return blocks;
@@ -180,21 +176,21 @@ public class Playfield {
         playfield.set(line, completeLine);
     }
 
-    public Score getScore() {
+    Score getScoreByName() {
         return score;
+    }
+    public int getScore(){
+        return score.getScore();
     }
 
 
-    public PointsForAbilities getPoints() {
+
+    public PointsForAbilities getPointsForAbilities() {
         return points;
     }
 
-    public boolean getBlinded() {
-        return blinded;
-    }
-
-    public void setBlinded(boolean blinded) {
-        this.blinded = blinded;
+    public int getPoints(){
+        return points.getPoints();
     }
 
     @Override
