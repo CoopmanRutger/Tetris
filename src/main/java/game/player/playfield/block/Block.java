@@ -14,7 +14,7 @@ public class Block {
     private int yValue;
     private List<List<Integer>> block;
 
-    public Block(List<List<Integer>> block){
+    public Block(List<List<Integer>> block) {
         this.block = block;
     }
 
@@ -40,18 +40,17 @@ public class Block {
         if (amountOfBlocksInBottomLine > amountOfBlocksOnTopLine) {
             amount = amountOfBlocksInBottomLine;
 
-        }
-        else if (amountOfBlocksInBottomLine == amountOfBlocksOnTopLine){
-            if (startPositionForTopLine != startPositionForBottomLine){
-                amount = amountOfBlocksInBottomLine +1;
+        } else if (amountOfBlocksInBottomLine == amountOfBlocksOnTopLine) {
+            if (startPositionForTopLine != startPositionForBottomLine) {
+                amount = amountOfBlocksInBottomLine + 1;
             } else {
                 amount = amountOfBlocksInBottomLine;
             }
-        } else{
+        } else {
             amount = amountOfBlocksOnTopLine;
         }
         makeWidthOrHeight(startPositionForTopLine, amountOfBlocksOnTopLine, amount);
-        if (amountOfBlocksInBottomLine > 0){
+        if (amountOfBlocksInBottomLine > 0) {
             makeWidthOrHeight(startPositionForBottomLine, amountOfBlocksInBottomLine, amount);
         }
     }

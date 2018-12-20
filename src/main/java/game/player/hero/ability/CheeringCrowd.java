@@ -1,22 +1,16 @@
 package game.player.hero.ability;
 
 import game.player.playfield.Playfield;
-import game.player.playfield.PointsForAbilities;
 import game.player.playfield.Score;
-import io.netty.util.Timeout;
-import org.pmw.tinylog.Logger;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class CheeringCrowd implements Ability {
 
+    private static int numberOfTimesUsed;
     private final String name = "CheerCrowd";
     private int startValue;
     private Playfield playfield;
-    private static int numberOfTimesUsed = 0;
 
-    public CheeringCrowd(Playfield playfield) {
+    public CheeringCrowd(final Playfield playfield) {
         this.playfield = playfield;
         this.startValue = 8;
     }
@@ -43,7 +37,7 @@ public class CheeringCrowd implements Ability {
 
     @Override
     public boolean activate() {
-        if (playfield.getPoints() >= startValue){
+        if (playfield.getPoints() >= startValue) {
             playfield.getPointsForAbilities().removePoints(startValue);
             action();
             usedAbility();
@@ -67,8 +61,8 @@ public class CheeringCrowd implements Ability {
 
     @Override
     public String toString() {
-        return "CheeringCrowd{" +
-                ", startValue=" + startValue +
-                '}';
+        return "CheeringCrowd{"
+            + ", startValue=" + startValue
+            + '}';
     }
 }

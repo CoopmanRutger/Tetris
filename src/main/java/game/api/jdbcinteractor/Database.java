@@ -1,10 +1,10 @@
 package game.api.jdbcinteractor;
 
 
-public class Database {
+public abstract class Database {
     private static ConnectionDatabase connectionDatabase;
 
-    public static ConnectionDatabase getDB(){
+    public static ConnectionDatabase getDB() {
         return connectionDatabase;
     }
 

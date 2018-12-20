@@ -1,6 +1,5 @@
 package game.events.event;
 
-import game.player.Player;
 import game.player.playfield.Playfield;
 
 public class AbilityReset implements Event {

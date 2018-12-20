@@ -1,124 +1,89 @@
 package game.api.webapi;
 
 import game.Game;
-import game.events.Events;
-import game.events.event.Trigger;
-import game.player.Player;
-import game.player.hero.Hero;
-import game.player.hero.ability.Ability;
-import game.player.hero.ability.CheeringCrowd;
-import game.player.hero.ability.Joker;
-import game.player.info.Gold;
-import game.player.info.Info;
-import game.player.info.Lifepoints;
 import game.player.playfield.Playfield;
-import game.player.playfield.PointsForAbilities;
 import io.vertx.core.AbstractVerticle;
+import org.pmw.tinylog.Logger;
 
 /**
- * @author      Remote Access Tetris aka RAT
+ * @author Remote Access Tetris aka RAT
  */
 public class GameController extends AbstractVerticle {
 
-    private Game game = null;
-    private String username1;
-    private Player player1;
-    private Hero hero1;
+    private Game game;
+    private PlayerController player1 = new PlayerController("Rutger123");
+    private PlayerController player2 = new PlayerController("User2");
+    private HeroController hero1 = new HeroController("Mathias de boer");
+
+    private HeroController hero2 = new HeroController("Jillke de ridder");
+
+    private IntelController intel = new IntelController();
+    private Playfield playfield1 = new Playfield(20, 12);
+    private Playfield playfield2 = new Playfield(20, 12);
 
 
-
-    private String username2;
-    private Player player2;
-    private Hero hero2;
-
-    @Override
-    public void start(){
-        System.out.println("Game Controller started");
+    public PlayerController getPlayer1() {
+        return player1;
     }
 
-    public Game getGame(){
+    public PlayerController getPlayer2() {
+        return player2;
+    }
+
+    public Playfield getPlayfield1() {
+        return playfield1;
+    }
+
+    public Playfield getPlayfield2() {
+        return playfield2;
+    }
+
+    @Override
+    public void start() {
+        Logger.info("Game Controller started");
+    }
+
+    public Game getGame() {
         gamePlay();
         return game;
     }
 
-    public void setUsername1(String username){
-        this.username1 = username;
-    }
+    private void gamePlay() {
 
-    public void setPlayer1(String playerName){
-        player1 = new Player(playerName);
-    }
-
-    public void setHero1(String heroName){
-        hero1 = new Hero(heroName);
-    }
-
-
-
-    public void setUsername2(String username){
-        this.username2 = username;
-    }
-
-   private void gamePlay(){
-        setUsername1("Rutger123");
-        setUsername2("User2");
-
-        Trigger trigger1 = Trigger.SCORE;
-        Trigger trigger2 = Trigger.TIME;
 
         //Event event1 = new Event("kill them", trigger1 );
         //Event event2 = new Event("add some blocks", trigger2);
 
-        Events events = new Events();
         //events.addEvent(event1);
         //events.addEvent(event2);
 
-        hero1 = new Hero("Mathias de boer");
-        hero2 = new Hero("Jillke de ridder");
 
-        player1 = new Player(username1);
-        player2 = new Player(username2);
+        intel.getGold().addGold(500);
 
+        IntelController info1 = new IntelController();
 
+        player1.getPlayer().setInfo(intel.getInfo());
+        player2.getPlayer().setInfo(info1.getInfo());
 
-        Info info = new Info();
-        Gold gold = new Gold();
-        gold.addGold(500);
+        AbilityController abilityController = new AbilityController();
 
-        Lifepoints lifepoints = new Lifepoints();
+        hero1.getHero().addAbility(abilityController.getAbility1());
+        hero1.getHero().addAbility(abilityController.getAbility1());
+        hero2.getHero().addAbility(abilityController.getAbility3());
+        hero2.getHero().addAbility(abilityController.getAbility4());
 
-        Info info1 = new Info();
+        player1.getPlayer().setHero(hero1.getHero());
+        player2.getPlayer().setHero(hero2.getHero());
 
-        player1.setInfo(info);
-        player2.setInfo(info1);
+        player1.getPlayer().addPlayfield(player1.getUsername(), playfield1);
+        player1.getPlayer().addPlayfield(player2.getUsername(), playfield2);
 
+        player2.getPlayer().addPlayfield(player2.getUsername(), playfield2);
+        player2.getPlayer().addPlayfield(player1.getUsername(), playfield1);
 
-        Playfield playfield1 = new Playfield(20,12);
-        Playfield playfield2 = new Playfield(20,12);
-
-
-       Ability ability1 = new CheeringCrowd(playfield1);
-       Ability ability2 = new Joker(playfield1);
-       Ability ability3 = new CheeringCrowd(playfield2);
-       Ability ability4 = new Joker(playfield2);
-
-       hero1.addAbility(ability1);
-       hero1.addAbility(ability2);
-       hero2.addAbility(ability3);
-       hero2.addAbility(ability4);
-
-       player1.setHero(hero1);
-       player2.setHero(hero2);
-
-        player1.addPlayfield(username1, playfield1);
-        player1.addPlayfield(username2, playfield2);
-
-        player2.addPlayfield(username2, playfield2);
-        player2.addPlayfield(username1, playfield1);
-
-        game = new Game(events);
-        game.addPlayer(player1);
-        game.addPlayer(player2);
+        game = new Game(intel.getEvents());
+        game.addPlayer(player1.getPlayer());
+        game.addPlayer(player2.getPlayer());
 
     }
 }

@@ -15,6 +15,11 @@ import org.pmw.tinylog.Logger;
  */
 public class ConsumerHandlers {
 
+    //private static final String CREATEUSER = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
+    //private static final String GETCLAN = "SELECT * FROM clans WHERE name = ?";
+    private static final String GETPASSWORD = "SELECT password FROM users WHERE username = ?";
+    private static final String USEREXISTS = "select * from users where username = ?";
+
     private StringLines lines = new StringLines();
     private JDBCClient jdbcClient;
     private GameController controller;
@@ -25,14 +30,11 @@ public class ConsumerHandlers {
         + "Left Join users on factions_users.userid = users.userid "
         + " WHERE users.userid = ? ";
 
-    private final String chooseFaction = "INSERT INTO clan_user(clanNr, userId) VALUES (?, ?)";
+    //private final String chooseFaction = "INSERT INTO clan_user(clanNr, userId) VALUES (?, ?)";
 
     private final String getUser = "select * from users "
         + "left join players on users.userid = players.userid "
         + "WHERE username = ?";
-    private final String makeUser = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
-    private final String getClan = "SELECT * FROM clans WHERE name = ?";
-    private final String getPassword = "SELECT password FROM users WHERE username = ?";
     private final String makeLogin = "INSERT INTO users (username, email, password, gold) "
         + "VALUES (?, ?, ?, ?)";
 
@@ -44,7 +46,6 @@ public class ConsumerHandlers {
 
     private final String makeRandomFaction = "insert into FACTIONS_USERS  ( factionnr, userid) "
         + "values( 5, ?)";
-    private final String userExists = "select * from users where username = ?";
     private final String makePlayerName = "INSERT INTO players (userid, PLAYERNAME, xp, level)"
         + "VALUES ((select max(userid) from users), ?, 0 , 1)";
 
@@ -58,7 +59,7 @@ public class ConsumerHandlers {
     }
 
 
-    public void getPlayerInfo(String username, EventBus eb) {
+    public void receivePlayerInfo(String username, EventBus eb) {
         final JsonArray[] params = {new JsonArray().add(username)};
         jdbcClient.queryWithParams(getUser, params[0],
             res -> {
@@ -69,10 +70,10 @@ public class ConsumerHandlers {
                     player.put(lines.getUsername(), rs.getResults().get(0).getString(1));
                     player.put("playerId", rs.getResults().get(0).getInteger(5));
                     player.put("playerName", rs.getResults().get(0).getString(6));
-                    System.out.println(player);
+                    Logger.info(player);
                     insertRandomFaction(rs.getResults().get(0).getInteger(0));
-                    controller.setPlayer1(rs.getResults().get(0).getString(6));
-                    controller.setUsername1(player.getString(rs.getResults().get(0).getString(1)));
+                    controller.getPlayer1().setPlayer(rs.getResults().get(0).getString(6));
+                    controller.getPlayer1().setUsername(player.getString(rs.getResults().get(0).getString(1)));
 
                 } else {
                     Logger.warn("Could not get player info from DB: ", res.cause());
@@ -88,7 +89,7 @@ public class ConsumerHandlers {
         jdbcClient.queryWithParams(makeRandomFaction, params[0],
             res -> {
                 if (res.succeeded()) {
-                    System.out.println("check");
+                    Logger.info("check");
 
                 } else {
                     Logger.warn(lines.getDbInfo(), res.cause());
@@ -96,7 +97,7 @@ public class ConsumerHandlers {
             });
     }
 
-    public void getGold(int userId, EventBus eb) {
+    public void receiveGold(int userId, EventBus eb) {
         JsonObject reponse = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(userId)};
         jdbcClient.queryWithParams(getGold, params[0],
@@ -115,10 +116,10 @@ public class ConsumerHandlers {
     public void insertFaction(int factionNr, int userId) {
         JsonArray params = new JsonArray().add(factionNr).add(userId).add(userId);
         jdbcClient.updateWithParams(makeFaction, params, res -> {
-            System.out.println(res.succeeded());
+            Logger.info(res.succeeded());
             if (res.succeeded()) {
                 UpdateResult updateResult = res.result();
-                System.out.println(updateResult);
+                Logger.info(updateResult);
                 if (updateResult.getUpdated() > 0) {
                     Logger.info(" insert faction into DB factionNr:" + factionNr + " and userId " + userId);
                 }
@@ -130,39 +131,39 @@ public class ConsumerHandlers {
     }
 
 
-    private void makeNewplayerUsername(String username, EventBus eb) {
-        final JsonArray[] params = {new JsonArray().add(username)};
-        jdbcClient.queryWithParams(makeUser, params[0],
-            res -> {
-                JsonObject player = new JsonObject();
-                if (res.succeeded()) {
-                    ResultSet rs = res.result();
-                    player.put(lines.getPlayer(), rs.getResults().get(0));
-                    System.out.println(rs.getResults().get(0).getString(1));
+    //    private void makeNewplayerUsername(String username, EventBus eb) {
+    //        final JsonArray[] params = {new JsonArray().add(username)};
+    //        jdbcClient.queryWithParams(CREATEUSER, params[0],
+    //            res -> {
+    //                JsonObject player = new JsonObject();
+    //                if (res.succeeded()) {
+    //                    ResultSet rs = res.result();
+    //                    player.put(lines.getPlayer(), rs.getResults().get(0));
+    //                    System.out.println(rs.getResults().get(0).getString(1));
+    //
+    //                    System.out.println("result!!! " + player);
+    //                } else {
+    //                    Logger.warn(lines.getDbInfo(), res.cause());
+    //                }
+    //
+    //                controller.getPlayer1().setUsername(player.getJsonArray(lines.getPlayer()).getString(1));
+    //                eb.send(lines.getSocketPlayerInfo(), player.encode());
+    //            });
+    //    }
 
-                    System.out.println("result!!! " + player);
-                } else {
-                    Logger.warn(lines.getDbInfo(), res.cause());
-                }
 
-                controller.setUsername1(player.getJsonArray(lines.getPlayer()).getString(1));
-                eb.send(lines.getSocketPlayerInfo(), player.encode());
-            });
-    }
-
-
-    public void getBasic(int playerId, EventBus eb) {
+    public void receiveBasic(int playerId, EventBus eb) {
         JsonObject reponse = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(playerId)};
         jdbcClient.queryWithParams(getBasic, params[0],
             res -> {
                 if (res.succeeded()) {
                     ResultSet rs = res.result();
-                    System.out.println("rs: " + rs.getResults());
-                    System.out.println(rs.getResults());
+                    Logger.info("rs: " + rs.getResults());
+                    Logger.info(rs.getResults());
                     JsonArray jsonArray = rs.getResults().get(0);
-                    System.out.println(rs.getColumnNames());
-                    System.out.println(jsonArray);
+                    Logger.info(rs.getColumnNames());
+                    Logger.info(jsonArray);
 
                     if (jsonArray.getString(1) != null) {
                         reponse.put("FactionNr", jsonArray.getInteger(0));
@@ -170,7 +171,7 @@ public class ConsumerHandlers {
                         reponse.put("ClanNr", jsonArray.getInteger(2));
                         reponse.put("ClanName", jsonArray.getString(3));
                     }
-                    System.out.println("result    !!! " + reponse);
+                    Logger.info("result    !!! " + reponse);
                 } else {
                     Logger.warn(lines.getDbInfo(), res.cause());
                 }
@@ -183,7 +184,7 @@ public class ConsumerHandlers {
         JsonObject passwordFromDb = new JsonObject();
         JsonObject passwordResult = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(username)};
-        jdbcClient.queryWithParams(getPassword, params[0], res -> {
+        jdbcClient.queryWithParams(GETPASSWORD, params[0], res -> {
             if (res.succeeded()) {
                 ResultSet rs = res.result();
                 if (rs.getResults().size() == 0) {
@@ -191,7 +192,7 @@ public class ConsumerHandlers {
                 } else {
                     passwordFromDb.put(lines.getPassword(), rs.getResults().get(0).getString(0));
                     boolean samePassword = BCrypt.checkpw(password, passwordFromDb.getString(lines.getPassword()));
-                    passwordResult.put(lines.getCanLogin(), "" + samePassword);
+                    passwordResult.put(lines.getCanLogin(), String.valueOf(samePassword));
                 }
             } else {
                 Logger.warn(lines.getDbInfo(), res.cause());
@@ -221,7 +222,6 @@ public class ConsumerHandlers {
     }
 
     public void makePlayer(String playername) {
-        JsonObject couldMakePlayername = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(playername)};
         jdbcClient.queryWithParams(makePlayerName, params[0], res -> {
             if (res.succeeded()) {
@@ -236,7 +236,7 @@ public class ConsumerHandlers {
         JsonObject loginExists = new JsonObject();
         final JsonArray[] params = {new JsonArray()
             .add(username)};
-        jdbcClient.queryWithParams(userExists, params[0], res -> {
+        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
             if (res.succeeded()) {
                 ResultSet rs = res.result();
                 if (rs.getResults().size() == 0) {
@@ -292,7 +292,7 @@ public class ConsumerHandlers {
     //    private String getClanNr(String clanName) {
     //        final String[] clanNr = new String[1];
     //        JsonArray params = new JsonArray().add(clanName);
-    //        jdbcClient.queryWithParams(getClan, params, res -> {
+    //        jdbcClient.queryWithParams(GETCLAN, params, res -> {
     //            ResultSet rs = res.result();
     //            List<JsonObject> rows = rs.getRows();
     //            for (JsonObject row : rows) {

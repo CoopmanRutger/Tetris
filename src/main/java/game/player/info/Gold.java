@@ -13,15 +13,13 @@ public class Gold {
     }
 
 
-    public void addGold(int gold){
+    public void addGold(int gold) {
         this.gold += gold;
     }
 
-    public boolean removeGold(int gold){
-        if ((this.gold -= gold)>= 0){
-            return true; // het is gekocht
-        }
-        return false; // het is niet gekocht, te weinig geld.
+    public boolean removeGold(int gold) {
+        int remainingGold = this.gold - gold;
+        return remainingGold >= 0;
     }
 
     @Override

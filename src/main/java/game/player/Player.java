@@ -49,7 +49,7 @@ public class Player {
         this.playfields = playfields;
     }
 
-    public void addPlayfield(String playername, Playfield playfield){
+    public void addPlayfield(String playername, Playfield playfield) {
         playfields.put(playername, playfield);
     }
 
@@ -63,8 +63,12 @@ public class Player {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Player player = (Player) o;
         return Objects.equals(name, player.name);
     }
@@ -77,11 +81,11 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", hero=" + hero +
-                ", playfields=" + playfields +
-                ", info=" + info +
-                '}';
+        return "Player{"
+            + "name='" + name + '\''
+            + ", hero=" + hero
+            + ", playfields=" + playfields
+            + ", info=" + info
+            + '}';
     }
 }

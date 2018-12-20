@@ -30,9 +30,9 @@ public class Info {
 
     @Override
     public String toString() {
-        return "Info{" +
-                "gold=" + gold +
-                ", lifepoints=" + lifepoints +
-                '}';
+        return "Info{"
+            + "gold=" + gold
+            + ", lifepoints=" + lifepoints
+            + '}';
     }
 }

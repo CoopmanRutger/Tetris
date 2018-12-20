@@ -1,16 +1,15 @@
 package game.api;
 
 import game.api.jdbcinteractor.ConnectionDatabase;
-import game.api.jdbcinteractor.ConsumerHandlers;
 import game.api.jdbcinteractor.Database;
+import game.api.webapi.GameController;
 import game.api.webapi.Routes;
 import game.api.webapi.WebAPI;
-import game.api.webapi.GameController;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 
 /**
- * @author      Remote Access Tetris aka RAT
+ * @author Remote Access Tetris aka RAT
  */
 public class Tetris extends AbstractVerticle {
 

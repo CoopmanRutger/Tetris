@@ -2,22 +2,18 @@ package game;
 
 import game.events.Events;
 import game.player.Player;
-import game.player.playfield.block.Block;
-import game.player.playfield.block.TypesOfBlocks;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
- * @author      Remote Access Tetris aka RAT
+ * @author Remote Access Tetris aka RAT
  */
 public class Game {
 
     private List<Player> players;
     private Events events;
+
     public Game(Events events) {
         players = new ArrayList<>();
         this.events = events;
@@ -50,9 +46,9 @@ public class Game {
 
     @Override
     public String toString() {
-        return "Game{" +
-                ", players=" + players +
-                ", events=" + events +
-                '}';
+        return "Game{"
+            + ", players=" + players
+            + ", events=" + events
+            + '}';
     }
 }

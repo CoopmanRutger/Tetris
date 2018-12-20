@@ -10,19 +10,41 @@ import java.util.Objects;
 
 public class Playfield {
 
-    private List<List<Integer>> playfield; // hoogte 20 en breedte 12
+    private static final String NEWLINE = "\n";
+    // hoogte 20 en breedte 12
+    private List<List<Integer>> playfield;
     private Score score;
     private PointsForAbilities points;
     private Blocks blocks;
     private Block currentBlock;
     private int counter;
-    private int gameSpeed ;
+    private int gameSpeed;
     private boolean blinded;
 
+    public Playfield(int height, int width) {
+        playfield = new ArrayList<>();
+        score = new Score();
+        points = new PointsForAbilities();
+        blocks = new Blocks();
+        counter = 0;
+        gameSpeed = 50;
+        blinded = false;
+        makeStandardPlayfield(height, width);
+    }
+
+    public Playfield(List<List<Integer>> playfield) {
+        this.playfield = new ArrayList<>(playfield);
+        score = new Score();
+        points = new PointsForAbilities();
+        blocks = new Blocks();
+        counter = 0;
+        gameSpeed = 50;
+    }
 
     public Block getCurrentBlock() {
         return currentBlock;
     }
+
     public Blocks getBlocks() {
         return blocks;
     }
@@ -38,27 +60,6 @@ public class Playfield {
     public void updateScore(int extraScore) {
         int previousScore = score.getScore();
         score.setScore(previousScore + extraScore);
-    }
-
-
-    public Playfield(int height, int width) {
-        playfield = new ArrayList<>();
-        score = new Score();
-        points = new PointsForAbilities();
-        blocks = new Blocks();
-        counter = 0;
-        gameSpeed = 50;
-        blinded = false;
-        makeStandardPlayfield(height,width);
-    }
-
-    public Playfield(List<List<Integer>> playfield) {
-        this.playfield = new ArrayList<>(playfield);
-        score = new Score();
-        points = new PointsForAbilities();
-        blocks = new Blocks();
-        counter = 0;
-        gameSpeed = 50;
     }
 
     public void setPlayfield(List<List<Integer>> playfield) {
@@ -162,7 +163,7 @@ public class Playfield {
     }
 
     private void scoreForCompletedLine() {
-        score.updateScore(100 ,points);
+        score.updateScore(100, points);
     }
 
     private void removeCompletedLine(int completedLine) {
@@ -187,7 +188,8 @@ public class Playfield {
     public Score getScoreByName() {
         return score;
     }
-    public int getScore(){
+
+    public int getScore() {
         return score.getScore();
     }
 
@@ -195,7 +197,7 @@ public class Playfield {
         return points;
     }
 
-    public int getPoints(){
+    public int getPoints() {
         return points.getPoints();
     }
 
@@ -205,11 +207,15 @@ public class Playfield {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Playfield playfield1 = (Playfield) o;
-        return Objects.equals(playfield, playfield1.playfield) &&
-                Objects.equals(score, playfield1.score);
+        return Objects.equals(playfield, playfield1.playfield)
+            && Objects.equals(score, playfield1.score);
     }
 
     @Override
@@ -222,11 +228,11 @@ public class Playfield {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder
-                .append("playfield ")
-                .append("\n");
+            .append("playfield ")
+            .append(NEWLINE);
         int number = 0;
-        for (List<Integer> list: playfield){
-            stringBuilder.append(number).append(list).append("\n");
+        for (List<Integer> list : playfield) {
+            stringBuilder.append(number).append(list).append(NEWLINE);
             number++;
         }
 
@@ -242,7 +248,7 @@ public class Playfield {
     }
 
     public void setGameSpeed(int gameSpeed) {
-        if (gameSpeed > 0){
+        if (gameSpeed > 0) {
             this.gameSpeed = gameSpeed;
         } else {
             this.gameSpeed = 1;
