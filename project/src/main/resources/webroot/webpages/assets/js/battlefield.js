@@ -6,10 +6,8 @@ let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 // let eb = new EventBus("http://192.168.0.251:8021/tetris-21/socket");
 let game = {
     gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50,
-    area: makeMatrix(1, 1),
-    area2: makeMatrix(1, 1),
-    context: player1.getContext("2d"),
-    context2: player2.getContext("2d"),
+    grid: makeMatrix(1, 1), context: player1.getContext("2d"),
+    grid2: makeMatrix(1, 1), context2: player2.getContext("2d"),
     fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0, width:12,height:20},
     fieldPlayer2: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0,width:12,height:20},
     color: null
@@ -70,8 +68,8 @@ function giveMatrixNumbers(playfields, firstPlayerName, secPlayerName) {
     let playfield2Height = playfields[secPlayerName].playfield.length;
     let playfield2Width = playfields[secPlayerName].playfield[0].length;
 
-    game.area2 = makeMatrix(playfield2Width, playfield2Height);
-    game.area = makeMatrix(playfieldWidth, playfieldheight);
+    game.grid2 = makeMatrix(playfield2Width, playfield2Height);
+    game.grid = makeMatrix(playfieldWidth, playfieldheight);
 
 }
 
@@ -170,27 +168,27 @@ function setWidth(lines, id) {
 
 function backgroundStuff() {
 
-    f(game.context, game.fieldPlayer, game.area);
-    f(game.context2, game.fieldPlayer2, game.area2);
+    f(game.context, game.fieldPlayer, game.grid);
+    f(game.context2, game.fieldPlayer2, game.grid2);
     startGame();
 
     const move = 1;
     document.addEventListener('keydown', function (e) {
         //links Q
         if (e.keyCode === 81) {
-            playerMove(game.fieldPlayer, -move, game.area);
+            playerMove(game.fieldPlayer, -move, game.grid);
         }
         // draai Z
         else if (e.keyCode === 90) {
-            playerRotate(game.fieldPlayer, game.area);
+            playerRotate(game.fieldPlayer, game.grid);
         }
         // Beneden S
         else if (e.keyCode === 83) {
-            playerDrop(game.fieldPlayer, game.context, game.area);
+            playerDrop(game.fieldPlayer, game.context, game.grid);
         }
         // rechts D
         else if (e.keyCode === 68) {
-            playerMove(game.fieldPlayer, +move, game.area);
+            playerMove(game.fieldPlayer, +move, game.grid);
         }
         //  1
         else if (e.keyCode === 49) {
@@ -207,19 +205,19 @@ function backgroundStuff() {
     document.addEventListener('keydown', function (e) {
         // links
         if (e.keyCode === 37) {
-            playerMove(game.fieldPlayer2, -move, game.area2);
+            playerMove(game.fieldPlayer2, -move, game.grid2);
         }
         // rechts
         else if (e.keyCode === 39) {
-            playerMove(game.fieldPlayer2, +move, game.area2);
+            playerMove(game.fieldPlayer2, +move, game.grid2);
         }
         // beneden
         else if (e.keyCode === 40) {
-            playerDrop(game.fieldPlayer2, game.context2, game.area2);
+            playerDrop(game.fieldPlayer2, game.context2, game.grid2);
         }
         // draaien
         else if (e.keyCode === 38) {
-            playerRotate(game.fieldPlayer2, game.area2);
+            playerRotate(game.fieldPlayer2, game.grid2);
         }
         //  9
         else if (e.keyCode === 57) {
@@ -229,19 +227,41 @@ function backgroundStuff() {
         // 0
         else if (e.keyCode === 48) {
             abilitys("ability4");
+            evenements("tornado")
             //todo
         }
-
-        // todo
-        // eb.send("tetris.infoBackend.updateGame", "update!", function (error, reply) {
-        //     if (error) {
-        //         console.log(error)
-        //     }
-        // });
     })
 }
 
+function evenements(string) {
+    let object = JSON.stringify({evenement: string,
+        playerName1:game.fieldPlayer.name,
+        playerName2: game.fieldPlayer2.name
+    });
+    console.log(object);
+    eb.send("tetris-21.socket.battleField.evenements", object, function (error, reply) {
+        if (error) {
+            console.log(error)
+        }
+        let info = JSON.parse(reply.body);
+        console.log(info);
+        console.log(info[game.fieldPlayer.name]);
+        game.grid = info[game.fieldPlayer.name];
+        console.log(info[game.fieldPlayer2.name]);
+        game.grid2 = info[game.fieldPlayer2.name]
+
+    });
+}
+
+
 function abilitys(string) {
+    // eb.send("tetris.infoBackend.updateGame", string, function (error, reply) {
+    //     if (error) {
+    //         console.log(error)
+    //     }
+    //     console.log(reply.body);
+    // });
+
     switch(string) {
         case "ability1":
             console.log(1);
@@ -258,6 +278,8 @@ function abilitys(string) {
         default:
             console.log("No ability is just")
     }
+
+
 }
 
 function startGame() {
@@ -268,8 +290,8 @@ function startGame() {
     game.gameLoop = setInterval(function () {
         number++;
         if ((number % game.speed === 0)) {
-            playerDrop(game.fieldPlayer, game.context, game.area);
-            playerDrop(game.fieldPlayer2, game.context2, game.area2)
+            playerDrop(game.fieldPlayer, game.context, game.grid);
+            playerDrop(game.fieldPlayer2, game.context2, game.grid2)
         }
         if (!game.gameRun) {
             youLose(game.context);
@@ -280,10 +302,10 @@ function startGame() {
             youWon(game.context);
         }
         else if (game.gameRun && game.gameRun2) {
-                draw(game.fieldPlayer, game.context, game.area);
-                draw(game.fieldPlayer2, game.context2, game.area2);
+                draw(game.fieldPlayer, game.context, game.grid);
+                draw(game.fieldPlayer2, game.context2, game.grid2);
         }
-        // console.log(game.area2)
+        // console.log(game.grid2)
     }, 10);
 }
 
@@ -322,10 +344,10 @@ function countdown(durationInSeconds) {
 
 function nextBlock(playerName) {
     if (game.fieldPlayer.name === playerName) {
-        makePieces(game.fieldPlayer, game.area);
+        makePieces(game.fieldPlayer, game.grid);
     }
     if (game.fieldPlayer2.name === playerName) {
-        makePieces(game.fieldPlayer2, game.area2);
+        makePieces(game.fieldPlayer2, game.grid2);
     }
 }
 
@@ -412,7 +434,7 @@ function collide(player, area) {
 
 function merge(player, area, context) {
 
-        let object = JSON.stringify({player:player ,area: area});
+        let object = JSON.stringify({player:player ,grid: area});
     eb.send("tetris-21.socket.battleField.blockOnField", object, function (error, reply) {
         if (error) {
             console.log(error);

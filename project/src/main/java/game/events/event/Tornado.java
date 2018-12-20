@@ -1,6 +1,7 @@
 package game.events.event;
 
 import game.player.Player;
+import game.player.playfield.Playfield;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,18 +9,18 @@ import java.util.List;
 
 public class Tornado implements Event {
 
-    private String name;
-    private Trigger trigger;
-    private Player player;
 
-    public Tornado(String name, Trigger trigger, Player player) {
-        this.name = name;
+    private Trigger trigger;
+    private Playfield playfield;
+
+    public Tornado(Trigger trigger, Playfield playfield) {
         this.trigger = trigger;
-        this.player = player;
+        this.playfield = playfield;
     }
 
+    @Override
     public String getName() {
-        return name;
+        return "Tornado";
     }
 
     public Trigger getTrigger() {
@@ -32,21 +33,21 @@ public class Tornado implements Event {
 
     private void activateOnTime() {
         List<List<Integer>> playfieldUpdatedVersion = new ArrayList<>();
-        List<List<Integer>> playfield = player.getPlayfieldByName(player.getName()).getPlayfield();
+        List<List<Integer>> CurrentPlayfield = playfield.getPlayfield();
 
-        for (List<Integer> playfieldLine : playfield) {
+        for (List<Integer> playfieldLine : CurrentPlayfield) {
             Collections.shuffle(playfieldLine);
         }
 
         List<List<Integer>> lowestLines = new ArrayList<>();
         List<List<Integer>> highestLines = new ArrayList<>();
 
-        for (int i = playfield.size() - 1; i >= 5; i--) {
-            lowestLines.add(playfield.get(i));
+        for (int i = CurrentPlayfield.size() - 1; i >= 5; i--) {
+            lowestLines.add(CurrentPlayfield.get(i));
         }
 
         for (int i = 4; i >= 0; i--) {
-            highestLines.add(playfield.get(i));
+            highestLines.add(CurrentPlayfield.get(i));
         }
 
         Collections.shuffle(lowestLines);
@@ -54,6 +55,13 @@ public class Tornado implements Event {
         playfieldUpdatedVersion.addAll(highestLines);
         playfieldUpdatedVersion.addAll(lowestLines);
 
-        player.getPlayfieldByName(player.getName()).setPlayfield(playfieldUpdatedVersion);
+        playfield.setPlayfield(playfieldUpdatedVersion);
+    }
+
+    @Override
+    public String toString() {
+        return "Tornado{" +
+                "playfield=" + playfield +
+                '}';
     }
 }

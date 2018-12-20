@@ -1,10 +1,10 @@
 package game.api.webapi;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import game.Game;
 import game.api.jdbcinteractor.Database;
+import game.events.event.Tornado;
+import game.events.event.Trigger;
 import game.player.Player;
 import game.player.playfield.Playfield;
 import game.player.playfield.block.Block;
@@ -13,10 +13,11 @@ import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.Json;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import org.pmw.tinylog.Logger;
+
+import java.util.List;
 
 public class Routes extends AbstractVerticle {
     private EventBus eb;
@@ -64,6 +65,7 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.battleField.getNewBlock",this::getNewBlock);
         eb.consumer("tetris-21.socket.battleField.rotate",this::rotateBlock);
         eb.consumer("tetris-21.socket.battleField.blockOnField",this::blockOnField);
+        eb.consumer("tetris-21.socket.battleField.evenements",this::evenements);
 
         eb.consumer("tetris-21.socket.updateScore",this::updateScore);
 
@@ -83,6 +85,56 @@ public class Routes extends AbstractVerticle {
 
     }
 
+    private void evenements(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+
+        String playerName1 = userMessage.getString("playerName1");
+        String playerName2 = userMessage.getString("playerName2");
+        String evenementName = userMessage.getString("evenement");
+        System.out.println(evenementName);
+
+        List<List<Integer>> playfield1 = switchCaseEvenements(playerName1, evenementName);
+        List<List<Integer>> playfield2 = switchCaseEvenements(playerName2, evenementName);
+
+        JsonObject json = new JsonObject();
+        json.put(playerName1 , playfield1);
+        json.put(playerName2 , playfield2);
+
+        System.out.println(json);
+        message.reply(json.encode());
+    }
+
+
+    private List<List<Integer>> switchCaseEvenements(String playerName, String evenementName){
+
+        Playfield playfield = getPlayfieldByPlayerName(playerName);
+
+        Logger.info(evenementName+ " \n " + playerName + " \n " + playfield);
+
+        switch (evenementName) {
+            case "tornado":
+                Trigger trigger = Trigger.TIME;
+                Tornado tornado = new Tornado(trigger,playfield);
+                tornado.activate();
+                Logger.info("Tornaadddoooooo");
+                break;
+            case "iets anders":
+                break;
+            case "blabla":
+                // todo
+                break;
+            case "meer blabla":
+                // todo
+                break;
+            default:
+                Logger.info("NO evenement");
+                break;
+        }
+
+        Logger.info(playerName + " \n " + playfield);
+        return playfield.getPlayfield();
+    }
+
     private void blockOnField(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         JsonObject player = userMessage.getJsonObject("player");
@@ -98,6 +150,7 @@ public class Routes extends AbstractVerticle {
         message.reply(playfield.putOnPlayField(xPosition, yPosition));
         System.out.println(playerName + "\n" + playfield.toString());
     }
+
 
     private void getNewBlock(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
