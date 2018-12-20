@@ -30,27 +30,26 @@ public class Routes extends AbstractVerticle {
     private GameController controller;
     private Game game;
 
-    void rootHandler(RoutingContext routingContext){
+    public Routes(GameController gameController) {
+        controller = gameController;
+        this.game = controller.getGame();
+    }
+
+    void rootHandler(RoutingContext routingContext) {
         HttpServerResponse response = routingContext.response();
         response.setChunked(true);
         response.write("hello tetris");
         response.end();
     }
 
-    public void start(){
+    public void start() {
         eb = vertx.eventBus();
         addConsumers();
     }
 
-
-    public Routes(GameController gameController) {
-        controller = gameController;
-        this.game = controller.getGame();
-    }
-
-    private void addConsumers(){
+    private void addConsumers() {
 //        homescreen
-        eb.consumer("tetris-21.socket.homescreen",this::getPlayerName);
+        eb.consumer("tetris-21.socket.homescreen", this::getPlayerName);
 
 //        shop get gold
         eb.consumer("tetris-21.socket.gold", this::getGold);
@@ -62,16 +61,13 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.faction.choose", this::chooseFaction);
 
 
-
-
-
 //        playfield
-        eb.consumer("tetris-21.socket.gamestart",this::ImReady);
+        eb.consumer("tetris-21.socket.gamestart", this::ImReady);
 
-        eb.consumer("tetris-21.socket.battleField.getNewBlock",this::getNewBlock);
-        eb.consumer("tetris-21.socket.battleField.rotate",this::rotateBlock);
-        eb.consumer("tetris-21.socket.battleField.blockOnField",this::blockOnField);
-        eb.consumer("tetris-21.socket.battleField.evenements",this::evenements);
+        eb.consumer("tetris-21.socket.battleField.getNewBlock", this::getNewBlock);
+        eb.consumer("tetris-21.socket.battleField.rotate", this::rotateBlock);
+        eb.consumer("tetris-21.socket.battleField.blockOnField", this::blockOnField);
+        eb.consumer("tetris-21.socket.battleField.evenements", this::evenements);
 
         eb.consumer("tetris-21.socket.battleField.abilities", this::abilities);
 
@@ -142,25 +138,25 @@ public class Routes extends AbstractVerticle {
         List<List<Integer>> playfield2 = switchCaseEvenements(playerName2, evenementName);
 
         JsonObject json = new JsonObject();
-        json.put(playerName1 , playfield1);
-        json.put(playerName2 , playfield2);
+        json.put(playerName1, playfield1);
+        json.put(playerName2, playfield2);
 
         System.out.println(json);
         message.reply(json.encode());
     }
 
 
-    private List<List<Integer>> switchCaseEvenements(String playerName, String evenementName){
+    private List<List<Integer>> switchCaseEvenements(String playerName, String evenementName) {
 
         Playfield playfield = getPlayfieldByPlayerName(playerName);
 
-        Logger.info(evenementName+ " \n " + playerName + " \n " + playfield);
+        Logger.info(evenementName + " \n " + playerName + " \n " + playfield);
 
         Trigger trigger = null;
         switch (evenementName) {
             case "tornado":
                 trigger = Trigger.TIME;
-                Tornado tornado = new Tornado(trigger,playfield);
+                Tornado tornado = new Tornado(trigger, playfield);
                 tornado.activate();
                 Logger.info("Tornaadddoooooo");
                 break;
@@ -206,16 +202,16 @@ public class Routes extends AbstractVerticle {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("playername");
 
-       Playfield playfield = getPlayfieldByPlayerName(playername);
+        Playfield playfield = getPlayfieldByPlayerName(playername);
         Block block = playfield.newBlock();
         int score = playfield.getScore();
         int points = playfield.getPoints();
         int blockCounter = playfield.getCounter();
         int lines = playfield.getScoreByName().getAmountOfLines();
 
-        if (blockCounter % 5 == 0){
+        if (blockCounter % 5 == 0) {
             int playfieldSpeed = playfield.getPlayfieldSpeed();
-            playfield.setGameSpeed(playfieldSpeed-1);
+            playfield.setGameSpeed(playfieldSpeed - 1);
         }
 
         JsonObject json = new JsonObject();
@@ -224,17 +220,16 @@ public class Routes extends AbstractVerticle {
         json.put("score", score);
         json.put("points", points);
         json.put("lines", lines);
-        json.put("gameSpeed",playfield.getPlayfieldSpeed());
+        json.put("gameSpeed", playfield.getPlayfieldSpeed());
 
         message.reply(json.encode());
     }
 
 
-
-    private Playfield getPlayfieldByPlayerName(String playerName){
+    private Playfield getPlayfieldByPlayerName(String playerName) {
         Playfield playfield = null;
-        for (Player player:game.getPlayers()) {
-            if (player.getName().equals(playerName)){
+        for (Player player : game.getPlayers()) {
+            if (player.getName().equals(playerName)) {
                 playfield = player.getPlayfieldByName(playerName);
             }
         }
@@ -269,8 +264,8 @@ public class Routes extends AbstractVerticle {
 
         message.reply(username);
         Database.getDB()
-                .getConsumerHandlers(controller)
-                .checkPassword(username, password, eb);
+            .getConsumerHandlers(controller)
+            .checkPassword(username, password, eb);
     }
 
     private void makeLogin(Message message) {
@@ -282,20 +277,20 @@ public class Routes extends AbstractVerticle {
 
         message.reply(username);
         Database.getDB()
-                .getConsumerHandlers(controller)
-                .makeUser(username, email, password, eb);
+            .getConsumerHandlers(controller)
+            .makeUser(username, email, password, eb);
 
         Database.getDB()
-                .getConsumerHandlers(controller)
-                .makePlayer(playername);
+            .getConsumerHandlers(controller)
+            .makePlayer(playername);
     }
 
     private void checkUsername(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString("username");
         Database.getDB()
-                .getConsumerHandlers(controller)
-                .checkUsername(username, eb);
+            .getConsumerHandlers(controller)
+            .checkUsername(username, eb);
         message.reply(username);
     }
 
@@ -305,8 +300,8 @@ public class Routes extends AbstractVerticle {
         message.reply(username);
 
         Database.getDB()
-                .getConsumerHandlers(controller)
-                .getPlayerInfo(username, eb);
+            .getConsumerHandlers(controller)
+            .getPlayerInfo(username, eb);
     }
 
     private void getFaction(Message message) {
@@ -315,8 +310,8 @@ public class Routes extends AbstractVerticle {
         message.reply("going to look for " + playerId);
 
         Database.getDB()
-                .getConsumerHandlers(controller)
-                .getBasic(playerId, eb);
+            .getConsumerHandlers(controller)
+            .getBasic(playerId, eb);
 
     }
 
@@ -328,12 +323,9 @@ public class Routes extends AbstractVerticle {
         int userId = Integer.parseInt(userMessage.getString("userId"));
 
 
-        Database.getDB().getConsumerHandlers(controller).insertFaction( factionId, userId);
+        Database.getDB().getConsumerHandlers(controller).insertFaction(factionId, userId);
         message.reply("Lets add factionId: " + factionId + " to userId: " + userId);
     }
-
-
-
 
 
 //    private void updateGame(Message message) {
@@ -352,7 +344,7 @@ public class Routes extends AbstractVerticle {
 //    }
 
 
-    private void ImReady(Message message){
+    private void ImReady(Message message) {
         System.out.println(game);
         eb.send("tetris-21.socket.game", Json.encode(game));
         message.reply("okey");
