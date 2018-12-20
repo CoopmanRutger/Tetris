@@ -4,7 +4,7 @@ import game.player.playfield.block.TypesOfBlocks;
 import game.player.playfield.block.Block;
 import org.junit.Before;
 import org.junit.Test;
-import java.awt.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;
@@ -75,7 +75,7 @@ public class PlayfieldTest  {
         int widthOfPlayingfield2 = playfield.getPlayfield().get(0).size();
         assertEquals(10, widthOfPlayingfield2);
 
-        Score score = playfield.getScore();
+        Score score = playfield.getScoreByName();
         int valueOfScore = score.getScore();
         assertEquals(400, valueOfScore);
     }

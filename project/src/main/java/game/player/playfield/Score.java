@@ -17,12 +17,13 @@ public class Score {
         this.score = score;
     }
 
-    public void updateScore(int extraScore) {
+    public void updateScore(int extraScore, PointsForAbilities points) {
         int previousScore = getScore();
         setScore(previousScore + extraScore);
+        points.addPoints(1);
     }
 
-    void extraScoreForMultipleLines(int amountOfCompletedLines) {
+    void extraScoreForMultipleLines(int amountOfCompletedLines, PointsForAbilities points) {
         int extraScore = 0;
         if (amountOfCompletedLines == 2) {
             extraScore = 200*2-200;
@@ -32,6 +33,7 @@ public class Score {
             extraScore = 400*4-400;
         }
         setScore(getScore() + extraScore);
+        points.addPoints(amountOfCompletedLines);
     }
 
     @Override

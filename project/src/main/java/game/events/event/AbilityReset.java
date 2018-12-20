@@ -1,17 +1,16 @@
 package game.events.event;
 
-public class FactoryReset implements Event {
+import game.player.Player;
+import game.player.playfield.Playfield;
 
-    private String name;
+public class AbilityReset implements Event {
+
+    private Playfield playfield;
     private Trigger trigger;
 
-    public FactoryReset(String name, Trigger trigger) {
-        this.name = name;
+    public AbilityReset(Trigger trigger, Playfield playfield) {
+        this.playfield = playfield;
         this.trigger = trigger;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public Trigger getTrigger() {
@@ -27,7 +26,7 @@ public class FactoryReset implements Event {
     }
 
     private void activateOnTime() {
-        // TODO: event is triggered on certain time
+        playfield.getPointsForAbilities().removeAllPoints();
     }
 
     private void activateOnScore() {

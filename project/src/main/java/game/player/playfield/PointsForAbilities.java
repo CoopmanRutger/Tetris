@@ -23,6 +23,10 @@ public class PointsForAbilities {
         }
     }
 
+    public void removeAllPoints(){
+        points = 0;
+    }
+
     @Override
     public String toString() {
         return " " + points;

@@ -6,8 +6,8 @@ let eb = new EventBus("http://localhost:8021/tetris-21/socket");
 // let eb = new EventBus("http://192.168.0.251:8021/tetris-21/socket");
 let game = {
     gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50,
-    grid: makeMatrix(1, 1), context: player1.getContext("2d"),
-    grid2: makeMatrix(1, 1), context2: player2.getContext("2d"),
+    grid: makeMatrixAZeroMatrix(1, 1), context: player1.getContext("2d"),
+    grid2: makeMatrixAZeroMatrix(1, 1), context2: player2.getContext("2d"),
     fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0, width:12,height:20},
     fieldPlayer2: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0,width:12,height:20},
     color: null
@@ -68,20 +68,12 @@ function giveMatrixNumbers(playfields, firstPlayerName, secPlayerName) {
     let playfield2Height = playfields[secPlayerName].playfield.length;
     let playfield2Width = playfields[secPlayerName].playfield[0].length;
 
-    game.grid2 = makeMatrix(playfield2Width, playfield2Height);
-    game.grid = makeMatrix(playfieldWidth, playfieldheight);
+    game.grid2 = makeMatrixAZeroMatrix(playfield2Width, playfield2Height);
+    game.grid = makeMatrixAZeroMatrix(playfieldWidth, playfieldheight);
 
 }
 
-
-function f(context, fieldPlayer, area) {
-    context.scale(20, 20);
-    nextBlock(fieldPlayer.name);
-    draw(fieldPlayer, context, area);
-}
-
-
-function makeMatrix(width, height) {
+function makeMatrixAZeroMatrix(width, height) {
     const matrix = [];
     while (height--) {
         matrix.push(new Array(width).fill(0));
@@ -164,12 +156,16 @@ function setWidth(lines, id) {
     }
 }
 
-
+function perparation(context, fieldPlayer, area) {
+    context.scale(20, 20);
+    nextBlock(fieldPlayer.name);
+    draw(fieldPlayer, context, area);
+}
 
 function backgroundStuff() {
 
-    f(game.context, game.fieldPlayer, game.grid);
-    f(game.context2, game.fieldPlayer2, game.grid2);
+    perparation(game.context, game.fieldPlayer, game.grid);
+    perparation(game.context2, game.fieldPlayer2, game.grid2);
     startGame();
 
     const move = 1;
@@ -227,8 +223,17 @@ function backgroundStuff() {
         // 0
         else if (e.keyCode === 48) {
             abilitys("ability4");
-            evenements("tornado")
             //todo
+        }
+        // E
+        else if (e.keyCode === 69) {
+            evenements("tornado")
+            //todo timen
+        }
+        // R
+        else if (e.keyCode === 82) {
+            evenements("abilityReset")
+            //todo timen
         }
     })
 }
@@ -238,30 +243,17 @@ function evenements(string) {
         playerName1:game.fieldPlayer.name,
         playerName2: game.fieldPlayer2.name
     });
-    console.log(object);
     eb.send("tetris-21.socket.battleField.evenements", object, function (error, reply) {
         if (error) {
             console.log(error)
         }
         let info = JSON.parse(reply.body);
-        console.log(info);
-        console.log(info[game.fieldPlayer.name]);
         game.grid = info[game.fieldPlayer.name];
-        console.log(info[game.fieldPlayer2.name]);
         game.grid2 = info[game.fieldPlayer2.name]
-
     });
 }
 
-
 function abilitys(string) {
-    // eb.send("tetris.infoBackend.updateGame", string, function (error, reply) {
-    //     if (error) {
-    //         console.log(error)
-    //     }
-    //     console.log(reply.body);
-    // });
-
     switch(string) {
         case "ability1":
             console.log(1);
@@ -279,7 +271,10 @@ function abilitys(string) {
             console.log("No ability is just")
     }
 
-
+    // eb.send("tetris-21.socket.battleField.abilitys", object, function (error, reply) {
+    //     if (error) {
+    //         console.log(error)
+    //     }
 }
 
 function startGame() {
@@ -341,7 +336,6 @@ function countdown(durationInSeconds) {
     }, 1000);
 }
 
-
 function nextBlock(playerName) {
     if (game.fieldPlayer.name === playerName) {
         makePieces(game.fieldPlayer, game.grid);
@@ -351,73 +345,30 @@ function nextBlock(playerName) {
     }
 }
 
-
-
-function points(player, area) {
-
-    let addScore = 0;
-    let rowCount = 1;
-    outer:for (let y = area.length - 1; y > 0; --y) {
-        for (let x = 0; x < area[y].length; ++x) {
-            if (area[y][x] === 0) {
-                continue outer;
-            }
-        }
-        const row = area.splice(y, 1)[0].fill(0);
-        area.unshift(row);
-        ++y;
-
-        addScore = rowCount * 100;
-        rowCount *= 2;
-
-        let object = JSON.stringify({score: addScore, player: player.name});
-        eb.send("tetris-21.socket.updateScore", object, function (error, reply) {
-            if (error) {
-                console.log(error)
-            }
-            // console.log(reply.body);
-            let info = JSON.parse(reply.body);
-            addScoreToPlayer(player, info)
-        });
-    }
-}
-
 function addScoreToPlayer(player, info) {
+
     if (player.name === game.fieldPlayer2.name ){
-
-        let score = select('#scoreplayer2').innerHTML;
-        select('#scoreplayer2').innerHTML = parseInt(score) + info.addToScore;
-        player.score += info.addToScore;
-
-        let numberOfLines = parseInt(select('#linesPlayer2 p span').innerHTML) + info.addlines;
-        select('#linesPlayer2 p span').innerHTML = numberOfLines;
-        abilityBars(player, numberOfLines);
-
+        select('#scoreplayer2').innerHTML = info.score;
+        player.score = info.score;
+        select('#linesPlayer2 p span').innerHTML = info.points;
 
     } else if(player.name === game.fieldPlayer.name){
-
-        let score = select('#scoreplayer1').innerHTML;
-        select('#scoreplayer1').innerHTML = parseInt(score) + info.addToScore;
-        player.score += info.addToScore;
-
-        let numberOfLines = parseInt(select('#linesPlayer1 p span').innerHTML)+ info.addlines;
-        select('#linesPlayer1 p span').innerHTML = numberOfLines;
-        abilityBars(player, numberOfLines);
+        select('#scoreplayer1').innerHTML = info.score;
+        player.score = info.score;
+        select('#linesPlayer1 p span').innerHTML = info.points;
     }
 }
 
-function abilityBars(player, lines){
-    let linesp = lines;
+function abilityBars(player, abilityPoints){
+    let points = abilityPoints;
     if(player.name === game.fieldPlayer.name ){
-        setWidth(linesp, "#abilty1p1");
-        setWidth(linesp, "#abilty2p1");
+        setWidth(points, "#abilty1p1");
+        setWidth(points, "#abilty2p1");
     } else {
-        setWidth(linesp, "#abilty1p2");
-        setWidth(linesp, "#abilty2p2");
+        setWidth(points, "#abilty1p2");
+        setWidth(points, "#abilty2p2");
     }
 }
-
-
 
 function collide(player, area) {
     const [m, o] = [player.matrix, player.pos];
@@ -431,31 +382,23 @@ function collide(player, area) {
     return false;
 }
 
-function merge(player, grid, context) {
-
+function merge(player, grid) {
         let object = JSON.stringify({player:player ,grid: grid});
     eb.send("tetris-21.socket.battleField.blockOnField", object, function (error, reply) {
         if (error) {
             console.log(error);
         }
-
         let playfield = JSON.parse(reply.body);
-
         if (player.name === sessionStorage.getItem("PlayerName")){
             game.grid2 = playfield;
         } else {
             game.grid = playfield;
         }
-        console.log(playfield);
-
-
-
     });
 }
 
 function rotate(player, area) {
     let object = JSON.stringify({matrix: player.matrix, playerName:player.name});
-
     eb.send("tetris-21.socket.battleField.rotate", object, function (error, reply) {
             if (error) {
                 console.log(error);
@@ -466,7 +409,6 @@ function rotate(player, area) {
     })
 
 }
-
 
 function collide2(player, area){
     while (collide(player, area)){
@@ -486,14 +428,24 @@ function makePieces(player, area) {
             console.log(error)
         }
         let block = JSON.parse(reply.body);
-        let newBlock = block.block;
-        game.color = block.color;
-        player.matrix = newBlock;
+
+        player.matrix = block.block;
         player.pos.y = 0;
         player.pos.x = 5;
 
+        update(player, block);
         collidefunction(player, area);
     });
+}
+
+function update(player, block) {
+    game.color = block.color;
+    let score = block.score;
+    let points = block.points;
+
+    let info = {score: score, points: points};
+    addScoreToPlayer(player, info);
+    abilityBars(player, points);
 }
 
 function collidefunction(player, area) {
@@ -512,8 +464,7 @@ function playerDrop(player, context, area) {
     player.pos.y++;
     if (collide(player, area)) {
         player.pos.y--;
-        merge(player, area, context);
-        points(player, area);
+        merge(player, area);
         nextBlock(player.name);
     }
 }
