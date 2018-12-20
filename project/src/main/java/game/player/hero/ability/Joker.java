@@ -2,9 +2,13 @@ package game.player.hero.ability;
 
 import game.player.playfield.Playfield;
 import game.player.playfield.PointsForAbilities;
+import io.netty.util.Timeout;
 import org.pmw.tinylog.Logger;
 
-public class Joker implements Ability {
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class Joker implements Ability{
 
     private int startValue;
     private Playfield playfield;
@@ -31,20 +35,32 @@ public class Joker implements Ability {
     }
 
     @Override
-    public void activate(PointsForAbilities points) {
+    public boolean activate() {
         if (playfield.getPoints() >= startValue){
-            points.removePoints(startValue);
+            playfield.getPoints().removePoints(startValue);
             action();
             usedAbility();
+            return true;
         } else {
-            Logger.warn("Ability is not available!");
+            return false;
         }
-        // TODO hier activeer je hem
+        Timer timer;
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                stopAction();
+            }
+        }, 10000);
     }
 
     @Override
     public void action() {
         playfield.setBlinded(true);
+    }
+
+    @Override
+    public void stopAction() {
+        playfield.setBlinded(false);
     }
 
     @Override

@@ -3,7 +3,11 @@ package game.player.hero.ability;
 import game.player.playfield.Playfield;
 import game.player.playfield.PointsForAbilities;
 import game.player.playfield.Score;
+import io.netty.util.Timeout;
 import org.pmw.tinylog.Logger;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class CheeringCrowd implements Ability {
 
@@ -32,21 +36,34 @@ public class CheeringCrowd implements Ability {
     }
 
     @Override
-    public void activate(PointsForAbilities points) {
+    public boolean activate() {
         if (playfield.getPoints() >= startValue){
-            points.removePoints(startValue);
+            playfield.getPoints().removePoints(startValue);
             action();
             usedAbility();
+            return true;
         } else {
-            Logger.warn("Ability is not available yet!");
+            return false;
         }
-        // TODO hier activeer je hem
+        Timer timer;
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                stopAction();
+            }
+        }, 20000);
     }
 
     @Override
     public void action() {
         Score score = playfield.getScore();
         score.setDoubleScore(2);
+    }
+
+    @Override
+    public void stopAction() {
+        Score score = playfield.getScore();
+        score.setDoubleScore(0);
     }
 
     @Override

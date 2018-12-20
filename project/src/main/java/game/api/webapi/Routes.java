@@ -6,6 +6,8 @@ import game.api.jdbcinteractor.Database;
 import game.events.event.Tornado;
 import game.events.event.Trigger;
 import game.player.Player;
+import game.player.hero.ability.CheeringCrowd;
+import game.player.hero.ability.Joker;
 import game.player.playfield.Playfield;
 import game.player.playfield.block.Block;
 import io.vertx.core.AbstractVerticle;
@@ -66,6 +68,7 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.battleField.rotate",this::rotateBlock);
         eb.consumer("tetris-21.socket.battleField.blockOnField",this::blockOnField);
         eb.consumer("tetris-21.socket.battleField.evenements",this::evenements);
+        eb.consumer("tetris-21.socket.battleField.abilities", this::abilities);
 
         eb.consumer("tetris-21.socket.updateScore",this::updateScore);
 
@@ -83,6 +86,22 @@ public class Routes extends AbstractVerticle {
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
+    }
+
+    private void abilities(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String playerName = userMessage.getString("playername");
+        String ability = userMessage.getString("ability");
+        String canActivate = null;
+
+        if (ability.equals("Cheering Crowd")) {
+            CheeringCrowd cheeringCrowd = new CheeringCrowd(getPlayfieldByPlayerName(playerName));
+            canActivate = String.valueOf(cheeringCrowd.activate());
+        } else if (ability.equals("Joker")) {
+            Joker joker = new Joker(getPlayfieldByPlayerName(playerName));
+            canActivate = String.valueOf(joker.activate());
+        }
+        message.reply(Json.encode(canActivate));
     }
 
     private void evenements(Message message) {

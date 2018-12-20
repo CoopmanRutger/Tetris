@@ -147,18 +147,19 @@ function setEvents(events) {
     // console.log(events.events[1].name);
 }
 
-function setWidth(lines, id) {
+function setWidth(points, id) {
     let multiply = 0 ;
     let maxVal = 0;
     if (id === "#abilty1p1" || id === "#abilty1p2") {
-        multiply = 10;
-        maxVal = 10
+        maxVal = 10;
+        multiply = 100/maxVal;
     } else if (id === "#abilty2p1" || id === "#abilty2p2") {
-        multiply = 5;
         maxVal = 20;
+        multiply = 100/maxVal;
     }
-    if(0 <= lines < maxVal) {
-        select(id).style.backgroundSize = lines * multiply + "%";
+
+    if(0 <= points < maxVal) {
+        select(id).style.backgroundSize = points * multiply + "%";
     } else {
         select(id).style.width = 100 + "%";
     }
@@ -227,13 +228,13 @@ function backgroundStuff() {
         // 0
         else if (e.keyCode === 48) {
             abilitys("ability4");
-            evenements("tornado")
+            events("tornado")
             //todo
         }
     })
 }
 
-function evenements(string) {
+function events(string) {
     let object = JSON.stringify({evenement: string,
         playerName1:game.fieldPlayer.name,
         playerName2: game.fieldPlayer2.name
