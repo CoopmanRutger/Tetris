@@ -117,16 +117,16 @@ public class Routes extends AbstractVerticle {
             @Override
             public void run() {
                 ability.stopAction();
-                letKnowTheEventIsOver(ability);
+                letKnowThatTheAbilityIsDone(ability);
             }
         }, seconds);
     }
 
-    private void letKnowTheEventIsOver(Ability ability) {
+    private void letKnowThatTheAbilityIsDone(Ability ability) {
         JsonObject json = new JsonObject();
         String abilityName = ability.getName();
         json.put(abilityName, "done");
-        eb.send("tetris-21.socket.battleField.abilites.done", json.encode());
+        eb.send("tetris-21.socket.battleField.abilities.done", json.encode());
     }
 
     private void evenements(Message message) {
@@ -209,12 +209,14 @@ public class Routes extends AbstractVerticle {
         Block block = playfield.newBlock();
         int score = playfield.getScore();
         int points = playfield.getPoints();
+        int lines = playfield.getScoreByName().getAmountOfLines();
 
         JsonObject json = new JsonObject();
         json.put("block", block.getBlock());
         json.put("color", block.getColor());
         json.put("score", score);
         json.put("points", points);
+        json.put("lines", lines);
 
         message.reply(json.encode());
     }

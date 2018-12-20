@@ -5,6 +5,7 @@ import io.netty.util.TimerTask;
 
 public interface Ability {
 
+    String getName();
     int getStartValue();
     int getNumberOfTimesUsed();
     void usedAbility();
@@ -12,5 +13,4 @@ public interface Ability {
     void action();
     void stopAction();
     String toString();
-    String getName();
 }
