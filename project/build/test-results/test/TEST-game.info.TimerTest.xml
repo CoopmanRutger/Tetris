@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.info.TimerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-20T14:15:08" hostname="MacBook-Pro-van-Din.local" time="5.018">
-  <properties/>
-  <testcase name="run" classname="game.info.TimerTest" time="5.018"/>
-  <system-out><![CDATA[Stopped
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
