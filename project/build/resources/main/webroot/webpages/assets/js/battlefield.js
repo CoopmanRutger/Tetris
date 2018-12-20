@@ -404,7 +404,6 @@ function addScoreToPlayer(player, info) {
         select('#linesPlayer1 p span').innerHTML = numberOfLines;
         abilityBars(player, numberOfLines);
     }
-
 }
 
 function abilityBars(player, lines){
@@ -432,25 +431,25 @@ function collide(player, area) {
     return false;
 }
 
-function merge(player, area, context) {
+function merge(player, grid, context) {
 
-        let object = JSON.stringify({player:player ,grid: area});
+        let object = JSON.stringify({player:player ,grid: grid});
     eb.send("tetris-21.socket.battleField.blockOnField", object, function (error, reply) {
         if (error) {
             console.log(error);
         }
-        console.log(reply.body);
 
-        if (reply.body){
-            collidefunction(player, area);
-            player.matrix.forEach((row, y) => {
-                row.forEach((value, x) => {
-                    if (value !== 0) {
-                        area[y + player.pos.y][x + player.pos.x] = value;
-                    }
-                });
-            });
+        let playfield = JSON.parse(reply.body);
+
+        if (player.name === sessionStorage.getItem("PlayerName")){
+            game.grid2 = playfield;
+        } else {
+            game.grid = playfield;
         }
+        console.log(playfield);
+
+
+
     });
 }
 

@@ -146,10 +146,10 @@ public class Playfield {
             }
             amountOf1s = 0;
         }
-//
-//        if (amountOfCompletedLines > 1) {
-//            score.extraScoreForMultipleLines(amountOfCompletedLines);
-//        }
+
+        if (amountOfCompletedLines > 1) {
+            score.extraScoreForMultipleLines(amountOfCompletedLines);
+        }
 
     }
 
@@ -168,7 +168,7 @@ public class Playfield {
     private List<Integer> makeLine(int size) {
         List<Integer> blocks = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            blocks.add(2);
+            blocks.add(0);
         }
         System.out.println(blocks);
         return blocks;

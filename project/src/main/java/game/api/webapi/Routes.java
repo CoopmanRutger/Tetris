@@ -146,9 +146,10 @@ public class Routes extends AbstractVerticle {
         Integer yPosition = pos.getInteger("y");
 
         Playfield playfield = getPlayfieldByPlayerName(playerName);
+        playfield.putOnPlayField(xPosition, yPosition);
 
-        message.reply(playfield.putOnPlayField(xPosition, yPosition));
-        System.out.println(playerName + "\n" + playfield.toString());
+
+        message.reply(Json.encode(playfield.getPlayfield()));
     }
 
 
