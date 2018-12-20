@@ -14,6 +14,7 @@ public class Playfield {
     private PointsForAbilities points;
     private Blocks blocks;
     private Block currentBlock;
+    private boolean blinded;
 
 
     public Block getCurrentBlock() {
@@ -42,6 +43,7 @@ public class Playfield {
         score = new Score();
         points = new PointsForAbilities();
         blocks = new Blocks();
+        blinded = false;
         makeStandardPlayfield(height,width);
     }
 
@@ -178,13 +180,21 @@ public class Playfield {
         playfield.set(line, completeLine);
     }
 
-    Score getScore() {
+    public Score getScore() {
         return score;
     }
 
 
     public PointsForAbilities getPoints() {
         return points;
+    }
+
+    public boolean getBlinded() {
+        return blinded;
+    }
+
+    public void setBlinded(boolean blinded) {
+        this.blinded = blinded;
     }
 
     @Override

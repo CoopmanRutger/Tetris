@@ -15,8 +15,8 @@ public class AbilityTest {
 
     @Before
     public void before(){
-        ability1 = new AbilityLvl1("one");
-        ability2 = new AbilityLvl2("paper");
+        ability1 = new CheeringCrowd("one");
+        ability2 = new Joker("paper");
         ability3 = new AbilityLvl3("car");
         points = new PointsForAbilities();
     }

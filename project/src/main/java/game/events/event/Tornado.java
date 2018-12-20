@@ -42,11 +42,11 @@ public class Tornado implements Event {
         List<List<Integer>> lowestLines = new ArrayList<>();
         List<List<Integer>> highestLines = new ArrayList<>();
 
-        for (int i = CurrentPlayfield.size() - 1; i >= 5; i--) {
+        for (int i = CurrentPlayfield.size() - 1; i >= 7; i--) {
             lowestLines.add(CurrentPlayfield.get(i));
         }
 
-        for (int i = 4; i >= 0; i--) {
+        for (int i = 6; i >= 0; i--) {
             highestLines.add(CurrentPlayfield.get(i));
         }
 

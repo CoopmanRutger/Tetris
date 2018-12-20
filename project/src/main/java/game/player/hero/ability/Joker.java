@@ -1,31 +1,25 @@
 package game.player.hero.ability;
 
+import game.player.playfield.Playfield;
 import game.player.playfield.PointsForAbilities;
 
-public class AbilityLvl2 implements Ability {
+public class Joker implements Ability {
 
-    private String name = null;
     private int startValue;
     private Boolean available;
+    private Playfield playfield;
     private static int numberOfTimesUsed = 0;
 
-    public AbilityLvl2(String name) {
-        this.name = name;
-        this.startValue = 750;
+    public Joker(Playfield playfield) {
+        this.startValue = 20;
         this.available = false;
+        this.playfield = playfield;
     }
 
     @Override
     public int getStartValue() {
         return startValue;
     }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-
 
     @Override
     public Boolean isAvailable() {
@@ -42,7 +36,6 @@ public class AbilityLvl2 implements Ability {
         if (points.getPoints() >= startValue){
             available = true;
         }
-        // TODO
     }
 
     @Override
@@ -53,9 +46,10 @@ public class AbilityLvl2 implements Ability {
     @Override
     public void activate(PointsForAbilities points) {
         if (available){
-            usedAbility();
             points.removePoints(startValue);
             action();
+            usedAbility();
+            available = false;
         } else {
             System.out.println("nope can't");
         }
@@ -64,13 +58,12 @@ public class AbilityLvl2 implements Ability {
 
     @Override
     public void action() {
-        // TODO hier voer je hem uit
+        playfield.setBlinded(true);
     }
 
     @Override
     public String toString() {
-        return "AbilityLvl1{" +
-                "name='" + name + '\'' +
+        return "Joker{" +
                 ", startValue=" + startValue +
                 ", available=" + available +
                 '}';

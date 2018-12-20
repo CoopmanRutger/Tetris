@@ -156,12 +156,13 @@ public class Routes extends AbstractVerticle {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("playername");
 
-       Playfield playfield = getPlayfieldByPlayerName(playername);
+        Playfield playfield = getPlayfieldByPlayerName(playername);
         Block block = playfield.newBlock();
 
         JsonObject json = new JsonObject();
         json.put("block", block.getBlock());
         json.put("color", block.getColor());
+        json.put("blinded", playfield.getBlinded());
 
         message.reply(json.encode());
     }

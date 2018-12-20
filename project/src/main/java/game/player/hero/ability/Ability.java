@@ -5,7 +5,6 @@ import game.player.playfield.PointsForAbilities;
 public interface Ability {
 
     int getStartValue();
-    String getName();
     Boolean isAvailable();
     int getNumberOfTimesUsed();
     void abilityIsReadyToUse(PointsForAbilities points);

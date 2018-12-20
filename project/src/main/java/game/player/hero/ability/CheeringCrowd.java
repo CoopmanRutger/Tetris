@@ -1,28 +1,25 @@
 package game.player.hero.ability;
 
+import game.player.playfield.Playfield;
 import game.player.playfield.PointsForAbilities;
+import game.player.playfield.Score;
 
-public class AbilityLvl1 implements Ability {
+public class CheeringCrowd implements Ability {
 
-    private String name = null;
     private int startValue;
     private Boolean available;
+    private Playfield playfield;
     private static int numberOfTimesUsed = 0;
 
-    public AbilityLvl1(String name) {
-        this.name = name;
-        this.startValue = 500;
+    public CheeringCrowd(Playfield playfield) {
+        this.playfield = playfield;
+        this.startValue = 10;
         this.available = false;
     }
 
     @Override
     public int getStartValue() {
         return startValue;
-    }
-
-    @Override
-    public String getName() {
-        return name;
     }
 
     @Override
@@ -51,9 +48,10 @@ public class AbilityLvl1 implements Ability {
     @Override
     public void activate(PointsForAbilities points) {
         if (available){
-            usedAbility();
             points.removePoints(startValue);
             action();
+            usedAbility();
+            available = false;
         } else {
             System.out.println("activate? nope");
         }
@@ -62,13 +60,13 @@ public class AbilityLvl1 implements Ability {
 
     @Override
     public void action() {
-        // TODO hier voer je hem uit
+        Score score = playfield.getScore();
+        score.setDoubleScore(2);
     }
 
     @Override
     public String toString() {
-        return "AbilityLvl1{" +
-                "name='" + name + '\'' +
+        return "CheeringCrowd{" +
                 ", startValue=" + startValue +
                 ", available=" + available +
                 '}';

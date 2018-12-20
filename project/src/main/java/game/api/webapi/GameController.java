@@ -6,8 +6,8 @@ import game.events.event.Trigger;
 import game.player.Player;
 import game.player.hero.Hero;
 import game.player.hero.ability.Ability;
-import game.player.hero.ability.AbilityLvl1;
-import game.player.hero.ability.AbilityLvl2;
+import game.player.hero.ability.CheeringCrowd;
+import game.player.hero.ability.Joker;
 import game.player.hero.ability.AbilityLvl3;
 import game.player.info.Gold;
 import game.player.info.Info;
@@ -83,14 +83,14 @@ public class GameController extends AbstractVerticle {
         player1.setHero(hero1);
         player2.setHero(hero2);
 
-        Ability ability1 = new AbilityLvl1("destruction");
-        Ability ability2 = new AbilityLvl2("lol");
-        Ability ability3 = new AbilityLvl3("spook");
+//        Ability ability1 = new CheeringCrowd("destruction");
+//        Ability ability2 = new Joker("lol");
+//        Ability ability3 = new AbilityLvl3("spook");
 
-        hero1.addAbility(ability1);
-        hero1.addAbility(ability2);
-        hero2.addAbility(ability1);
-        hero2.addAbility(ability3);
+//        hero1.addAbility(ability1);
+//        hero1.addAbility(ability2);
+//        hero2.addAbility(ability1);
+//        hero2.addAbility(ability3);
 
         Info info = new Info();
         Gold gold = new Gold();
@@ -115,7 +115,7 @@ public class GameController extends AbstractVerticle {
         player1.addPlayfield(username2, playfield2);
 
         player2.addPlayfield(username2, playfield2);
-       player2.addPlayfield(username1, playfield1);
+        player2.addPlayfield(username1, playfield1);
 
         game = new Game(events);
         game.addPlayer(player1);
