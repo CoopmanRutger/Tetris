@@ -16,7 +16,7 @@ public class Joker implements Ability{
     private static int numberOfTimesUsed = 0;
 
     public Joker(Playfield playfield) {
-        this.startValue = 20;
+        this.startValue = 15;
         this.playfield = playfield;
     }
 

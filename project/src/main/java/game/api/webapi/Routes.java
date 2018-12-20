@@ -211,10 +211,10 @@ public class Routes extends AbstractVerticle {
         int score = playfield.getScore();
         int points = playfield.getPoints();
         int blockCounter = playfield.getCounter();
-        int playfieldSpeed = playfield.getPlayfieldSpeed();
         int lines = playfield.getScoreByName().getAmountOfLines();
 
-        if ((blockCounter % playfieldSpeed == 0)){
+        if (blockCounter % 5 == 0){
+            int playfieldSpeed = playfield.getPlayfieldSpeed();
             playfield.setGameSpeed(playfieldSpeed-1);
         }
 

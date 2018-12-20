@@ -11,14 +11,14 @@ import java.util.TimerTask;
 
 public class CheeringCrowd implements Ability {
 
-    private final String name = "CheeringCrowd";
+    private final String name = "CheerCrowd";
     private int startValue;
     private Playfield playfield;
     private static int numberOfTimesUsed = 0;
 
     public CheeringCrowd(Playfield playfield) {
         this.playfield = playfield;
-        this.startValue = 10;
+        this.startValue = 8;
     }
 
     @Override
