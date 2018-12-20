@@ -3,18 +3,17 @@ package game.player.hero.ability;
 import game.player.playfield.Playfield;
 import game.player.playfield.PointsForAbilities;
 import game.player.playfield.Score;
+import org.pmw.tinylog.Logger;
 
 public class CheeringCrowd implements Ability {
 
     private int startValue;
-    private Boolean available;
     private Playfield playfield;
     private static int numberOfTimesUsed = 0;
 
     public CheeringCrowd(Playfield playfield) {
         this.playfield = playfield;
         this.startValue = 10;
-        this.available = false;
     }
 
     @Override
@@ -23,21 +22,8 @@ public class CheeringCrowd implements Ability {
     }
 
     @Override
-    public Boolean isAvailable() {
-        return available;
-    }
-
-    @Override
     public int getNumberOfTimesUsed() {
         return numberOfTimesUsed;
-    }
-
-    @Override
-    public void abilityIsReadyToUse(PointsForAbilities points) {
-        if (points.getPoints() >= startValue){
-            available = true;
-        }
-        // TODO
     }
 
     @Override
@@ -47,13 +33,12 @@ public class CheeringCrowd implements Ability {
 
     @Override
     public void activate(PointsForAbilities points) {
-        if (available){
+        if (playfield.getPoints() >= startValue){
             points.removePoints(startValue);
             action();
             usedAbility();
-            available = false;
         } else {
-            System.out.println("activate? nope");
+            Logger.warn("Ability is not available yet!");
         }
         // TODO hier activeer je hem
     }
@@ -68,7 +53,6 @@ public class CheeringCrowd implements Ability {
     public String toString() {
         return "CheeringCrowd{" +
                 ", startValue=" + startValue +
-                ", available=" + available +
                 '}';
     }
 }
