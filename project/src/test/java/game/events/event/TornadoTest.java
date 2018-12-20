@@ -37,6 +37,6 @@ public class TornadoTest {
 
         tornado.activate();
 
-        assertNotSame((playerField.getPlayfield()), player.getPlayfieldByName(player.getName()).getPlayfield());
+        assertEquals((player.getPlayfieldByName(player.getName()).getPlayfield()), playerField.getPlayfield());
     }
 }
