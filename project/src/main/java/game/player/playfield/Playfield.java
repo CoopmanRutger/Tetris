@@ -45,6 +45,17 @@ public class Playfield {
         makeStandardPlayfield(height,width);
     }
 
+    public Playfield(List<List<Integer>> playfield) {
+        this.playfield = new ArrayList<>(playfield);
+        score = new Score();
+        points = new PointsForAbilities();
+        blocks = new Blocks();
+    }
+
+    public void setPlayfield(List<List<Integer>> playfield) {
+        this.playfield = playfield;
+    }
+
     private void makeStandardPlayfield(int height, int width) {
         makePlayfield(height, width);
     }

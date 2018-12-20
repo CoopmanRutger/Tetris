@@ -2,7 +2,6 @@ package game.api.webapi;
 
 import game.Game;
 import game.events.Events;
-import game.events.event.Event;
 import game.events.event.Trigger;
 import game.player.Player;
 import game.player.hero.Hero;
@@ -68,12 +67,12 @@ public class GameController extends AbstractVerticle {
         Trigger trigger1 = Trigger.SCORE;
         Trigger trigger2 = Trigger.TIME;
 
-        Event event1 = new Event("kill them", trigger1 );
-        Event event2 = new Event("add some blocks", trigger2);
+        //Event event1 = new Event("kill them", trigger1 );
+        //Event event2 = new Event("add some blocks", trigger2);
 
         Events events = new Events();
-        events.addEvent(event1);
-        events.addEvent(event2);
+        //events.addEvent(event1);
+        //events.addEvent(event2);
 
         hero1 = new Hero("Mathias de boer");
         hero2 = new Hero("Jillke de ridder");
