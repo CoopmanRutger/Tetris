@@ -116,29 +116,29 @@ function setGamePlay(infoBackend) {
     setEvents(infoBackend.events);
 }
 
-function setPlayer1(player) {
-    // console.log(player);
-
-    game.fieldPlayer.name = sessionStorage.getItem("PlayerName");
-    select('#player1name').innerHTML =  sessionStorage.getItem("PlayerName");
-    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/1.png\" "
-        + "class='key' title='key1' alt='key1'>";
-    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/2.png\" " +
-        "class='key' title='key2' alt='key2'>";
-
-    select("#heroimgplayer1").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
-}
-
 function setPlayer2(player) {
     // console.log(player);
 
-    game.fieldPlayer2.name = 'User2';
-    select('#player2name').innerHTML = 'User2';
-    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/9.png\" " +
-        "class='key' title='key9' alt='key9'>";
-    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/0.png\" " +
-        "class='key' title='key0' alt='key0'>";
+    game.fieldPlayer2.name = sessionStorage.getItem("PlayerName");
+    select('#player2name').innerHTML =  sessionStorage.getItem("PlayerName");
+    select('#abilty1p2').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/1.png\" "
+        + "class='key' title='key1' alt='key1'>";
+    select('#abilty2p2').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/2.png\" " +
+        "class='key' title='key2' alt='key2'>";
+
     select("#heroimgplayer2").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
+}
+
+function setPlayer1(player) {
+    // console.log(player);
+
+    game.fieldPlayer.name = 'User2';
+    select('#player1name').innerHTML = 'User2';
+    select('#abilty1p1').innerHTML = player.hero.abilitySet[0].name + " <img src=\"assets/media/9.png\" " +
+        "class='key' title='key9' alt='key9'>";
+    select('#abilty2p1').innerHTML = player.hero.abilitySet[1].name + " <img src=\"assets/media/0.png\" " +
+        "class='key' title='key0' alt='key0'>";
+    select("#heroimgplayer1").innerHTML = '<img src="assets/media/' + player.hero.name + '.png">';
 
 }
 
@@ -192,6 +192,16 @@ function backgroundStuff() {
         else if (e.keyCode === 68) {
             playerMove(game.fieldPlayer, +move, game.area);
         }
+        //  1
+        else if (e.keyCode === 49) {
+            abilitys("ability1");
+            //todo
+        }
+        // 2
+        else if (e.keyCode === 50) {
+            abilitys("ability2");
+            //todo
+        }
     });
 
     document.addEventListener('keydown', function (e) {
@@ -211,6 +221,16 @@ function backgroundStuff() {
         else if (e.keyCode === 38) {
             playerRotate(game.fieldPlayer2, game.area2);
         }
+        //  9
+        else if (e.keyCode === 57) {
+            abilitys("ability3");
+            //todo
+        }
+        // 0
+        else if (e.keyCode === 48) {
+            abilitys("ability4");
+            //todo
+        }
 
         // todo
         // eb.send("tetris.infoBackend.updateGame", "update!", function (error, reply) {
@@ -219,6 +239,25 @@ function backgroundStuff() {
         //     }
         // });
     })
+}
+
+function abilitys(string) {
+    switch(string) {
+        case "ability1":
+            console.log(1);
+            break;
+        case "ability2":
+            console.log(2);
+            break;
+        case "ability3":
+            console.log(9);
+            break;
+        case "ability4":
+            console.log(0);
+            break;
+        default:
+            console.log("No ability is just")
+    }
 }
 
 function startGame() {
