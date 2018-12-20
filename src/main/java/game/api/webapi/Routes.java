@@ -47,6 +47,7 @@ public class Routes extends AbstractVerticle {
         response.end();
     }
 
+    @Override
     public void start() {
         eb = vertx.eventBus();
         addConsumers();
