@@ -93,7 +93,8 @@ public class Routes extends AbstractVerticle {
 
     private void abilities(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        String playername = userMessage.getString("playername");
+        String playername = userMessage.getString("attacker");
+        String otherUser = userMessage.getString("defender");
         String ability = userMessage.getString("ability");
 
         String canActivate = null;
@@ -103,7 +104,7 @@ public class Routes extends AbstractVerticle {
             canActivate = String.valueOf(cheeringCrowd.activate());
             timeTheEvent((long) 20000, cheeringCrowd);
         } else if (ability.equals("Joker")) {
-            Joker joker = new Joker(getPlayfieldByPlayerName(playername));
+            Joker joker = new Joker(getPlayfieldByPlayerName(otherUser));
             canActivate = String.valueOf(joker.activate());
             timeTheEvent((long) 10000, joker);
         }
