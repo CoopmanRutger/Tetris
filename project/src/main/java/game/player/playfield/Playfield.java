@@ -14,8 +14,8 @@ public class Playfield {
     private Score score;
     private PointsForAbilities points;
     private Blocks blocks;
-    private boolean blinded;
     private Block currentBlock;
+    private boolean blinded;
 
 
     public Block getCurrentBlock() {
@@ -43,8 +43,8 @@ public class Playfield {
         playfield = new ArrayList<>();
         score = new Score();
         points = new PointsForAbilities();
-        blinded = false;
         blocks = new Blocks();
+        blinded = false;
         makeStandardPlayfield(height,width);
     }
 
@@ -176,14 +176,12 @@ public class Playfield {
         playfield.set(line, completeLine);
     }
 
-    Score getScoreByName() {
+    public Score getScoreByName() {
         return score;
     }
     public int getScore(){
         return score.getScore();
     }
-
-
 
     public PointsForAbilities getPointsForAbilities() {
         return points;
@@ -191,6 +189,10 @@ public class Playfield {
 
     public int getPoints(){
         return points.getPoints();
+    }
+
+    public void setBlinded(boolean blinded) {
+        this.blinded = blinded;
     }
 
     @Override
@@ -222,4 +224,6 @@ public class Playfield {
 
         return stringBuilder.toString();
     }
+
+
 }

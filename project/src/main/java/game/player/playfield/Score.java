@@ -3,11 +3,12 @@ package game.player.playfield;
 public class Score {
 
     private int score;
+    private int doubleScore;
 
     public Score() {
         score = 0;
+        doubleScore = 1;
     }
-
 
     public int getScore() {
         return score;
@@ -39,5 +40,9 @@ public class Score {
     @Override
     public String toString() {
         return " " + score;
+    }
+
+    public void setDoubleScore(int doubleScore) {
+        this.doubleScore = doubleScore;
     }
 }

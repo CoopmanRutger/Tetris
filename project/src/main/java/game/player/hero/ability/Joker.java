@@ -10,6 +10,7 @@ import java.util.TimerTask;
 
 public class Joker implements Ability{
 
+    private final String name = "Joker";
     private int startValue;
     private Playfield playfield;
     private static int numberOfTimesUsed = 0;
@@ -17,6 +18,11 @@ public class Joker implements Ability{
     public Joker(Playfield playfield) {
         this.startValue = 20;
         this.playfield = playfield;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -37,20 +43,13 @@ public class Joker implements Ability{
     @Override
     public boolean activate() {
         if (playfield.getPoints() >= startValue){
-            playfield.getPoints().removePoints(startValue);
+            playfield.getPointsForAbilities().removePoints(startValue);
             action();
             usedAbility();
             return true;
         } else {
             return false;
         }
-        Timer timer;
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                stopAction();
-            }
-        }, 10000);
     }
 
     @Override

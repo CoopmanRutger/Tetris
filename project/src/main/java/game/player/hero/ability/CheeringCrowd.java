@@ -11,6 +11,7 @@ import java.util.TimerTask;
 
 public class CheeringCrowd implements Ability {
 
+    private final String name = "CheeringCrowd";
     private int startValue;
     private Playfield playfield;
     private static int numberOfTimesUsed = 0;
@@ -18,6 +19,11 @@ public class CheeringCrowd implements Ability {
     public CheeringCrowd(Playfield playfield) {
         this.playfield = playfield;
         this.startValue = 10;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -38,31 +44,24 @@ public class CheeringCrowd implements Ability {
     @Override
     public boolean activate() {
         if (playfield.getPoints() >= startValue){
-            playfield.getPoints().removePoints(startValue);
+            playfield.getPointsForAbilities().removePoints(startValue);
             action();
             usedAbility();
             return true;
         } else {
             return false;
         }
-        Timer timer;
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                stopAction();
-            }
-        }, 20000);
     }
 
     @Override
     public void action() {
-        Score score = playfield.getScore();
+        Score score = playfield.getScoreByName();
         score.setDoubleScore(2);
     }
 
     @Override
     public void stopAction() {
-        Score score = playfield.getScore();
+        Score score = playfield.getScoreByName();
         score.setDoubleScore(0);
     }
 

@@ -12,4 +12,5 @@ public interface Ability {
     void action();
     void stopAction();
     String toString();
+    String getName();
 }
