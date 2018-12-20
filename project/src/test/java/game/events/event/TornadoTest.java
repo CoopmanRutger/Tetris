@@ -14,7 +14,7 @@ public class TornadoTest {
     @Test
     public void activate() {
         Player player = new Player("Rutger123");
-        Event tornado = new Tornado("tornado", Trigger.TIME, player);
+        Event tornado = new Tornado(Trigger.TIME, player.getPlayfieldByName(player.getName()));
 
         List<List<Integer>> playfield = new ArrayList<>();
 

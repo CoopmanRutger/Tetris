@@ -327,12 +327,12 @@ function addScoreToPlayer(player, info) {
     if (player.name === game.fieldPlayer2.name ){
         select('#scoreplayer2').innerHTML = info.score;
         player.score = info.score;
-        select('#linesPlayer2 p span').innerHTML = info.points;
+        select('#linesPlayer2 p span').innerHTML = info.lines;
 
     } else if(player.name === game.fieldPlayer.name){
         select('#scoreplayer1').innerHTML = info.score;
         player.score = info.score;
-        select('#linesPlayer1 p span').innerHTML = info.points;
+        select('#linesPlayer1 p span').innerHTML = info.lines;
     }
 }
 
@@ -415,6 +415,11 @@ function makePieces(player, area) {
     });
 }
 
+function update(player, block) {
+    game.color = block.color;
+    let score = block.score;
+    let points = block.points;
+    let lines = block.lines;
 function update(player, info) {
     game.color = info.color;
     let score = info.score;
@@ -425,6 +430,8 @@ function update(player, info) {
     game.speed = gameSpeed;
     let info1 = {score: score, points: points};
     addScoreToPlayer(player, info1);
+    let info = {score: score, points: points, lines: lines};
+    addScoreToPlayer(player, info);
     abilityBars(player, points);
 }
 

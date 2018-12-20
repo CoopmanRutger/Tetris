@@ -7,6 +7,9 @@ import game.events.event.AbilityReset;
 import game.events.event.Tornado;
 import game.events.event.Trigger;
 import game.player.Player;
+import game.player.hero.ability.Ability;
+import game.player.hero.ability.CheeringCrowd;
+import game.player.hero.ability.Joker;
 import game.player.playfield.Playfield;
 import game.player.playfield.block.Block;
 import io.vertx.core.AbstractVerticle;
@@ -19,6 +22,8 @@ import io.vertx.ext.web.RoutingContext;
 import org.pmw.tinylog.Logger;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Routes extends AbstractVerticle {
     private EventBus eb;
@@ -68,6 +73,8 @@ public class Routes extends AbstractVerticle {
         eb.consumer("tetris-21.socket.battleField.blockOnField",this::blockOnField);
         eb.consumer("tetris-21.socket.battleField.evenements",this::evenements);
 
+        eb.consumer("tetris-21.socket.battleField.abilities", this::abilities);
+
 //        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
 
         // Login
@@ -82,6 +89,45 @@ public class Routes extends AbstractVerticle {
         // May login
         //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
 
+    }
+
+    private void abilities(Message message) {
+        JsonObject userMessage = new JsonObject(message.body().toString());
+        String playername = userMessage.getString("attacker");
+        String otherUser = userMessage.getString("defender");
+        String ability = userMessage.getString("ability");
+
+        String canActivate = null;
+
+        if (ability.equals("CheeringCrowd")) {
+            CheeringCrowd cheeringCrowd = new CheeringCrowd(getPlayfieldByPlayerName(playername));
+            canActivate = String.valueOf(cheeringCrowd.activate());
+            timeTheEvent((long) 20000, cheeringCrowd);
+        } else if (ability.equals("Joker")) {
+            Joker joker = new Joker(getPlayfieldByPlayerName(otherUser));
+            canActivate = String.valueOf(joker.activate());
+            timeTheEvent((long) 10000, joker);
+        }
+
+        message.reply(canActivate);
+    }
+
+    private void timeTheEvent(Long seconds, Ability ability) {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                ability.stopAction();
+                letKnowThatTheAbilityIsDone(ability);
+            }
+        }, seconds);
+    }
+
+    private void letKnowThatTheAbilityIsDone(Ability ability) {
+        JsonObject json = new JsonObject();
+        String abilityName = ability.getName();
+        json.put(abilityName, "done");
+        eb.send("tetris-21.socket.battleField.abilities.done", json.encode());
     }
 
     private void evenements(Message message) {
@@ -166,6 +212,7 @@ public class Routes extends AbstractVerticle {
         int points = playfield.getPoints();
         int blockCounter = playfield.getCounter();
         int playfieldSpeed = playfield.getPlayfieldSpeed();
+        int lines = playfield.getScoreByName().getAmountOfLines();
 
         if ((blockCounter % playfieldSpeed == 0)){
             playfield.setGameSpeed(playfieldSpeed-1);
@@ -176,6 +223,7 @@ public class Routes extends AbstractVerticle {
         json.put("color", block.getColor());
         json.put("score", score);
         json.put("points", points);
+        json.put("lines", lines);
         json.put("gameSpeed",playfield.getPlayfieldSpeed());
 
         message.reply(json.encode());
