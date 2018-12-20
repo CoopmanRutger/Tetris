@@ -11,42 +11,42 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.pmw.tinylog.Logger;
 
 /**
- * @author      Remote Access Tetris aka RAT
+ * @author Remote Access Tetris aka RAT
  */
 public class ConsumerHandlers {
 
+    private StringLines lines = new StringLines();
     private JDBCClient jdbcClient;
     private GameController controller;
 
     private final String getBasic = "SELECT * FROM factions "
-            + "Left join clans on factions.factionnr = clans.factionnr "
-            + "Left join factions_users ON factions.factionNr= factions_users.factionNr "
-            + "Left Join users on factions_users.userid = users.userid "
-            + " WHERE users.userid = ? ";
+        + "Left join clans on factions.factionnr = clans.factionnr "
+        + "Left join factions_users ON factions.factionNr= factions_users.factionNr "
+        + "Left Join users on factions_users.userid = users.userid "
+        + " WHERE users.userid = ? ";
 
     private final String chooseFaction = "INSERT INTO clan_user(clanNr, userId) VALUES (?, ?)";
 
     private final String getUser = "select * from users "
-            + "left join players on users.userid = players.userid "
-            + "WHERE username = ?";
+        + "left join players on users.userid = players.userid "
+        + "WHERE username = ?";
     private final String makeUser = "INSERT INTO USERS (Username, email) VALUES ( ?, null);";
     private final String getClan = "SELECT * FROM clans WHERE name = ?";
     private final String getPassword = "SELECT password FROM users WHERE username = ?";
     private final String makeLogin = "INSERT INTO users (username, email, password, gold) "
-            + "VALUES (?, ?, ?, ?)";
+        + "VALUES (?, ?, ?, ?)";
 
     private final String makeFaction = "UPDATE FACTIONS_USERS "
-            + "SET Factionnr = ?, userid= ? WHERE userid = ?";
+        + "SET Factionnr = ?, userid= ? WHERE userid = ?";
 
     private final String getGold = "SELECT gold FROM USERS "
-            + "WHERE Userid = ?";
+        + "WHERE Userid = ?";
 
     private final String makeRandomFaction = "insert into FACTIONS_USERS  ( factionnr, userid) "
-            + "values( 5, ?)";
-    private final String USEREXISTS = "select * from users where username = ?";
-    private final String MAKEPLAYERNAME = "INSERT INTO players (userid, PLAYERNAME, xp, level) VALUES ((select max(userid) from users), ?, 0 , 1)";
-
-
+        + "values( 5, ?)";
+    private final String userExists = "select * from users where username = ?";
+    private final String makePlayerName = "INSERT INTO players (userid, PLAYERNAME, xp, level)"
+        + "VALUES ((select max(userid) from users), ?, 0 , 1)";
 
     public ConsumerHandlers() {
         this(null);
@@ -65,8 +65,8 @@ public class ConsumerHandlers {
                 final JsonObject player = new JsonObject();
                 if (res.succeeded()) {
                     final ResultSet rs = res.result();
-                    player.put("userId", rs.getResults().get(0).getInteger(0));
-                    player.put("username", rs.getResults().get(0).getString(1));
+                    player.put(lines.getUserid(), rs.getResults().get(0).getInteger(0));
+                    player.put(lines.getUsername(), rs.getResults().get(0).getString(1));
                     player.put("playerId", rs.getResults().get(0).getInteger(5));
                     player.put("playerName", rs.getResults().get(0).getString(6));
                     System.out.println(player);
@@ -78,7 +78,7 @@ public class ConsumerHandlers {
                     Logger.warn("Could not get player info from DB: ", res.cause());
                 }
 
-                eb.send("tetris-21.socket.homescreen.playerinfo", player.encode());
+                eb.send(lines.getSocketPlayerInfo(), player.encode());
             }
         );
     }
@@ -86,29 +86,29 @@ public class ConsumerHandlers {
     private void insertRandomFaction(int userId) {
         final JsonArray[] params = {new JsonArray().add(userId)};
         jdbcClient.queryWithParams(makeRandomFaction, params[0],
-                res -> {
-                    if (res.succeeded()) {
-                        System.out.println("check");
+            res -> {
+                if (res.succeeded()) {
+                    System.out.println("check");
 
-                    } else {
-                        Logger.warn("Could not get info from DB: ", res.cause());
-                    }
-                });
+                } else {
+                    Logger.warn(lines.getDbInfo(), res.cause());
+                }
+            });
     }
 
-    public void getGold(int UserId, EventBus eb) {
+    public void getGold(int userId, EventBus eb) {
         JsonObject reponse = new JsonObject();
-        final JsonArray[] params = {new JsonArray().add(UserId)};
+        final JsonArray[] params = {new JsonArray().add(userId)};
         jdbcClient.queryWithParams(getGold, params[0],
-                res -> {
-                    if (res.succeeded()) {
-                        ResultSet rs = res.result();
-                        reponse.put("gold",rs.getResults().get(0) );
-                    } else {
-                        Logger.warn("Could not get info from DB: ", res.cause());
-                    }
-                    eb.send("tetris-21.socket.gold.get", reponse);
-                });
+            res -> {
+                if (res.succeeded()) {
+                    ResultSet rs = res.result();
+                    reponse.put("gold", rs.getResults().get(0));
+                } else {
+                    Logger.warn(lines.getDbInfo(), res.cause());
+                }
+                eb.send("tetris-21.socket.gold.get", reponse);
+            });
     }
 
 
@@ -130,26 +130,24 @@ public class ConsumerHandlers {
     }
 
 
-
-
     private void makeNewplayerUsername(String username, EventBus eb) {
         final JsonArray[] params = {new JsonArray().add(username)};
         jdbcClient.queryWithParams(makeUser, params[0],
-                res -> {
-                    JsonObject player = new JsonObject();
-                    if (res.succeeded()) {
-                        ResultSet rs = res.result();
-                        player.put("player", rs.getResults().get(0));
-                        System.out.println(rs.getResults().get(0).getString(1));
+            res -> {
+                JsonObject player = new JsonObject();
+                if (res.succeeded()) {
+                    ResultSet rs = res.result();
+                    player.put(lines.getPlayer(), rs.getResults().get(0));
+                    System.out.println(rs.getResults().get(0).getString(1));
 
-                        System.out.println("result!!! " + player);
-                    } else {
-                        Logger.warn("Could not get info from DB: ", res.cause());
-                    }
+                    System.out.println("result!!! " + player);
+                } else {
+                    Logger.warn(lines.getDbInfo(), res.cause());
+                }
 
-                    controller.setUsername1(player.getJsonArray("player").getString(1));
-                    eb.send("tetris-21.socket.homescreen.playerinfo", player.encode());
-                });
+                controller.setUsername1(player.getJsonArray(lines.getPlayer()).getString(1));
+                eb.send(lines.getSocketPlayerInfo(), player.encode());
+            });
     }
 
 
@@ -157,28 +155,28 @@ public class ConsumerHandlers {
         JsonObject reponse = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(playerId)};
         jdbcClient.queryWithParams(getBasic, params[0],
-                res -> {
-                    if (res.succeeded()) {
-                        ResultSet rs = res.result();
-                        System.out.println("rs: " + rs.getResults());
-                        System.out.println(rs.getResults());
-                        JsonArray jsonArray = rs.getResults().get(0);
-                        System.out.println(rs.getColumnNames());
-                        System.out.println(jsonArray);
+            res -> {
+                if (res.succeeded()) {
+                    ResultSet rs = res.result();
+                    System.out.println("rs: " + rs.getResults());
+                    System.out.println(rs.getResults());
+                    JsonArray jsonArray = rs.getResults().get(0);
+                    System.out.println(rs.getColumnNames());
+                    System.out.println(jsonArray);
 
-                        if (jsonArray.getString(1) != null) {
-                            reponse.put("FactionNr", jsonArray.getInteger(0));
-                            reponse.put("FactionName", jsonArray.getString(1));
-                            reponse.put("ClanNr", jsonArray.getInteger(2));
-                            reponse.put("ClanName", jsonArray.getString(3));
-                        }
-                        System.out.println("result    !!! " + reponse);
-                    } else {
-                    Logger.warn("Could not get info from DB: ", res.cause());
+                    if (jsonArray.getString(1) != null) {
+                        reponse.put("FactionNr", jsonArray.getInteger(0));
+                        reponse.put("FactionName", jsonArray.getString(1));
+                        reponse.put("ClanNr", jsonArray.getInteger(2));
+                        reponse.put("ClanName", jsonArray.getString(3));
                     }
+                    System.out.println("result    !!! " + reponse);
+                } else {
+                    Logger.warn(lines.getDbInfo(), res.cause());
+                }
 
-                    eb.send("tetris-21.socket.gameStart.faction.get", reponse);
-                });
+                eb.send("tetris-21.socket.gameStart.faction.get", reponse);
+            });
     }
 
     public void checkPassword(String username, String password, EventBus eb) {
@@ -189,17 +187,17 @@ public class ConsumerHandlers {
             if (res.succeeded()) {
                 ResultSet rs = res.result();
                 if (rs.getResults().size() == 0) {
-                    passwordResult.put("canLogin", "false");
+                    passwordResult.put(lines.getCanLogin(), lines.getFalse());
                 } else {
-                    passwordFromDb.put("password", rs.getResults().get(0).getString(0));
-                    boolean samePassword = BCrypt.checkpw(password, passwordFromDb.getString("password"));
-                    passwordResult.put("canLogin", "" + samePassword);
+                    passwordFromDb.put(lines.getPassword(), rs.getResults().get(0).getString(0));
+                    boolean samePassword = BCrypt.checkpw(password, passwordFromDb.getString(lines.getPassword()));
+                    passwordResult.put(lines.getCanLogin(), "" + samePassword);
                 }
             } else {
-                Logger.warn("Could not get info from DB: ", res.cause());
-                passwordResult.put("canLogin", "false");
+                Logger.warn(lines.getDbInfo(), res.cause());
+                passwordResult.put(lines.getCanLogin(), lines.getFalse());
             }
-            eb.send("tetris-21.socket.login.server", passwordResult.getString("canLogin"));
+            eb.send("tetris-21.socket.login.server", passwordResult.getString(lines.getCanLogin()));
         });
     }
 
@@ -207,25 +205,25 @@ public class ConsumerHandlers {
         JsonObject couldLogin = new JsonObject();
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
         final JsonArray[] params = {new JsonArray()
-                .add(username)
-                .add(email)
-                .add(hashedPassword)
-                .add(0)};
+            .add(username)
+            .add(email)
+            .add(hashedPassword)
+            .add(0)};
         jdbcClient.queryWithParams(makeLogin, params[0], res -> {
             if (res.succeeded()) {
-                couldLogin.put("register", "true");
+                couldLogin.put(lines.getRegister(), lines.getTrue());
             } else {
-                couldLogin.put("register", "false");
+                couldLogin.put(lines.getRegister(), lines.getFalse());
                 Logger.warn("Could not make login: ", res.cause());
             }
-            eb.send("tetris-21.socket.login.make.server", couldLogin.getString("register"));
+            eb.send("tetris-21.socket.login.make.server", couldLogin.getString(lines.getRegister()));
         });
     }
 
     public void makePlayer(String playername) {
         JsonObject couldMakePlayername = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(playername)};
-        jdbcClient.queryWithParams(MAKEPLAYERNAME, params[0], res -> {
+        jdbcClient.queryWithParams(makePlayerName, params[0], res -> {
             if (res.succeeded()) {
                 Logger.info("Player was made.");
             } else {
@@ -237,74 +235,72 @@ public class ConsumerHandlers {
     public void checkUsername(String username, EventBus eb) {
         JsonObject loginExists = new JsonObject();
         final JsonArray[] params = {new JsonArray()
-                .add(username)};
-        jdbcClient.queryWithParams(USEREXISTS, params[0], res -> {
+            .add(username)};
+        jdbcClient.queryWithParams(userExists, params[0], res -> {
             if (res.succeeded()) {
                 ResultSet rs = res.result();
                 if (rs.getResults().size() == 0) {
-                    loginExists.put("username", "false");
+                    loginExists.put(lines.getUsername(), lines.getFalse());
                 } else {
-                    loginExists.put("username", "true");
+                    loginExists.put(lines.getUsername(), lines.getTrue());
                 }
             } else {
                 Logger.warn("Could not check username: ", res.cause());
             }
-            eb.send("tetris-21.socket.login.username.server", loginExists.getString("username"));
+            eb.send("tetris-21.socket.login.username.server", loginExists.getString(lines.getUsername()));
         });
     }
 
 
-
-//    public boolean chooseFaction(String playerName, String clanName) {
-//        final boolean[] happened = new boolean[1];
-//        JsonArray params = new JsonArray().add(getClanNr(clanName)).add(getUserid(playerName));
-//        jdbcClient.updateWithParams(chooseFaction, params,res -> {
-//            if (res.succeeded()) {
-//                UpdateResult updateResult = res.result();
-//                if (updateResult.getUpdated() > 0) {
-//                    happened[0] = false;
-//                    Logger.warn("Could not insert into faction.");
-//                } else {
-//                    happened[0] = true;
-//                }
-//            } else {
-//                happened[0] = false;
-//                Logger.warn("Could not insert into faction.", res.cause());
-//            }
-//        });
-//
-//        return happened[0];
-//    }
-
+    //    public boolean chooseFaction(String playerName, String clanName) {
+    //        final boolean[] happened = new boolean[1];
+    //        JsonArray params = new JsonArray().add(getClanNr(clanName)).add(getUserid(playerName));
+    //        jdbcClient.updateWithParams(chooseFaction, params,res -> {
+    //            if (res.succeeded()) {
+    //                UpdateResult updateResult = res.result();
+    //                if (updateResult.getUpdated() > 0) {
+    //                    happened[0] =lines.getFalse(
+    //                    Logger.warn("Could not insert into faction.");
+    //                } else {
+    //                    happened[0] = true;
+    //                }
+    //            } else {
+    //                happened[0] =lines.getFalse(
+    //                Logger.warn("Could not insert into faction.", res.cause());
+    //            }
+    //        });
+    //
+    //        return happened[0];
+    //    }
 
 
-//    private String getUserid(String playerName) {
-//        final String[] userId = new String[1];
-//        JsonArray params = new JsonArray().add(playerName);
-//        jdbcClient.queryWithParams(getUser, params, res -> {
-//            if (res.succeeded()) {
-//                ResultSet rs = res.result();
-//                List<JsonObject> rows = rs.getRows();
-//                for (JsonObject row : rows) {
-//                    userId[0] = row.getString("userId");
-//                }
-//            }
-//        });
-//        return userId[0];
-//    }
-//
-//    private String getClanNr(String clanName) {
-//        final String[] clanNr = new String[1];
-//        JsonArray params = new JsonArray().add(clanName);
-//        jdbcClient.queryWithParams(getClan, params, res -> {
-//            ResultSet rs = res.result();
-//            List<JsonObject> rows = rs.getRows();
-//            for (JsonObject row : rows) {
-//                clanNr[0] = row.getString("clanNr");
-//            }
-//        });
-//        return clanNr[0];
-//    }
+    //    private String getUserid(String playerName) {
+    //        final String[] userId = new String[1];
+    //        JsonArray params = new JsonArray().add(playerName);
+    //        jdbcClient.queryWithParams(getUser, params, res -> {
+    //            if (res.succeeded()) {
+    //                ResultSet rs = res.result();
+    //                List<JsonObject> rows = rs.getRows();
+    //                for (JsonObject row : rows) {
+    //                    userId[0] = row.getString(lines.getUserid();
+    //                }
+    //            }
+    //        });
+    //        return userId[0];
+    //    }
+    //
+    //    private String getClanNr(String clanName) {
+    //        final String[] clanNr = new String[1];
+    //        JsonArray params = new JsonArray().add(clanName);
+    //        jdbcClient.queryWithParams(getClan, params, res -> {
+    //            ResultSet rs = res.result();
+    //            List<JsonObject> rows = rs.getRows();
+    //            for (JsonObject row : rows) {
+    //                clanNr[0] = row.getString("clanNr");
+    //            }
+    //        });
+    //        return clanNr[0];
+    //    }
 
 
 }
