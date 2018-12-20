@@ -94,7 +94,7 @@ public class Routes extends AbstractVerticle {
     private void abilities(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("attacker");
-        String otherUser = userMessage.getString("defender");
+        String otherUser = userMessage.getString("victim");
         String ability = userMessage.getString("ability");
 
         String canActivate = null;

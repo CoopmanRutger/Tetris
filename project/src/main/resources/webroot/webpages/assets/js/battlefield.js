@@ -209,12 +209,12 @@ function backgroundStuff() {
             //todo
         }
         // E
-        else if (game.speed == 35 || game.speed == 15 ) {
+        else if (game.speed === 35 || game.speed === 15 ) {
             evenements("tornado")
             //todo timen
         }
         // R
-        else if (game.speed == 40 || game.speed == 20 || game.speed == 10 || game.speed == 5 ) {
+        else if (game.speed === 40 || game.speed === 20 || game.speed === 10 || game.speed === 5 ) {
             evenements("abilityReset")
             //todo timen
         }
@@ -415,23 +415,17 @@ function makePieces(player, area) {
     });
 }
 
-function update(player, block) {
-    game.color = block.color;
-    let score = block.score;
-    let points = block.points;
-    let lines = block.lines;
 function update(player, info) {
     game.color = info.color;
     let score = info.score;
     let points = info.points;
+    let lines = info.lines;
     let gameSpeed = info.gameSpeed;
     console.log(gameSpeed);
 
     game.speed = gameSpeed;
-    let info1 = {score: score, points: points};
+    let info1 = {score: score, points: points, lines: lines};
     addScoreToPlayer(player, info1);
-    let info = {score: score, points: points, lines: lines};
-    addScoreToPlayer(player, info);
     abilityBars(player, points);
 }
 
