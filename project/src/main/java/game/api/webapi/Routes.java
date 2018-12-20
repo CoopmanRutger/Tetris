@@ -164,15 +164,24 @@ public class Routes extends AbstractVerticle {
         Block block = playfield.newBlock();
         int score = playfield.getScore();
         int points = playfield.getPoints();
+        int blockCounter = playfield.getCounter();
+        int playfieldSpeed = playfield.getPlayfieldSpeed();
+
+        if ((blockCounter % playfieldSpeed == 0)){
+            playfield.setGameSpeed(playfieldSpeed-1);
+        }
 
         JsonObject json = new JsonObject();
         json.put("block", block.getBlock());
         json.put("color", block.getColor());
         json.put("score", score);
         json.put("points", points);
+        json.put("gameSpeed",playfield.getPlayfieldSpeed());
 
         message.reply(json.encode());
     }
+
+
 
     private Playfield getPlayfieldByPlayerName(String playerName){
         Playfield playfield = null;

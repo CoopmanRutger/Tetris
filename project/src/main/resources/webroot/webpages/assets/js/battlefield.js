@@ -29,7 +29,6 @@ function initialize() {
     registers();
 }
 
-
 function registers() {
     eb.send("tetris-21.socket.gamestart", "Im ready!", function (error) {
         if (error) {
@@ -50,17 +49,14 @@ function registers() {
         backgroundStuff();
     });
 
-
     eb.registerHandler("tetris-21.socket.BattleField", function (error, message) {
         if (error) {
             console.log(error)
         }
         console.log(message);
-
     });
 
 }
-
 
 function giveMatrixNumbers(playfields, firstPlayerName, secPlayerName) {
     let playfieldheight = playfields[firstPlayerName].playfield.length;
@@ -68,17 +64,8 @@ function giveMatrixNumbers(playfields, firstPlayerName, secPlayerName) {
     let playfield2Height = playfields[secPlayerName].playfield.length;
     let playfield2Width = playfields[secPlayerName].playfield[0].length;
 
-    game.grid2 = makeMatrixAZeroMatrix(playfield2Width, playfield2Height);
     game.grid = makeMatrixAZeroMatrix(playfieldWidth, playfieldheight);
-
-}
-
-function makeMatrixAZeroMatrix(width, height) {
-    const matrix = [];
-    while (height--) {
-        matrix.push(new Array(width).fill(0));
-    }
-    return matrix;
+    game.grid2 = makeMatrixAZeroMatrix(playfield2Width, playfield2Height);
 }
 
 function drawMatrix(matrix, offset, context) {
@@ -94,8 +81,6 @@ function drawMatrix(matrix, offset, context) {
         });
     });
 }
-
-
 
 function setGamePlay(infoBackend) {
 
@@ -156,7 +141,7 @@ function setWidth(lines, id) {
     }
 }
 
-function perparation(context, fieldPlayer, area) {
+function preparation(context, fieldPlayer, area) {
     context.scale(20, 20);
     nextBlock(fieldPlayer.name);
     draw(fieldPlayer, context, area);
@@ -164,8 +149,8 @@ function perparation(context, fieldPlayer, area) {
 
 function backgroundStuff() {
 
-    perparation(game.context, game.fieldPlayer, game.grid);
-    perparation(game.context2, game.fieldPlayer2, game.grid2);
+    preparation(game.context, game.fieldPlayer, game.grid);
+    preparation(game.context2, game.fieldPlayer2, game.grid2);
     startGame();
 
     const move = 1;
@@ -188,13 +173,11 @@ function backgroundStuff() {
         }
         //  1
         else if (e.keyCode === 49) {
-            abilitys("ability1");
-            //todo
+            abilities(game.fieldPlayer.name, game.fieldPlayer2.name, "Joker");
         }
         // 2
         else if (e.keyCode === 50) {
-            abilitys("ability2");
-            //todo
+            abilities(game.fieldPlayer.name, game.fieldPlayer2.name, "CheeringCrowd");
         }
     });
 
@@ -217,21 +200,21 @@ function backgroundStuff() {
         }
         //  9
         else if (e.keyCode === 57) {
-            abilitys("ability3");
+            abilities(game.fieldPlayer2.name, game.fieldPlayer.name, "Joker");
             //todo
         }
         // 0
         else if (e.keyCode === 48) {
-            abilitys("ability4");
+            abilities(game.fieldPlayer2.name, game.fieldPlayer.name, "CheeringCrowd");
             //todo
         }
         // E
-        else if (e.keyCode === 69) {
+        else if (game.speed == 35 || game.speed == 15 ) {
             evenements("tornado")
             //todo timen
         }
         // R
-        else if (e.keyCode === 82) {
+        else if (game.speed == 40 || game.speed == 20 || game.speed == 10 || game.speed == 5 ) {
             evenements("abilityReset")
             //todo timen
         }
@@ -239,6 +222,7 @@ function backgroundStuff() {
 }
 
 function evenements(string) {
+    select("main header div h1").innerHTML = string;
     let object = JSON.stringify({evenement: string,
         playerName1:game.fieldPlayer.name,
         playerName2: game.fieldPlayer2.name
@@ -251,30 +235,26 @@ function evenements(string) {
         game.grid = info[game.fieldPlayer.name];
         game.grid2 = info[game.fieldPlayer2.name]
     });
+
+    setTimeout(() => {
+        select("main header div h1").innerHTML = "";
+    }, 2000)
 }
 
-function abilitys(string) {
-    switch(string) {
-        case "ability1":
-            console.log(1);
-            break;
-        case "ability2":
-            console.log(2);
-            break;
-        case "ability3":
-            console.log(9);
-            break;
-        case "ability4":
-            console.log(0);
-            break;
-        default:
-            console.log("No ability is just")
-    }
+function abilities(playerName, playername , string) {
 
-    // eb.send("tetris-21.socket.battleField.abilitys", object, function (error, reply) {
-    //     if (error) {
-    //         console.log(error)
-    //     }
+    let attacker = playerName;
+    let victim = playername;
+
+    console.log(string);
+
+    let object = JSON.stringify({attacker:attacker ,victim: victim, ability:string});
+
+    eb.send("tetris-21.socket.battleField.abilities", object, function (error, reply) {
+        if (error) {
+            console.log(error)
+        }
+        console.log(Json.parse(reply.body));
 }
 
 function startGame() {
@@ -291,16 +271,13 @@ function startGame() {
         if (!game.gameRun) {
             youLose(game.context);
             youWon(game.context2);
-        }
-        else if (!game.gameRun2) {
+        } else if (!game.gameRun2) {
             youLose(game.context2);
             youWon(game.context);
-        }
-        else if (game.gameRun && game.gameRun2) {
+        } else if (game.gameRun && game.gameRun2) {
                 draw(game.fieldPlayer, game.context, game.grid);
                 draw(game.fieldPlayer2, game.context2, game.grid2);
         }
-        // console.log(game.grid2)
     }, 10);
 }
 
@@ -427,24 +404,27 @@ function makePieces(player, area) {
         if (error) {
             console.log(error)
         }
-        let block = JSON.parse(reply.body);
+        let info = JSON.parse(reply.body);
 
-        player.matrix = block.block;
+        player.matrix = info.block;
         player.pos.y = 0;
         player.pos.x = 5;
 
-        update(player, block);
+        update(player, info);
         collidefunction(player, area);
     });
 }
 
-function update(player, block) {
-    game.color = block.color;
-    let score = block.score;
-    let points = block.points;
+function update(player, info) {
+    game.color = info.color;
+    let score = info.score;
+    let points = info.points;
+    let gameSpeed = info.gameSpeed;
+    console.log(gameSpeed);
 
-    let info = {score: score, points: points};
-    addScoreToPlayer(player, info);
+    game.speed = gameSpeed;
+    let info1 = {score: score, points: points};
+    addScoreToPlayer(player, info1);
     abilityBars(player, points);
 }
 
@@ -516,4 +496,12 @@ function Tie() {
     resultscore(game.context2);
     game.context.fillText("DRAW", (player1.width / 20) / 2, (player1.width / 20) / 2);
     game.context2.fillText("DRAW", (player2.width / 20) / 2, (player2.width / 20) / 2);
+}
+
+function makeMatrixAZeroMatrix(width, height) {
+    const matrix = [];
+    while (height--) {
+        matrix.push(new Array(width).fill(0));
+    }
+    return matrix;
 }

@@ -33,7 +33,7 @@ public class Hero {
         if (abilitySet.size() < 2 && !abilitySet.contains(ability)){
             abilitySet.add(ability);
         } else {
-            System.out.println("Je hebt er al 2 verschillende abilitys OF de ability heb je al");
+            System.out.println("Je hebt er al 2 verschillende abilities OF de ability heb je al");
         }
     }
 

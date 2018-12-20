@@ -15,6 +15,8 @@ public class Playfield {
     private PointsForAbilities points;
     private Blocks blocks;
     private Block currentBlock;
+    private int counter;
+    private int gameSpeed ;
 
 
     public Block getCurrentBlock() {
@@ -43,6 +45,8 @@ public class Playfield {
         score = new Score();
         points = new PointsForAbilities();
         blocks = new Blocks();
+        counter = 0;
+        gameSpeed = 50;
         makeStandardPlayfield(height,width);
     }
 
@@ -51,6 +55,8 @@ public class Playfield {
         score = new Score();
         points = new PointsForAbilities();
         blocks = new Blocks();
+        counter = 0;
+        gameSpeed = 50;
     }
 
     public void setPlayfield(List<List<Integer>> playfield) {
@@ -76,6 +82,7 @@ public class Playfield {
     }
 
     public Block newBlock() {
+        counter++;
         currentBlock = new Block(blocks.getBlock());
         Logger.info(currentBlock);
         return getCurrentBlock();
@@ -105,6 +112,7 @@ public class Playfield {
         checkForCompletedLine();
 
     }
+
 
     public Boolean positionAvailable(int positionX, int positionY, Block block) {
         List<List<Integer>> controlBlock = block.getBlock();
@@ -219,5 +227,21 @@ public class Playfield {
         }
 
         return stringBuilder.toString();
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public int getPlayfieldSpeed() {
+        return gameSpeed;
+    }
+
+    public void setGameSpeed(int gameSpeed) {
+        if (gameSpeed > 0){
+            this.gameSpeed = gameSpeed;
+        } else {
+            this.gameSpeed = 1;
+        }
     }
 }
