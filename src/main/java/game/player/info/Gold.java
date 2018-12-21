@@ -17,9 +17,11 @@ public class Gold {
         this.goldAmount += goldAmount;
     }
 
-    public boolean removeGold(int goldAmount) {
+    public void removeGold(int goldAmount) {
         int remainingGold = this.goldAmount - goldAmount;
-        return remainingGold >= 0;
+        if (remainingGold >= 0) {
+            this.goldAmount -= goldAmount;
+        }
     }
 
     @Override

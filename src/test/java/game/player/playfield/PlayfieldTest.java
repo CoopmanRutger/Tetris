@@ -7,9 +7,10 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.junit.Assert.*;
 
-public class PlayfieldTest  {
+public class PlayfieldTest {
 
     private Playfield playfield;
     private Block block;
@@ -22,8 +23,12 @@ public class PlayfieldTest  {
     }
 
     @Test
-    public void testMakeField() {
-        assertEquals(20,playfield.getPlayfield().size());
+    public void testMakeFieldHeight() {
+        assertEquals(20, playfield.getPlayfield().size());
+    }
+
+    @Test
+    public void testMakeFieldWidth() {
         assertEquals(10, playfield.getPlayfield().get(2).size());
     }
 
@@ -33,27 +38,47 @@ public class PlayfieldTest  {
     }
 
     @Test
-    public void testPutBlockOnField() {
+    public void testPutBlockOnField1() {
         playfield.putOnPlayField(4, 2);
 
         int valueOfPlayfield = playfield.getPlayfield().get(2).get(4);
         assertEquals(1, valueOfPlayfield);
+    }
+
+    @Test
+    public void testPutBlockOnField2() {
+        playfield.putOnPlayField(4, 2);
 
         int valueOfPlayfield1 = playfield.getPlayfield().get(2).get(5);
         assertEquals(1, valueOfPlayfield1);
+    }
+
+    @Test
+    public void testPutBlockOnField3() {
+        playfield.putOnPlayField(4, 2);
 
         int valueOfPlayfield2 = playfield.getPlayfield().get(2).get(6);
         assertEquals(1, valueOfPlayfield2);
+    }
+
+    @Test
+    public void testPutBlockOnField4() {
+        playfield.putOnPlayField(4, 2);
 
         int valueOfPlayfield3 = playfield.getPlayfield().get(3).get(6);
         assertEquals(1, valueOfPlayfield3);
+    }
+
+    @Test
+    public void testPutBlockOnField5() {
+        playfield.putOnPlayField(4, 2);
 
         int valueOfPlayfield4 = playfield.getPlayfield().get(3).get(4);
         assertEquals(0, valueOfPlayfield4);
     }
 
     @Test
-    public void testCheckForCompleted() {
+    public void testCheckForCompleted1() {
         List<Integer> completeLine = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             completeLine.add(1);
@@ -65,15 +90,72 @@ public class PlayfieldTest  {
 
         int valueOnRemovedLine = playfield.getPlayfield().get(0).get(3);
         assertEquals(0, valueOnRemovedLine);
+    }
+
+    @Test
+    public void testCheckForCompleted2() {
+        List<Integer> completeLine = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            completeLine.add(1);
+        }
+        playfield.putLineOnField(0, completeLine);
+        playfield.putLineOnField(1, completeLine);
+
+        playfield.checkForCompletedLine();
 
         int heightOfPlayingField = playfield.getPlayfield().size();
         assertEquals(20, heightOfPlayingField);
+    }
+
+    @Test
+    public void testCheckForCompleted3() {
+        List<Integer> completeLine = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            completeLine.add(1);
+        }
+        playfield.putLineOnField(0, completeLine);
+        playfield.putLineOnField(1, completeLine);
+
+        playfield.checkForCompletedLine();
 
         int widthOfPlayingfield1 = playfield.getPlayfield().get(19).size();
         assertEquals(10, widthOfPlayingfield1);
+    }
+
+    @Test
+    public void testCheckForCompleted4() {
+        List<Integer> completeLine = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            completeLine.add(1);
+        }
+        playfield.putLineOnField(0, completeLine);
+        playfield.putLineOnField(1, completeLine);
+
+        playfield.checkForCompletedLine();
 
         int widthOfPlayingfield2 = playfield.getPlayfield().get(0).size();
         assertEquals(10, widthOfPlayingfield2);
+    }
+
+    @Test
+    public void testCheckForCompleted5() {
+        List<Integer> completeLine = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            completeLine.add(1);
+        }
+        playfield.putLineOnField(0, completeLine);
+        playfield.putLineOnField(1, completeLine);
+        playfield.checkForCompletedLine();
+        playfield.putLineOnField(0, completeLine);
+        playfield.putLineOnField(1, completeLine);
+        playfield.checkForCompletedLine();
+        playfield.putLineOnField(0, completeLine);
+        playfield.putLineOnField(1, completeLine);
+        playfield.checkForCompletedLine();
+        playfield.putLineOnField(0, completeLine);
+        playfield.putLineOnField(1, completeLine);
+
+        playfield.checkForCompletedLine();
 
         Score score = playfield.getScoreByName();
         int valueOfScore = score.getScore();

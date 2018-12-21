@@ -11,18 +11,20 @@ import static org.junit.Assert.*;
 
 public class TornadoTest {
 
+    private static final String RUTGER123 = "Rutger123";
+
     @Test
     public void activate() {
-        Player player = new Player("Rutger123");
+        Player player = new Player(RUTGER123);
         Event tornado = new Tornado(Trigger.TIME, player.getPlayfieldByName(player.getName()));
 
         List<List<Integer>> playfield = new ArrayList<>();
 
         for (int i = 0; i < 20; i++) {
-            List<Integer> playWidth = new ArrayList<>();
+            List<Integer> playWidth = createNewArrayList();
             int z = 0;
             for (int j = 0; j < 12; j++) {
-                if (j == z*2) {
+                if (j == z * 2) {
                     playWidth.add(1);
                     z++;
                 } else {
@@ -33,10 +35,14 @@ public class TornadoTest {
         }
 
         Playfield playerField = new Playfield(playfield);
-        player.addPlayfield("Rutger123", playerField);
+        player.addPlayfield(RUTGER123, playerField);
 
         tornado.activate();
 
-        assertEquals((player.getPlayfieldByName(player.getName()).getPlayfield()), playerField.getPlayfield());
+        assertEquals(player.getPlayfieldByName(player.getName()).getPlayfield(), playerField.getPlayfield());
+    }
+
+    private List<Integer> createNewArrayList() {
+        return new ArrayList<>();
     }
 }

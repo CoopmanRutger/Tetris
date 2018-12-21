@@ -10,19 +10,19 @@ public class InfoTest {
     private Info info;
 
     @Before
-    public void before(){
+    public void before() {
         info = new Info();
 
     }
 
     @Test
-    public void getGold() {
-        assertEquals(0,info.getGold());
+    public void receiveGold() {
+        assertEquals(0, info.getGold());
     }
 
     @Test
-    public void getLifepoints() {
-        assertEquals(10,info.getLifepoints());
+    public void receiveLifepoints() {
+        assertEquals(10, info.getLifepoints());
     }
 
     @Test
