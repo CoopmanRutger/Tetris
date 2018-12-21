@@ -5,6 +5,10 @@ import io.vertx.ext.web.handler.sockjs.BridgeOptions;
 import io.vertx.ext.bridge.PermittedOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class TetrisSockJSHandler {
 
 
@@ -23,7 +27,7 @@ public class TetrisSockJSHandler {
         sockJSHandler.bridge(options);
     }
 
-    SockJSHandler create() {
+    public SockJSHandler create() {
         addBridgeOptions();
         return sockJSHandler;
     }

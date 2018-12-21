@@ -1,14 +1,18 @@
 package game.player.info;
 
+/**
+ * @author Remote Access Tetris aka RAT
+ */
+
 public class Info {
 
-    private Gold gold;
-    private Lifepoints lifepoints;
-    private Xp xp;
+    private final Gold gold;
+    private final LifePoints lifepoints;
+    private final Xp xp;
 
     public Info() {
         gold = new Gold();
-        lifepoints = new Lifepoints();
+        lifepoints = new LifePoints();
         xp = new Xp();
     }
 
