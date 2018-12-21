@@ -7,27 +7,27 @@ import java.util.stream.Collectors;
 
 public class Events {
 
-    private Set<Event> events;
+    private Set<Event> eventsList;
 
     public Events() {
-        events = new HashSet<>();
+        eventsList = new HashSet<>();
     }
 
     public Set<Event> getEvents() {
-        return events;
+        return eventsList;
     }
 
     public void addEvent(Event event) {
-        events.add(event);
+        eventsList.add(event);
     }
 
     public void removeEvent(Event event) {
-        events.remove(event);
+        eventsList.remove(event);
     }
 
     @Override
     public String toString() {
-        return events.stream()
+        return eventsList.stream()
                 .map(Event::toString)
                 .collect(Collectors.joining("\n"));
     }

@@ -26,6 +26,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Routes extends AbstractVerticle {
+
+    private static final String NEWLINE = "\n";
+    private static final String PLAYERNAME = "playername";
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
     private EventBus eb;
     private GameController controller;
     private Game game;
@@ -42,36 +47,37 @@ public class Routes extends AbstractVerticle {
         response.end();
     }
 
+    @Override
     public void start() {
         eb = vertx.eventBus();
         addConsumers();
     }
 
     private void addConsumers() {
-//        homescreen
-        eb.consumer("tetris-21.socket.homescreen", this::getPlayerName);
+        //        homescreen
+        eb.consumer("tetris-21.socket.homescreen", this::receivePlayerName);
 
-//        shop get gold
-        eb.consumer("tetris-21.socket.gold", this::getGold);
+        //        shop get gold
+        eb.consumer("tetris-21.socket.gold", this::receiveGold);
 
-//        gameStart
-        eb.consumer("tetris-21.socket.gameStart.faction", this::getFaction);
+        //        gameStart
+        eb.consumer("tetris-21.socket.gameStart.faction", this::receiveFaction);
 
-//        choose faction
+        //        choose faction
         eb.consumer("tetris-21.socket.faction.choose", this::chooseFaction);
 
 
-//        playfield
-        eb.consumer("tetris-21.socket.gamestart", this::ImReady);
+        //        playfield
+        eb.consumer("tetris-21.socket.gamestart", this::imReady);
 
-        eb.consumer("tetris-21.socket.battleField.getNewBlock", this::getNewBlock);
+        eb.consumer("tetris-21.socket.battleField.getNewBlock", this::receiveNewBlock);
         eb.consumer("tetris-21.socket.battleField.rotate", this::rotateBlock);
         eb.consumer("tetris-21.socket.battleField.blockOnField", this::blockOnField);
         eb.consumer("tetris-21.socket.battleField.evenements", this::evenements);
 
         eb.consumer("tetris-21.socket.battleField.abilities", this::abilities);
 
-//        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
+        //        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
 
         // Login
         eb.consumer("tetris-21.socket.login", this::login);
@@ -87,21 +93,41 @@ public class Routes extends AbstractVerticle {
 
     }
 
+    private void timer(int seconds) {
+        final int[] counter = {0};
+        counter[0] = seconds;
+        java.util.Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                counter[0]--;
+                JsonObject json = new JsonObject();
+                json.put("timeInSeconds", counter[0]);
+                eb.send("tetris-21.socket.battleField.timer", json.encode());
+                System.out.println(counter[0]);
+                if (counter[0] <= 0) {
+                    timer.cancel();
+                    // TODO: check for winner.
+                }
+            }
+        }, 0, 1000);
+    }
+
     private void abilities(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("attacker");
         String otherUser = userMessage.getString("victim");
         String ability = userMessage.getString("ability");
 
-        String canActivate = null;
+        String couldActivate = null;
 
-        if (ability.equals("CheeringCrowd")) {
+        if ("CheeringCrowd".equals(ability)) {
             CheeringCrowd cheeringCrowd = new CheeringCrowd(getPlayfieldByPlayerName(playername));
-            canActivate = String.valueOf(cheeringCrowd.activate());
+            couldActivate = String.valueOf(cheeringCrowd.activate());
             timeTheEvent((long) 20000, cheeringCrowd);
-        } else if (ability.equals("Joker")) {
+        } else if ("Joker".equals(ability)) {
             Joker joker = new Joker(getPlayfieldByPlayerName(otherUser));
-            canActivate = String.valueOf(joker.activate());
+            couldActivate = String.valueOf(joker.activate());
             timeTheEvent((long) 10000, joker);
         }
 
@@ -133,7 +159,7 @@ public class Routes extends AbstractVerticle {
         String playerName1 = userMessage.getString("playerName1");
         String playerName2 = userMessage.getString("playerName2");
         String evenementName = userMessage.getString("evenement");
-        System.out.println(evenementName);
+        Logger.info(evenementName);
 
         List<List<Integer>> playfield1 = switchCaseEvenements(playerName1, evenementName);
         List<List<Integer>> playfield2 = switchCaseEvenements(playerName2, evenementName);
@@ -142,7 +168,7 @@ public class Routes extends AbstractVerticle {
         json.put(playerName1, playfield1);
         json.put(playerName2, playfield2);
 
-        System.out.println(json);
+        Logger.info(json);
         message.reply(json.encode());
     }
 
@@ -151,7 +177,7 @@ public class Routes extends AbstractVerticle {
 
         Playfield playfield = getPlayfieldByPlayerName(playerName);
 
-        Logger.info(evenementName + " \n " + playerName + " \n " + playfield);
+        Logger.info(evenementName + NEWLINE + playerName + NEWLINE + playfield);
 
         Trigger trigger = null;
         switch (evenementName) {
@@ -177,7 +203,7 @@ public class Routes extends AbstractVerticle {
                 break;
         }
 
-        Logger.info(playerName + " \n " + playfield);
+        Logger.info(playerName + " NEWLINE " + playfield);
         return playfield.getPlayfield();
     }
 
@@ -199,16 +225,16 @@ public class Routes extends AbstractVerticle {
     }
 
 
-    private void getNewBlock(Message message) {
+    private void receiveNewBlock(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        String playername = userMessage.getString("playername");
+        String playername = userMessage.getString(PLAYERNAME);
 
         Playfield playfield = getPlayfieldByPlayerName(playername);
         Block block = playfield.newBlock();
         int score = playfield.getScore();
         int points = playfield.getPoints();
         int blockCounter = playfield.getCounter();
-        int lines = playfield.getScoreByName().getAmountOfLines();
+        final int lines = playfield.getScoreByName().getAmountOfLines();
 
         if (blockCounter % 5 == 0) {
             int playfieldSpeed = playfield.getPlayfieldSpeed();
@@ -250,76 +276,76 @@ public class Routes extends AbstractVerticle {
     }
 
 
-    private void getGold(Message message) {
-        System.out.println(message.body());
-        int UserId = (int) message.body();
-        Database.getDB().getConsumerHandlers(controller).getGold(UserId, eb);
+    private void receiveGold(Message message) {
+        Logger.info(message.body());
+        int userId = (int) message.body();
+        Database.getDB().getConsumerHandlers(controller).receiveGold(userId, eb);
 
         message.reply("I will get the gold :D");
     }
 
     private void login(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        String username = userMessage.getString("username");
-        String password = userMessage.getString("password");
+        String username = userMessage.getString(USERNAME);
+        String password = userMessage.getString(PASSWORD);
 
         message.reply(username);
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .checkPassword(username, password, eb);
+                .getConsumerHandlers(controller)
+                .checkPassword(username, password, eb);
     }
 
     private void makeLogin(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        String username = userMessage.getString("username");
+        String username = userMessage.getString(USERNAME);
         String email = userMessage.getString("email");
-        String password = userMessage.getString("password");
-        String playername = userMessage.getString("playername");
+        String password = userMessage.getString(PASSWORD);
+        String playername = userMessage.getString(PLAYERNAME);
 
         message.reply(username);
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .makeUser(username, email, password, eb);
+                .getConsumerHandlers(controller)
+                .makeUser(username, email, password, eb);
 
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .makePlayer(playername);
+                .getConsumerHandlers(controller)
+                .makePlayer(playername);
     }
 
     private void checkUsername(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        String username = userMessage.getString("username");
+        String username = userMessage.getString(USERNAME);
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .checkUsername(username, eb);
+                .getConsumerHandlers(controller)
+                .checkUsername(username, eb);
         message.reply(username);
     }
 
-    private void getPlayerName(Message message) {
+    private void receivePlayerName(Message message) {
         String username = message.body().toString();
-        System.out.println(username);
+        Logger.info(username);
         message.reply(username);
 
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .getPlayerInfo(username, eb);
+                .getConsumerHandlers(controller)
+                .receivePlayerInfo(username, eb);
     }
 
-    private void getFaction(Message message) {
+    private void receiveFaction(Message message) {
         int playerId = (int) message.body();
-        System.out.println(playerId);
+        Logger.info(playerId);
         message.reply("going to look for " + playerId);
 
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .getBasic(playerId, eb);
+                .getConsumerHandlers(controller)
+                .receiveBasic(playerId, eb);
 
     }
 
 
     public void chooseFaction(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        System.out.println(userMessage);
+        Logger.info(userMessage);
         int factionId = userMessage.getInteger("factionId");
         int userId = Integer.parseInt(userMessage.getString("userId"));
 
@@ -329,50 +355,52 @@ public class Routes extends AbstractVerticle {
     }
 
 
-//    private void updateGame(Message message) {
-//        JsonObject object =  new JsonObject(message.body().toString());
-//
-//        System.out.println(object);
-//        int number = game.getPlayers().indexOf(object.getString("player"));
-//        player = game.getPlayers().get(number);
-//        System.out.println(player.getPlayfieldByName().getPlayfieldByName().get(0));
-//        player.getPlayfieldByName().getPlayfieldByName().get(0).updateScore(Integer.parseInt(object.getString("score")));
-//        System.out.println(Integer.parseInt(object.getString("score")));
-//        System.out.println(player.getPlayfieldByName().getPlayfieldByName().get(0));
-//        game.getPlayers().get(number).getPlayfieldByName().getPlayfieldByName().get(0).setScore();
-//
-//        message.reply(makeObjectJson(game));
-//    }
+    //    private void updateGame(Message message) {
+    //        JsonObject object =  new JsonObject(message.body().toString());
+    //
+    //        System.out.println(object);
+    //        int number = game.getPlayers().indexOf(object.getString("player"));
+    //        player = game.getPlayers().get(number);
+    //        System.out.println(player.getPlayfieldByName().getPlayfieldByName().get(0));
+    //        player.getPlayfieldByName().getPlayfieldByName().get(0).updateScore
+    //        (Integer.parseInt(object.getString("score")));
+    //        System.out.println(Integer.parseInt(object.getString("score")));
+    //        System.out.println(player.getPlayfieldByName().getPlayfieldByName().get(0));
+    //        game.getPlayers().get(number).getPlayfieldByName().getPlayfieldByName().get(0).setScore();
+    //
+    //        message.reply(makeObjectJson(game));
+    //    }
 
 
-    private void ImReady(Message message) {
-        System.out.println(game);
+    private void imReady(Message message) {
+        Logger.info(game);
+        timer(180);
         eb.send("tetris-21.socket.game", Json.encode(game));
         message.reply("okey");
 
     }
 
     //
-//    public void battleFieldBlockPositioning() {
-//        eb.consumer("tetris.infoBackend.BattleField.positionBlock", message -> {
-//            game.getPlayers().get(1).getPlayfieldByName().getPlayfieldByName().get(1);
-//            String m = message.body().toString();
-//                    .put(OnPlayField(1, 1, new Block("block", TypesOfBlocks.lBlock, Color.RED)));
-//            message.reply(m);
-//            sendBlockOneByOne(game);
-//        });
-//
-//    }
+    //    public void battleFieldBlockPositioning() {
+    //        eb.consumer("tetris.infoBackend.BattleField.positionBlock", message -> {
+    //            game.getPlayers().get(1).getPlayfieldByName().getPlayfieldByName().get(1);
+    //            String m = message.body().toString();
+    //                    .put(OnPlayField(1, 1, new Block("block", TypesOfBlocks.lBlock, Color.RED)));
+    //            message.reply(m);
+    //            sendBlockOneByOne(game);
+    //        });
+    //
+    //    }
 
 
-//    public void getFactionInfo() {
-//
-//            String m = message.body().toString();
-//        eb.consumer("tetris.game.faction.get", message -> {
-//        });
-//            message.reply(null);
-//    }
-//    // TODO: get faction from DB.
-//
+    //    public void getFactionInfo() {
+    //
+    //            String m = message.body().toString();
+    //        eb.consumer("tetris.game.faction.get", message -> {
+    //        });
+    //            message.reply(null);
+    //    }
+    // TODO: get faction from DB.
+    //
 
 }

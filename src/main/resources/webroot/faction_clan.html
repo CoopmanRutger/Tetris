@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link href="assets/css/logout.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
+          integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
 
     <title>Title</title>
 </head>
@@ -17,9 +18,9 @@
         <a href="#" class="dropdown-logout" id="logout">Sign out</a>
     </p>
 </header>
-<section id="faction">
+<div id="faction">
     <article>
-        <h1>Welcome, brave warrior.</h1>
+        <h2>Welcome, brave warrior.</h2>
         <div class="tab">
             <button class="tablinks" onclick="openMenu(event, 'details')">faction details</button>
             <button class="tablinks" onclick="openMenu(event, 'ongoing')">ongoing events</button>
@@ -31,7 +32,7 @@
     </article>
 
     <!-- Tab content -->
-    <article id="details" class="tabcontent">
+    <div id="details" class="tabcontent">
         <div>
 
         </div>
@@ -49,7 +50,7 @@
             dragons. So the number of people in this faction has dropped immensely over the years. They need members
             like you to spread the word and prove that dragons have existed.
         </p>
-    </article>
+    </div>
 
     <article id="ongoing" class="tabcontent">
         <h2>Ongoing events</h2>
@@ -159,9 +160,9 @@
             faction.</p>
     </article>
 
-</section>
+</div>
 
-<section id="clan" class="hidden">
+<div id="clan" class="hidden">
     <article>
         <h1>Welcome, loyal clan member</h1>
         <div class="tab">
@@ -285,12 +286,11 @@
         <p>Follow <a href="https://discord.gg/43bnmZm" target="_blank">this link</a> to the discord server of your
             clan.</p>
     </article>
-</section>
+</div>
 
 <footer>
     <a id="home" href="gameStart.html">Back</a>
 </footer>
-</body>
 
 <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
@@ -299,4 +299,5 @@
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/logout.js"></script>
 
+</body>
 </html>

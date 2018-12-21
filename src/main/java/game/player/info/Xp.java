@@ -2,24 +2,24 @@ package game.player.info;
 
 public class Xp {
 
-    private int xp;
+    private int experience;
     private int level;
     private int previousLevelScore;
     private int nextLevelScore;
 
     public Xp() {
-        xp = 0;
+        experience = 0;
         level = 1;
         previousLevelScore = 0;
         nextLevelScore = 300;
     }
 
     public int getXp() {
-        return xp;
+        return experience;
     }
 
-    private void setXp(int xp) {
-        this.xp = xp;
+    private void setXp(int experience) {
+        this.experience = experience;
     }
 
     public int getLevel() {

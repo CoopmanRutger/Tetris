@@ -2,30 +2,30 @@ package game.player.info;
 
 public class Gold {
 
-    private int gold;
+    private int goldAmount;
 
     public Gold() {
-        gold = 0;
+        goldAmount = 0;
     }
 
     public int getGold() {
-        return gold;
+        return goldAmount;
     }
 
 
-    public void addGold(int gold){
-        this.gold += gold;
+    public void addGold(int goldAmount) {
+        this.goldAmount += goldAmount;
     }
 
-    public boolean removeGold(int gold){
-        if ((this.gold -= gold)>= 0){
-            return true; // het is gekocht
+    public void removeGold(int goldAmount) {
+        int remainingGold = this.goldAmount - goldAmount;
+        if (remainingGold >= 0) {
+            this.goldAmount -= goldAmount;
         }
-        return false; // het is niet gekocht, te weinig geld.
     }
 
     @Override
     public String toString() {
-        return Integer.toString(gold);
+        return Integer.toString(goldAmount);
     }
 }

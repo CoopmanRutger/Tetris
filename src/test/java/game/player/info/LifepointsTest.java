@@ -10,25 +10,32 @@ public class LifepointsTest {
     private Lifepoints lifepoints;
 
     @Before
-    public void before(){
+    public void before() {
         lifepoints = new Lifepoints();
     }
 
     @Test
-    public void getLifePoints() {
+    public void receiveLifePoints() {
         assertEquals(10, lifepoints.getLifePoints());
     }
 
     @Test
-    public void addLifePoint() {
-        assertEquals(10,lifepoints.getLifePoints());
-        for (int i = 0; i <3 ; i++) {
+    public void addLifePoint1() {
+        receiveLifePoints();
+        for (int i = 0; i < 3; i++) {
             lifepoints.addLifePoint();
         }
-        assertEquals(13,lifepoints.getLifePoints());
+        assertEquals(13, lifepoints.getLifePoints());
+    }
+
+    @Test
+    public void addLifePoint2() {
+        for (int i = 0; i < 3; i++) {
+            lifepoints.addLifePoint();
+        }
 
         // testen boven 15 gaat niet
-        for (int i = 0; i <3 ; i++) {
+        for (int i = 0; i < 3; i++) {
             lifepoints.addLifePoint();
         }
 
@@ -36,14 +43,20 @@ public class LifepointsTest {
     }
 
     @Test
-    public void removeLifePoint() {
-        addLifePoint();
-        assertEquals(15, lifepoints.getLifePoints());
+    public void removeLifePoint1() {
+        addLifePoint2();
         lifepoints.removeLifePoint();
         assertEquals(14, lifepoints.getLifePoints());
 
+    }
+
+    @Test
+    public void removeLifePoint2() {
+        addLifePoint2();
+        lifepoints.removeLifePoint();
+
         //testen onder 0
-        for (int i = 0; i <16 ; i++) {
+        for (int i = 0; i < 16; i++) {
             lifepoints.removeLifePoint();
         }
         assertEquals(0, lifepoints.getLifePoints());

@@ -1,24 +1,26 @@
 package game.info;
 
+import org.pmw.tinylog.Logger;
+
 import java.util.TimerTask;
 
 public class Timer extends TimerTask {
 
-    private int timer;
+    private int timerAmount;
 
     public Timer(int timer) {
-        this.timer = timer;
+        this.timerAmount = timer;
     }
 
     public int getTimer() {
-        return timer;
+        return timerAmount;
     }
 
     @Override
     public void run() {
-        timer--;
-        System.out.println(timer);
-        if (timer <= 0) {
+        timerAmount--;
+        Logger.info(timerAmount);
+        if (timerAmount <= 0) {
             cancel();
         }
     }

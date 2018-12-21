@@ -17,14 +17,18 @@ let game = {
 
 document.addEventListener("DOMContentLoaded", init);
 
+let paused = false;
+
 function init() {
     eb.onopen = function () {
         initialize();
     };
-    countdown(game.timer);
+    //countdown(game.timer);
     addEventHandler("#openmodal", "click", openModal);
     addEventHandler("body", "click", onModalClose);
     addEventHandler("#keepplaying", "click", keepPlaying);
+    document.querySelector("#pause").addEventListener("click", pause);
+    document.querySelector("#resume").addEventListener("click", resume);
 }
 
 function initialize() {
@@ -58,6 +62,30 @@ function registers() {
         console.log(message);
     });
 
+    eb.registerHandler("tetris-21.socket.battleField.timer", function (error, message) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(message.body);
+        let info = JSON.parse(message.body);
+        let timeInSeconds = info.timeInSeconds;
+        displayTimer(timeInSeconds);
+    });
+}
+
+function displayTimer(timeInSeconds) {
+    let minutes = parseInt((timeInSeconds % 3600) / 60);
+    let seconds = parseInt((timeInSeconds % 3600) % 60);
+
+    if (minutes < 10){
+        minutes = "0" + minutes;
+    }
+
+    if (seconds < 10){
+        seconds = "0" + seconds;
+    }
+
+    document.querySelector('#time').innerHTML = minutes + ":" + seconds;
 }
 
 function giveMatrixNumbers(playfields, firstPlayerName, secPlayerName) {
@@ -323,7 +351,7 @@ function countdown(durationInSeconds) {
         seconds = parseInt(timer % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + (seconds - 1) : seconds;
+        seconds = seconds < 10 ? "0" + (seconds) : seconds;
 
         document.querySelector("#time").textContent = minutes + ":" + seconds;
 
@@ -332,6 +360,7 @@ function countdown(durationInSeconds) {
         }
 
         if (timer === 0) {
+            document.querySelector("#time").innerHTML = "00:00";
             if (game.fieldPlayer.score < game.fieldPlayer2.score) {
                 youLose(game.context);
                 youWon(game.context2);
@@ -393,7 +422,7 @@ function collide(player, area) {
 }
 
 function merge(player, grid) {
-        let object = JSON.stringify({player:player ,grid: grid});
+    let object = JSON.stringify({player:player ,grid: grid});
     eb.send("tetris-21.socket.battleField.blockOnField", object, function (error, reply) {
         if (error) {
             console.log(error);
@@ -486,25 +515,31 @@ function collidefunction(player, area) {
 }
 
 function playerDrop(player, context, area) {
-    player.pos.y++;
-    if (collide(player, area)) {
-        player.pos.y--;
-        merge(player, area);
-        nextBlock(player.name);
+    if (!paused) {
+        player.pos.y++;
+        if (collide(player, area)) {
+            player.pos.y--;
+            merge(player, area);
+            nextBlock(player.name);
+        }
     }
 }
 
 function playerMove(player, dir, area) {
-    player.pos.x += dir;
-    if (collide(player, area)) {
-        player.pos.x -= dir;
+    if (!paused) {
+        player.pos.x += dir;
+        if (collide(player, area)) {
+            player.pos.x -= dir;
+        }
     }
 }
 
 function playerRotate(player, area) {
-    const pos = player.pos.x;
-    let offset = 1;
-    player.matrix = rotate(player, area);
+    if (!paused) {
+        const pos = player.pos.x;
+        let offset = 1;
+        player.matrix = rotate(player, area);
+    }
 }
 
 function setWidth(lines, id) {

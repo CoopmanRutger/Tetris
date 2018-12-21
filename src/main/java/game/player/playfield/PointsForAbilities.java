@@ -1,13 +1,8 @@
 package game.player.playfield;
 
-import game.player.hero.ability.Ability;
-import game.player.hero.ability.CheeringCrowd;
-
 public class PointsForAbilities {
 
     private int points;
-    private Ability abilityLvl1;
-    private Ability abilityLvl2;
 
     public PointsForAbilities() {
         this.points = 0;
@@ -17,18 +12,19 @@ public class PointsForAbilities {
         return points;
     }
 
-    public void addPoints(int points){
-        if (points > 0){
+    public void addPoints(int points) {
+        if (points > 0) {
             this.points += points;
         }
     }
-    public void removePoints(int points){
-        if (points > 0){
+
+    public void removePoints(int points) {
+        if (points > 0) {
             this.points -= points;
         }
     }
 
-    public void removeAllPoints(){
+    public void removeAllPoints() {
         points = 0;
     }
 

@@ -1,19 +1,13 @@
 package game.player.hero.ability;
 
 import game.player.playfield.Playfield;
-import game.player.playfield.PointsForAbilities;
-import io.netty.util.Timeout;
-import org.pmw.tinylog.Logger;
 
-import java.util.Timer;
-import java.util.TimerTask;
+public class Joker implements Ability {
 
-public class Joker implements Ability{
-
-    private final String name = "Joker";
+    private static final String NAME = "Joker";
+    private int numberOfTimesUsed;
     private int startValue;
     private Playfield playfield;
-    private static int numberOfTimesUsed = 0;
 
     public Joker(Playfield playfield) {
         this.startValue = 10;
@@ -22,7 +16,7 @@ public class Joker implements Ability{
 
     @Override
     public String getName() {
-        return name;
+        return NAME;
     }
 
     @Override
@@ -42,7 +36,7 @@ public class Joker implements Ability{
 
     @Override
     public boolean activate() {
-        if (playfield.getPoints() >= startValue){
+        if (playfield.getPoints() >= startValue) {
             playfield.getPointsForAbilities().removePoints(startValue);
             action();
             usedAbility();
@@ -63,9 +57,14 @@ public class Joker implements Ability{
     }
 
     @Override
+    public Playfield getPlayfield() {
+        return playfield;
+    }
+
+    @Override
     public String toString() {
-        return "Joker{" +
-                ", startValue=" + startValue +
-                '}';
+        return "Joker{"
+            + ", startValue=" + startValue
+            + '}';
     }
 }

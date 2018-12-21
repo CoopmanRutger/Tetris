@@ -1,6 +1,5 @@
 package game.events.event;
 
-import game.player.Player;
 import game.player.playfield.Playfield;
 
 import java.util.ArrayList;
@@ -18,19 +17,21 @@ public class Tornado implements Event {
         this.playfield = playfield;
     }
 
+    @Override
     public Trigger getTrigger() {
         return trigger;
     }
 
+    @Override
     public void activate() {
         activateOnTime();
     }
 
     private void activateOnTime() {
         List<List<Integer>> playfieldUpdatedVersion = new ArrayList<>();
-        List<List<Integer>> CurrentPlayfield = playfield.getPlayfield();
+        List<List<Integer>> currentPlayfield = playfield.getPlayfield();
 
-        for (List<Integer> playfieldLine : CurrentPlayfield) {
+        for (List<Integer> playfieldLine : currentPlayfield) {
             Collections.shuffle(playfieldLine);
         }
 
@@ -39,32 +40,32 @@ public class Tornado implements Event {
 
 
         int number = 10;
-        for (int i = CurrentPlayfield.size() - 1; i >= number; i--) {
-            lowestLines.add(CurrentPlayfield.get(i));
+        for (int i = currentPlayfield.size() - 1; i >= number; i--) {
+            lowestLines.add(currentPlayfield.get(i));
         }
 
-        for (int i = number-1 ; i >= 0; i--) {
-            highestLines.add(CurrentPlayfield.get(i));
+        for (int i = number - 1; i >= 0; i--) {
+            highestLines.add(currentPlayfield.get(i));
         }
 
-         Collections.shuffle(lowestLines);
+        Collections.shuffle(lowestLines);
 
         playfieldUpdatedVersion.addAll(highestLines);
         playfieldUpdatedVersion.addAll(lowestLines);
 
         playfield.setPlayfield(playfieldUpdatedVersion);
 
-        for (int i = 0; i < number-2 ; i++) {
-            for (int j = 0; j < playfield.getPlayfield().get(i).size() ; j++) {
-                playfield.getPlayfield().get(i).set(j,0);
+        for (int i = 0; i < number - 2; i++) {
+            for (int j = 0; j < playfield.getPlayfield().get(i).size(); j++) {
+                playfield.getPlayfield().get(i).set(j, 0);
             }
         }
     }
 
     @Override
     public String toString() {
-        return "Tornado{" +
-                "playfield=" + playfield +
-                '}';
+        return "Tornado{"
+            + "playfield=" + playfield
+            + '}';
     }
 }
