@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="game.player.hero.ability.AbilityTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-12-21T14:41:24" hostname="Rutger" time="0.034">
+  <properties/>
+  <testcase name="activate" classname="game.player.hero.ability.AbilityTest" time="0.002"/>
+  <testcase name="action" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
+  <testcase name="usedAbility" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
+  <testcase name="abilityIsReadyToUse" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
+  <testcase name="receiveNumberOfTimesUsed1" classname="game.player.hero.ability.AbilityTest" time="0.03"/>
+  <testcase name="receiveNumberOfTimesUsed2" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
+  <system-out><![CDATA[2018-12-21 15:41:24 [Test worker] game.player.hero.ability.CheeringCrowd.activate()
+INFO: ability activate?
+]]></system-out>
+  <system-err><![CDATA[2018-12-21 15:41:24 [Test worker] game.player.hero.ability.CheeringCrowd.activate()
+WARNING: Ability!
+]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="game.player.playfield.ScoreTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-12-21T14:41:24" hostname="Rutger" time="0.0">
+  <properties/>
+  <testcase name="testUpdateScoreForMultipleLines" classname="game.player.playfield.ScoreTest" time="0.0"/>
+  <testcase name="testUpdateScore1" classname="game.player.playfield.ScoreTest" time="0.0"/>
+  <testcase name="testUpdateScore2" classname="game.player.playfield.ScoreTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

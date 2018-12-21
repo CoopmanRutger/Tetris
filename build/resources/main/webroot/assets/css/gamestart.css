@@ -1,0 +1,28 @@
+body {
+    height: 400px;
+}
+
+#homemid {
+    width: 700px;
+    margin: 35px auto 65px auto;
+}
+
+#homemid > li {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#homemid > li:first-child, #homemid > li:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+#homemid > li:nth-child(odd) {
+    margin-right: 20px;
+}
+
+#homemid > li:last-child {
+    margin-top: 0;
+}
+

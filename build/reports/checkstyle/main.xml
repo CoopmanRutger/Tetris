@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.12">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\Game.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\Tetris.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\jdbcinteractor\ConnectionDatabase.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\jdbcinteractor\ConsumerHandlers.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\jdbcinteractor\Database.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\jdbcinteractor\StringLines.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\AbilityController.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\GameController.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\HeroController.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\IntelController.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\PlayerController.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\Routes.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\TetrisSockJSHandler.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\api\webapi\WebAPI.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\events\Events.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\events\event\AbilityReset.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\events\event\Event.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\events\event\Tornado.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\events\event\Trigger.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\info\Timer.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\Player.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\hero\Hero.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\hero\ability\Ability.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\hero\ability\CheeringCrowd.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\hero\ability\Joker.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\info\Gold.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\info\Info.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\info\Lifepoints.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\info\Xp.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\playfield\Blocks.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\playfield\Playfield.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\playfield\PointsForAbilities.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\playfield\Score.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\playfield\block\Block.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\game\player\playfield\block\TypesOfBlocks.java">
+</file>
+</checkstyle>

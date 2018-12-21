@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/faction_clan.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link href="assets/css/logout.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
+          integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
+    <title>Title</title>
+</head>
+<body id="body">
+<header>
+    <p class="logout">
+        <i class="far fa-user-circle fa-lg" id="sign-out"></i>
+        <a href="#" class="dropdown-logout" id="logout">Sign out</a>
+    </p>
+</header>
+<div id="faction">
+    <article>
+        <h2>Welcome, brave warrior.</h2>
+        <div class="tab">
+            <button class="tablinks" onclick="openMenu(event, 'details')">faction details</button>
+            <button class="tablinks" onclick="openMenu(event, 'ongoing')">ongoing events</button>
+            <button class="tablinks" onclick="openMenu(event, 'upcoming')">upcoming events</button>
+            <button class="tablinks" onclick="openMenu(event, 'wins')">wins/losses</button>
+            <button class="tablinks" onclick="openMenu(event, 'chat')">chat</button>
+            <button class="tablinks" id="clanbutton">Clan</button>
+        </div>
+    </article>
+
+    <!-- Tab content -->
+    <div id="details" class="tabcontent">
+        <div>
+
+        </div>
+        <h2>Everything you need to know about your faction</h2>
+        <p>This faction was created a few hundred years ago by the followers of the great dragon, Aldruïn
+            They served Aldruïn until mankind slaughtered every last dragon in the world. Now, there sole purpose is
+            to build and protect statues and castles in name of Aldruïn and the other killed dragons.
+        </p>
+        <p>
+            The faction exists of men and women. They are a large group spread across the entire world. They give
+            their knowledge from parent to child.
+        </p>
+        <p>
+            But humankind is not the same as hundreds of years ago. People have stopped believing in the existence of
+            dragons. So the number of people in this faction has dropped immensely over the years. They need members
+            like you to spread the word and prove that dragons have existed.
+        </p>
+    </div>
+
+    <article id="ongoing" class="tabcontent">
+        <h2>Ongoing events</h2>
+        <table>
+            <thead>
+            <tr>
+                <td></td>
+                <td>event</td>
+                <td>type</td>
+                <td>against</td>
+                <td>start</td>
+                <td>end</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>faction war against another faction</td>
+                <td>faction war</td>
+                <td>red faction</td>
+                <td>09/11/2018</td>
+                <td>19/11/2018</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>faction war against another faction</td>
+                <td>faction war</td>
+                <td>blue faction</td>
+                <td>09/11/2018</td>
+                <td>19/11/2018</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>faction war against another faction</td>
+                <td>faction war</td>
+                <td>yellow faction</td>
+                <td>09/11/2018</td>
+                <td>19/11/2018</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article id="upcoming" class="tabcontent">
+        <h2>upcoming events</h2>
+        <table>
+            <thead>
+            <tr>
+                <td></td>
+                <td>event</td>
+                <td>type</td>
+                <td>against</td>
+                <td>start</td>
+                <td>end</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>faction war against another faction</td>
+                <td>faction war</td>
+                <td>red faction</td>
+                <td>09/12/2018</td>
+                <td>19/12/2018</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>faction war against another faction</td>
+                <td>faction war</td>
+                <td>blue faction</td>
+                <td>09/12/2018</td>
+                <td>19/12/2018</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>faction war against another faction</td>
+                <td>faction war</td>
+                <td>yellow faction</td>
+                <td>09/12/2018</td>
+                <td>19/12/2018</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article id="wins" class="tabcontent">
+        <h2>wins and losses of your faction</h2>
+        <table>
+            <thead>
+            <tr>
+                <td>wins</td>
+                <td>losses</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>5</td>
+                <td>2</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article id="chat" class="tabcontent">
+        <h2>Chat</h2>
+        <p>Follow <a href="https://discord.gg/43bnmZm" target="_blank">this link</a> to the discord server of your
+            faction.</p>
+    </article>
+
+</div>
+
+<div id="clan" class="hidden">
+    <article>
+        <h1>Welcome, loyal clan member</h1>
+        <div class="tab">
+            <button class="tablinks" onclick="openMenu(event, 'clandetails')">clan details</button>
+            <button class="tablinks" onclick="openMenu(event, 'clanongoing')">ongoing events</button>
+            <button class="tablinks" onclick="openMenu(event, 'clanupcoming')">upcoming events</button>
+            <button class="tablinks" onclick="openMenu(event, 'clanwins')">wins/losses</button>
+            <button class="tablinks" onclick="openMenu(event, 'clanchat')">chat</button>
+            <button class="tablinks" id="factionbutton">faction</button>
+            <button class="tablinks" id="kingdom">kingdom</button>
+        </div>
+    </article>
+
+    <!-- Tab content -->
+    <article id="clandetails" class="tabcontent">
+        <div>
+
+        </div>
+        <h2>Everything you need to know about your clan</h2>
+        <p>
+            //Please write a description about your clan here.
+        </p>
+    </article>
+
+    <article id="clanongoing" class="tabcontent">
+        <h2>Ongoing events</h2>
+        <table>
+            <thead>
+            <tr>
+                <td></td>
+                <td>event</td>
+                <td>type</td>
+                <td>against</td>
+                <td>start</td>
+                <td>end</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>clan war against another clan</td>
+                <td>clan war</td>
+                <td>Gryffindorians</td>
+                <td>09/11/2018</td>
+                <td>19/11/2018</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>clan war against another clan</td>
+                <td>clan war</td>
+                <td>Stormkillers</td>
+                <td>09/11/2018</td>
+                <td>19/11/2018</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article id="clanupcoming" class="tabcontent">
+        <h2>upcoming events</h2>
+        <table>
+            <thead>
+            <tr>
+                <td></td>
+                <td>event</td>
+                <td>type</td>
+                <td>against</td>
+                <td>start</td>
+                <td>end</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>clan war against another clan</td>
+                <td>clan war</td>
+                <td>Yggdrasil</td>
+                <td>09/12/2018</td>
+                <td>19/12/2018</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>clan war against another clan</td>
+                <td>clan war</td>
+                <td>any clan</td>
+                <td>09/12/2018</td>
+                <td>19/12/2018</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>clan war against another clan</td>
+                <td>clan war</td>
+                <td>Hufflepuf</td>
+                <td>09/12/2018</td>
+                <td>19/12/2018</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article id="clanwins" class="tabcontent">
+        <h2>wins and losses of your clan</h2>
+        <table>
+            <thead>
+            <tr>
+                <td>wins</td>
+                <td>losses</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>5</td>
+                <td>2</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article id="clanchat" class="tabcontent">
+        <h2>Chat</h2>
+        <p>Follow <a href="https://discord.gg/43bnmZm" target="_blank">this link</a> to the discord server of your
+            clan.</p>
+    </article>
+</div>
+
+<footer>
+    <a id="home" href="gameStart.html">Back</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.5.4/vertx-eventbus.min.js"></script>
+<script src="assets/js/faction_clan.js"></script>
+<script src="assets/js/functions.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/logout.js"></script>
+
+</body>
+</html>

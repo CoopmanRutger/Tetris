@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="game.player.playfield.PlayfieldTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2018-12-21T14:41:24" hostname="Rutger" time="0.005">
+  <properties/>
+  <testcase name="testAvailability" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testCheckForCompleted1" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testCheckForCompleted2" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testCheckForCompleted3" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testCheckForCompleted4" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testCheckForCompleted5" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testMakeFieldWidth" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testPutBlockOnField1" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testPutBlockOnField2" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testPutBlockOnField3" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
+  <testcase name="testPutBlockOnField4" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testPutBlockOnField5" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testMakeFieldHeight" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.1.8" sequence="0" timestamp="1545403270545" analysisTimestamp="1545403270584" release="">
+  <Project projectName="">
+    <Jar>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\build\classes\java\test</Jar>
+    <AuxClasspathEntry>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\build\classes\java\main</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\build\resources\main</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-web\3.5.4\3d77c8cc8bff92cb2b1015edd377770a3910324b\vertx-web-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-unit\3.5.4\3a708467993f3ec32b9cb56fbd69101e9b95451e\vertx-unit-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-auth-common\3.5.4\4fcb4262072aa467039a54b4c6faf9a8819acda4\vertx-auth-common-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-core\3.5.4\89d9df77a7d3669504a14a34d1b7247d45b71c05\vertx-core-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-jdbc-client\3.5.4\896782c1ae42e67d1fdb1ce537a49b1266066fd9\vertx-jdbc-client-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.h2database\h2\1.4.197\bb391050048ca8ae3e32451b5a3714ecd3596a46\h2-1.4.197.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\3.2.0\6c66db1c636ee90beb4c65fe34abd8ba9396bca6\HikariCP-3.2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\org.tinylog\tinylog\1.3.5\bfebfda15bc6b5416f292bb062fc66b33fd9f1\tinylog-1.3.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\org.mindrot\jbcrypt\0.4\af7e61017f73abb18ac4e036954f9f28c6366c07\jbcrypt-0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http2\4.1.19.Final\665bd06aed74b3f5592465dda2e00e3d03f41048\netty-codec-http2-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.19.Final\9c784510bc6f81177c4f2c2956144438863cdac4\netty-handler-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler-proxy\4.1.19.Final\47c7f7977cea190351962bee726f663eb6488a22\netty-handler-proxy-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver-dns\4.1.19.Final\67a1e265bcbc49160417c81fdf2fdc50ea423727\netty-resolver-dns-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http\4.1.19.Final\f7edff289d10cc03cdb97ad99e2722f9d61ffdc3\netty-codec-http-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-socks\4.1.19.Final\c84f0540fceccae979d7aeb17b1fa0057c038df9\netty-codec-socks-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-dns\4.1.19.Final\8b0a7fd3c67e8bd5e3d347f9bb200ae0aaa5c1b7\netty-codec-dns-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.19.Final\ad4d4309c5b011036ca4df6aca190983d75c6b19\netty-codec-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.19.Final\4f26f51b86dc1ab19621eb2ac39f1a63682f17f2\netty-transport-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.19.Final\65abf40a28ce4f52dd763d0b4f740066a87b5c9e\netty-buffer-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.19.Final\7d97be8b3fb195f9d94d9a4afcadef25e08bde2\netty-resolver-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.19.Final\b281916c11d3eeec5e839677ec4f2eb9d7586928\netty-common-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.9.6\cfa4f316351a91bfd95cb0644c6a2c95f52db1fc\jackson-databind-2.9.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-sql-common\3.5.4\a07e660378b0ce385712baba5a1d19434417acd8\vertx-sql-common-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.mchange\c3p0\0.9.5.2\5f86cb6130bc6e8475615ed82d5b5e6fb226a86a\c3p0-0.9.5.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-bridge-common\3.5.4\327e404ed3288e5c38e3720b26fb21d6f419f73b\vertx-bridge-common-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.25\da76ca59f6a57ee3102f8f9bd9cee742973efa8a\slf4j-api-1.7.25.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.9.0\7c10d545325e3a6e72e06381afe469fd40eb701\jackson-annotations-2.9.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.mchange\mchange-commons-java\0.2.11\2a6a6c1fe25f28f5a073171956ce6250813467ef\mchange-commons-java-0.2.11.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\data\MySQLTetrisTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\events\event\TornadoTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\hero\ability\AbilityTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\GoldTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\InfoTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\LifepointsTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\XpTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\block\BlockTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\PlayfieldTest.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\ScoreTest.java</SrcDir>
+  </Project>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" priority="2" rank="17" abbrev="RV" category="STYLE" instanceHash="40f169e5142e486924e0c90e563e93f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="440">
+    <ShortMessage>Return value of method without side effect is ignored</ShortMessage>
+    <LongMessage>Return value of Ability.getName() ignored, but method has no side effect</LongMessage>
+    <Class classname="game.player.hero.ability.AbilityTest" primary="true">
+      <SourceLine classname="game.player.hero.ability.AbilityTest" start="11" end="104" sourcefile="AbilityTest.java" sourcepath="game/player/hero/ability/AbilityTest.java">
+        <Message>At AbilityTest.java:[lines 11-104]</Message>
+      </SourceLine>
+      <Message>In class game.player.hero.ability.AbilityTest</Message>
+    </Class>
+    <Method classname="game.player.hero.ability.AbilityTest" name="receiveNumberOfTimesUsed2" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="game.player.hero.ability.AbilityTest" start="43" end="44" startBytecode="0" endBytecode="56" sourcefile="AbilityTest.java" sourcepath="game/player/hero/ability/AbilityTest.java"/>
+      <Message>In method game.player.hero.ability.AbilityTest.receiveNumberOfTimesUsed2()</Message>
+    </Method>
+    <Method classname="game.player.hero.ability.Ability" name="getName" signature="()Ljava/lang/String;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="game.player.hero.ability.Ability" sourcefile="Ability.java" sourcepath="game/player/hero/ability/Ability.java"/>
+      <Message>Called method game.player.hero.ability.Ability.getName()</Message>
+    </Method>
+    <SourceLine classname="game.player.hero.ability.AbilityTest" primary="true" start="43" end="43" startBytecode="4" endBytecode="4" sourcefile="AbilityTest.java" sourcepath="game/player/hero/ability/AbilityTest.java">
+      <Message>At AbilityTest.java:[line 43]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugPattern type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" abbrev="RV" category="STYLE">
+    <ShortDescription>Return value of method without side effect is ignored</ShortDescription>
+    <Details><![CDATA[
+
+<p>This code calls a method and ignores the return value. However our analysis shows that
+the method (including its implementations in subclasses if any) does not produce any effect
+other than return value. Thus this call can be removed.
+</p>
+<p>We are trying to reduce the false positives as much as possible, but in some cases this warning might be wrong.
+Common false-positive cases include:</p>
+<p>- The method is designed to be overridden and produce a side effect in other projects which are out of the scope of the analysis.</p>
+<p>- The method is called to trigger the class loading which may have a side effect.</p>
+<p>- The method is called just to get some exception.</p>
+<p>If you feel that our assumption is incorrect, you can use a @CheckReturnValue annotation
+to instruct SpotBugs that ignoring the return value of this method is acceptable.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="RV" cweid="440">
+    <Description>Bad use of return value from method</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Fri, 21 Dec 2018 15:41:10 +0100" total_classes="10" referenced_classes="41" total_bugs="1" total_size="356" num_packages="6" java_version="1.8.0_161" vm_version="25.161-b12" cpu_seconds="11.55" clock_seconds="3.22" peak_mbytes="119.85" alloc_mbytes="3611.00" gc_seconds="0.03" priority_2="1">
+    <FileStats path="game/data/MySQLTetrisTest.java" bugCount="0" size="3"/>
+    <FileStats path="game/events/event/TornadoTest.java" bugCount="0" size="24"/>
+    <FileStats path="game/player/hero/ability/AbilityTest.java" bugCount="1" size="35" bugHash="2ab3ed420288b169bc368a91cdb1ec59"/>
+    <FileStats path="game/player/info/GoldTest.java" bugCount="0" size="19"/>
+    <FileStats path="game/player/info/InfoTest.java" bugCount="0" size="16"/>
+    <FileStats path="game/player/info/LifepointsTest.java" bugCount="0" size="31"/>
+    <FileStats path="game/player/info/XpTest.java" bugCount="0" size="23"/>
+    <FileStats path="game/player/playfield/PlayfieldTest.java" bugCount="0" size="100"/>
+    <FileStats path="game/player/playfield/ScoreTest.java" bugCount="0" size="23"/>
+    <FileStats path="game/player/playfield/block/BlockTest.java" bugCount="0" size="82"/>
+    <PackageStats package="game.data" total_bugs="0" total_types="1" total_size="3">
+      <ClassStats class="game.data.MySQLTetrisTest" sourceFile="MySQLTetrisTest.java" interface="false" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="game.events.event" total_bugs="0" total_types="1" total_size="24">
+      <ClassStats class="game.events.event.TornadoTest" sourceFile="TornadoTest.java" interface="false" size="24" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="game.player.hero.ability" total_bugs="1" total_types="1" total_size="35" priority_2="1">
+      <ClassStats class="game.player.hero.ability.AbilityTest" sourceFile="AbilityTest.java" interface="false" size="35" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="game.player.info" total_bugs="0" total_types="4" total_size="89">
+      <ClassStats class="game.player.info.GoldTest" sourceFile="GoldTest.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="game.player.info.InfoTest" sourceFile="InfoTest.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="game.player.info.LifepointsTest" sourceFile="LifepointsTest.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="game.player.info.XpTest" sourceFile="XpTest.java" interface="false" size="23" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="game.player.playfield" total_bugs="0" total_types="2" total_size="123">
+      <ClassStats class="game.player.playfield.PlayfieldTest" sourceFile="PlayfieldTest.java" interface="false" size="100" bugs="0"/>
+      <ClassStats class="game.player.playfield.ScoreTest" sourceFile="ScoreTest.java" interface="false" size="23" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="game.player.playfield.block" total_bugs="0" total_types="1" total_size="82">
+      <ClassStats class="game.player.playfield.block.BlockTest" sourceFile="BlockTest.java" interface="false" size="82" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1498" invocations="374" avgMicrosecondsPerInvocation="4007" maxMicrosecondsPerInvocation="12446" standardDeviationMicrosecondsPerInvocation="2402"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="148" invocations="373" avgMicrosecondsPerInvocation="396" maxMicrosecondsPerInvocation="12028" standardDeviationMicrosecondsPerInvocation="832"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="66" invocations="79" avgMicrosecondsPerInvocation="839" maxMicrosecondsPerInvocation="13738" standardDeviationMicrosecondsPerInvocation="1720"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="55" invocations="67" avgMicrosecondsPerInvocation="829" maxMicrosecondsPerInvocation="11412" standardDeviationMicrosecondsPerInvocation="1492"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="55" invocations="67" avgMicrosecondsPerInvocation="822" maxMicrosecondsPerInvocation="13128" standardDeviationMicrosecondsPerInvocation="1706"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="54" invocations="41" avgMicrosecondsPerInvocation="1329" maxMicrosecondsPerInvocation="7503" standardDeviationMicrosecondsPerInvocation="2168"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="50" invocations="41" avgMicrosecondsPerInvocation="1233" maxMicrosecondsPerInvocation="9112" standardDeviationMicrosecondsPerInvocation="1897"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="49" invocations="67" avgMicrosecondsPerInvocation="745" maxMicrosecondsPerInvocation="37019" standardDeviationMicrosecondsPerInvocation="4485"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="47" invocations="160" avgMicrosecondsPerInvocation="298" maxMicrosecondsPerInvocation="2736" standardDeviationMicrosecondsPerInvocation="401"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="45" invocations="67" avgMicrosecondsPerInvocation="673" maxMicrosecondsPerInvocation="3619" standardDeviationMicrosecondsPerInvocation="702"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

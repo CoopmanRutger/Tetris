@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="game.player.playfield.block.BlockTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2018-12-21T14:41:24" hostname="Rutger" time="0.003">
+  <properties/>
+  <testcase name="testRotateRight1" classname="game.player.playfield.block.BlockTest" time="0.001"/>
+  <testcase name="testRotateRight2" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testRotateRight4" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testRotateRight5" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testRotateRight6" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testMakeBlock1" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testMakeBlock2" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testMakeBlock4" classname="game.player.playfield.block.BlockTest" time="0.001"/>
+  <testcase name="testMakeBlock5" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testMakeBlock6" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testRotateRight" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <testcase name="testMakeBlock" classname="game.player.playfield.block.BlockTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

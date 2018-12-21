@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.12">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\data\MySQLTetrisTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\events\event\TornadoTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\hero\ability\AbilityTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\GoldTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\InfoTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\LifepointsTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\info\XpTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\PlayfieldTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\ScoreTest.java">
+</file>
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\block\BlockTest.java">
+</file>
+</checkstyle>
