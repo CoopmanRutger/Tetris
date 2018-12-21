@@ -23,7 +23,7 @@ function init() {
     eb.onopen = function () {
         initialize();
     };
-    countdown(game.timer);
+    //countdown(game.timer);
     addEventHandler("#openmodal", "click", openModal);
     addEventHandler("body", "click", onModalClose);
     addEventHandler("#keepplaying", "click", keepPlaying);
@@ -62,6 +62,30 @@ function registers() {
         console.log(message);
     });
 
+    eb.registerHandler("tetris-21.socket.battleField.timer", function (error, message) {
+        if (error) {
+            console.log(error);
+        }
+        console.log(message.body);
+        let info = JSON.parse(message.body);
+        let timeInSeconds = info.timeInSeconds;
+        displayTimer(timeInSeconds);
+    });
+}
+
+function displayTimer(timeInSeconds) {
+    let minutes = parseInt((timeInSeconds % 3600) / 60);
+    let seconds = parseInt((timeInSeconds % 3600) % 60);
+
+    if (minutes < 10){
+        minutes = "0" + minutes;
+    }
+
+    if (seconds < 10){
+        seconds = "0" + seconds;
+    }
+
+    document.querySelector('#time').innerHTML = minutes + ":" + seconds;
 }
 
 function giveMatrixNumbers(playfields, firstPlayerName, secPlayerName) {

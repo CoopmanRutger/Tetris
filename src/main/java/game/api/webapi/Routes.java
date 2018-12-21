@@ -93,6 +93,26 @@ public class Routes extends AbstractVerticle {
 
     }
 
+    private void timer(int seconds) {
+        final int[] counter = {0};
+        counter[0] = seconds;
+        java.util.Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                counter[0]--;
+                JsonObject json = new JsonObject();
+                json.put("timeInSeconds", counter[0]);
+                eb.send("tetris-21.socket.battleField.timer", json.encode());
+                System.out.println(counter[0]);
+                if (counter[0] <= 0) {
+                    timer.cancel();
+                    // TODO: check for winner.
+                }
+            }
+        }, 0, 1000);
+    }
+
     private void abilities(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString("attacker");
@@ -270,8 +290,8 @@ public class Routes extends AbstractVerticle {
 
         message.reply(username);
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .checkPassword(username, password, eb);
+                .getConsumerHandlers(controller)
+                .checkPassword(username, password, eb);
     }
 
     private void makeLogin(Message message) {
@@ -283,20 +303,20 @@ public class Routes extends AbstractVerticle {
 
         message.reply(username);
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .makeUser(username, email, password, eb);
+                .getConsumerHandlers(controller)
+                .makeUser(username, email, password, eb);
 
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .makePlayer(playername);
+                .getConsumerHandlers(controller)
+                .makePlayer(playername);
     }
 
     private void checkUsername(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String username = userMessage.getString(USERNAME);
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .checkUsername(username, eb);
+                .getConsumerHandlers(controller)
+                .checkUsername(username, eb);
         message.reply(username);
     }
 
@@ -306,8 +326,8 @@ public class Routes extends AbstractVerticle {
         message.reply(username);
 
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .receivePlayerInfo(username, eb);
+                .getConsumerHandlers(controller)
+                .receivePlayerInfo(username, eb);
     }
 
     private void receiveFaction(Message message) {
@@ -316,8 +336,8 @@ public class Routes extends AbstractVerticle {
         message.reply("going to look for " + playerId);
 
         Database.getDB()
-            .getConsumerHandlers(controller)
-            .receiveBasic(playerId, eb);
+                .getConsumerHandlers(controller)
+                .receiveBasic(playerId, eb);
 
     }
 
@@ -353,6 +373,7 @@ public class Routes extends AbstractVerticle {
 
     private void imReady(Message message) {
         Logger.info(game);
+        timer(180);
         eb.send("tetris-21.socket.game", Json.encode(game));
         message.reply("okey");
 
