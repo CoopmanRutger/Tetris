@@ -42,26 +42,30 @@ public class Playfield {
         gameSpeed = 50;
     }
 
+    public boolean isBlinded() {
+        return blinded;
+    }
+
     public Block getCurrentBlock() {
         return currentBlock;
     }
 
-    public Blocks getBlocks() {
-        return blocks;
-    }
+    //    public Blocks getBlocks() {
+    //        return blocks;
+    //    }
 
-    public void setScore(Score score) {
-        this.score = score;
-    }
+    //    public void setScore(Score score) {
+    //        this.score = score;
+    //    }
 
     public void setPoints(PointsForAbilities points) {
         this.points = points;
     }
 
-    public void updateScore(int extraScore) {
-        int previousScore = score.getScore();
-        score.setScore(previousScore + extraScore);
-    }
+    //    public void updateScore(int extraScore) {
+    //        int previousScore = score.getScore();
+    //        score.setScore(previousScore + extraScore);
+    //    }
 
     public void setPlayfield(List<List<Integer>> playfieldList) {
         this.playfieldList = playfieldList;
@@ -184,10 +188,6 @@ public class Playfield {
         }
         Logger.info(blocks);
         return blocks;
-    }
-
-    public boolean isBlinded() {
-        return blinded;
     }
 
     void putLineOnField(int line, List<Integer> completeLine) {
