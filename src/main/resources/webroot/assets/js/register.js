@@ -1,8 +1,8 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+//let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -10,7 +10,7 @@ let loginMade = false;
 let usernameExists = false;
 
 function init() {
-    eb.onopen = function() {
+    eb.onopen = function () {
         console.log("opened");
     };
     document.querySelector("#register").addEventListener("click", checkValues);
@@ -51,7 +51,7 @@ function passwordIsTheSame(password, repeatPassword) {
 }
 
 function register(email, username, password, playername) {
-    let registerValues = { email: email, username: username, password: password, playername: playername};
+    let registerValues = {email: email, username: username, password: password, playername: playername};
     eb.send("tetris-21.socket.login.make", JSON.stringify(registerValues), function (error, reply) {
         if (error) {
             console.log(error);

@@ -1,8 +1,8 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+//let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
 // let eb = new EventBus("http://192.168.0.251:8021/tetris-21/socket");
 let game = {
     gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50, evenement:false,

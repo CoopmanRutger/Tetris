@@ -1,8 +1,8 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+//let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
 
 
 document.addEventListener("DOMContentLoaded", init);
@@ -19,13 +19,13 @@ function getUserId() {
 
 function getFactionId(factionName) {
 
-    if (factionName === "dark green"){
+    if (factionName === "dark green") {
         return 1;
-    } else if (factionName === "dark red"){
+    } else if (factionName === "dark red") {
         return 2;
-    } else if(factionName === "dark blue"){
+    } else if (factionName === "dark blue") {
         return 3;
-    } else if (factionName === "dark yellow"){
+    } else if (factionName === "dark yellow") {
         return 4;
     }
 }
@@ -38,7 +38,7 @@ function chooseFaction(e) {
     sessionStorage.setItem('FactionName', faction);
     sendFactionToServer(getFactionId(faction), getUserId());
 
-    if (sessionStorage.getItem('FactionName') !== "dark"){
+    if (sessionStorage.getItem('FactionName') !== "dark") {
         window.location.href = "faction_clan.html";
     }
 }
