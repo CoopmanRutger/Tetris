@@ -12,7 +12,7 @@ public class CheeringCrowd implements Ability {
 
     public CheeringCrowd(final Playfield playfield) {
         this.playfield = playfield;
-        this.startValue = 8;
+        this.startValue = 6;
     }
 
     @Override
@@ -42,14 +42,15 @@ public class CheeringCrowd implements Ability {
 
     @Override
     public boolean activate() {
-        if (playfield.getPoints() >= startValue) {
+        Logger.warn("Ability!");
+        if (playfield.getPoints() >= startValue){
+            Logger.info("ability activate?");
             playfield.getPointsForAbilities().removePoints(startValue);
             action();
             usedAbility();
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     @Override

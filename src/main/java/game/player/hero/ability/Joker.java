@@ -10,7 +10,7 @@ public class Joker implements Ability {
     private Playfield playfield;
 
     public Joker(Playfield playfield) {
-        this.startValue = 15;
+        this.startValue = 10;
         this.playfield = playfield;
     }
 
