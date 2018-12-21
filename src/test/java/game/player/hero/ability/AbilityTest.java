@@ -28,7 +28,8 @@ public class AbilityTest {
 
     @Test
     public void receiveNumberOfTimesUsed1() {
-        points.addPoints(500);
+        points.addPoints(10);
+        ability1.getPlayfield().setPoints(points);
         //ability1.abilityIsReadyToUse(points);
         ability1.activate();
         assertEquals(1, ability1.getNumberOfTimesUsed());
@@ -36,12 +37,10 @@ public class AbilityTest {
 
     @Test
     public void receiveNumberOfTimesUsed2() {
-        points.addPoints(500);
-        //ability1.abilityIsReadyToUse(points);
-        ability1.activate();
 
-        for (int i = 0; i < 7; i++) {
-            points.addPoints(500);
+        for (int i = 0; i < 6; i++) {
+            points.addPoints(18);
+            ability2.getPlayfield().setPoints(points);
             //ability2.abilityIsReadyToUse(points);
             ability2.activate();
         }

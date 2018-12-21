@@ -1,5 +1,7 @@
 package game.player.hero.ability;
 
+import game.player.playfield.Playfield;
+
 public interface Ability {
 
     String getName();
@@ -15,6 +17,8 @@ public interface Ability {
     void action();
 
     void stopAction();
+
+    Playfield getPlayfield();
 
     @Override
     String toString();

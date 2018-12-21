@@ -25,6 +25,10 @@ public class CheeringCrowd implements Ability {
         return startValue;
     }
 
+    public Playfield getPlayfield() {
+        return playfield;
+    }
+
     @Override
     public int getNumberOfTimesUsed() {
         return numberOfTimesUsed;

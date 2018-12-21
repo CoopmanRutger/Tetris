@@ -57,6 +57,11 @@ public class Joker implements Ability {
     }
 
     @Override
+    public Playfield getPlayfield() {
+        return playfield;
+    }
+
+    @Override
     public String toString() {
         return "Joker{"
             + ", startValue=" + startValue
