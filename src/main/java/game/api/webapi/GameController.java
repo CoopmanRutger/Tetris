@@ -86,28 +86,18 @@ public class GameController extends AbstractVerticle {
         game.addPlayer(player2.getPlayer());
 
 
-       Ability ability1 = new CheeringCrowd(playfield1);
-       Ability ability2 = new Joker(playfield1);
-       Ability ability3 = new Joker(playfield2);
-       Ability ability4 = new CheeringCrowd(playfield2);;
+        player1.getPlayer().setHero(hero1.getHero());
+        player2.getPlayer().setHero(hero2.getHero());
 
-       hero1.addAbility(ability2);
-       hero1.addAbility(ability1);
-       hero2.addAbility(ability3);
-       hero2.addAbility(ability4);
+        player1.getPlayer().addPlayfield(player1.getUsername(), playfield1);
+        player1.getPlayer().addPlayfield(player2.getUsername(), playfield2);
 
-       player1.setHero(hero1);
-       player2.setHero(hero2);
+        player2.getPlayer().addPlayfield(player2.getUsername(), playfield2);
+        player2.getPlayer().addPlayfield(player1.getUsername(), playfield1);
 
-        player1.addPlayfield(username1, playfield1);
-        player1.addPlayfield(username2, playfield2);
-
-        player2.addPlayfield(username2, playfield2);
-        player2.addPlayfield(username1, playfield1);
-
-        game = new Game(events);
-        game.addPlayer(player1);
-        game.addPlayer(player2);
+        game = new Game(intel.getEvents());
+        game.addPlayer(player1.getPlayer());
+        game.addPlayer(player2.getPlayer());
 
     }
 }

@@ -12,6 +12,7 @@ public class Playfield {
 
     private static final String NEWLINE = "\n";
     private static final Integer ONE = 1;
+    private static final int TEN = 10;
     // hoogte 20 en breedte 12
     private List<List<Integer>> playfieldList;
     private Score score;
@@ -261,7 +262,7 @@ public class Playfield {
     }
 
     public void setGameSpeed(int gameSpeed) {
-        if (gameSpeed > 10){
+        if (gameSpeed > TEN) {
             this.gameSpeed = gameSpeed;
         } else {
             this.gameSpeed = 10;

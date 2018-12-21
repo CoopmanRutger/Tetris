@@ -2,6 +2,7 @@ package game.player.hero.ability;
 
 import game.player.playfield.Playfield;
 import game.player.playfield.Score;
+import org.pmw.tinylog.Logger;
 
 public class CheeringCrowd implements Ability {
 
@@ -43,7 +44,7 @@ public class CheeringCrowd implements Ability {
     @Override
     public boolean activate() {
         Logger.warn("Ability!");
-        if (playfield.getPoints() >= startValue){
+        if (playfield.getPoints() >= startValue) {
             Logger.info("ability activate?");
             playfield.getPointsForAbilities().removePoints(startValue);
             action();

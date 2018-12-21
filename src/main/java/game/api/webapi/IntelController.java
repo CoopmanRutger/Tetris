@@ -17,6 +17,7 @@ public class IntelController {
 
     private Events events = new Events();
 
+
     public Events getEvents() {
         return events;
     }

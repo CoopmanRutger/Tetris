@@ -96,7 +96,7 @@ public class Routes extends AbstractVerticle {
     private void timer(int seconds) {
         final int[] counter = {0};
         counter[0] = seconds;
-        java.util.Timer timer = new Timer();
+        Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -104,7 +104,7 @@ public class Routes extends AbstractVerticle {
                 JsonObject json = new JsonObject();
                 json.put("timeInSeconds", counter[0]);
                 eb.send("tetris-21.socket.battleField.timer", json.encode());
-                System.out.println(counter[0]);
+                Logger.info(counter[0]);
                 if (counter[0] <= 0) {
                     timer.cancel();
                     // TODO: check for winner.
@@ -131,8 +131,7 @@ public class Routes extends AbstractVerticle {
             timeTheEvent((long) 10000, joker);
         }
 
-        System.out.println(canActivate);
-        message.reply(canActivate);
+        message.reply(couldActivate);
     }
 
     private void timeTheEvent(Long seconds, Ability ability) {
