@@ -1,0 +1,218 @@
+@font-face {
+    font-family: Orbitron;
+    src: url(../media/font/Orbitron-Regular.ttf);
+}
+
+body {
+    background: url("../media/bg.png") no-repeat;
+    background-size: cover;
+    margin-top: 10%;
+    color: white;
+}
+
+header {
+    position: absolute;
+    margin-top: -5%;
+    left: 40%;
+    text-align: center;
+    width: 300px;
+}
+
+header div {
+    margin: auto 10px auto 10px;
+
+}
+
+header div p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: red;
+}
+
+
+strong {
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(103, 0, 1);
+}
+
+.key {
+    width: 20%;
+}
+
+#time {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+}
+
+#linesPlayer1, #linesPlayer2 {
+    text-align: center;
+    padding: 35px;
+    position: absolute;
+    border: rgb(103, 0, 1) solid 5px;
+}
+
+#linesPlayer1 {
+    /*left: 39.9%;*/
+    margin-left: 10px;
+}
+
+#linesPlayer2 {
+    right: 39.5%;
+}
+
+#heroplayer1, #heroplayer2 {
+    position: absolute;
+    margin-top: 20%;
+    font-size: 1.2rem;
+    border: none;
+}
+
+#heroplayer1 > p, #heroplayer2 > p {
+    border: rgb(103, 0, 1) solid 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background: linear-gradient(to right, rgba(0,0,139,0.5), rgba(103, 0, 1, 1)) no-repeat;
+}
+
+#heroplayer1 {
+    /*left: 39.9%;*/
+    margin-left: 10px;
+}
+
+#heroplayer2 {
+    right: 39.5%;
+}
+
+#heroimgplayer2, #heroimgplayer1 {
+    position: absolute;
+    padding: 0;
+    border: none;
+    margin-top: 10%;
+    width: 8%;
+}
+
+#heroimgplayer1 {
+    /*left: 39.9%;*/
+    margin-left: 10px;
+}
+
+#heroimgplayer2 {
+    right: 39.5%;
+}
+
+#heroimgplayer2 img, #heroimgplayer1 img {
+    width: 100%;
+}
+
+#player1name, #player2name {
+    position: absolute;
+    padding: 10px;
+}
+
+.canvas_wrap {
+    display: inline;
+    margin-left: 22.5%;
+    padding-top: 25px;
+}
+
+.canvas_wrap > * {
+    display: inline;
+    margin: 0 auto;
+    border: rgb(103, 0, 1) solid 5px;
+    border-radius: 10px;
+}
+
+/* The Modal (background) */
+#openmodal {
+    position: fixed;
+    font-size: 1.2rem;
+    bottom: 0.3%;
+    right: 12%;
+    width: 100px;
+    padding: 4px;
+    border-radius: 10px;
+    background: whitesmoke;
+    text-decoration: none;
+    display: block;
+    border: none;
+    color: black;
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    color: black;
+}
+
+/*--------------------------------------------------------------------
+--------------------------CSS FOR MODAL BOX---------------------------
+--------------------------------------------------------------------*/
+
+.modal-content {
+    background-color: whitesmoke;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; /* Could be more or less, depending on screen size */
+    text-align: center;
+}
+
+.modal-content a {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background: #d00;
+    border: none;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* CSS for pause */
+
+#pause {
+    color: rgb(103, 0, 1);
+    font-size: 2em;
+}
+
+#pauseModal {
+    display: none;
+}
+
+.pause {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#pauseContent {
+    font-size: 2rem;
+    line-height: 120%;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 15%;
+}
