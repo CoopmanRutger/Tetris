@@ -12,10 +12,12 @@ public class AbilityReset implements Event {
         this.trigger = trigger;
     }
 
+    @Override
     public Trigger getTrigger() {
         return trigger;
     }
 
+    @Override
     public void activate() {
         if (getTrigger() == Trigger.SCORE) {
             activateOnScore();

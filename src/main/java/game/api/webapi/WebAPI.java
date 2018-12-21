@@ -4,6 +4,7 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.StaticHandler;
+import org.pmw.tinylog.Logger;
 
 
 public class WebAPI extends AbstractVerticle {
@@ -16,7 +17,7 @@ public class WebAPI extends AbstractVerticle {
 
     @Override
     public void start() {
-        System.out.println("webApi");
+        Logger.info("webApi");
         HttpServer server = vertx.createHttpServer();
         Router router = Router.router(vertx);
 

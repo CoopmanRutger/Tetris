@@ -17,10 +17,12 @@ public class Tornado implements Event {
         this.playfield = playfield;
     }
 
+    @Override
     public Trigger getTrigger() {
         return trigger;
     }
 
+    @Override
     public void activate() {
         activateOnTime();
     }

@@ -2,22 +2,25 @@ package game.player.playfield;
 
 public class Score {
 
-    private int score;
+    private static final int TWO = 2;
+    private static final int THREE = 3;
+    private static final int FOUR = 4;
+    private int scoreAmount;
     private int doubleScore;
     private int amountOfLines;
 
     public Score() {
-        score = 0;
+        scoreAmount = 0;
         doubleScore = 1;
         amountOfLines = 0;
     }
 
     public int getScore() {
-        return score;
+        return scoreAmount;
     }
 
-    void setScore(int score) {
-        this.score = score;
+    void setScore(int scoreAmount) {
+        this.scoreAmount = scoreAmount;
     }
 
     public void updateScore(int extraScore, PointsForAbilities points) {
@@ -29,11 +32,11 @@ public class Score {
 
     void extraScoreForMultipleLines(int amountOfCompletedLines, PointsForAbilities points) {
         int extraScore = 0;
-        if (amountOfCompletedLines == 2) {
+        if (amountOfCompletedLines == TWO) {
             extraScore = doubleScore * (200 * 2 - 200);
-        } else if (amountOfCompletedLines == 3) {
+        } else if (amountOfCompletedLines == THREE) {
             extraScore = doubleScore * (300 * 3 - 300);
-        } else if (amountOfCompletedLines == 4) {
+        } else if (amountOfCompletedLines == FOUR) {
             extraScore = doubleScore * (400 * 4 - 400);
         }
         setScore(getScore() + extraScore);
@@ -50,6 +53,6 @@ public class Score {
 
     @Override
     public String toString() {
-        return " " + score;
+        return " " + scoreAmount;
     }
 }

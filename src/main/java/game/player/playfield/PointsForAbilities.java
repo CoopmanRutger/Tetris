@@ -1,12 +1,8 @@
 package game.player.playfield;
 
-import game.player.hero.ability.Ability;
-
 public class PointsForAbilities {
 
     private int points;
-    private Ability abilityLvl1;
-    private Ability abilityLvl2;
 
     public PointsForAbilities() {
         this.points = 0;

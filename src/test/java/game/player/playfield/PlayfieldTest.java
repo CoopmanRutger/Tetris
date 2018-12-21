@@ -17,7 +17,7 @@ public class PlayfieldTest  {
     @Before
     public void initiate() {
         playfield = new Playfield(20, 10);
-        block = new Block(TypesOfBlocks.lBlock, "black");
+        block = new Block(TypesOfBlocks.LBLOCK, "black");
         block.makeBlock(2, 0, 1, 3);
     }
 

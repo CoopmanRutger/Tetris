@@ -1,33 +1,36 @@
 package game.player.info;
 
+import org.pmw.tinylog.Logger;
+
 public class Lifepoints {
 
-    private int lifePoints;
+    private static final int FIFTEEN = 15;
+    private int lifepointsAmount;
     private Thread thread;
 
     public Lifepoints() {
-        lifePoints = 10;
+        lifepointsAmount = 10;
     }
 
     public int getLifePoints() {
-        if (lifePoints < 15) {
+        if (lifepointsAmount < FIFTEEN) {
             addAutomaticLifePoints();
         }
-        return lifePoints;
+        return lifepointsAmount;
     }
 
     public void addLifePoint() {
         // max 15 levens
-        if (lifePoints < 15) {
-            lifePoints++;
+        if (lifepointsAmount < FIFTEEN) {
+            lifepointsAmount++;
         } else {
             thread.interrupt();
         }
     }
 
     public boolean removeLifePoint() {
-        if (lifePoints > 0) {
-            lifePoints--;
+        if (lifepointsAmount > 0) {
+            lifepointsAmount--;
             // you can play
             return true;
         }
@@ -45,14 +48,14 @@ public class Lifepoints {
                     Thread.sleep(500);
                 }
             } catch (InterruptedException ignored) {
-                ignored.getMessage();
+                Logger.info(ignored.getMessage());
             }
         });
     }
 
     @Override
     public String toString() {
-        return Integer.toString(lifePoints);
+        return Integer.toString(lifepointsAmount);
     }
 }
 

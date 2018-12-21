@@ -8,14 +8,15 @@ import java.util.List;
 public class Block {
 
 
+    private static final String BRACE = " }";
     private TypesOfBlocks typeOfBlock;
     private String color;
     private int xValue;
     private int yValue;
-    private List<List<Integer>> block;
+    private List<List<Integer>> blockList;
 
-    public Block(List<List<Integer>> block) {
-        this.block = block;
+    public Block(List<List<Integer>> blockList) {
+        this.blockList = blockList;
     }
 
     public Block(TypesOfBlocks typeOfBlock, String color) {
@@ -23,7 +24,7 @@ public class Block {
         this.color = color;
         this.xValue = 0;
         this.yValue = 0;
-        block = new ArrayList<>();
+        blockList = new ArrayList<>();
     }
 
     public Block(Block newblock) {
@@ -31,7 +32,7 @@ public class Block {
         this.xValue = 0;
         this.yValue = 0;
         this.color = newblock.color;
-        this.block = new ArrayList<>(newblock.getBlock());
+        this.blockList = new ArrayList<>(newblock.getBlock());
     }
 
     public void makeBlock(int startPositionForTopLine, int startPositionForBottomLine,
@@ -70,11 +71,11 @@ public class Block {
                 blockSize.add(0);
             }
         }
-        block.add(blockSize);
+        blockList.add(blockSize);
     }
 
     public List<List<Integer>> getBlock() {
-        return Collections.unmodifiableList(block);
+        return Collections.unmodifiableList(blockList);
     }
 
     public String getColor() {
@@ -100,15 +101,15 @@ public class Block {
     public void rotateLeft() {
         List<List<Integer>> blockAfterTurn = new ArrayList<>();
 
-        for (int i = block.get(0).size() - 1; i >= 0; i--) {
+        for (int i = blockList.get(0).size() - 1; i >= 0; i--) {
             blockAfterTurn.add(makeLineForLeftRotation(i));
         }
-        block = blockAfterTurn;
+        blockList = blockAfterTurn;
     }
 
     private List<Integer> makeLineForLeftRotation(int i) {
         List<Integer> valuesAfterTurn = new ArrayList<>();
-        for (List<Integer> aBlock : block) {
+        for (List<Integer> aBlock : blockList) {
             if (aBlock.get(i) != 0) {
                 valuesAfterTurn.add(1);
             } else {
@@ -121,17 +122,16 @@ public class Block {
     public void rotateRight() {
         List<List<Integer>> blockAfterTurn = new ArrayList<>();
 
-        for (int i = 0; i < block.get(0).size(); i++) {
+        for (int i = 0; i < blockList.get(0).size(); i++) {
             blockAfterTurn.add(makeLineForRightRotation(i));
         }
-        block = blockAfterTurn;
-        System.out.println(block);
+        blockList = blockAfterTurn;
     }
 
     private List<Integer> makeLineForRightRotation(int index) {
         List<Integer> valuesAfterTurn = new ArrayList<>();
-        for (int j = block.size() - 1; j >= 0; j--) {
-            if (block.get(j).get(index) != 0) {
+        for (int j = blockList.size() - 1; j >= 0; j--) {
+            if (blockList.get(j).get(index) != 0) {
                 valuesAfterTurn.add(1);
             } else {
                 valuesAfterTurn.add(0);
@@ -143,14 +143,13 @@ public class Block {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        for (List<Integer> aBlock : block) {
+        for (List<Integer> aBlock : blockList) {
             res.append("{ ");
-            for (int j = 0; j < aBlock.size(); j++) {
-                res.append(aBlock.get(j));
+            for (Integer anABlock : aBlock) {
+                res.append(anABlock);
                 res.append(", ");
             }
-            res.append(" }");
-            res.append('\n');
+            res.append(BRACE).append('\n');
         }
         return res.toString();
     }

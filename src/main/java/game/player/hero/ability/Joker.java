@@ -4,8 +4,8 @@ import game.player.playfield.Playfield;
 
 public class Joker implements Ability {
 
-    private static int numberOfTimesUsed;
-    private final String name = "Joker";
+    private static final String NAME = "Joker";
+    private int numberOfTimesUsed;
     private int startValue;
     private Playfield playfield;
 
@@ -16,7 +16,7 @@ public class Joker implements Ability {
 
     @Override
     public String getName() {
-        return name;
+        return NAME;
     }
 
     @Override

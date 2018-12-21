@@ -55,13 +55,13 @@ public class Routes extends AbstractVerticle {
 
     private void addConsumers() {
         //        homescreen
-        eb.consumer("tetris-21.socket.homescreen", this::getPlayerName);
+        eb.consumer("tetris-21.socket.homescreen", this::receivePlayerName);
 
         //        shop get gold
-        eb.consumer("tetris-21.socket.gold", this::getGold);
+        eb.consumer("tetris-21.socket.gold", this::receiveGold);
 
         //        gameStart
-        eb.consumer("tetris-21.socket.gameStart.faction", this::getFaction);
+        eb.consumer("tetris-21.socket.gameStart.faction", this::receiveFaction);
 
         //        choose faction
         eb.consumer("tetris-21.socket.faction.choose", this::chooseFaction);
@@ -70,7 +70,7 @@ public class Routes extends AbstractVerticle {
         //        playfield
         eb.consumer("tetris-21.socket.gamestart", this::imReady);
 
-        eb.consumer("tetris-21.socket.battleField.getNewBlock", this::getNewBlock);
+        eb.consumer("tetris-21.socket.battleField.getNewBlock", this::receiveNewBlock);
         eb.consumer("tetris-21.socket.battleField.rotate", this::rotateBlock);
         eb.consumer("tetris-21.socket.battleField.blockOnField", this::blockOnField);
         eb.consumer("tetris-21.socket.battleField.evenements", this::evenements);
@@ -99,19 +99,19 @@ public class Routes extends AbstractVerticle {
         String otherUser = userMessage.getString("victim");
         String ability = userMessage.getString("ability");
 
-        String canActivate = null;
+        String couldActivate = null;
 
         if ("CheeringCrowd".equals(ability)) {
             CheeringCrowd cheeringCrowd = new CheeringCrowd(getPlayfieldByPlayerName(playername));
-            canActivate = String.valueOf(cheeringCrowd.activate());
+            couldActivate = String.valueOf(cheeringCrowd.activate());
             timeTheEvent((long) 20000, cheeringCrowd);
         } else if ("Joker".equals(ability)) {
             Joker joker = new Joker(getPlayfieldByPlayerName(otherUser));
-            canActivate = String.valueOf(joker.activate());
+            couldActivate = String.valueOf(joker.activate());
             timeTheEvent((long) 10000, joker);
         }
 
-        message.reply(canActivate);
+        message.reply(couldActivate);
     }
 
     private void timeTheEvent(Long seconds, Ability ability) {
@@ -138,7 +138,7 @@ public class Routes extends AbstractVerticle {
         String playerName1 = userMessage.getString("playerName1");
         String playerName2 = userMessage.getString("playerName2");
         String evenementName = userMessage.getString("evenement");
-        System.out.println(evenementName);
+        Logger.info(evenementName);
 
         List<List<Integer>> playfield1 = switchCaseEvenements(playerName1, evenementName);
         List<List<Integer>> playfield2 = switchCaseEvenements(playerName2, evenementName);
@@ -147,7 +147,7 @@ public class Routes extends AbstractVerticle {
         json.put(playerName1, playfield1);
         json.put(playerName2, playfield2);
 
-        System.out.println(json);
+        Logger.info(json);
         message.reply(json.encode());
     }
 
@@ -204,7 +204,7 @@ public class Routes extends AbstractVerticle {
     }
 
 
-    private void getNewBlock(Message message) {
+    private void receiveNewBlock(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
         String playername = userMessage.getString(PLAYERNAME);
 
@@ -255,8 +255,8 @@ public class Routes extends AbstractVerticle {
     }
 
 
-    private void getGold(Message message) {
-        System.out.println(message.body());
+    private void receiveGold(Message message) {
+        Logger.info(message.body());
         int userId = (int) message.body();
         Database.getDB().getConsumerHandlers(controller).receiveGold(userId, eb);
 
@@ -300,9 +300,9 @@ public class Routes extends AbstractVerticle {
         message.reply(username);
     }
 
-    private void getPlayerName(Message message) {
+    private void receivePlayerName(Message message) {
         String username = message.body().toString();
-        System.out.println(username);
+        Logger.info(username);
         message.reply(username);
 
         Database.getDB()
@@ -310,9 +310,9 @@ public class Routes extends AbstractVerticle {
             .receivePlayerInfo(username, eb);
     }
 
-    private void getFaction(Message message) {
+    private void receiveFaction(Message message) {
         int playerId = (int) message.body();
-        System.out.println(playerId);
+        Logger.info(playerId);
         message.reply("going to look for " + playerId);
 
         Database.getDB()
@@ -324,7 +324,7 @@ public class Routes extends AbstractVerticle {
 
     public void chooseFaction(Message message) {
         JsonObject userMessage = new JsonObject(message.body().toString());
-        System.out.println(userMessage);
+        Logger.info(userMessage);
         int factionId = userMessage.getInteger("factionId");
         int userId = Integer.parseInt(userMessage.getString("userId"));
 
@@ -352,7 +352,7 @@ public class Routes extends AbstractVerticle {
 
 
     private void imReady(Message message) {
-        System.out.println(game);
+        Logger.info(game);
         eb.send("tetris-21.socket.game", Json.encode(game));
         message.reply("okey");
 

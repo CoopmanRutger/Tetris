@@ -1,6 +1,7 @@
 package game.player.hero;
 
 import game.player.hero.ability.Ability;
+import org.pmw.tinylog.Logger;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -32,7 +33,7 @@ public class Hero {
         if (abilitySet.size() < 2 && !abilitySet.contains(ability)) {
             abilitySet.add(ability);
         } else {
-            System.out.println("Je hebt er al 2 verschillende abilities OF de ability heb je al");
+            Logger.warn("Je hebt er al 2 verschillende abilities OF de ability heb je al");
         }
     }
 
@@ -40,7 +41,7 @@ public class Hero {
         if (abilitySet.contains(ability)) {
             abilitySet.remove(ability);
         } else {
-            System.out.println("deze ability zit niet in je verzameling dus kan je er ook niet uitsmijten.");
+            Logger.warn("deze ability zit niet in je verzameling dus kan je er ook niet uitsmijten.");
         }
     }
 

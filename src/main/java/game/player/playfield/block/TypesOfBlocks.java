@@ -1,19 +1,19 @@
 package game.player.playfield.block;
 
 public enum TypesOfBlocks {
-    lineBlock, inverseLBlock, lBlock, squareBlock, leftNBlock, tBlock, zBlock, specialBlock
+    LINEBLOCK, INVERSELBLOCK, LBLOCK, SQUAREBLOCK, LEFTNBLOCK, TBLOCK, ZBLOCK, SPECIALBLOCK
 
     // lineblock { 1, 1, 1, 1}
-    // inverseLBlock { 1, 0, 0 , 0 }
+    // INVERSELBLOCK { 1, 0, 0 , 0 }
     //               { 1, 1, 1, 0 }
-    // lBlock { 0, 0, 1, 0 }
+    // LBLOCK { 0, 0, 1, 0 }
     //        { 1, 1, 1, 0 }
-    // squareBlock { 1, 1, 0, 0 }
+    // SQUAREBLOCK { 1, 1, 0, 0 }
     //             { 1, 1, 0, 0 }
-    // leftNBlock { 0, 1, 1, 0 }
+    // LEFTNBLOCK { 0, 1, 1, 0 }
     //            { 1, 1, 0, 0 }
-    // tBlock { 0, 1, 0, 0 }
+    // TBLOCK { 0, 1, 0, 0 }
     //        { 1, 1, 1, 0}
-    // zBlock { 1, 1, 0, 0 }
+    // ZBLOCK { 1, 1, 0, 0 }
     //        { 0, 1, 1, 0 }
 }

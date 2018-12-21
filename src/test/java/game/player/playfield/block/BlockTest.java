@@ -10,7 +10,7 @@ public class BlockTest {
 
     @Test
     public void testMakeBlock() {
-        Block block = new Block(TypesOfBlocks.tBlock, "blauw");
+        Block block = new Block(TypesOfBlocks.TBLOCK, "blauw");
         block.makeBlock(1, 0, 1, 3);
 
         int blockValue = block.getBlock().get(0).get(0);
@@ -40,7 +40,7 @@ public class BlockTest {
 
     @Test
     public void testRotateRight() {
-        Block block = new Block(TypesOfBlocks.inverseLBlock, "blauw");
+        Block block = new Block(TypesOfBlocks.INVERSELBLOCK, "blauw");
         block.makeBlock(0, 0, 1, 3);
         block.rotateRight();
 

@@ -19,35 +19,34 @@ public class ConsumerHandlers {
     //private static final String GETCLAN = "SELECT * FROM clans WHERE name = ?";
     private static final String GETPASSWORD = "SELECT password FROM users WHERE username = ?";
     private static final String USEREXISTS = "select * from users where username = ?";
+    private static final String GETGOLD = "SELECT gold FROM USERS "
+        + "WHERE Userid = ?";
 
-    private StringLines lines = new StringLines();
-    private JDBCClient jdbcClient;
-    private GameController controller;
-
-    private final String getBasic = "SELECT * FROM factions "
+    private static final String GETBASIC = "SELECT * FROM factions "
         + "Left join clans on factions.factionnr = clans.factionnr "
         + "Left join factions_users ON factions.factionNr= factions_users.factionNr "
         + "Left Join users on factions_users.userid = users.userid "
         + " WHERE users.userid = ? ";
 
-    //private final String chooseFaction = "INSERT INTO clan_user(clanNr, userId) VALUES (?, ?)";
+    //private static final String CHOOSEFACTION = "INSERT INTO clan_user(clanNr, userId) VALUES (?, ?)";
 
-    private final String getUser = "select * from users "
+    private static final String GETUSER = "select * from users "
         + "left join players on users.userid = players.userid "
         + "WHERE username = ?";
-    private final String makeLogin = "INSERT INTO users (username, email, password, gold) "
+    private static final String MAKELOGIN = "INSERT INTO users (username, email, password, gold) "
         + "VALUES (?, ?, ?, ?)";
 
-    private final String makeFaction = "UPDATE FACTIONS_USERS "
+    private static final String MAKEFACTION = "UPDATE FACTIONS_USERS "
         + "SET Factionnr = ?, userid= ? WHERE userid = ?";
 
-    private final String getGold = "SELECT gold FROM USERS "
-        + "WHERE Userid = ?";
-
-    private final String makeRandomFaction = "insert into FACTIONS_USERS  ( factionnr, userid) "
+    private static final String MAKERANDOMFACTION = "insert into FACTIONS_USERS  ( factionnr, userid) "
         + "values( 5, ?)";
-    private final String makePlayerName = "INSERT INTO players (userid, PLAYERNAME, xp, level)"
+    private static final String MAKEPLAYERNAME = "INSERT INTO players (userid, PLAYERNAME, xp, level)"
         + "VALUES ((select max(userid) from users), ?, 0 , 1)";
+
+    private StringLines lines = new StringLines();
+    private JDBCClient jdbcClient;
+    private GameController controller;
 
     public ConsumerHandlers() {
         this(null);
@@ -61,7 +60,7 @@ public class ConsumerHandlers {
 
     public void receivePlayerInfo(String username, EventBus eb) {
         final JsonArray[] params = {new JsonArray().add(username)};
-        jdbcClient.queryWithParams(getUser, params[0],
+        jdbcClient.queryWithParams(GETUSER, params[0],
             res -> {
                 final JsonObject player = new JsonObject();
                 if (res.succeeded()) {
@@ -86,7 +85,7 @@ public class ConsumerHandlers {
 
     private void insertRandomFaction(int userId) {
         final JsonArray[] params = {new JsonArray().add(userId)};
-        jdbcClient.queryWithParams(makeRandomFaction, params[0],
+        jdbcClient.queryWithParams(MAKERANDOMFACTION, params[0],
             res -> {
                 if (res.succeeded()) {
                     Logger.info("check");
@@ -100,7 +99,7 @@ public class ConsumerHandlers {
     public void receiveGold(int userId, EventBus eb) {
         JsonObject reponse = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(userId)};
-        jdbcClient.queryWithParams(getGold, params[0],
+        jdbcClient.queryWithParams(GETGOLD, params[0],
             res -> {
                 if (res.succeeded()) {
                     ResultSet rs = res.result();
@@ -115,7 +114,7 @@ public class ConsumerHandlers {
 
     public void insertFaction(int factionNr, int userId) {
         JsonArray params = new JsonArray().add(factionNr).add(userId).add(userId);
-        jdbcClient.updateWithParams(makeFaction, params, res -> {
+        jdbcClient.updateWithParams(MAKEFACTION, params, res -> {
             Logger.info(res.succeeded());
             if (res.succeeded()) {
                 UpdateResult updateResult = res.result();
@@ -155,7 +154,7 @@ public class ConsumerHandlers {
     public void receiveBasic(int playerId, EventBus eb) {
         JsonObject reponse = new JsonObject();
         final JsonArray[] params = {new JsonArray().add(playerId)};
-        jdbcClient.queryWithParams(getBasic, params[0],
+        jdbcClient.queryWithParams(GETBASIC, params[0],
             res -> {
                 if (res.succeeded()) {
                     ResultSet rs = res.result();
@@ -210,7 +209,7 @@ public class ConsumerHandlers {
             .add(email)
             .add(hashedPassword)
             .add(0)};
-        jdbcClient.queryWithParams(makeLogin, params[0], res -> {
+        jdbcClient.queryWithParams(MAKELOGIN, params[0], res -> {
             if (res.succeeded()) {
                 couldLogin.put(lines.getRegister(), lines.getTrue());
             } else {
@@ -223,7 +222,7 @@ public class ConsumerHandlers {
 
     public void makePlayer(String playername) {
         final JsonArray[] params = {new JsonArray().add(playername)};
-        jdbcClient.queryWithParams(makePlayerName, params[0], res -> {
+        jdbcClient.queryWithParams(MAKEPLAYERNAME, params[0], res -> {
             if (res.succeeded()) {
                 Logger.info("Player was made.");
             } else {
@@ -277,7 +276,7 @@ public class ConsumerHandlers {
     //    private String getUserid(String playerName) {
     //        final String[] userId = new String[1];
     //        JsonArray params = new JsonArray().add(playerName);
-    //        jdbcClient.queryWithParams(getUser, params, res -> {
+    //        jdbcClient.queryWithParams(GETUSER, params, res -> {
     //            if (res.succeeded()) {
     //                ResultSet rs = res.result();
     //                List<JsonObject> rows = rs.getRows();

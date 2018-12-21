@@ -16,5 +16,6 @@ public interface Ability {
 
     void stopAction();
 
+    @Override
     String toString();
 }

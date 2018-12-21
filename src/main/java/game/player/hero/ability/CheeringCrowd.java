@@ -5,8 +5,8 @@ import game.player.playfield.Score;
 
 public class CheeringCrowd implements Ability {
 
-    private static int numberOfTimesUsed;
-    private final String name = "CheerCrowd";
+    private static final String NAME = "CheerCrowd";
+    private int numberOfTimesUsed;
     private int startValue;
     private Playfield playfield;
 
@@ -17,7 +17,7 @@ public class CheeringCrowd implements Ability {
 
     @Override
     public String getName() {
-        return name;
+        return NAME;
     }
 
     @Override

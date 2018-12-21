@@ -11,8 +11,9 @@ import java.util.Objects;
 public class Playfield {
 
     private static final String NEWLINE = "\n";
+    private static final Integer ONE = 1;
     // hoogte 20 en breedte 12
-    private List<List<Integer>> playfield;
+    private List<List<Integer>> playfieldList;
     private Score score;
     private PointsForAbilities points;
     private Blocks blocks;
@@ -22,7 +23,7 @@ public class Playfield {
     private boolean blinded;
 
     public Playfield(int height, int width) {
-        playfield = new ArrayList<>();
+        playfieldList = new ArrayList<>();
         score = new Score();
         points = new PointsForAbilities();
         blocks = new Blocks();
@@ -32,8 +33,8 @@ public class Playfield {
         makeStandardPlayfield(height, width);
     }
 
-    public Playfield(List<List<Integer>> playfield) {
-        this.playfield = new ArrayList<>(playfield);
+    public Playfield(List<List<Integer>> playfieldList) {
+        this.playfieldList = new ArrayList<>(playfieldList);
         score = new Score();
         points = new PointsForAbilities();
         blocks = new Blocks();
@@ -62,8 +63,8 @@ public class Playfield {
         score.setScore(previousScore + extraScore);
     }
 
-    public void setPlayfield(List<List<Integer>> playfield) {
-        this.playfield = playfield;
+    public void setPlayfield(List<List<Integer>> playfieldList) {
+        this.playfieldList = playfieldList;
     }
 
     private void makeStandardPlayfield(int height, int width) {
@@ -72,16 +73,20 @@ public class Playfield {
 
     public void makePlayfield(int height, int width) {
         for (int i = 0; i < height; i++) {
-            List<Integer> playWidth = new ArrayList<>();
+            List<Integer> playWidth = createNewArraylist();
             for (int j = 0; j < width; j++) {
                 playWidth.add(0);
             }
-            playfield.add(playWidth);
+            playfieldList.add(playWidth);
         }
     }
 
+    private List<Integer> createNewArraylist() {
+        return new ArrayList<>();
+    }
+
     public List<List<Integer>> getPlayfield() {
-        return Collections.unmodifiableList(playfield);
+        return Collections.unmodifiableList(playfieldList);
     }
 
     public Block newBlock() {
@@ -92,18 +97,18 @@ public class Playfield {
     }
 
     public void putOnPlayField(int xPos, int yPos) {
-        boolean putItOnField = false;
+        //boolean putItOnField = false;
         Logger.info("block" + currentBlock);
         if (positionAvailable(xPos, yPos, currentBlock)) {
-            putItOnField = positionAvailable(xPos, yPos, currentBlock);
+            //putItOnField = positionAvailable(xPos, yPos, currentBlock);
             Logger.info("avaible YES");
             List<List<Integer>> block = currentBlock.getBlock();
             int newYPos = yPos;
             int newXPos = xPos;
-            for (int i = 0; i <= block.size() - 1; i++) {
-                for (int j = 0; j < block.get(i).size(); j++) {
-                    if (block.get(i).get(j) != 0) {
-                        playfield.get(newYPos).set(newXPos, 1);
+            for (List<Integer> integer : block) {
+                for (Integer anInteger : integer) {
+                    if (anInteger != 0) {
+                        playfieldList.get(newYPos).set(newXPos, 1);
                     }
                     newXPos++;
                 }
@@ -124,7 +129,7 @@ public class Playfield {
         for (int i = controlBlock.size() - 1; i >= 0; i--) {
             for (int j = 0; j < controlBlock.get(i).size(); j++) {
                 if (controlBlock.get(i).get(j) != 0) {
-                    if (playfield.get(newYPos).get(newXPos) == 0) {
+                    if (playfieldList.get(newYPos).get(newXPos) == 0) {
                         newXPos++;
                     } else {
                         return false;
@@ -141,13 +146,13 @@ public class Playfield {
         int amountOf1s = 0;
         int amountOfCompletedLines = 0;
         int completedLine = -1;
-        for (int i = 0; i < playfield.size(); i++) {
-            for (int j = 0; j < playfield.get(i).size(); j++) {
-                if (playfield.get(i).get(j) == 1) {
+        for (int i = 0; i < playfieldList.size(); i++) {
+            for (int j = 0; j < playfieldList.get(i).size(); j++) {
+                if (playfieldList.get(i).get(j).equals(ONE)) {
                     amountOf1s++;
                 }
             }
-            if (amountOf1s == playfield.get(10).size()) {
+            if (amountOf1s == playfieldList.get(10).size()) {
                 scoreForCompletedLine();
                 completedLine = i;
                 amountOfCompletedLines++;
@@ -156,7 +161,7 @@ public class Playfield {
             amountOf1s = 0;
         }
 
-        if (amountOfCompletedLines > 1) {
+        if (amountOfCompletedLines > ONE) {
             score.extraScoreForMultipleLines(amountOfCompletedLines, points);
         }
 
@@ -167,9 +172,9 @@ public class Playfield {
     }
 
     private void removeCompletedLine(int completedLine) {
-        playfield.remove(completedLine);
-        int widthOfField = playfield.get(10).size();
-        playfield.add(1, makeLine(widthOfField));
+        playfieldList.remove(completedLine);
+        int widthOfField = playfieldList.get(10).size();
+        playfieldList.add(1, makeLine(widthOfField));
     }
 
     private List<Integer> makeLine(int size) {
@@ -177,12 +182,16 @@ public class Playfield {
         for (int i = 0; i < size; i++) {
             blocks.add(0);
         }
-        System.out.println(blocks);
+        Logger.info(blocks);
         return blocks;
     }
 
+    public boolean isBlinded() {
+        return blinded;
+    }
+
     void putLineOnField(int line, List<Integer> completeLine) {
-        playfield.set(line, completeLine);
+        playfieldList.set(line, completeLine);
     }
 
     public Score getScoreByName() {
@@ -214,14 +223,14 @@ public class Playfield {
             return false;
         }
         Playfield playfield1 = (Playfield) o;
-        return Objects.equals(playfield, playfield1.playfield)
+        return Objects.equals(playfieldList, playfield1.playfieldList)
             && Objects.equals(score, playfield1.score);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(playfield, score);
+        return Objects.hash(playfieldList, score);
     }
 
     @Override
@@ -231,7 +240,7 @@ public class Playfield {
             .append("playfield ")
             .append(NEWLINE);
         int number = 0;
-        for (List<Integer> list : playfield) {
+        for (List<Integer> list : playfieldList) {
             stringBuilder.append(number).append(list).append(NEWLINE);
             number++;
         }
