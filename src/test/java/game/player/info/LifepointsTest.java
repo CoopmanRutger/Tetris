@@ -21,7 +21,6 @@ public class LifepointsTest {
 
     @Test
     public void addLifePoint1() {
-        receiveLifePoints();
         for (int i = 0; i < 3; i++) {
             lifepoints.addLifePoint();
         }
@@ -30,16 +29,11 @@ public class LifepointsTest {
 
     @Test
     public void addLifePoint2() {
-        for (int i = 0; i < 3; i++) {
-            lifepoints.addLifePoint();
-        }
-
         // testen boven 15 gaat niet
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             lifepoints.addLifePoint();
         }
-
-        assertEquals(15, lifepoints.getLifePoints());
+        
     }
 
     @Test

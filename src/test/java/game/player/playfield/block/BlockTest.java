@@ -36,15 +36,6 @@ public class BlockTest {
     }
 
     @Test
-    public void testMakeBlock3() {
-        Block block = new Block(TypesOfBlocks.TBLOCK, BLAUW);
-        block.makeBlock(1, 0, 1, 3);
-
-        int blockValue3 = block.getBlock().get(0).get(3);
-        assertEquals(0, blockValue3);
-    }
-
-    @Test
     public void testMakeBlock4() {
         Block block = new Block(TypesOfBlocks.TBLOCK, BLAUW);
         block.makeBlock(1, 0, 1, 3);
@@ -69,15 +60,6 @@ public class BlockTest {
 
         int blockValue6 = block.getBlock().get(1).get(2);
         assertEquals(1, blockValue6);
-    }
-
-    @Test
-    public void testMakeBlock7() {
-        Block block = new Block(TypesOfBlocks.TBLOCK, BLAUW);
-        block.makeBlock(1, 0, 1, 3);
-
-        int blockValue7 = block.getBlock().get(1).get(3);
-        assertEquals(0, blockValue7);
     }
 
     @Test
@@ -111,16 +93,6 @@ public class BlockTest {
     }
 
     @Test
-    public void testRotateRight3() {
-        Block block = new Block(TypesOfBlocks.INVERSELBLOCK, BLAUW);
-        block.makeBlock(0, 0, 1, 3);
-        block.rotateRight();
-
-        int blockValue3 = block.getBlock().get(3).get(0);
-        assertEquals(0, blockValue3);
-    }
-
-    @Test
     public void testRotateRight4() {
         Block block = new Block(TypesOfBlocks.INVERSELBLOCK, BLAUW);
         block.makeBlock(0, 0, 1, 3);
@@ -148,16 +120,6 @@ public class BlockTest {
 
         int blockValue6 = block.getBlock().get(2).get(1);
         assertEquals(0, blockValue6);
-    }
-
-    @Test
-    public void testRotateRight7() {
-        Block block = new Block(TypesOfBlocks.INVERSELBLOCK, BLAUW);
-        block.makeBlock(0, 0, 1, 3);
-        block.rotateRight();
-
-        int blockValue7 = block.getBlock().get(3).get(1);
-        assertEquals(0, blockValue7);
     }
 
     //    @Test

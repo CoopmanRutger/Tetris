@@ -16,8 +16,6 @@ public class TornadoTest {
     @Test
     public void activate() {
         Player player = new Player(RUTGER123);
-        Event tornado = new Tornado(Trigger.TIME, player.getPlayfieldByName(player.getName()));
-
         List<List<Integer>> playfield = new ArrayList<>();
 
         for (int i = 0; i < 20; i++) {
@@ -36,6 +34,7 @@ public class TornadoTest {
 
         Playfield playerField = new Playfield(playfield);
         player.addPlayfield(RUTGER123, playerField);
+        Event tornado = new Tornado(Trigger.TIME, player.getPlayfieldByName(player.getName()));
 
         tornado.activate();
 

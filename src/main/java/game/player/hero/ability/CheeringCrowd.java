@@ -25,6 +25,7 @@ public class CheeringCrowd implements Ability {
         return startValue;
     }
 
+    @Override
     public Playfield getPlayfield() {
         return playfield;
     }

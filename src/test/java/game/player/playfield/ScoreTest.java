@@ -23,8 +23,8 @@ public class ScoreTest {
 
     @Test
     public void testUpdateScore2() {
-        score.updateScore(10, points);
-        score.updateScore(10, points);
+        score.updateScore(100, points);
+        score.updateScore(100, points);
         assertEquals(200, score.getScore());
     }
 

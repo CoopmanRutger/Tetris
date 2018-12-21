@@ -152,7 +152,7 @@ public class Playfield {
                     amountOf1s++;
                 }
             }
-            if (amountOf1s == playfieldList.get(10).size()) {
+            if (amountOf1s == playfieldList.get(i).size()) {
                 scoreForCompletedLine();
                 completedLine = i;
                 amountOfCompletedLines++;
@@ -212,6 +212,10 @@ public class Playfield {
 
     public void setBlinded(boolean blinded) {
         this.blinded = blinded;
+    }
+
+    public void setCurrentBlock(Block currentBlock) {
+        this.currentBlock = currentBlock;
     }
 
     @Override

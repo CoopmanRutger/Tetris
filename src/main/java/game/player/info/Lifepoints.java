@@ -25,6 +25,7 @@ public class Lifepoints {
             lifepointsAmount++;
         } else {
             thread.interrupt();
+            throw new IllegalStateException("Can't be more than 15");
         }
     }
 
