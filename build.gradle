@@ -61,7 +61,7 @@ csslint {
 mainClassName = 'io.vertx.core.Launcher'
 
 def vertxVersion = '3.5.4'
-def mainVerticleName = 'game.api.Tetris'
+def mainVerticleName = 'tetris.api.Tetris'
 
 configurations {
     htmlValidation

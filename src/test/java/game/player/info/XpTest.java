@@ -2,8 +2,9 @@ package game.player.info;
 
 import org.junit.Before;
 import org.junit.Test;
+import tetris.player.info.Xp;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class XpTest {
 

@@ -1,12 +1,15 @@
 package game.player.hero.ability;
 
-import game.player.Player;
-import game.player.playfield.Playfield;
-import game.player.playfield.PointsForAbilities;
 import org.junit.Before;
 import org.junit.Test;
+import tetris.player.Player;
+import tetris.player.hero.ability.Ability;
+import tetris.player.hero.ability.CheeringCrowd;
+import tetris.player.hero.ability.Joker;
+import tetris.player.playfield.Playfield;
+import tetris.player.playfield.PointsForAbilities;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AbilityTest {
 

@@ -1,6 +1,8 @@
 package game.player.playfield.block;
 
 import org.junit.Test;
+import tetris.player.playfield.block.Block;
+import tetris.player.playfield.block.TypesOfBlocks;
 
 import static org.junit.Assert.assertEquals;
 

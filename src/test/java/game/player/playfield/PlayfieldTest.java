@@ -1,14 +1,17 @@
 package game.player.playfield;
 
-import game.player.playfield.block.TypesOfBlocks;
-import game.player.playfield.block.Block;
 import org.junit.Before;
 import org.junit.Test;
+import tetris.player.playfield.Playfield;
+import tetris.player.playfield.Score;
+import tetris.player.playfield.block.Block;
+import tetris.player.playfield.block.TypesOfBlocks;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PlayfieldTest {
 

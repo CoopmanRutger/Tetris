@@ -1,8 +1,11 @@
 package game.events.event;
 
-import game.player.Player;
-import game.player.playfield.Playfield;
 import org.junit.Test;
+import tetris.events.event.Event;
+import tetris.events.event.Tornado;
+import tetris.events.event.Trigger;
+import tetris.player.Player;
+import tetris.player.playfield.Playfield;
 
 import java.util.ArrayList;
 import java.util.List;
