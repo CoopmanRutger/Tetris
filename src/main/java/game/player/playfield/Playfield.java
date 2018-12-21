@@ -242,10 +242,10 @@ public class Playfield {
     }
 
     public void setGameSpeed(int gameSpeed) {
-        if (gameSpeed > 0){
+        if (gameSpeed > 10){
             this.gameSpeed = gameSpeed;
         } else {
-            this.gameSpeed = 1;
+            this.gameSpeed = 10;
         }
     }
 }

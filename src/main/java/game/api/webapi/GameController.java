@@ -99,11 +99,11 @@ public class GameController extends AbstractVerticle {
 
        Ability ability1 = new CheeringCrowd(playfield1);
        Ability ability2 = new Joker(playfield1);
-       Ability ability3 = new CheeringCrowd(playfield2);
-       Ability ability4 = new Joker(playfield2);
+       Ability ability3 = new Joker(playfield2);
+       Ability ability4 = new CheeringCrowd(playfield2);;
 
-       hero1.addAbility(ability1);
        hero1.addAbility(ability2);
+       hero1.addAbility(ability1);
        hero2.addAbility(ability3);
        hero2.addAbility(ability4);
 

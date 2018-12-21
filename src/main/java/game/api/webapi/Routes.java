@@ -105,6 +105,7 @@ public class Routes extends AbstractVerticle {
             timeTheEvent((long) 10000, joker);
         }
 
+        System.out.println(canActivate);
         message.reply(canActivate);
     }
 
