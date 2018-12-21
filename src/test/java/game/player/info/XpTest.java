@@ -21,11 +21,18 @@ public class XpTest {
     }
 
     @Test
-    public void testCheckLevel() {
+    public void testCheckLevel1() {
         xp.updateXp();
         xp.updateXp();
         xp.updateXp();
         assertEquals(300, xp.getXp());
+    }
+
+    @Test
+    public void testCheckLevel2() {
+        xp.updateXp();
+        xp.updateXp();
+        xp.updateXp();
         assertEquals(2, xp.getLevel());
     }
 
