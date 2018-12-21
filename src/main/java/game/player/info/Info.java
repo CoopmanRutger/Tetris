@@ -7,12 +7,12 @@ package game.player.info;
 public class Info {
 
     private final Gold gold;
-    private final LifePoints lifepoints;
+    private final Lifepoints lifepoints;
     private final Xp xp;
 
     public Info() {
         gold = new Gold();
-        lifepoints = new LifePoints();
+        lifepoints = new Lifepoints();
         xp = new Xp();
     }
 
