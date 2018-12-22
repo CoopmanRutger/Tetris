@@ -31,13 +31,13 @@ function checkValues(e) {
         return;
     }
 
-    index(username, password);
+    login(username, password);
 }
 
 function mayPersonLogin(username) {
     if (loginAllowed === "true") {
         let loginValues = {username: username, login: loginAllowed};
-        sessionStorage.setItem("index", JSON.stringify(loginValues));
+        sessionStorage.setItem("login", JSON.stringify(loginValues));
         window.location.href = "homescreen.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";
@@ -45,7 +45,7 @@ function mayPersonLogin(username) {
     }
 }
 
-function index(username, password) {
+function login(username, password) {
     let loginValues = {username: username, password: password};
     console.log(JSON.stringify(loginValues));
     eb.send("tetris-21.socket.login", JSON.stringify(loginValues), function (error, reply) {

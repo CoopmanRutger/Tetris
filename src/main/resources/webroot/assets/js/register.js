@@ -71,10 +71,10 @@ function register(email, username, password, playername) {
 
 function registerMade() {
     if (loginMade === "true") {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";
-        document.querySelector("#errorMessage").innerHTML = "Could not make index.";
+        document.querySelector("#errorMessage").innerHTML = "Could not make login.";
     }
 }
 

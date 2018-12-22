@@ -15,7 +15,7 @@ function init() {
 }
 
 function f() {
-    let username = JSON.parse(sessionStorage.getItem('index')).username;
+    let username = JSON.parse(sessionStorage.getItem('login')).username;
     eb.send("tetris-21.socket.homescreen", username , function (error, reply) {
         if (error) {
             console.log(error)
