@@ -1,10 +1,10 @@
 @font-face {
     font-family: Orbitron;
-    src: url(../assets/media/font/Orbitron-Regular.ttf);
+    src: url("../media/font/Orbitron-Regular.ttf");
 }
 
 body {
-    background: url("../assets/media/bg.png") no-repeat;
+    background: url("../media/bg.png") no-repeat;
     background-size: cover;
     margin-top: 10%;
     color: white;

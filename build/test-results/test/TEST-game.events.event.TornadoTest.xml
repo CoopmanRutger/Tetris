@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.events.event.TornadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-22T17:37:20" hostname="Satan" time="0.016">
+<testsuite name="game.events.event.TornadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-22T18:14:05" hostname="Satan" time="0.008">
   <properties/>
-  <testcase name="activate" classname="game.events.event.TornadoTest" time="0.016"/>
+  <testcase name="activate" classname="game.events.event.TornadoTest" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

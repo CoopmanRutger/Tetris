@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.player.hero.ability.AbilityTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-12-22T17:37:20" hostname="Satan" time="0.059">
+<testsuite name="game.player.hero.ability.AbilityTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-12-22T18:14:05" hostname="Satan" time="0.032">
   <properties/>
-  <testcase name="activate" classname="game.player.hero.ability.AbilityTest" time="0.001"/>
+  <testcase name="activate" classname="game.player.hero.ability.AbilityTest" time="0.002"/>
   <testcase name="action" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
-  <testcase name="usedAbility" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
+  <testcase name="usedAbility" classname="game.player.hero.ability.AbilityTest" time="0.001"/>
   <testcase name="abilityIsReadyToUse" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
-  <testcase name="receiveNumberOfTimesUsed1" classname="game.player.hero.ability.AbilityTest" time="0.055"/>
-  <testcase name="receiveNumberOfTimesUsed2" classname="game.player.hero.ability.AbilityTest" time="0.001"/>
-  <system-out><![CDATA[2018-12-22 18:37:20 [Test worker] tetris.player.hero.ability.CheeringCrowd.activate()
+  <testcase name="receiveNumberOfTimesUsed1" classname="game.player.hero.ability.AbilityTest" time="0.029"/>
+  <testcase name="receiveNumberOfTimesUsed2" classname="game.player.hero.ability.AbilityTest" time="0.0"/>
+  <system-out><![CDATA[2018-12-22 19:14:05 [Test worker] tetris.player.hero.ability.CheeringCrowd.activate()
 INFO: ability activate?
 ]]></system-out>
-  <system-err><![CDATA[2018-12-22 18:37:20 [Test worker] tetris.player.hero.ability.CheeringCrowd.activate()
+  <system-err><![CDATA[2018-12-22 19:14:05 [Test worker] tetris.player.hero.ability.CheeringCrowd.activate()
 WARNING: Ability!
 ]]></system-err>
 </testsuite>
