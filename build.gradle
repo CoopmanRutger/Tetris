@@ -27,7 +27,7 @@ sourceSets {
 javascript.source {
     dev {
         js {
-            srcDir "src/main/resources/webroot/assets/js"
+            srcDir "src/main/resources/webroot/js"
             include "*.js"
             exclude "*.min.js"
         }
@@ -37,7 +37,7 @@ javascript.source {
 css.source {
     dev {
         css {
-            srcDir "src/main/resources/webroot/assets/styles"
+            srcDir "src/main/resources/webroot/styles"
             include "*.css"
             exclude "*.min.css"
         }
