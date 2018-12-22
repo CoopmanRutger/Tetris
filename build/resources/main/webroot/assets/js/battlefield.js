@@ -1,11 +1,11 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+//let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+let eb = new EventBus("http://172.21.22.52:8021/tetris-21/socket");
 // let eb = new EventBus("http://192.168.0.251:8021/tetris-21/socket");
 let game = {
-    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, speed: 50, evenement:false,
+    gameRun: false, gameRun2: false, gameLoop: null, countdown: null, timer: 180, speed: 50, evenement:false,
     grid: makeMatrixAZeroMatrix(1, 1), context: player1.getContext("2d"),
     grid2: makeMatrixAZeroMatrix(1, 1), context2: player2.getContext("2d"),
     fieldPlayer: {name: null, pos: {x: 0, y: 0}, matrix: null, score: 0, width:12,height:20,
@@ -66,7 +66,7 @@ function registers() {
         if (error) {
             console.log(error);
         }
-
+        console.log(message.body);
         let info = JSON.parse(message.body);
         let timeInSeconds = info.timeInSeconds;
         displayTimer(timeInSeconds);
@@ -139,6 +139,7 @@ function setRightPlayer(player) {
 }
 
 function setLeftPlayer(player) {
+    console.log(player);
 
     game.fieldPlayer.name = 'User2';
     select('#player1name').innerHTML = 'User2';
@@ -224,7 +225,7 @@ function backgroundStuff() {
             //todo
         }
         // 0
-        else if (e.keyCode === 48){
+        else if (e.keyCode === 48) {
             abilities(game.fieldPlayer2.name, game.fieldPlayer.name, game.fieldPlayer2.ability2);
             //todo
         }
@@ -246,7 +247,7 @@ function backgroundStuff() {
 }
 
 function evenements(string) {
-    select("main header div p").innerHTML = string;
+    select("main header div h1").innerHTML = string;
     let object = JSON.stringify({evenement: string,
         playerName1: game.fieldPlayer.name,
         playerName2: game.fieldPlayer2.name
@@ -261,24 +262,25 @@ function evenements(string) {
     });
 
     setTimeout(() => {
-        select("main header div p").innerHTML = "";
+        select("main header div h1").innerHTML = "";
     }, 2000)
 }
 
 function abilities(attacker, victim , string) {
     let object = JSON.stringify({attacker:attacker ,victim: victim, ability:string});
-    console.log(object);
+    console.log(string);
     eb.send("tetris-21.socket.battleField.abilities", object, function (error, reply) {
         if (error) {
             console.log(error)
         }
 
         let abilityBoolean = JSON.parse(reply.body);
-        doAbility(attacker,victim,string, abilityBoolean)
+        doAbility(string,attacker,victim, abilityBoolean)
     })
 }
 
-function doAbility(attacker, victim, string, abilityBoolean) {
+function doAbility(string,attacker,victim , abilityBoolean) {
+
     console.log(abilityBoolean);
 
     switch (string){
@@ -286,7 +288,6 @@ function doAbility(attacker, victim, string, abilityBoolean) {
             if (abilityBoolean){
                 let ctx = null;
                 if (attacker === game.fieldPlayer.name){
-                    console.log(attacker);
                     game.fieldPlayer2.showField = false;
                     ctx = game.context2;
                 }
@@ -298,19 +299,17 @@ function doAbility(attacker, victim, string, abilityBoolean) {
                 ctx.rect(0, 0, game.fieldPlayer.width, game.fieldPlayer.height);
                 ctx.fillStyle = "white";
                 ctx.fill();
-                select("header div p").innerHTML = "HAHA " + victim;
                 setTimeout(() => {
-                    select("main header div p").innerHTML = "";
                     game.fieldPlayer2.showField = true;
                     game.fieldPlayer.showField = true;
                 }, 5000);
             }
+
             break;
-        case "CheeringCrowd":
-            select("header div p").innerHTML = "*2 for " + attacker;
-            setTimeout(() => {
-                select("main header div p").innerHTML = "";
-            }, 10000);
+        case "CheerCrowd":
+            if (abilityBoolean){
+
+            }
             break;
     }
 
@@ -342,6 +341,39 @@ function startGame() {
             }
         }
     }, 10);
+}
+
+function countdown(durationInSeconds) {
+    let timer = durationInSeconds, minutes, seconds;
+
+    game.countdown = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + (seconds) : seconds;
+
+        document.querySelector("#time").textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = durationInSeconds;
+        }
+
+        if (timer === 0) {
+            document.querySelector("#time").innerHTML = "00:00";
+            if (game.fieldPlayer.score < game.fieldPlayer2.score) {
+                youLose(game.context);
+                youWon(game.context2);
+            }
+            else if (game.fieldPlayer.score > game.fieldPlayer2.score) {
+                youLose(game.context2);
+                youWon(game.context);
+
+            } else if (game.fieldPlayer.score === game.fieldPlayer2.score) {
+                Tie();
+            }
+        }
+    }, 1000);
 }
 
 function nextBlock(playerName) {
@@ -450,8 +482,10 @@ function update(player, info) {
     let score = info.score;
     let points = info.points;
     let lines = info.lines;
-    game.speed = info.gameSpeed;
+    let gameSpeed = info.gameSpeed;
+    console.log(gameSpeed);
 
+    game.speed = gameSpeed;
     let info1 = {score: score, points: points, lines: lines};
     addScoreToPlayer(player, info1);
     abilityBars(player, points);

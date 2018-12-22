@@ -1,8 +1,8 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+//let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -18,11 +18,10 @@ function playername() {
 }
 
 
-
 function getGoldFromDB() {
     let UserId = parseInt(sessionStorage.getItem('UserId'));
 
-    eb.send("tetris-21.socket.gold", UserId , function (error, reply) {
+    eb.send("tetris-21.socket.gold", UserId, function (error, reply) {
         if (error) {
             console.log(error)
         }

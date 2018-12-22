@@ -1,8 +1,8 @@
 "use strict";
 
 /* global EventBus */
-let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-// let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+//let eb = new EventBus("http://localhost:8021/tetris-21/socket");
+let eb = new EventBus("http://172.21.22.52:48200/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -10,13 +10,13 @@ let loginAllowed = false;
 
 function init() {
     ResetPlayerInSession();
-    eb.onopen = function() {
+    eb.onopen = function () {
         console.log("opened");
     };
     document.querySelector("#Login").addEventListener("click", checkValues);
 }
 
-function ResetPlayerInSession(){
+function ResetPlayerInSession() {
     sessionStorage.clear();
 }
 
@@ -36,7 +36,7 @@ function checkValues(e) {
 
 function mayPersonLogin(username) {
     if (loginAllowed === "true") {
-        let loginValues = { username: username, login: loginAllowed};
+        let loginValues = {username: username, login: loginAllowed};
         sessionStorage.setItem("login", JSON.stringify(loginValues));
         window.location.href = "homescreen.html";
     } else {
