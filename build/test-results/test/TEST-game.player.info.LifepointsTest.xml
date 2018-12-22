@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.player.info.LifepointsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-12-22T13:57:24" hostname="Satan" time="0.003">
+<testsuite name="game.player.info.LifepointsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-12-22T16:20:32" hostname="Rutger" time="0.003">
   <properties/>
   <testcase name="addLifePoint1" classname="game.player.info.LifepointsTest" time="0.001"/>
   <testcase name="addLifePoint2" classname="game.player.info.LifepointsTest" time="0.0"/>
   <testcase name="removeLifePoint1" classname="game.player.info.LifepointsTest" time="0.001"/>
-  <testcase name="removeLifePoint2" classname="game.player.info.LifepointsTest" time="0.001"/>
+  <testcase name="removeLifePoint2" classname="game.player.info.LifepointsTest" time="0.0"/>
   <testcase name="receiveLifePoints" classname="game.player.info.LifepointsTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

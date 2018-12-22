@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.12">
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\Game.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\Game.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\Tetris.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\Tetris.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\ConnectionDatabase.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\ConnectionDatabase.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\ConsumerHandlers.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\ConsumerHandlers.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\Database.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\Database.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\StringLines.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\StringLines.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\Events.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\Events.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\AbilityReset.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\AbilityReset.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\Event.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\Event.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\Tornado.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\Tornado.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\Trigger.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\Trigger.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\info\Timer.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\info\Timer.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\Player.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\Player.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\Hero.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\Hero.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\ability\Ability.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\ability\Ability.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\ability\CheeringCrowd.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\ability\CheeringCrowd.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\ability\Joker.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\ability\Joker.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Gold.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Gold.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Info.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Info.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Lifepoints.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Lifepoints.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Xp.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Xp.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\Blocks.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\Blocks.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\Playfield.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\Playfield.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\PointsForAbilities.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\PointsForAbilities.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\Score.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\Score.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\block\Block.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\block\Block.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\block\TypesOfBlocks.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\block\TypesOfBlocks.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\AbilityController.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\AbilityController.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\GameController.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\GameController.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\HeroController.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\HeroController.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\IntelController.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\IntelController.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\PlayerController.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\PlayerController.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\Routes.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\Routes.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\TetrisSockJSHandler.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\TetrisSockJSHandler.java">
 </file>
-<file name="D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\WebAPI.java">
+<file name="C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\WebAPI.java">
 </file>
 </checkstyle>

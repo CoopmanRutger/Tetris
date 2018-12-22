@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.1.8" sequence="0" timestamp="1545403270545" analysisTimestamp="1545403270584" release="">
+<BugCollection version="3.1.8" sequence="0" timestamp="1545495686454" analysisTimestamp="1545495686490" release="">
   <Project projectName="">
     <Jar>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\build\classes\java\test</Jar>
     <AuxClasspathEntry>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\build\classes\java\main</AuxClasspathEntry>
@@ -48,57 +48,11 @@
     <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\PlayfieldTest.java</SrcDir>
     <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\test\java\game\player\playfield\ScoreTest.java</SrcDir>
   </Project>
-  <BugInstance type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" priority="2" rank="17" abbrev="RV" category="STYLE" instanceHash="40f169e5142e486924e0c90e563e93f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="440">
-    <ShortMessage>Return value of method without side effect is ignored</ShortMessage>
-    <LongMessage>Return value of Ability.getName() ignored, but method has no side effect</LongMessage>
-    <Class classname="game.player.hero.ability.AbilityTest" primary="true">
-      <SourceLine classname="game.player.hero.ability.AbilityTest" start="11" end="104" sourcefile="AbilityTest.java" sourcepath="game/player/hero/ability/AbilityTest.java">
-        <Message>At AbilityTest.java:[lines 11-104]</Message>
-      </SourceLine>
-      <Message>In class game.player.hero.ability.AbilityTest</Message>
-    </Class>
-    <Method classname="game.player.hero.ability.AbilityTest" name="receiveNumberOfTimesUsed2" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="game.player.hero.ability.AbilityTest" start="43" end="44" startBytecode="0" endBytecode="56" sourcefile="AbilityTest.java" sourcepath="game/player/hero/ability/AbilityTest.java"/>
-      <Message>In method game.player.hero.ability.AbilityTest.receiveNumberOfTimesUsed2()</Message>
-    </Method>
-    <Method classname="game.player.hero.ability.Ability" name="getName" signature="()Ljava/lang/String;" isStatic="false" role="METHOD_CALLED">
-      <SourceLine classname="game.player.hero.ability.Ability" sourcefile="Ability.java" sourcepath="game/player/hero/ability/Ability.java"/>
-      <Message>Called method game.player.hero.ability.Ability.getName()</Message>
-    </Method>
-    <SourceLine classname="game.player.hero.ability.AbilityTest" primary="true" start="43" end="43" startBytecode="4" endBytecode="4" sourcefile="AbilityTest.java" sourcepath="game/player/hero/ability/AbilityTest.java">
-      <Message>At AbilityTest.java:[line 43]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugCategory category="STYLE">
-    <Description>Dodgy code</Description>
-  </BugCategory>
-  <BugPattern type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" abbrev="RV" category="STYLE">
-    <ShortDescription>Return value of method without side effect is ignored</ShortDescription>
-    <Details><![CDATA[
-
-<p>This code calls a method and ignores the return value. However our analysis shows that
-the method (including its implementations in subclasses if any) does not produce any effect
-other than return value. Thus this call can be removed.
-</p>
-<p>We are trying to reduce the false positives as much as possible, but in some cases this warning might be wrong.
-Common false-positive cases include:</p>
-<p>- The method is designed to be overridden and produce a side effect in other projects which are out of the scope of the analysis.</p>
-<p>- The method is called to trigger the class loading which may have a side effect.</p>
-<p>- The method is called just to get some exception.</p>
-<p>If you feel that our assumption is incorrect, you can use a @CheckReturnValue annotation
-to instruct SpotBugs that ignoring the return value of this method is acceptable.
-</p>
-
-    ]]></Details>
-  </BugPattern>
-  <BugCode abbrev="RV" cweid="440">
-    <Description>Bad use of return value from method</Description>
-  </BugCode>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Fri, 21 Dec 2018 15:41:10 +0100" total_classes="10" referenced_classes="41" total_bugs="1" total_size="356" num_packages="6" java_version="1.8.0_161" vm_version="25.161-b12" cpu_seconds="11.55" clock_seconds="3.22" peak_mbytes="119.85" alloc_mbytes="3611.00" gc_seconds="0.03" priority_2="1">
+  <FindBugsSummary timestamp="Sat, 22 Dec 2018 17:21:26 +0100" total_classes="10" referenced_classes="41" total_bugs="0" total_size="357" num_packages="6" java_version="1.8.0_161" vm_version="25.161-b12" cpu_seconds="13.53" clock_seconds="3.56" peak_mbytes="132.21" alloc_mbytes="3611.00" gc_seconds="0.13">
     <FileStats path="game/data/MySQLTetrisTest.java" bugCount="0" size="3"/>
     <FileStats path="game/events/event/TornadoTest.java" bugCount="0" size="24"/>
-    <FileStats path="game/player/hero/ability/AbilityTest.java" bugCount="1" size="35" bugHash="2ab3ed420288b169bc368a91cdb1ec59"/>
+    <FileStats path="game/player/hero/ability/AbilityTest.java" bugCount="0" size="36"/>
     <FileStats path="game/player/info/GoldTest.java" bugCount="0" size="19"/>
     <FileStats path="game/player/info/InfoTest.java" bugCount="0" size="16"/>
     <FileStats path="game/player/info/LifepointsTest.java" bugCount="0" size="31"/>
@@ -112,8 +66,8 @@ to instruct SpotBugs that ignoring the return value of this method is acceptable
     <PackageStats package="game.events.event" total_bugs="0" total_types="1" total_size="24">
       <ClassStats class="game.events.event.TornadoTest" sourceFile="TornadoTest.java" interface="false" size="24" bugs="0"/>
     </PackageStats>
-    <PackageStats package="game.player.hero.ability" total_bugs="1" total_types="1" total_size="35" priority_2="1">
-      <ClassStats class="game.player.hero.ability.AbilityTest" sourceFile="AbilityTest.java" interface="false" size="35" bugs="1" priority_2="1"/>
+    <PackageStats package="game.player.hero.ability" total_bugs="0" total_types="1" total_size="36">
+      <ClassStats class="game.player.hero.ability.AbilityTest" sourceFile="AbilityTest.java" interface="false" size="36" bugs="0"/>
     </PackageStats>
     <PackageStats package="game.player.info" total_bugs="0" total_types="4" total_size="89">
       <ClassStats class="game.player.info.GoldTest" sourceFile="GoldTest.java" interface="false" size="19" bugs="0"/>
@@ -129,16 +83,16 @@ to instruct SpotBugs that ignoring the return value of this method is acceptable
       <ClassStats class="game.player.playfield.block.BlockTest" sourceFile="BlockTest.java" interface="false" size="82" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1498" invocations="374" avgMicrosecondsPerInvocation="4007" maxMicrosecondsPerInvocation="12446" standardDeviationMicrosecondsPerInvocation="2402"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="148" invocations="373" avgMicrosecondsPerInvocation="396" maxMicrosecondsPerInvocation="12028" standardDeviationMicrosecondsPerInvocation="832"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="66" invocations="79" avgMicrosecondsPerInvocation="839" maxMicrosecondsPerInvocation="13738" standardDeviationMicrosecondsPerInvocation="1720"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="55" invocations="67" avgMicrosecondsPerInvocation="829" maxMicrosecondsPerInvocation="11412" standardDeviationMicrosecondsPerInvocation="1492"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="55" invocations="67" avgMicrosecondsPerInvocation="822" maxMicrosecondsPerInvocation="13128" standardDeviationMicrosecondsPerInvocation="1706"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="54" invocations="41" avgMicrosecondsPerInvocation="1329" maxMicrosecondsPerInvocation="7503" standardDeviationMicrosecondsPerInvocation="2168"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="50" invocations="41" avgMicrosecondsPerInvocation="1233" maxMicrosecondsPerInvocation="9112" standardDeviationMicrosecondsPerInvocation="1897"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="49" invocations="67" avgMicrosecondsPerInvocation="745" maxMicrosecondsPerInvocation="37019" standardDeviationMicrosecondsPerInvocation="4485"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="47" invocations="160" avgMicrosecondsPerInvocation="298" maxMicrosecondsPerInvocation="2736" standardDeviationMicrosecondsPerInvocation="401"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="45" invocations="67" avgMicrosecondsPerInvocation="673" maxMicrosecondsPerInvocation="3619" standardDeviationMicrosecondsPerInvocation="702"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1502" invocations="379" avgMicrosecondsPerInvocation="3964" maxMicrosecondsPerInvocation="10225" standardDeviationMicrosecondsPerInvocation="2326"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="199" invocations="378" avgMicrosecondsPerInvocation="528" maxMicrosecondsPerInvocation="12972" standardDeviationMicrosecondsPerInvocation="1174"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="62" invocations="67" avgMicrosecondsPerInvocation="932" maxMicrosecondsPerInvocation="10192" standardDeviationMicrosecondsPerInvocation="1749"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="61" invocations="79" avgMicrosecondsPerInvocation="781" maxMicrosecondsPerInvocation="10268" standardDeviationMicrosecondsPerInvocation="1332"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="59" invocations="67" avgMicrosecondsPerInvocation="889" maxMicrosecondsPerInvocation="12348" standardDeviationMicrosecondsPerInvocation="1621"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="59" invocations="41" avgMicrosecondsPerInvocation="1447" maxMicrosecondsPerInvocation="11875" standardDeviationMicrosecondsPerInvocation="2395"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="58" invocations="67" avgMicrosecondsPerInvocation="876" maxMicrosecondsPerInvocation="7393" standardDeviationMicrosecondsPerInvocation="1280"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="56" invocations="67" avgMicrosecondsPerInvocation="843" maxMicrosecondsPerInvocation="4564" standardDeviationMicrosecondsPerInvocation="880"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="50" invocations="67" avgMicrosecondsPerInvocation="752" maxMicrosecondsPerInvocation="13005" standardDeviationMicrosecondsPerInvocation="1597"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="49" invocations="67" avgMicrosecondsPerInvocation="743" maxMicrosecondsPerInvocation="35046" standardDeviationMicrosecondsPerInvocation="4242"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

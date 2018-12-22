@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.1.8" sequence="0" timestamp="1545487038939" analysisTimestamp="1545487038976" release="">
+<BugCollection version="3.1.8" sequence="0" timestamp="1545495707101" analysisTimestamp="1545495707155" release="">
   <Project projectName="">
-    <Jar>D:\documenten\18-19\ADP_Tetris\groep-21\build\classes\java\main</Jar>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-web\3.5.4\3d77c8cc8bff92cb2b1015edd377770a3910324b\vertx-web-3.5.4.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-auth-common\3.5.4\4fcb4262072aa467039a54b4c6faf9a8819acda4\vertx-auth-common-3.5.4.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-core\3.5.4\89d9df77a7d3669504a14a34d1b7247d45b71c05\vertx-core-3.5.4.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-jdbc-client\3.5.4\896782c1ae42e67d1fdb1ce537a49b1266066fd9\vertx-jdbc-client-3.5.4.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\com.h2database\h2\1.4.197\bb391050048ca8ae3e32451b5a3714ecd3596a46\h2-1.4.197.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\3.2.0\6c66db1c636ee90beb4c65fe34abd8ba9396bca6\HikariCP-3.2.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\org.tinylog\tinylog\1.3.5\bfebfda15bc6b5416f292bb062fc66b33fd9f1\tinylog-1.3.5.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\org.mindrot\jbcrypt\0.4\af7e61017f73abb18ac4e036954f9f28c6366c07\jbcrypt-0.4.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http2\4.1.19.Final\665bd06aed74b3f5592465dda2e00e3d03f41048\netty-codec-http2-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.19.Final\9c784510bc6f81177c4f2c2956144438863cdac4\netty-handler-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler-proxy\4.1.19.Final\47c7f7977cea190351962bee726f663eb6488a22\netty-handler-proxy-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver-dns\4.1.19.Final\67a1e265bcbc49160417c81fdf2fdc50ea423727\netty-resolver-dns-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http\4.1.19.Final\f7edff289d10cc03cdb97ad99e2722f9d61ffdc3\netty-codec-http-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-socks\4.1.19.Final\c84f0540fceccae979d7aeb17b1fa0057c038df9\netty-codec-socks-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-dns\4.1.19.Final\8b0a7fd3c67e8bd5e3d347f9bb200ae0aaa5c1b7\netty-codec-dns-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.19.Final\ad4d4309c5b011036ca4df6aca190983d75c6b19\netty-codec-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.19.Final\4f26f51b86dc1ab19621eb2ac39f1a63682f17f2\netty-transport-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.19.Final\65abf40a28ce4f52dd763d0b4f740066a87b5c9e\netty-buffer-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.19.Final\7d97be8b3fb195f9d94d9a4afcadef25e08bde2\netty-resolver-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.19.Final\b281916c11d3eeec5e839677ec4f2eb9d7586928\netty-common-4.1.19.Final.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.9.6\cfa4f316351a91bfd95cb0644c6a2c95f52db1fc\jackson-databind-2.9.6.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-sql-common\3.5.4\a07e660378b0ce385712baba5a1d19434417acd8\vertx-sql-common-3.5.4.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\com.mchange\c3p0\0.9.5.2\5f86cb6130bc6e8475615ed82d5b5e6fb226a86a\c3p0-0.9.5.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-bridge-common\3.5.4\327e404ed3288e5c38e3720b26fb21d6f419f73b\vertx-bridge-common-3.5.4.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.25\da76ca59f6a57ee3102f8f9bd9cee742973efa8a\slf4j-api-1.7.25.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.9.0\7c10d545325e3a6e72e06381afe469fd40eb701\jackson-annotations-2.9.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\gerba\.gradle\caches\modules-2\files-2.1\com.mchange\mchange-commons-java\0.2.11\2a6a6c1fe25f28f5a073171956ce6250813467ef\mchange-commons-java-0.2.11.jar</AuxClasspathEntry>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\ConnectionDatabase.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\ConsumerHandlers.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\Database.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\jdbcinteractor\StringLines.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\api\Tetris.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\AbilityReset.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\Event.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\Tornado.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\event\Trigger.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\events\Events.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\Game.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\info\Timer.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\ability\Ability.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\ability\CheeringCrowd.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\ability\Joker.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\hero\Hero.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Gold.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Info.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Lifepoints.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\info\Xp.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\Player.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\block\Block.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\block\TypesOfBlocks.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\Blocks.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\Playfield.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\PointsForAbilities.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\player\playfield\Score.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\AbilityController.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\GameController.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\HeroController.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\IntelController.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\PlayerController.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\Routes.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\TetrisSockJSHandler.java</SrcDir>
-    <SrcDir>D:\documenten\18-19\ADP_Tetris\groep-21\src\main\java\tetris\webapi\WebAPI.java</SrcDir>
+    <Jar>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\build\classes\java\main</Jar>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-web\3.5.4\3d77c8cc8bff92cb2b1015edd377770a3910324b\vertx-web-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-auth-common\3.5.4\4fcb4262072aa467039a54b4c6faf9a8819acda4\vertx-auth-common-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-core\3.5.4\89d9df77a7d3669504a14a34d1b7247d45b71c05\vertx-core-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-jdbc-client\3.5.4\896782c1ae42e67d1fdb1ce537a49b1266066fd9\vertx-jdbc-client-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.h2database\h2\1.4.197\bb391050048ca8ae3e32451b5a3714ecd3596a46\h2-1.4.197.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\3.2.0\6c66db1c636ee90beb4c65fe34abd8ba9396bca6\HikariCP-3.2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\org.tinylog\tinylog\1.3.5\bfebfda15bc6b5416f292bb062fc66b33fd9f1\tinylog-1.3.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\org.mindrot\jbcrypt\0.4\af7e61017f73abb18ac4e036954f9f28c6366c07\jbcrypt-0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http2\4.1.19.Final\665bd06aed74b3f5592465dda2e00e3d03f41048\netty-codec-http2-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.19.Final\9c784510bc6f81177c4f2c2956144438863cdac4\netty-handler-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler-proxy\4.1.19.Final\47c7f7977cea190351962bee726f663eb6488a22\netty-handler-proxy-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver-dns\4.1.19.Final\67a1e265bcbc49160417c81fdf2fdc50ea423727\netty-resolver-dns-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http\4.1.19.Final\f7edff289d10cc03cdb97ad99e2722f9d61ffdc3\netty-codec-http-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-socks\4.1.19.Final\c84f0540fceccae979d7aeb17b1fa0057c038df9\netty-codec-socks-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-dns\4.1.19.Final\8b0a7fd3c67e8bd5e3d347f9bb200ae0aaa5c1b7\netty-codec-dns-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.19.Final\ad4d4309c5b011036ca4df6aca190983d75c6b19\netty-codec-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.19.Final\4f26f51b86dc1ab19621eb2ac39f1a63682f17f2\netty-transport-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.19.Final\65abf40a28ce4f52dd763d0b4f740066a87b5c9e\netty-buffer-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.19.Final\7d97be8b3fb195f9d94d9a4afcadef25e08bde2\netty-resolver-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.19.Final\b281916c11d3eeec5e839677ec4f2eb9d7586928\netty-common-4.1.19.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.9.6\cfa4f316351a91bfd95cb0644c6a2c95f52db1fc\jackson-databind-2.9.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-sql-common\3.5.4\a07e660378b0ce385712baba5a1d19434417acd8\vertx-sql-common-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.mchange\c3p0\0.9.5.2\5f86cb6130bc6e8475615ed82d5b5e6fb226a86a\c3p0-0.9.5.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\io.vertx\vertx-bridge-common\3.5.4\327e404ed3288e5c38e3720b26fb21d6f419f73b\vertx-bridge-common-3.5.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.25\da76ca59f6a57ee3102f8f9bd9cee742973efa8a\slf4j-api-1.7.25.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.9.0\7c10d545325e3a6e72e06381afe469fd40eb701\jackson-annotations-2.9.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\rutge\.gradle\caches\modules-2\files-2.1\com.mchange\mchange-commons-java\0.2.11\2a6a6c1fe25f28f5a073171956ce6250813467ef\mchange-commons-java-0.2.11.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\ConnectionDatabase.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\ConsumerHandlers.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\Database.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\jdbcinteractor\StringLines.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\api\Tetris.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\AbilityReset.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\Event.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\Tornado.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\event\Trigger.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\events\Events.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\Game.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\info\Timer.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\ability\Ability.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\ability\CheeringCrowd.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\ability\Joker.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\hero\Hero.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Gold.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Info.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Lifepoints.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\info\Xp.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\Player.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\block\Block.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\block\TypesOfBlocks.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\Blocks.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\Playfield.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\PointsForAbilities.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\player\playfield\Score.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\AbilityController.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\GameController.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\HeroController.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\IntelController.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\PlayerController.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\Routes.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\TetrisSockJSHandler.java</SrcDir>
+    <SrcDir>C:\Users\rutge\Desktop\Howest\Semesters\S3\Project 2\projectTetris\groep21\src\main\java\tetris\webapi\WebAPI.java</SrcDir>
   </Project>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Sat, 22 Dec 2018 14:57:18 +0100" total_classes="37" referenced_classes="119" total_bugs="0" total_size="1498" num_packages="13" java_version="1.8.0_162" vm_version="25.162-b12" cpu_seconds="14.62" clock_seconds="3.34" peak_mbytes="209.97" alloc_mbytes="3612.50" gc_seconds="0.12">
+  <FindBugsSummary timestamp="Sat, 22 Dec 2018 17:21:47 +0100" total_classes="37" referenced_classes="119" total_bugs="0" total_size="1498" num_packages="13" java_version="1.8.0_161" vm_version="25.161-b12" cpu_seconds="17.06" clock_seconds="3.91" peak_mbytes="206.47" alloc_mbytes="3611.00" gc_seconds="0.12">
     <FileStats path="tetris/Game.java" bugCount="0" size="26"/>
     <FileStats path="tetris/api/Tetris.java" bugCount="0" size="12"/>
     <FileStats path="tetris/api/jdbcinteractor/ConnectionDatabase.java" bugCount="0" size="54"/>
@@ -169,31 +169,23 @@
       <ClassStats class="tetris.webapi.WebAPI" sourceFile="WebAPI.java" interface="false" size="16" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="482" invocations="735" avgMicrosecondsPerInvocation="656" maxMicrosecondsPerInvocation="13775" standardDeviationMicrosecondsPerInvocation="615"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="249" invocations="732" avgMicrosecondsPerInvocation="341" maxMicrosecondsPerInvocation="11740" standardDeviationMicrosecondsPerInvocation="665"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="119" invocations="119" avgMicrosecondsPerInvocation="1007" maxMicrosecondsPerInvocation="11820" standardDeviationMicrosecondsPerInvocation="1891"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="112" invocations="281" avgMicrosecondsPerInvocation="399" maxMicrosecondsPerInvocation="7291" standardDeviationMicrosecondsPerInvocation="716"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="100" invocations="283" avgMicrosecondsPerInvocation="354" maxMicrosecondsPerInvocation="11598" standardDeviationMicrosecondsPerInvocation="877"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="98" invocations="119" avgMicrosecondsPerInvocation="831" maxMicrosecondsPerInvocation="7888" standardDeviationMicrosecondsPerInvocation="1311"/>
-      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="97" invocations="4649" avgMicrosecondsPerInvocation="21" maxMicrosecondsPerInvocation="85553" standardDeviationMicrosecondsPerInvocation="1254"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="94" invocations="281" avgMicrosecondsPerInvocation="336" maxMicrosecondsPerInvocation="5735" standardDeviationMicrosecondsPerInvocation="537"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="91" invocations="463" avgMicrosecondsPerInvocation="198" maxMicrosecondsPerInvocation="16367" standardDeviationMicrosecondsPerInvocation="808"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="87" invocations="288" avgMicrosecondsPerInvocation="303" maxMicrosecondsPerInvocation="9707" standardDeviationMicrosecondsPerInvocation="711"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="85" invocations="281" avgMicrosecondsPerInvocation="304" maxMicrosecondsPerInvocation="14832" standardDeviationMicrosecondsPerInvocation="914"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="77" invocations="281" avgMicrosecondsPerInvocation="274" maxMicrosecondsPerInvocation="3255" standardDeviationMicrosecondsPerInvocation="467"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="63" invocations="292" avgMicrosecondsPerInvocation="217" maxMicrosecondsPerInvocation="36489" standardDeviationMicrosecondsPerInvocation="2129"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="54" invocations="179" avgMicrosecondsPerInvocation="302" maxMicrosecondsPerInvocation="2301" standardDeviationMicrosecondsPerInvocation="364"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="45" invocations="685" avgMicrosecondsPerInvocation="65" maxMicrosecondsPerInvocation="1236" standardDeviationMicrosecondsPerInvocation="110"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="43" invocations="178" avgMicrosecondsPerInvocation="242" maxMicrosecondsPerInvocation="13194" standardDeviationMicrosecondsPerInvocation="1014"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="37" invocations="119" avgMicrosecondsPerInvocation="317" maxMicrosecondsPerInvocation="7143" standardDeviationMicrosecondsPerInvocation="749"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="34" invocations="37" avgMicrosecondsPerInvocation="924" maxMicrosecondsPerInvocation="19674" standardDeviationMicrosecondsPerInvocation="3437"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="33" invocations="119" avgMicrosecondsPerInvocation="282" maxMicrosecondsPerInvocation="3978" standardDeviationMicrosecondsPerInvocation="530"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="30" invocations="119" avgMicrosecondsPerInvocation="258" maxMicrosecondsPerInvocation="4640" standardDeviationMicrosecondsPerInvocation="596"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="29" invocations="119" avgMicrosecondsPerInvocation="246" maxMicrosecondsPerInvocation="10303" standardDeviationMicrosecondsPerInvocation="968"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="28" invocations="37" avgMicrosecondsPerInvocation="767" maxMicrosecondsPerInvocation="3397" standardDeviationMicrosecondsPerInvocation="824"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethodInvocations" totalMilliseconds="25" invocations="37" avgMicrosecondsPerInvocation="701" maxMicrosecondsPerInvocation="21697" standardDeviationMicrosecondsPerInvocation="3501"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="24" invocations="281" avgMicrosecondsPerInvocation="86" maxMicrosecondsPerInvocation="1618" standardDeviationMicrosecondsPerInvocation="147"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="23" invocations="119" avgMicrosecondsPerInvocation="199" maxMicrosecondsPerInvocation="5436" standardDeviationMicrosecondsPerInvocation="560"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1127" invocations="735" avgMicrosecondsPerInvocation="1534" maxMicrosecondsPerInvocation="9174" standardDeviationMicrosecondsPerInvocation="900"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="272" invocations="732" avgMicrosecondsPerInvocation="371" maxMicrosecondsPerInvocation="17386" standardDeviationMicrosecondsPerInvocation="950"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="191" invocations="281" avgMicrosecondsPerInvocation="682" maxMicrosecondsPerInvocation="88621" standardDeviationMicrosecondsPerInvocation="5292"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="116" invocations="119" avgMicrosecondsPerInvocation="974" maxMicrosecondsPerInvocation="9515" standardDeviationMicrosecondsPerInvocation="1694"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="95" invocations="281" avgMicrosecondsPerInvocation="339" maxMicrosecondsPerInvocation="5096" standardDeviationMicrosecondsPerInvocation="564"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="92" invocations="283" avgMicrosecondsPerInvocation="326" maxMicrosecondsPerInvocation="11251" standardDeviationMicrosecondsPerInvocation="781"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="90" invocations="119" avgMicrosecondsPerInvocation="757" maxMicrosecondsPerInvocation="6328" standardDeviationMicrosecondsPerInvocation="1174"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="88" invocations="288" avgMicrosecondsPerInvocation="307" maxMicrosecondsPerInvocation="12059" standardDeviationMicrosecondsPerInvocation="811"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="80" invocations="463" avgMicrosecondsPerInvocation="174" maxMicrosecondsPerInvocation="3802" standardDeviationMicrosecondsPerInvocation="348"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="79" invocations="281" avgMicrosecondsPerInvocation="281" maxMicrosecondsPerInvocation="12134" standardDeviationMicrosecondsPerInvocation="754"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="67" invocations="281" avgMicrosecondsPerInvocation="239" maxMicrosecondsPerInvocation="3035" standardDeviationMicrosecondsPerInvocation="374"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="60" invocations="292" avgMicrosecondsPerInvocation="208" maxMicrosecondsPerInvocation="33915" standardDeviationMicrosecondsPerInvocation="1980"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="51" invocations="119" avgMicrosecondsPerInvocation="430" maxMicrosecondsPerInvocation="10953" standardDeviationMicrosecondsPerInvocation="1402"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="48" invocations="179" avgMicrosecondsPerInvocation="272" maxMicrosecondsPerInvocation="2163" standardDeviationMicrosecondsPerInvocation="304"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="45" invocations="685" avgMicrosecondsPerInvocation="65" maxMicrosecondsPerInvocation="1278" standardDeviationMicrosecondsPerInvocation="122"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="38" invocations="178" avgMicrosecondsPerInvocation="216" maxMicrosecondsPerInvocation="13880" standardDeviationMicrosecondsPerInvocation="1065"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="31" invocations="119" avgMicrosecondsPerInvocation="264" maxMicrosecondsPerInvocation="3198" standardDeviationMicrosecondsPerInvocation="488"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

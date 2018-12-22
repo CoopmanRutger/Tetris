@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.player.playfield.PlayfieldTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2018-12-22T13:57:24" hostname="Satan" time="0.016">
+<testsuite name="game.player.playfield.PlayfieldTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2018-12-22T16:20:32" hostname="Rutger" time="0.022">
   <properties/>
   <testcase name="testAvailability" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
-  <testcase name="testCheckForCompleted1" classname="game.player.playfield.PlayfieldTest" time="0.003"/>
+  <testcase name="testCheckForCompleted1" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
   <testcase name="testCheckForCompleted2" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
-  <testcase name="testCheckForCompleted3" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
-  <testcase name="testCheckForCompleted4" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
+  <testcase name="testCheckForCompleted3" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
+  <testcase name="testCheckForCompleted4" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
   <testcase name="testCheckForCompleted5" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
   <testcase name="testMakeFieldWidth" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
-  <testcase name="testPutBlockOnField1" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
+  <testcase name="testPutBlockOnField1" classname="game.player.playfield.PlayfieldTest" time="0.002"/>
   <testcase name="testPutBlockOnField2" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
-  <testcase name="testPutBlockOnField3" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
-  <testcase name="testPutBlockOnField4" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
-  <testcase name="testPutBlockOnField5" classname="game.player.playfield.PlayfieldTest" time="0.001"/>
+  <testcase name="testPutBlockOnField3" classname="game.player.playfield.PlayfieldTest" time="0.002"/>
+  <testcase name="testPutBlockOnField4" classname="game.player.playfield.PlayfieldTest" time="0.002"/>
+  <testcase name="testPutBlockOnField5" classname="game.player.playfield.PlayfieldTest" time="0.007"/>
   <testcase name="testMakeFieldHeight" classname="game.player.playfield.PlayfieldTest" time="0.0"/>
-  <system-out><![CDATA[2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.makeLine()
+  <system-out><![CDATA[2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.makeLine()
 INFO: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.makeLine()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.makeLine()
 INFO: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.makeLine()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.makeLine()
 INFO: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.makeLine()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.makeLine()
 INFO: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.makeLine()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.makeLine()
 INFO: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.makeLine()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.makeLine()
 INFO: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: block{ 0, 0, 1,  }
 { 1, 1, 1,  }
 
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: avaible YES
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: block{ 0, 0, 1,  }
 { 1, 1, 1,  }
 
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: avaible YES
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: block{ 0, 0, 1,  }
 { 1, 1, 1,  }
 
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: avaible YES
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: block{ 0, 0, 1,  }
 { 1, 1, 1,  }
 
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: avaible YES
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: block{ 0, 0, 1,  }
 { 1, 1, 1,  }
 
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 INFO: avaible YES
 ]]></system-out>
-  <system-err><![CDATA[2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+  <system-err><![CDATA[2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 WARNING: avaible?
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 WARNING: avaible?
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 WARNING: avaible?
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 WARNING: avaible?
-2018-12-22 14:57:24 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
+2018-12-22 17:20:32 [Test worker] tetris.player.playfield.Playfield.putOnPlayField()
 WARNING: avaible?
 ]]></system-err>
 </testsuite>

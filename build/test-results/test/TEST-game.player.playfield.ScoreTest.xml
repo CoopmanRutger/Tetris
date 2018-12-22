@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.player.playfield.ScoreTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-12-22T13:57:24" hostname="Satan" time="0.0">
+<testsuite name="game.player.playfield.ScoreTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-12-22T16:20:32" hostname="Rutger" time="0.0">
   <properties/>
   <testcase name="testUpdateScoreForMultipleLines" classname="game.player.playfield.ScoreTest" time="0.0"/>
   <testcase name="testUpdateScore1" classname="game.player.playfield.ScoreTest" time="0.0"/>
