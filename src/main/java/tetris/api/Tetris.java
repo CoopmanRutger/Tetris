@@ -20,7 +20,7 @@ public class Tetris extends AbstractVerticle {
         final GameController gameController = new GameController();
 
         final Vertx vertx = Vertx.vertx();
-        //        vertx.deployVerticle(gameController);
+        vertx.deployVerticle(gameController);
         vertx.deployVerticle(new WebAPI(gameController));
         vertx.deployVerticle(connectionDatabase);
         vertx.deployVerticle(new Routes(gameController));
