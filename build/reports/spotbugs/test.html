@@ -31,7 +31,7 @@
 <p>Project: 
 			</p>
 <h2>Metrics</h2>
-<p>356 lines of code analyzed,
+<p>357 lines of code analyzed,
 	in 10 classes, 
 	in 6 packages.</p>
 <table width="500" cellpadding="5" cellspacing="2">
@@ -47,18 +47,18 @@
 </tr>
 <tr class="tablerow1">
 <td>Medium Priority Warnings</td>
-<td align="right">1</td>
-<td align="right">2.81</td>
+<td align="right"/>
+<td align="right">NaN</td>
 </tr>
 <tr class="$totalClass">
 <td>
 <b>Total Warnings</b>
 </td>
 <td align="right">
-<b>1</b>
+<b>0</b>
 </td>
 <td align="right">
-<b>2.81</b>
+<b>0.00</b>
 </td>
 </tr>
 </table>
@@ -77,16 +77,10 @@
 </tr>
 <tr class="tablerow0">
 <td>
-<a href="#Warnings_STYLE">Dodgy code Warnings</a>
-</td>
-<td align="right">1</td>
-</tr>
-<tr class="tablerow1">
-<td>
 <b>Total</b>
 </td>
 <td align="right">
-<b>1</b>
+<b>0</b>
 </td>
 </tr>
 </table>
@@ -97,33 +91,6 @@
 <h1>Warnings</h1>
 <p>Click on each warning link to see a full description of the issue, and
 	    details of how to resolve it.</p>
-<h2>
-<a name="Warnings_STYLE">Dodgy code Warnings</a>
-</h2>
-<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
-<tr class="tableheader">
-<th align="left">Warning</th>
-<th align="left">Priority</th>
-<th align="left">Details</th>
-</tr>
-<tr class="tablerow1">
-<td width="20%" valign="top">
-<a href="#RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT">Return value of method without side effect is ignored</a>
-</td>
-<td width="10%" valign="top">Medium</td>
-<td width="70%">
-<p>Return value of Ability.getName() ignored, but method has no side effect<br/>
-<br/>
-<br/>In file AbilityTest.java,
-					
-						line 43<br/>In class game.player.hero.ability.AbilityTest<br/>In method game.player.hero.ability.AbilityTest.receiveNumberOfTimesUsed2()<br/>Called method game.player.hero.ability.Ability.getName()<br/>At AbilityTest.java:[line 43]</p>
-</td>
-</tr>
-</table>
-<p>
-<br/>
-<br/>
-</p>
 <p>
 <br/>
 <br/>
@@ -131,27 +98,5 @@
 <h1>
 <a name="Details">Warning Types</a>
 </h1>
-<h2>
-<a name="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT">Return value of method without side effect is ignored</a>
-</h2>
-
-<p>This code calls a method and ignores the return value. However our analysis shows that
-the method (including its implementations in subclasses if any) does not produce any effect
-other than return value. Thus this call can be removed.
-</p>
-<p>We are trying to reduce the false positives as much as possible, but in some cases this warning might be wrong.
-Common false-positive cases include:</p>
-<p>- The method is designed to be overridden and produce a side effect in other projects which are out of the scope of the analysis.</p>
-<p>- The method is called to trigger the class loading which may have a side effect.</p>
-<p>- The method is called just to get some exception.</p>
-<p>If you feel that our assumption is incorrect, you can use a @CheckReturnValue annotation
-to instruct SpotBugs that ignoring the return value of this method is acceptable.
-</p>
-
-    
-<p>
-<br/>
-<br/>
-</p>
 </body>
 </html>
