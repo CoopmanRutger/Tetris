@@ -2,7 +2,7 @@
 
 /* global EventBus */
 //let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+let eb = new EventBus("http://172.21.22.52:48200/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -31,13 +31,13 @@ function checkValues(e) {
         return;
     }
 
-    login(username, password);
+    index(username, password);
 }
 
 function mayPersonLogin(username) {
     if (loginAllowed === "true") {
         let loginValues = {username: username, login: loginAllowed};
-        sessionStorage.setItem("login", JSON.stringify(loginValues));
+        sessionStorage.setItem("index", JSON.stringify(loginValues));
         window.location.href = "homescreen.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";
@@ -45,7 +45,7 @@ function mayPersonLogin(username) {
     }
 }
 
-function login(username, password) {
+function index(username, password) {
     let loginValues = {username: username, password: password};
     console.log(JSON.stringify(loginValues));
     eb.send("tetris-21.socket.login", JSON.stringify(loginValues), function (error, reply) {

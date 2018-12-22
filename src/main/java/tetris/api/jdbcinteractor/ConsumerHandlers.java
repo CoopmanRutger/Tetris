@@ -197,7 +197,7 @@ public class ConsumerHandlers {
                 Logger.warn(lines.getDbInfo(), res.cause());
                 passwordResult.put(lines.getCanLogin(), lines.getFalse());
             }
-            eb.send("tetris-21.socket.login.server", passwordResult.getString(lines.getCanLogin()));
+            eb.send("tetris-21.socket.index.server", passwordResult.getString(lines.getCanLogin()));
         });
     }
 
@@ -214,9 +214,9 @@ public class ConsumerHandlers {
                 couldLogin.put(lines.getRegister(), lines.getTrue());
             } else {
                 couldLogin.put(lines.getRegister(), lines.getFalse());
-                Logger.warn("Could not make login: ", res.cause());
+                Logger.warn("Could not make index: ", res.cause());
             }
-            eb.send("tetris-21.socket.login.make.server", couldLogin.getString(lines.getRegister()));
+            eb.send("tetris-21.socket.index.make.server", couldLogin.getString(lines.getRegister()));
         });
     }
 
@@ -246,7 +246,7 @@ public class ConsumerHandlers {
             } else {
                 Logger.warn("Could not check username: ", res.cause());
             }
-            eb.send("tetris-21.socket.login.username.server", loginExists.getString(lines.getUsername()));
+            eb.send("tetris-21.socket.index.username.server", loginExists.getString(lines.getUsername()));
         });
     }
 

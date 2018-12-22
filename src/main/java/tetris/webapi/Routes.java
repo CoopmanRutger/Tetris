@@ -79,16 +79,16 @@ public class Routes extends AbstractVerticle {
         //        eb.consumer("tetris-21.socket.sendBlock",this::sendBlockOneByOne);
 
         // Login
-        eb.consumer("tetris-21.socket.login", this::login);
+        eb.consumer("tetris-21.socket.index", this::login);
 
-        // Make login
-        eb.consumer("tetris-21.socket.login.make", this::makeLogin);
+        // Make index
+        eb.consumer("tetris-21.socket.index.make", this::makeLogin);
 
         // Check username
-        eb.consumer("tetris-21.socket.login.username", this::checkUsername);
+        eb.consumer("tetris-21.socket.index.username", this::checkUsername);
 
-        // May login
-        //eb.consumer("tetris-21.socket.login.may", this::mayLogin);
+        // May index
+        //eb.consumer("tetris-21.socket.index.may", this::mayLogin);
 
     }
 
