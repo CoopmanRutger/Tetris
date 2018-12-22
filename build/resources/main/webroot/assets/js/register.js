@@ -2,7 +2,8 @@
 
 /* global EventBus */
 //let eb = new EventBus("http://localhost:8021/tetris-21/socket");
-let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+//let eb = new EventBus("http://172.31.27.98:8021/tetris-21/socket");
+let eb = new EventBus("http://172.21.22.52:48200/tetris-21/socket");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -71,7 +72,7 @@ function register(email, username, password, playername) {
 
 function registerMade() {
     if (loginMade === "true") {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     } else {
         document.querySelector("#errorMessage").style.display = "block";
         document.querySelector("#errorMessage").innerHTML = "Could not make login.";
